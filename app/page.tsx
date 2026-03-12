@@ -14,19 +14,19 @@ export default function HomePage() {
       <section
         style={{
           width: "100%",
-          maxWidth: "1100px",
+          maxWidth: "1000px",
           display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
+          gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
           gap: "40px",
           alignItems: "center",
         }}
       >
-        {/* الصندوق الأصفر مع الشعار */}
+        {/* المربع الأصفر مع الشعار */}
         <div
           style={{
             background: "#FFD100",
-            borderRadius: "28px",
-            minHeight: "420px",
+            borderRadius: "26px",
+            minHeight: "300px",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
@@ -37,8 +37,8 @@ export default function HomePage() {
             src="/images/MAAB LOGO-01.jpg"
             alt="MAAB Art Space"
             style={{
-              width: "70%",
-              maxWidth: "320px",
+              width: "60%",
+              maxWidth: "260px",
               height: "auto",
               objectFit: "contain",
             }}
@@ -47,21 +47,9 @@ export default function HomePage() {
 
         {/* النص */}
         <div>
-          <p
-            style={{
-              fontSize: "13px",
-              letterSpacing: "3px",
-              fontWeight: "bold",
-              marginBottom: "14px",
-              color: "#111",
-            }}
-          >
-            MAAB ART SPACE
-          </p>
-
           <h1
             style={{
-              fontSize: "clamp(34px, 6vw, 56px)",
+              fontSize: "clamp(34px, 6vw, 52px)",
               lineHeight: "1.4",
               margin: "0 0 18px 0",
               color: "#111",
@@ -73,6 +61,7 @@ export default function HomePage() {
               style={{
                 fontSize: "0.55em",
                 color: "#666",
+                letterSpacing: "1px",
               }}
             >
               MAAB Art Space
@@ -81,17 +70,22 @@ export default function HomePage() {
 
           <p
             style={{
-              fontSize: "clamp(16px, 2.2vw, 20px)",
-              color: "#666",
-              lineHeight: "1.9",
-              marginBottom: "26px",
-              maxWidth: "620px",
+              fontSize: "clamp(22px, 3vw, 26px)",
+              color: "#444",
+              marginBottom: "28px",
+              lineHeight: "1.6",
             }}
           >
-             قريباً .
+            قريباً
             <br />
-            <span style={{ fontSize: "0.9em" }}>
-              The website is currently under development and will launch soon.
+            <span
+              style={{
+                fontSize: "0.65em",
+                color: "#777",
+                letterSpacing: "2px",
+              }}
+            >
+              Coming Soon
             </span>
           </p>
 
@@ -101,7 +95,6 @@ export default function HomePage() {
               display: "flex",
               gap: "14px",
               flexWrap: "wrap",
-              marginBottom: "28px",
             }}
           >
             <a
@@ -138,15 +131,12 @@ export default function HomePage() {
 
           <div
             style={{
-              borderTop: "1px solid #eee",
-              paddingTop: "18px",
+              marginTop: "24px",
               color: "#888",
               fontSize: "14px",
-              lineHeight: "1.8",
             }}
           >
-            <div>Coming Soon</div>
-            <div>Riyadh, Saudi Arabia</div>
+            Riyadh — Saudi Arabia
           </div>
         </div>
       </section>
