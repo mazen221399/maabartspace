@@ -2,68 +2,141 @@ export default function HomePage() {
   return (
     <main
       style={{
-        minHeight: "80vh",
+        minHeight: "100vh",
+        background: "#fff",
+        fontFamily: "sans-serif",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        textAlign: "center",
         padding: "40px 20px",
-        fontFamily: "sans-serif",
       }}
     >
-      <div style={{ maxWidth: "700px" }}>
-        <img
-          src="/images/MAAB LOGO-01.jpg"
-          alt="MAAB Art Space"
-          style={{
-            width: "120px",
-            marginBottom: "30px",
-          }}
-        />
-
-        <h1
-          style={{
-            fontSize: "clamp(28px,5vw,40px)",
-            marginBottom: "20px",
-          }}
-        >
-          مآب مساحة فنية
-        </h1>
-
-        <p
-          style={{
-            fontSize: "18px",
-            color: "#555",
-            lineHeight: "1.9",
-            marginBottom: "30px",
-          }}
-        >
-          الموقع حالياً تحت التطوير
-          <br />
-          سيتم إطلاقه قريباً.
-        </p>
-
-        <p
-          style={{
-            fontSize: "14px",
-            color: "#888",
-          }}
-        >
-          MAAB Art Space – Coming Soon
-        </p>
-
+      <section
+        style={{
+          width: "100%",
+          maxWidth: "1100px",
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
+          gap: "40px",
+          alignItems: "center",
+        }}
+      >
         <div
           style={{
-            marginTop: "40px",
-            height: "6px",
-            width: "160px",
             background: "#FFD100",
-            marginLeft: "auto",
-            marginRight: "auto",
-            borderRadius: "10px",
+            borderRadius: "28px",
+            minHeight: "420px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            padding: "30px",
           }}
-        />
-      </div>
+        >
+          <img
+            src="/images/MAAB LOGO-01.jpg"
+            alt="MAAB Art Space"
+            style={{
+              width: "70%",
+              maxWidth: "320px",
+              height: "auto",
+              objectFit: "contain",
+            }}
+          />
+        </div>
+
+        <div>
+          <p
+            style={{
+              fontSize: "13px",
+              letterSpacing: "3px",
+              fontWeight: "bold",
+              marginBottom: "14px",
+              color: "#111",
+            }}
+          >
+            MAAB ART SPACE
+          </p>
+
+          <h1
+            style={{
+              fontSize: "clamp(34px, 6vw, 58px)",
+              lineHeight: "1.35",
+              margin: "0 0 18px 0",
+              color: "#111",
+            }}
+          >
+            مآب
+            <br />
+            مساحة فنية
+          </h1>
+
+          <p
+            style={{
+              fontSize: "clamp(16px, 2.2vw, 20px)",
+              color: "#666",
+              lineHeight: "1.9",
+              marginBottom: "26px",
+              maxWidth: "620px",
+            }}
+          >
+            الموقع الإلكتروني قيد التطوير حاليًا، وسيتم إطلاقه قريبًا 
+            ليقدم تجربة متكاملة للتعريف بمآب وبرامجه ومحتواه الفني.
+          </p>
+
+          <div
+            style={{
+              display: "flex",
+              gap: "14px",
+              flexWrap: "wrap",
+              marginBottom: "28px",
+            }}
+          >
+            <a
+              href="/Contact"
+              style={{
+                display: "inline-block",
+                padding: "14px 22px",
+                background: "#111",
+                color: "#fff",
+                textDecoration: "none",
+                borderRadius: "12px",
+              }}
+            >
+              تواصل معنا
+            </a>
+
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              rel="noreferrer"
+              style={{
+                display: "inline-block",
+                padding: "14px 22px",
+                background: "transparent",
+                color: "#111",
+                textDecoration: "none",
+                border: "1px solid #111",
+                borderRadius: "12px",
+              }}
+            >
+              تابعنا على إنستجرام
+            </a>
+          </div>
+
+          <div
+            style={{
+              borderTop: "1px solid #eee",
+              paddingTop: "18px",
+              color: "#888",
+              fontSize: "14px",
+              lineHeight: "1.8",
+            }}
+          >
+            <div>Coming Soon</div>
+            <div>Riyadh, Saudi Arabia</div>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }
