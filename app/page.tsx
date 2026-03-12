@@ -106,7 +106,7 @@ export default function HomePage() {
             </a>
 
             <a
-              href="https://instagram.com"
+              href="https://instagram.com/maab.artspace"
               target="_blank"
               rel="noreferrer"
               style={{
