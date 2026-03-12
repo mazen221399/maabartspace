@@ -4,121 +4,106 @@ export default function HomePage() {
       <section
         style={{
           display: "grid",
-          gridTemplateColumns: "1.1fr 1fr",
+          gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
           gap: "40px",
           alignItems: "center",
-          padding: "70px 60px",
+          padding: "40px 20px",
           minHeight: "80vh",
         }}
       >
-        <div>
+        {/* النص */}
+        <div style={{ order: 2 }}>
           <p
             style={{
-              fontSize: "14px",
+              fontSize: "13px",
               letterSpacing: "2px",
               color: "#111",
-              marginBottom: "18px",
+              marginBottom: "14px",
               fontWeight: "bold",
             }}
           >
-            MAAB ARTSPACE
+            MAAB ART SPACE
           </p>
 
           <h1
             style={{
-              fontSize: "60px",
-              lineHeight: "1.2",
-              marginBottom: "24px",
+              fontSize: "clamp(32px, 6vw, 48px)",
+              lineHeight: "1.4",
+              marginBottom: "20px",
+              marginTop: 0,
             }}
           >
             مآب
             <br />
-            مساحة للفن
-            <br />
-            والتجربة والإبداع
+            مساحة فنية
           </h1>
 
           <p
             style={{
-              fontSize: "19px",
+              fontSize: "clamp(15px, 2vw, 18px)",
               color: "#666",
-              maxWidth: "650px",
+              maxWidth: "600px",
               lineHeight: "1.9",
-              marginBottom: "30px",
+              marginBottom: "28px",
             }}
           >
             مآب مساحة فنية معاصرة تُعنى بعرض وتسويق الأعمال الفنية المتميزة،
             وإبراز الفنانين، وتنظيم المعارض والورش الفنية والثقافية المتخصصة.
           </p>
 
-          <div style={{ display: "flex", gap: "16px", flexWrap: "wrap" }}>
-            <a href="/Artworks" style={primaryButton}>
-              استكشف الأعمال
-            </a>
-
-
-          </div>
+          <a href="/Artworks" style={primaryButton}>
+            استكشف الأعمال
+          </a>
         </div>
 
+        {/* الصورة */}
         <div
           style={{
             width: "100%",
-            height: "560px",
+            minHeight: "320px",
             background: "#FFD100",
             borderRadius: "24px",
+            overflow: "hidden",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            color: "#111",
-            fontSize: "28px",
-            fontWeight: "bold",
+            padding: "20px",
+            order: 1,
           }}
         >
-          <div
-  style={{
-    width: "100%",
-    height: "560px",
-    borderRadius: "24px",
-    overflow: "hidden",
-  }}
->
-  <img
-  src="/images/MAAB LOGO-01.jpg"
-  alt="Maab Artspace"
-  style={{
-    width: "75%",
-    height: "75%",
-    objectFit: "contain",
-    display: "block",
-    margin: "auto",
-  }}
-/>
-</div>
+          <img
+            src="/images/MAAB LOGO-01.jpg"
+            alt="Maab Artspace"
+            style={{
+              width: "65%",
+              maxWidth: "300px",
+              height: "auto",
+              objectFit: "contain",
+              display: "block",
+              margin: "auto",
+            }}
+          />
         </div>
       </section>
 
-      <section
-        style={{
-          padding: "0 60px 70px 60px",
-        }}
-      >
+      {/* الأعمال */}
+      <section style={{ padding: "0 20px 60px 20px" }}>
         <div
           style={{
             display: "flex",
             justifyContent: "space-between",
             alignItems: "end",
-            marginBottom: "30px",
-            gap: "20px",
+            marginBottom: "24px",
             flexWrap: "wrap",
+            gap: "10px",
           }}
         >
           <div>
             <p
               style={{
-                fontSize: "14px",
+                fontSize: "13px",
                 letterSpacing: "2px",
-                color: "#111",
-                marginBottom: "10px",
+                marginBottom: "6px",
                 fontWeight: "bold",
               }}
             >
@@ -127,7 +112,7 @@ export default function HomePage() {
 
             <h2
               style={{
-                fontSize: "36px",
+                fontSize: "clamp(24px,4vw,30px)",
                 margin: 0,
               }}
             >
@@ -143,8 +128,8 @@ export default function HomePage() {
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
-            gap: "24px",
+            gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
+            gap: "20px",
           }}
         >
           <div style={artCard}>
@@ -166,66 +151,17 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
-      <section
-        style={{
-          padding: "0 60px 80px 60px",
-        }}
-      >
-        <div
-          style={{
-            background: "#fafafa",
-            border: "1px solid #eee",
-            borderRadius: "24px",
-            padding: "40px",
-          }}
-        >
-          <h2
-            style={{
-              fontSize: "34px",
-              marginTop: 0,
-              marginBottom: "18px",
-            }}
-          >
-            لماذا مآب؟
-          </h2>
-
-          <p
-            style={{
-              fontSize: "18px",
-              color: "#666",
-              lineHeight: "1.9",
-              maxWidth: "900px",
-              marginBottom: "0",
-            }}
-          >
-            يجمع مآب بين عرض الأعمال الفنية، وتنظيم الورش المتخصصة، وفتح مساحات
-            للتعاون مع الفنانين والمبدعين، ضمن تجربة معاصرة تعكس جودة المحتوى
-            الفني وثراء المشهد الثقافي.
-          </p>
-        </div>
-      </section>
     </main>
   );
 }
 
 const primaryButton = {
   display: "inline-block",
-  padding: "14px 22px",
+  padding: "12px 20px",
   background: "#111",
   color: "#fff",
   textDecoration: "none",
-  borderRadius: "12px",
-};
-
-const secondaryButton = {
-  display: "inline-block",
-  padding: "14px 22px",
-  background: "transparent",
-  color: "#111",
-  textDecoration: "none",
-  border: "1px solid #111",
-  borderRadius: "12px",
+  borderRadius: "10px",
 };
 
 const viewAllLink = {
@@ -236,26 +172,26 @@ const viewAllLink = {
 
 const artCard = {
   border: "1px solid #eee",
-  borderRadius: "20px",
-  padding: "18px",
+  borderRadius: "18px",
+  padding: "16px",
   background: "#fff",
 };
 
 const artImage = {
   width: "100%",
-  height: "260px",
-  borderRadius: "16px",
+  height: "220px",
+  borderRadius: "14px",
   background: "#f3f3f3",
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
   color: "#777",
-  marginBottom: "16px",
+  marginBottom: "14px",
 };
 
 const artTitle = {
-  margin: "0 0 8px 0",
-  fontSize: "22px",
+  margin: "0 0 6px 0",
+  fontSize: "20px",
 };
 
 const artMeta = {
