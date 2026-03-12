@@ -14,35 +14,38 @@ export default function HomePage() {
       <section
         style={{
           width: "100%",
-          maxWidth: "1000px",
+          maxWidth: "900px",
           display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+          gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
           gap: "40px",
           alignItems: "center",
         }}
       >
-        {/* المربع الأصفر مع الشعار */}
+        {/* إطار الشعار */}
         <div
           style={{
-            background: "#FFD100",
-            borderRadius: "26px",
-            minHeight: "300px",
             display: "flex",
-            alignItems: "center",
             justifyContent: "center",
-            padding: "30px",
           }}
         >
-          <img
-            src="/images/MAAB LOGO-01.jpg"
-            alt="MAAB Art Space"
+          <div
             style={{
-              width: "60%",
-              maxWidth: "260px",
-              height: "auto",
-              objectFit: "contain",
+              background: "#FFD100",
+              padding: "20px",
+              borderRadius: "20px",
+              display: "inline-block",
             }}
-          />
+          >
+            <img
+              src="/images/MAAB LOGO-01.jpg"
+              alt="MAAB Art Space"
+              style={{
+                width: "180px",
+                height: "auto",
+                display: "block",
+              }}
+            />
+          </div>
         </div>
 
         {/* النص */}
@@ -89,7 +92,6 @@ export default function HomePage() {
             </span>
           </p>
 
-          {/* الأزرار */}
           <div
             style={{
               display: "flex",
