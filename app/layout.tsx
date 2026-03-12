@@ -1,23 +1,33 @@
+"use client";
+
 import "./globals.css";
 import Link from "next/link";
-
-export const metadata = {
-  title: "Maab Artspace",
-  description: "Official website of Maab Artspace",
-};
+import { useState } from "react";
 
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <html lang="ar" dir="rtl">
-      <body style={{ margin: 0, fontFamily: "sans-serif", background: "#fff", color: "#111" }}>
+      <body
+        style={{
+          margin: 0,
+          fontFamily: "sans-serif",
+          background: "#fff",
+          color: "#111",
+        }}
+      >
         <header
           style={{
             borderBottom: "1px solid #eee",
             background: "#fff",
+            position: "sticky",
+            top: 0,
+            zIndex: 1000,
           }}
         >
           <div
@@ -28,14 +38,7 @@ export default function RootLayout({
             }}
           />
 
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center",
-              padding: "22px 60px",
-            }}
-          >
+          <div className="headerInner">
             <div
               style={{
                 fontWeight: "bold",
@@ -46,12 +49,15 @@ export default function RootLayout({
               MAAB
             </div>
 
-            <nav
-              style={{
-                display: "flex",
-                gap: "26px",
-              }}
+            <button
+              className="menuButton"
+              onClick={() => setMenuOpen(!menuOpen)}
+              aria-label="فتح القائمة"
             >
+              ☰
+            </button>
+
+            <nav className="desktopNav">
               <Link className="navLink" href="/">
                 الرئيسية
               </Link>
@@ -75,63 +81,86 @@ export default function RootLayout({
               </Link>
             </nav>
           </div>
+
+          {menuOpen && (
+            <nav className="mobileNav">
+              <Link className="mobileNavLink" href="/" onClick={() => setMenuOpen(false)}>
+                الرئيسية
+              </Link>
+              <Link className="mobileNavLink" href="/About" onClick={() => setMenuOpen(false)}>
+                عن مآب
+              </Link>
+              <Link className="mobileNavLink" href="/Vision" onClick={() => setMenuOpen(false)}>
+                الرؤية
+              </Link>
+              <Link className="mobileNavLink" href="/Artworks" onClick={() => setMenuOpen(false)}>
+                الأعمال
+              </Link>
+              <Link className="mobileNavLink" href="/Workshops" onClick={() => setMenuOpen(false)}>
+                الورش
+              </Link>
+              <Link className="mobileNavLink" href="/Artists" onClick={() => setMenuOpen(false)}>
+                الفنانون
+              </Link>
+              <Link className="mobileNavLink" href="/Contact" onClick={() => setMenuOpen(false)}>
+                اتصل بنا
+              </Link>
+            </nav>
+          )}
         </header>
 
         {children}
+
         <footer
-  style={{
-    marginTop: "80px",
-    borderTop: "1px solid #eee",
-    background: "#fafafa",
-  }}
->
-  <div
-    style={{
-      maxWidth: "1200px",
-      margin: "0 auto",
-      padding: "60px 60px 40px",
-      display: "grid",
-      gridTemplateColumns: "repeat(auto-fit, minmax(220px,1fr))",
-      gap: "40px",
-    }}
-  >
-    <div>
-      <h3 style={{ marginTop: 0 }}>MAAB</h3>
+          style={{
+            marginTop: "80px",
+            borderTop: "1px solid #eee",
+            background: "#fafafa",
+          }}
+        >
+          <div className="footerGrid">
+            <div>
+              <h3 style={{ marginTop: 0 }}>MAAB</h3>
+              <p style={{ color: "#666", lineHeight: "1.8" }}>
+                مآب مساحة فنية معاصرة تُعنى بعرض الأعمال الفنية وتنظيم المعارض
+                والورش الثقافية.
+              </p>
+            </div>
 
-      <p style={{ color: "#666", lineHeight: "1.8" }}>
-        مآب مساحة فنية معاصرة تُعنى بعرض الأعمال الفنية وتنظيم المعارض
-        والورش الثقافية.
-      </p>
-    </div>
+            <div>
+              <h4>روابط</h4>
+              <p>
+                <a href="/">الرئيسية</a>
+              </p>
+              <p>
+                <a href="/Artworks">الأعمال</a>
+              </p>
+              <p>
+                <a href="/Workshops">الورش</a>
+              </p>
+              <p>
+                <a href="/Artists">الفنانون</a>
+              </p>
+            </div>
 
-    <div>
-      <h4>روابط</h4>
+            <div>
+              <h4>تواصل</h4>
+              <p>info@maabartspace.com</p>
+              <p>الرياض – السعودية</p>
+            </div>
+          </div>
 
-      <p><a href="/">الرئيسية</a></p>
-      <p><a href="/Artworks">الأعمال</a></p>
-      <p><a href="/Workshops">الورش</a></p>
-      <p><a href="/Artists">الفنانون</a></p>
-    </div>
-
-    <div>
-      <h4>تواصل</h4>
-
-      <p>info@maabartspace.com</p>
-      <p>الرياض – السعودية</p>
-    </div>
-  </div>
-
-  <div
-    style={{
-      background: "#FFD100",
-      textAlign: "center",
-      padding: "12px",
-      fontSize: "14px",
-    }}
-  >
-    © {new Date().getFullYear()} M A A B Artspace
-  </div>
-</footer>
+          <div
+            style={{
+              background: "#FFD100",
+              textAlign: "center",
+              padding: "12px",
+              fontSize: "14px",
+            }}
+          >
+            © {new Date().getFullYear()} Maab Artspace
+          </div>
+        </footer>
       </body>
     </html>
   );
