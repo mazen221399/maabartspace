@@ -1,22 +1,58 @@
 export default function AboutPage() {
   return (
-    <main style={{ padding: "60px", fontFamily: "sans-serif", lineHeight: "1.8" }}>
-      <h1 style={{ fontSize: "42px", marginBottom: "20px" }}>عن مآب</h1>
+    <main
+      style={{
+        minHeight: "80vh",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        textAlign: "center",
+        padding: "40px 20px",
+        fontFamily: "sans-serif",
+      }}
+    >
+      <div style={{ maxWidth: "700px" }}>
+        <h1
+          style={{
+            fontSize: "clamp(32px,5vw,44px)",
+            marginBottom: "18px",
+          }}
+        >
+          عن مآب
+        </h1>
 
-      <p style={{ fontSize: "20px", maxWidth: "800px", marginBottom: "30px", direction: "rtl" }}>
-        مآب مساحة فنية معاصرة تُعنى بعرض وتسويق الأعمال الفنية المتميزة،
-        وإبراز الفنانين، وتنظيم معارض وورش فنية متخصصة تسهم في تنمية
-        المشهد الفني وإتاحة الفرصة للتفاعل بين الفنانين والجمهور.
-      </p>
+        <p
+          style={{
+            fontSize: "22px",
+            color: "#444",
+            lineHeight: "1.7",
+          }}
+        >
+          قريباً
+          <br />
+          <span
+            style={{
+              fontSize: "0.7em",
+              color: "#777",
+              letterSpacing: "2px",
+            }}
+          >
+            Coming Soon
+          </span>
+        </p>
 
-      <h2 style={{ marginTop: "40px", marginBottom: "10px" }}>About Maab</h2>
-
-      <p style={{ fontSize: "18px", maxWidth: "800px" }}>
-        Maab is a contemporary art space dedicated to presenting and promoting
-        exceptional artworks, supporting artists, and organizing curated
-        exhibitions and specialized workshops that contribute to the growth
-        of the artistic scene and foster engagement between artists and audiences.
-      </p>
+        <div
+          style={{
+            marginTop: "30px",
+            width: "120px",
+            height: "6px",
+            background: "#FFD100",
+            marginLeft: "auto",
+            marginRight: "auto",
+            borderRadius: "10px",
+          }}
+        />
+      </div>
     </main>
   );
 }

@@ -23,20 +23,21 @@ export default function ArtistsPage() {
 
         <p
           style={{
-            fontSize: "18px",
-            color: "#555",
-            lineHeight: "1.9",
+            fontSize: "22px",
+            color: "#444",
+            lineHeight: "1.7",
           }}
         >
-          نخبة من الفنانين قيد الظهور، ترقبونا.
+          قريباً
           <br />
           <span
             style={{
-              fontSize: "0.9em",
+              fontSize: "0.7em",
               color: "#777",
+              letterSpacing: "2px",
             }}
           >
-            A curated group of artists will be featured soon. Stay tuned.
+            Coming Soon
           </span>
         </p>
 

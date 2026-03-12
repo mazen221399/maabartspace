@@ -1,50 +1,58 @@
-import Link from "next/link";
-
 export default function ArtworksPage() {
   return (
-    <main style={{ padding: "60px" }}>
-      <h1 style={{ fontSize: "42px", marginBottom: "20px" }}>
-        الأعمال الفنية
-      </h1>
+    <main
+      style={{
+        minHeight: "80vh",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        textAlign: "center",
+        padding: "40px 20px",
+        fontFamily: "sans-serif",
+      }}
+    >
+      <div style={{ maxWidth: "700px" }}>
+        <h1
+          style={{
+            fontSize: "clamp(32px,5vw,44px)",
+            marginBottom: "18px",
+          }}
+        >
+          الأعمال الفنية
+        </h1>
 
-      <p style={{ color: "#666", marginBottom: "40px" }}>
-        تصفح أقسام الأعمال الفنية في مآب.
-      </p>
+        <p
+          style={{
+            fontSize: "22px",
+            color: "#444",
+            lineHeight: "1.7",
+          }}
+        >
+          قريباً
+          <br />
+          <span
+            style={{
+              fontSize: "0.7em",
+              color: "#777",
+              letterSpacing: "2px",
+            }}
+          >
+            Coming Soon
+          </span>
+        </p>
 
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(240px,1fr))",
-          gap: "20px",
-        }}
-      >
-        <Link href="/Artworks/Painting">
-          <div style={card}><h3>فن تشكيلي</h3></div>
-        </Link>
-
-        <Link href="/Artworks/Sculpture">
-          <div style={card}><h3>منحوتات</h3></div>
-        </Link>
-
-        <Link href="/Artworks/Calligraphy">
-          <div style={card}><h3>خط عربي</h3></div>
-        </Link>
-
-        <Link href="/Artworks/Contemporary">
-          <div style={card}><h3>فن معاصر</h3></div>
-        </Link>
-
-        <Link href="/Artworks/Classical">
-          <div style={card}><h3>أعمال كلاسيكية</h3></div>
-        </Link>
+        <div
+          style={{
+            marginTop: "30px",
+            width: "120px",
+            height: "6px",
+            background: "#FFD100",
+            marginLeft: "auto",
+            marginRight: "auto",
+            borderRadius: "10px",
+          }}
+        />
       </div>
     </main>
   );
 }
-
-const card = {
-  border: "1px solid #e5e5e5",
-  padding: "40px",
-  borderRadius: "16px",
-  cursor: "pointer",
-};
