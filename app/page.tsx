@@ -88,7 +88,7 @@ export default function HomePage() {
               maxWidth: "620px",
             }}
           >
-            الموقع الإلكتروني قيد التطوير حالياً وسيتم إطلاقه قريباً .
+             قريباً .
             <br />
             <span style={{ fontSize: "0.9em" }}>
               The website is currently under development and will launch soon.
