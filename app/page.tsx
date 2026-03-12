@@ -21,6 +21,7 @@ export default function HomePage() {
           alignItems: "center",
         }}
       >
+        {/* الصندوق الأصفر مع الشعار */}
         <div
           style={{
             background: "#FFD100",
@@ -44,6 +45,7 @@ export default function HomePage() {
           />
         </div>
 
+        {/* النص */}
         <div>
           <p
             style={{
@@ -59,15 +61,22 @@ export default function HomePage() {
 
           <h1
             style={{
-              fontSize: "clamp(34px, 6vw, 58px)",
-              lineHeight: "1.35",
+              fontSize: "clamp(34px, 6vw, 56px)",
+              lineHeight: "1.4",
               margin: "0 0 18px 0",
               color: "#111",
             }}
           >
-            مآب
+            مآب مساحة فنية
             <br />
-            مساحة فنية
+            <span
+              style={{
+                fontSize: "0.55em",
+                color: "#666",
+              }}
+            >
+              MAAB Art Space
+            </span>
           </h1>
 
           <p
@@ -79,10 +88,14 @@ export default function HomePage() {
               maxWidth: "620px",
             }}
           >
-            الموقع الإلكتروني قيد التطوير حاليًا، وسيتم إطلاقه قريبًا 
-            ليقدم تجربة متكاملة للتعريف بمآب وبرامجه ومحتواه الفني.
+            الموقع الإلكتروني قيد التطوير حالياً وسيتم إطلاقه قريباً .
+            <br />
+            <span style={{ fontSize: "0.9em" }}>
+              The website is currently under development and will launch soon.
+            </span>
           </p>
 
+          {/* الأزرار */}
           <div
             style={{
               display: "flex",
