@@ -15,7 +15,7 @@ export default function ContactPage() {
         >
           <div style={card}>
             <h3>رقم الجوال</h3>
-            <p style={text}>+966 50 000 0000</p>
+            <p style={text}>+966 554520495</p>
           </div>
 
           <div style={card}>
