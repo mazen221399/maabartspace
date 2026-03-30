@@ -1,13 +1,6 @@
 export default function HomePage() {
   return (
-    <main
-      style={{
-        padding: "60px 20px",
-        textAlign: "center",
-      }}
-    >
-
-      {/* مربع اللوجو */}
+    <main style={{ padding: "60px 20px", textAlign: "center" }}>
       <div
         style={{
           width: "120px",
@@ -20,13 +13,12 @@ export default function HomePage() {
         }}
       >
         <img
-          src="/logo.jpg"
+          src="/images/logo.jpg"
           alt="MAAB Logo"
           style={{ width: "70%", height: "auto" }}
         />
       </div>
 
-      {/* الرؤية */}
       <section style={{ maxWidth: "700px", margin: "0 auto 40px" }}>
         <h2>الرؤية</h2>
         <ul style={{ textAlign: "right", lineHeight: "2" }}>
@@ -35,7 +27,6 @@ export default function HomePage() {
         </ul>
       </section>
 
-      {/* الرسالة */}
       <section style={{ maxWidth: "700px", margin: "0 auto 40px" }}>
         <h2>الرسالة</h2>
         <ul style={{ textAlign: "right", lineHeight: "2" }}>
@@ -47,7 +38,6 @@ export default function HomePage() {
         </ul>
       </section>
 
-      {/* الأزرار */}
       <section
         style={{
           display: "flex",
@@ -82,7 +72,6 @@ export default function HomePage() {
           تابعنا على انستجرام
         </a>
       </section>
-
     </main>
   );
 }
