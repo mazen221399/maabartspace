@@ -1,6 +1,11 @@
 export default function HomePage() {
   return (
-    <main style={{ padding: "60px 20px", textAlign: "center" }}>
+    <main
+      style={{
+        padding: "60px 20px",
+        textAlign: "center",
+      }}
+    >
 
       {/* مربع اللوجو */}
       <div
@@ -15,10 +20,11 @@ export default function HomePage() {
         }}
       >
         <img
-  src="/logo.jpg"
-  alt="MAAB Logo"
-  style={{ width: "70%", height: "auto" }}
-/>
+          src="/logo.jpg"
+          alt="MAAB Logo"
+          style={{ width: "70%", height: "auto" }}
+        />
+      </div>
 
       {/* الرؤية */}
       <section style={{ maxWidth: "700px", margin: "0 auto 40px" }}>
@@ -42,7 +48,14 @@ export default function HomePage() {
       </section>
 
       {/* الأزرار */}
-      <section style={{ display: "flex", gap: "20px", justifyContent: "center" }}>
+      <section
+        style={{
+          display: "flex",
+          gap: "20px",
+          justifyContent: "center",
+          flexWrap: "wrap",
+        }}
+      >
         <a
           href="/Contact"
           style={{
@@ -58,6 +71,7 @@ export default function HomePage() {
         <a
           href="https://instagram.com/maab.artspace"
           target="_blank"
+          rel="noopener noreferrer"
           style={{
             padding: "12px 24px",
             backgroundColor: "black",
