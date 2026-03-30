@@ -23,7 +23,6 @@ export default function HomePage() {
         <h2>الرؤية</h2>
         <ul style={{ textAlign: "right", lineHeight: "2" }}>
           <li>أن يكون مآب وجهة فنية نخبوية في المملكة تعكس قيمة الفن كهوية ثقافية أصيلة.</li>
-          <li>أن يكون مآب منصة فنية رائدة تسهم في إثراء المشهد الفني وتعزيز حضوره.</li>
         </ul>
       </section>
 
