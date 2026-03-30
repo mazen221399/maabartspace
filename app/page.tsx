@@ -15,11 +15,10 @@ export default function HomePage() {
         }}
       >
         <img
-          src="/MAAB-LOGO-01.jpg"
-          alt="MAAB Logo"
-          style={{ width: "70%", height: "auto" }}
-        />
-      </div>
+  src="/logo.jpg"
+  alt="MAAB Logo"
+  style={{ width: "70%", height: "auto" }}
+/>
 
       {/* الرؤية */}
       <section style={{ maxWidth: "700px", margin: "0 auto 40px" }}>
