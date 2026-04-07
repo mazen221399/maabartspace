@@ -1,58 +1,43 @@
 export default function ArtistsPage() {
   return (
-    <main
-      style={{
-        minHeight: "80vh",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        textAlign: "center",
-        padding: "40px 20px",
-        fontFamily: "sans-serif",
-      }}
-    >
-      <div style={{ maxWidth: "700px" }}>
-        <h1
-          style={{
-            fontSize: "clamp(32px,5vw,44px)",
-            marginBottom: "18px",
-          }}
-        >
-          الفنانون
-        </h1>
+    <main style={{ padding: "60px 20px", textAlign: "center" }}>
+      <h1 style={{ marginBottom: "40px" }}>الفنانون</h1>
 
-        <p
+      {/* مربع الصورة */}
+      <div
+        style={{
+          width: "320px",
+          height: "420px",
+          margin: "0 auto",
+          backgroundColor: "#f2d23b",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          overflow: "hidden",
+        }}
+      >
+        <img
+          src="/images/artist1.jpg"
+          alt="artist"
           style={{
-            fontSize: "22px",
-            color: "#444",
-            lineHeight: "1.7",
-          }}
-        >
-          قريباً
-          <br />
-          <span
-            style={{
-              fontSize: "0.7em",
-              color: "#777",
-              letterSpacing: "2px",
-            }}
-          >
-            Coming Soon
-          </span>
-        </p>
-
-        <div
-          style={{
-            marginTop: "30px",
-            width: "120px",
-            height: "6px",
-            background: "#FFD100",
-            marginLeft: "auto",
-            marginRight: "auto",
-            borderRadius: "10px",
+            width: "85%",
+            height: "auto",
           }}
         />
       </div>
+
+      {/* النص + الرابط */}
+      <p style={{ marginTop: "25px", lineHeight: "1.8" }}>
+        للتعرف أكثر على الفنان، يرجى زيارة حسابنا على{" "}
+        <a
+          href="https://instagram.com/maab.artspace"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ color: "#000", fontWeight: "bold" }}
+        >
+          إنستجرام
+        </a>
+      </p>
     </main>
   );
 }
