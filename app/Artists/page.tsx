@@ -7,15 +7,15 @@ export default function ArtistsPage() {
         style={{
           display: "flex",
           justifyContent: "center",
-          gap: "30px",
+          gap: "24px",
           flexWrap: "wrap",
           marginBottom: "50px",
         }}
       >
         <div
           style={{
-            width: "320px",
-            height: "420px",
+            width: "260px",
+            height: "340px",
             backgroundColor: "#f2d23b",
             display: "flex",
             alignItems: "center",
@@ -26,14 +26,14 @@ export default function ArtistsPage() {
           <img
             src="/images/artist1.jpg"
             alt="artist1"
-            style={{ width: "85%", height: "auto" }}
+            style={{ width: "72%", height: "auto" }}
           />
         </div>
 
         <div
           style={{
-            width: "320px",
-            height: "420px",
+            width: "260px",
+            height: "340px",
             backgroundColor: "#f2d23b",
             display: "flex",
             alignItems: "center",
@@ -44,14 +44,14 @@ export default function ArtistsPage() {
           <img
             src="/images/artist2.jpg"
             alt="artist2"
-            style={{ width: "85%", height: "auto" }}
+            style={{ width: "72%", height: "auto" }}
           />
         </div>
 
         <div
           style={{
-            width: "320px",
-            height: "420px",
+            width: "260px",
+            height: "340px",
             backgroundColor: "#f2d23b",
             display: "flex",
             alignItems: "center",
@@ -62,7 +62,25 @@ export default function ArtistsPage() {
           <img
             src="/images/mazin.jpg"
             alt="mazin"
-            style={{ width: "85%", height: "auto" }}
+            style={{ width: "72%", height: "auto" }}
+          />
+        </div>
+
+        <div
+          style={{
+            width: "260px",
+            height: "340px",
+            backgroundColor: "#f2d23b",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            overflow: "hidden",
+          }}
+        >
+          <img
+            src="/images/stuart.jpg"
+            alt="stuart"
+            style={{ width: "72%", height: "auto" }}
           />
         </div>
       </section>
@@ -84,7 +102,7 @@ export default function ArtistsPage() {
           fontSize: "18px",
         }}
       >
-        زيارة إنستجرام
+        Instagram Acount
       </a>
     </main>
   );
