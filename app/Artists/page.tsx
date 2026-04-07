@@ -23,14 +23,13 @@ export default function ArtistsPage() {
         />
       </div>
 
-      {/* رابط انستجرام */}
-      <p style={{ marginBottom: "60px" }}>
-        للتعرف أكثر على الفنان، يرجى زيارة{" "}
+      <p style={{ marginBottom: "60px", lineHeight: "1.8" }}>
+        للتعرف أكثر على الفنان، يرجى زيارة حسابنا على{" "}
         <a
           href="https://instagram.com/maab.artspace"
           target="_blank"
           rel="noopener noreferrer"
-          style={{ fontWeight: "bold" }}
+          style={{ fontWeight: "bold", color: "#000" }}
         >
           إنستجرام
         </a>
@@ -56,14 +55,13 @@ export default function ArtistsPage() {
         />
       </div>
 
-      {/* رابط انستجرام */}
-      <p>
-        للتعرف أكثر على الفنان، يرجى زيارة{" "}
+      <p style={{ lineHeight: "1.8" }}>
+        للتعرف أكثر على الفنان، يرجى زيارة حسابنا على{" "}
         <a
           href="https://instagram.com/maab.artspace"
           target="_blank"
           rel="noopener noreferrer"
-          style={{ fontWeight: "bold" }}
+          style={{ fontWeight: "bold", color: "#000" }}
         >
           إنستجرام
         </a>
