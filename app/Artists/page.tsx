@@ -1,71 +1,100 @@
 export default function ArtistsPage() {
   return (
     <main style={{ padding: "60px 20px", textAlign: "center" }}>
-      <h1 style={{ marginBottom: "40px" }}>الفنانون</h1>
+      <h1 style={{ marginBottom: "50px" }}>الفنانون</h1>
 
-      {/* الفنان الأول */}
-      <div
+      <section
         style={{
-          width: "320px",
-          height: "420px",
-          margin: "0 auto 40px",
-          backgroundColor: "#f2d23b",
           display: "flex",
-          alignItems: "center",
           justifyContent: "center",
-          overflow: "hidden",
+          gap: "30px",
+          flexWrap: "wrap",
+          marginBottom: "50px",
         }}
       >
-        <img
-          src="/images/artist1.jpg"
-          alt="artist1"
-          style={{ width: "85%", height: "auto" }}
-        />
-      </div>
+        <div style={{ width: "320px" }}>
+          <div
+            style={{
+              width: "320px",
+              height: "420px",
+              backgroundColor: "#f2d23b",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              overflow: "hidden",
+              marginBottom: "15px",
+            }}
+          >
+            <img
+              src="/images/artist1.jpg"
+              alt="artist1"
+              style={{ width: "85%", height: "auto" }}
+            />
+          </div>
+        </div>
 
-      <p style={{ marginBottom: "60px", lineHeight: "1.8" }}>
-        للتعرف أكثر على الفنان، يرجى زيارة حسابنا على{" "}
-        <a
-          href="https://instagram.com/maab.artspace"
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{ fontWeight: "bold", color: "#000" }}
-        >
-          إنستجرام
-        </a>
+        <div style={{ width: "320px" }}>
+          <div
+            style={{
+              width: "320px",
+              height: "420px",
+              backgroundColor: "#f2d23b",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              overflow: "hidden",
+              marginBottom: "15px",
+            }}
+          >
+            <img
+              src="/images/artist2.jpg"
+              alt="artist2"
+              style={{ width: "85%", height: "auto" }}
+            />
+          </div>
+        </div>
+
+        <div style={{ width: "320px" }}>
+          <div
+            style={{
+              width: "320px",
+              height: "420px",
+              backgroundColor: "#f2d23b",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              overflow: "hidden",
+              marginBottom: "15px",
+            }}
+          >
+            <img
+              src="/images/mazin.jpg"
+              alt="mazin"
+              style={{ width: "85%", height: "auto" }}
+            />
+          </div>
+        </div>
+      </section>
+
+      <p style={{ fontSize: "20px", lineHeight: "1.8", marginBottom: "25px" }}>
+        للتعرف عن قرب على فنانينا، الرجاء زيارة حسابنا في إنستجرام
       </p>
 
-      {/* الفنان الثاني */}
-      <div
+      <a
+        href="https://instagram.com/maab.artspace"
+        target="_blank"
+        rel="noopener noreferrer"
         style={{
-          width: "320px",
-          height: "420px",
-          margin: "0 auto 40px",
-          backgroundColor: "#f2d23b",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          overflow: "hidden",
+          display: "inline-block",
+          padding: "14px 30px",
+          backgroundColor: "black",
+          color: "white",
+          textDecoration: "none",
+          fontSize: "18px",
         }}
       >
-        <img
-          src="/images/artist2.jpg"
-          alt="artist2"
-          style={{ width: "85%", height: "auto" }}
-        />
-      </div>
-
-      <p style={{ lineHeight: "1.8" }}>
-        للتعرف أكثر على الفنان، يرجى زيارة حسابنا على{" "}
-        <a
-          href="https://instagram.com/maab.artspace"
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{ fontWeight: "bold", color: "#000" }}
-        >
-          إنستجرام
-        </a>
-      </p>
+        زيارة إنستجرام
+      </a>
     </main>
   );
 }
