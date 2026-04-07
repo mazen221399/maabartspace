@@ -102,7 +102,7 @@ export default function ArtistsPage() {
           fontSize: "18px",
         }}
       >
-        Instagram Acount
+        Instagram
       </a>
     </main>
   );
