@@ -12,67 +12,58 @@ export default function ArtistsPage() {
           marginBottom: "50px",
         }}
       >
-        <div style={{ width: "320px" }}>
-          <div
-            style={{
-              width: "320px",
-              height: "420px",
-              backgroundColor: "#f2d23b",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              overflow: "hidden",
-              marginBottom: "15px",
-            }}
-          >
-            <img
-              src="/images/artist1.jpg"
-              alt="artist1"
-              style={{ width: "85%", height: "auto" }}
-            />
-          </div>
+        <div
+          style={{
+            width: "320px",
+            height: "420px",
+            backgroundColor: "#f2d23b",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            overflow: "hidden",
+          }}
+        >
+          <img
+            src="/images/artist1.jpg"
+            alt="artist1"
+            style={{ width: "85%", height: "auto" }}
+          />
         </div>
 
-        <div style={{ width: "320px" }}>
-          <div
-            style={{
-              width: "320px",
-              height: "420px",
-              backgroundColor: "#f2d23b",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              overflow: "hidden",
-              marginBottom: "15px",
-            }}
-          >
-            <img
-              src="/images/artist2.jpg"
-              alt="artist2"
-              style={{ width: "85%", height: "auto" }}
-            />
-          </div>
+        <div
+          style={{
+            width: "320px",
+            height: "420px",
+            backgroundColor: "#f2d23b",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            overflow: "hidden",
+          }}
+        >
+          <img
+            src="/images/artist2.jpg"
+            alt="artist2"
+            style={{ width: "85%", height: "auto" }}
+          />
         </div>
 
-        <div style={{ width: "320px" }}>
-          <div
-            style={{
-              width: "320px",
-              height: "420px",
-              backgroundColor: "#f2d23b",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              overflow: "hidden",
-              marginBottom: "15px",
-            }}
-          >
-            <img
-              src="/images/mazin.jpg"
-              alt="mazin"
-              style={{ width: "85%", height: "auto" }}
-            />
-          </div>
+        <div
+          style={{
+            width: "320px",
+            height: "420px",
+            backgroundColor: "#f2d23b",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            overflow: "hidden",
+          }}
+        >
+          <img
+            src="/images/mazin.jpg"
+            alt="mazin"
+            style={{ width: "85%", height: "auto" }}
+          />
         </div>
       </section>
 
