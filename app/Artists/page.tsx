@@ -23,11 +23,7 @@ export default function ArtistsPage() {
             overflow: "hidden",
           }}
         >
-          <img
-            src="/images/artist1.jpg"
-            alt="artist1"
-            style={{ width: "72%", height: "auto" }}
-          />
+          <img src="/images/artist1.jpg" alt="artist1" style={{ width: "72%" }} />
         </div>
 
         <div
@@ -41,11 +37,7 @@ export default function ArtistsPage() {
             overflow: "hidden",
           }}
         >
-          <img
-            src="/images/artist2.jpg"
-            alt="artist2"
-            style={{ width: "72%", height: "auto" }}
-          />
+          <img src="/images/artist2.jpg" alt="artist2" style={{ width: "72%" }} />
         </div>
 
         <div
@@ -59,11 +51,7 @@ export default function ArtistsPage() {
             overflow: "hidden",
           }}
         >
-          <img
-            src="/images/mazin.jpg"
-            alt="mazin"
-            style={{ width: "72%", height: "auto" }}
-          />
+          <img src="/images/mazin.jpg" alt="mazin" style={{ width: "72%" }} />
         </div>
 
         <div
@@ -77,11 +65,21 @@ export default function ArtistsPage() {
             overflow: "hidden",
           }}
         >
-          <img
-            src="/images/stuart.jpg"
-            alt="stuart"
-            style={{ width: "72%", height: "auto" }}
-          />
+          <img src="/images/stuart.jpg" alt="stuart" style={{ width: "72%" }} />
+        </div>
+
+        <div
+          style={{
+            width: "260px",
+            height: "340px",
+            backgroundColor: "#f2d23b",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            overflow: "hidden",
+          }}
+        >
+          <img src="/images/ahmed.jpg" alt="ahmed" style={{ width: "72%" }} />
         </div>
       </section>
 
@@ -102,7 +100,7 @@ export default function ArtistsPage() {
           fontSize: "18px",
         }}
       >
-        Instagram
+        زيارة إنستجرام
       </a>
     </main>
   );
