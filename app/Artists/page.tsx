@@ -12,29 +12,28 @@ export default function ArtistsPage() {
           marginBottom: "50px",
         }}
       >
-        <div style={{ width: "260px", height: "340px", backgroundColor: "#f2d23b", display: "flex", alignItems: "center", justifyContent: "center", overflow: "hidden" }}>
-          <img src="/images/artist1.jpg" alt="artist1" style={{ width: "72%" }} />
-        </div>
-
-        <div style={{ width: "260px", height: "340px", backgroundColor: "#f2d23b", display: "flex", alignItems: "center", justifyContent: "center", overflow: "hidden" }}>
-          <img src="/images/artist2.jpg" alt="artist2" style={{ width: "72%" }} />
-        </div>
-
-        <div style={{ width: "260px", height: "340px", backgroundColor: "#f2d23b", display: "flex", alignItems: "center", justifyContent: "center", overflow: "hidden" }}>
-          <img src="/images/mazin.jpg" alt="mazin" style={{ width: "72%" }} />
-        </div>
-
-        <div style={{ width: "260px", height: "340px", backgroundColor: "#f2d23b", display: "flex", alignItems: "center", justifyContent: "center", overflow: "hidden" }}>
-          <img src="/images/stuart.jpg" alt="stuart" style={{ width: "72%" }} />
-        </div>
-
-        <div style={{ width: "260px", height: "340px", backgroundColor: "#f2d23b", display: "flex", alignItems: "center", justifyContent: "center", overflow: "hidden" }}>
-          <img src="/images/ahmed.jpg" alt="ahmed" style={{ width: "72%" }} />
-        </div>
-
-        <div style={{ width: "260px", height: "340px", backgroundColor: "#f2d23b", display: "flex", alignItems: "center", justifyContent: "center", overflow: "hidden" }}>
-          <img src="/images/redafarhan.jpg" alt="redafarhan" style={{ width: "72%" }} />
-        </div>
+        {["artist1", "artist2", "mazin", "stuart", "ahmed", "redafarhan"].map(
+          (artist) => (
+            <div
+              key={artist}
+              style={{
+                width: "260px",
+                height: "340px",
+                backgroundColor: "#f2d23b",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                overflow: "hidden",
+              }}
+            >
+              <img
+                src={`/images/${artist}.jpg`}
+                alt={artist}
+                style={{ width: "72%" }}
+              />
+            </div>
+          )
+        )}
       </section>
 
       <p style={{ fontSize: "20px", lineHeight: "1.8", marginBottom: "25px" }}>
@@ -52,9 +51,20 @@ export default function ArtistsPage() {
           color: "white",
           textDecoration: "none",
           fontSize: "18px",
+          transition: "all 0.3s ease",
+        }}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.backgroundColor = "#f2d23b";
+          e.currentTarget.style.color = "#000";
+          e.currentTarget.style.transform = "translateY(-3px)";
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.backgroundColor = "#000";
+          e.currentTarget.style.color = "#fff";
+          e.currentTarget.style.transform = "translateY(0)";
         }}
       >
-        Instagram account
+        📸 Instagram account
       </a>
     </main>
   );
