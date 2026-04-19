@@ -25,6 +25,14 @@ export default function Artworks() {
     },
 
     {
+      image: "/images/artworks/joy.jpg",
+      title: "Joy",
+      artist: "بسمة مختار",
+      description: `عمل أصلي
+أكريليك على كانفاس.`,
+    },
+
+    {
       image: "/images/artworks/hahaha.jpg",
       title: "اتصالات حرف الهاء – خط الثلث",
       artist: "مازن أنديجاني",
