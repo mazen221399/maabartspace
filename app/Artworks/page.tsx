@@ -31,7 +31,13 @@ export default function Artworks() {
       description: `عمل أصلي
 أكريليك على كانفاس.`,
     },
-
+{
+  image: "/images/artworks/migraine.jpg",
+  title: "Migraine",
+  artist: "بسمة مختار",
+  description: `عمل أصلي
+أكريليك على كانفاس.`,
+},
     {
       image: "/images/artworks/hahaha.jpg",
       title: "اتصالات حرف الهاء – خط الثلث",
