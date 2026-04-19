@@ -44,12 +44,21 @@ export default function Artworks() {
 منفذ على ورق مقهر طبيعي من بوتان،
 بمعالجة تقليدية تعكس أصالة التكوين الحروفي.`,
     },
+
+    {
+      image: "/images/artworks/rohi.jpg",
+      title: "روحه روحي",
+      artist: "مازن أنديجاني",
+      description: `تركيب حروفي لعبارة "روحه روحي"
+بمزج بين خطي الثلث والنسخ،
+منفذ على ورق طبيعي مقهر من بوتان،
+بمعالجة كلاسيكية تعكس الانسجام بين الكتلة والفراغ.`,
+    },
   ];
 
   return (
     <main style={{ padding: "40px" }}>
       
-      {/* GRID */}
       <div
         style={{
           display: "grid",
@@ -73,7 +82,6 @@ export default function Artworks() {
               }}
             />
 
-            {/* اسم العمل */}
             <div
               style={{
                 position: "absolute",
@@ -93,7 +101,6 @@ export default function Artworks() {
         ))}
       </div>
 
-      {/* POPUP */}
       {selected && (
         <div
           onClick={() => setSelected(null)}
@@ -137,10 +144,7 @@ export default function Artworks() {
               {selected.description}
             </p>
 
-            {/* زر طلب اقتناء */}
             <div style={{ marginTop: "25px" }}>
-              
-              {/* واتساب */}
               <a
                 href={`https://wa.me/966554520495?text=مرحباً، أرغب في اقتناء العمل: ${selected.title}`}
                 target="_blank"
@@ -158,7 +162,6 @@ export default function Artworks() {
                 طلب اقتناء (واتساب)
               </a>
 
-              {/* ايميل */}
               <a
                 href={`mailto:info@maabartspace.com?subject=طلب اقتناء&body=أرغب في اقتناء العمل: ${selected.title}`}
                 style={{
@@ -174,7 +177,6 @@ export default function Artworks() {
               >
                 طلب اقتناء (إيميل)
               </a>
-
             </div>
           </div>
         </div>
