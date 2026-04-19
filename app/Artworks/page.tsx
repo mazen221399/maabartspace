@@ -6,7 +6,6 @@ export default function Artworks() {
   const [selected, setSelected] = useState<any>(null);
 
   const artworks = [
-    // 🔥 بسمة مختار
     {
       image: "/images/artworks/sisters.jpg",
       title: "Sisters",
@@ -15,7 +14,6 @@ export default function Artworks() {
 على سطح كانفاس
 بمقاس 150 × 150 سم.`,
     },
-
     {
       image: "/images/artworks/confusion.jpg",
       title: "Confusion",
@@ -23,7 +21,6 @@ export default function Artworks() {
       description: `عمل أصلي
 أكريليك على كانفاس.`,
     },
-
     {
       image: "/images/artworks/joy.jpg",
       title: "Joy",
@@ -31,13 +28,13 @@ export default function Artworks() {
       description: `عمل أصلي
 أكريليك على كانفاس.`,
     },
-{
-  image: "/images/artworks/migraine.jpg",
-  title: "Migraine",
-  artist: "بسمة مختار",
-  description: `عمل أصلي
+    {
+      image: "/images/artworks/migraine.jpg",
+      title: "Migraine",
+      artist: "بسمة مختار",
+      description: `عمل أصلي
 أكريليك على كانفاس.`,
-},
+    },
     {
       image: "/images/artworks/hahaha.jpg",
       title: "اتصالات حرف الهاء – خط الثلث",
@@ -51,7 +48,6 @@ export default function Artworks() {
 56 × 81 سم
 عمل أصلي (1/1)`,
     },
-
     {
       image: "/images/artworks/hoa1.jpg",
       title: "هو علي هيّن",
@@ -59,7 +55,6 @@ export default function Artworks() {
       description: `تكوين خطي لعبارة "هو علي هيّن" بخط الثلث،
 منفذ على ورق طبيعي مقهر من بوتان بألوان طبيعية وصناعية.`,
     },
-
     {
       image: "/images/artworks/hoa2.jpg",
       title: "هو علي هيّن",
@@ -67,54 +62,42 @@ export default function Artworks() {
       description: `صياغة بصرية لعبارة "هو علي هيّن" بخط الثلث،
 على ورق مقهر من بوتان بألوان طبيعية وصناعية.`,
     },
-
     {
       image: "/images/artworks/rbbi.jpg",
       title: "ربّ اجعل لي آية",
       artist: "مازن أنديجاني",
       description: `تركيب كلاسيكي بخط الثلث،
-منفذ على ورق مقهر طبيعي من بوتان،
-بمعالجة تقليدية تعكس أصالة التكوين الحروفي.`,
+منفذ على ورق مقهر طبيعي من بوتان.`,
     },
-
     {
       image: "/images/artworks/rohi.jpg",
       title: "روحه روحي",
       artist: "مازن أنديجاني",
-      description: `تركيب حروفي لعبارة "روحه روحي"
-بمزج بين خطي الثلث والنسخ،
-منفذ على ورق طبيعي مقهر من بوتان،
-بمعالجة كلاسيكية تعكس الانسجام بين الكتلة والفراغ.`,
+      description: `تركيب حروفي بخط الثلث والنسخ
+على ورق طبيعي مقهر من بوتان.`,
     },
-
     {
       image: "/images/artworks/kldaqat.jpg",
       title: "كل دقة قلب",
       artist: "مازن أنديجاني",
       description: `عمل رقمي مدمج مع سطح أكريليك
-بمقاس 30 × 30 سم
-منفذ بأسلوب الخط الكوفي المربع.`,
+30 × 30 سم
+بالخط الكوفي المربع.`,
     },
-
     {
       image: "/images/artworks/fahad1.jpg",
       title: "بدون عنوان",
       artist: "فهد العمار",
       description: `أكريليك على كانفاس
-مع إطار خشبي
-
 220 × 150 سم
-
-بأسلوب تعبيري مستلهم من البيئة والعناصر الحية.`,
+مع إطار خشبي.`,
     },
-
     {
       image: "/images/artworks/fahad2.jpg",
       title: "بدون عنوان",
       artist: "فهد العمار",
       description: `أكريليك على كانفاس
-مع إطار خشبي
-بمعالجة لونية تعكس حس الحركة والارتباط بالبيئة.`,
+مع إطار خشبي.`,
     },
   ];
 
@@ -123,23 +106,30 @@ export default function Artworks() {
       <div
         style={{
           display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
-          gap: "40px",
-          justifyItems: "center",
+          gridTemplateColumns: "repeat(4, 1fr)",
+          gap: "25px",
         }}
       >
         {artworks.map((art, index) => (
           <div
             key={index}
-            style={{ position: "relative", cursor: "pointer" }}
+            style={{
+              position: "relative",
+              cursor: "pointer",
+              border: "2px solid black",
+              borderRadius: "8px",
+              padding: "6px",
+              background: "white",
+            }}
             onClick={() => setSelected(art)}
           >
             <img
               src={art.image}
               style={{
                 width: "100%",
-                maxWidth: "300px",
-                borderRadius: "10px",
+                height: "250px",
+                objectFit: "cover",
+                borderRadius: "6px",
               }}
             />
 
@@ -151,9 +141,8 @@ export default function Artworks() {
                 top: "50%",
                 left: "50%",
                 transform: "translate(-50%, -50%)",
-                width: "60px",
-                opacity: 0.08,
-                pointerEvents: "none",
+                width: "50px",
+                opacity: 0.07,
               }}
             />
 
@@ -165,9 +154,8 @@ export default function Artworks() {
                 background: "rgba(0,0,0,0.6)",
                 color: "white",
                 textAlign: "center",
-                padding: "8px",
-                borderBottomLeftRadius: "10px",
-                borderBottomRightRadius: "10px",
+                padding: "6px",
+                fontSize: "14px",
               }}
             >
               {art.title}
@@ -189,7 +177,6 @@ export default function Artworks() {
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            padding: "20px",
             zIndex: 9999,
           }}
         >
@@ -207,7 +194,6 @@ export default function Artworks() {
                 width: "100%",
                 maxHeight: "70vh",
                 objectFit: "contain",
-                borderRadius: "10px",
                 marginBottom: "20px",
               }}
             />
@@ -215,42 +201,36 @@ export default function Artworks() {
             <h2>{selected.artist}</h2>
             <h3>{selected.title}</h3>
 
-            <p style={{ whiteSpace: "pre-line", lineHeight: "1.8" }}>
+            <p style={{ whiteSpace: "pre-line" }}>
               {selected.description}
             </p>
 
-            <div style={{ marginTop: "25px" }}>
+            <div style={{ marginTop: "20px" }}>
               <a
-                href={`https://wa.me/966554520495?text=مرحباً، أرغب في اقتناء العمل: ${selected.title}`}
+                href={`https://wa.me/966554520495?text=أرغب في اقتناء العمل: ${selected.title}`}
                 target="_blank"
                 style={{
-                  display: "inline-block",
-                  margin: "5px",
-                  padding: "12px 22px",
+                  padding: "10px 20px",
                   background: "#25D366",
                   color: "white",
-                  borderRadius: "6px",
-                  textDecoration: "none",
-                  fontWeight: "bold",
+                  margin: "5px",
+                  display: "inline-block",
                 }}
               >
-                طلب اقتناء (واتساب)
+                واتساب
               </a>
 
               <a
-                href={`mailto:info@maabartspace.com?subject=طلب اقتناء&body=أرغب في اقتناء العمل: ${selected.title}`}
+                href={`mailto:info@maabartspace.com`}
                 style={{
-                  display: "inline-block",
-                  margin: "5px",
-                  padding: "12px 22px",
+                  padding: "10px 20px",
                   background: "#333",
                   color: "white",
-                  borderRadius: "6px",
-                  textDecoration: "none",
-                  fontWeight: "bold",
+                  margin: "5px",
+                  display: "inline-block",
                 }}
               >
-                طلب اقتناء (إيميل)
+                إيميل
               </a>
             </div>
           </div>
