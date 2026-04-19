@@ -6,7 +6,7 @@ export default function Artworks() {
   const [selected, setSelected] = useState<any>(null);
 
   const artworks = [
-    // 🔥 بسمة مختار (أول عمل)
+    // 🔥 بسمة مختار
     {
       image: "/images/artworks/sisters.jpg",
       title: "Sisters",
@@ -14,6 +14,14 @@ export default function Artworks() {
       description: `نسخة مطبوعة بدقة عالية
 على سطح كانفاس
 بمقاس 150 × 150 سم.`,
+    },
+
+    {
+      image: "/images/artworks/confusion.jpg",
+      title: "Confusion",
+      artist: "بسمة مختار",
+      description: `عمل أصلي
+أكريليك على كانفاس.`,
     },
 
     {
@@ -98,7 +106,6 @@ export default function Artworks() {
 
   return (
     <main style={{ padding: "40px" }}>
-      
       <div
         style={{
           display: "grid",
@@ -113,8 +120,6 @@ export default function Artworks() {
             style={{ position: "relative", cursor: "pointer" }}
             onClick={() => setSelected(art)}
           >
-            
-            {/* الصورة */}
             <img
               src={art.image}
               style={{
@@ -124,21 +129,20 @@ export default function Artworks() {
               }}
             />
 
-            {/* 🔥 شعار مآب (Watermark) */}
+            {/* watermark */}
             <img
-              src="/logo.png"
+              src="/logo.jpg"
               style={{
                 position: "absolute",
                 top: "50%",
                 left: "50%",
                 transform: "translate(-50%, -50%)",
                 width: "60px",
-                opacity: 0.15,
+                opacity: 0.08,
                 pointerEvents: "none",
               }}
             />
 
-            {/* اسم العمل */}
             <div
               style={{
                 position: "absolute",
