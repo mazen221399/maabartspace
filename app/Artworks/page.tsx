@@ -19,44 +19,76 @@ export default function Artworks() {
 56 × 81 سم
 عمل أصلي (1/1)`,
     },
+
+    {
+      image: "/images/artworks/hoa1.jpg",
+      title: "هو علي هيّن",
+      artist: "مازن أنديجاني",
+      description: `تكوين خطي لعبارة "هو علي هيّن" بخط الثلث،
+منفذ على ورق طبيعي مقهر من بوتان باستخدام ألوان طبيعية وصناعية،
+في معالجة بصرية متوازنة.`,
+    },
+
+    {
+      image: "/images/artworks/hoa2.jpg",
+      title: "هو علي هيّن",
+      artist: "مازن أنديجاني",
+      description: `صياغة بصرية لعبارة "هو علي هيّن" بخط الثلث،
+على ورق مقهر من بوتان، بألوان طبيعية وصناعية،
+تعكس تناغمًا بين التكوين الحروفي والإيقاع اللوني.`,
+    },
   ];
 
   return (
     <main style={{ padding: "40px" }}>
-      
-      {/* Grid */}
+
+      {/* GRID */}
       <div
         style={{
           display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+          gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
           gap: "40px",
           justifyItems: "center",
         }}
       >
         {artworks.map((art, index) => (
-          <img
+          <div
             key={index}
-            src={art.image}
-            style={{
-              width: "100%",
-              maxWidth: "320px",
-              height: "auto",
-              borderRadius: "10px",
-              cursor: "pointer",
-              transition: "0.3s",
-            }}
+            style={{ position: "relative", cursor: "pointer" }}
             onClick={() => setSelected(art)}
-            onMouseEnter={(e) =>
-              (e.currentTarget.style.transform = "scale(1.03)")
-            }
-            onMouseLeave={(e) =>
-              (e.currentTarget.style.transform = "scale(1)")
-            }
-          />
+          >
+            {/* IMAGE */}
+            <img
+              src={art.image}
+              style={{
+                width: "100%",
+                maxWidth: "300px",
+                borderRadius: "10px",
+              }}
+            />
+
+            {/* TITLE OVERLAY */}
+            <div
+              style={{
+                position: "absolute",
+                bottom: "0",
+                width: "100%",
+                background: "rgba(0,0,0,0.6)",
+                color: "white",
+                textAlign: "center",
+                padding: "8px",
+                borderBottomLeftRadius: "10px",
+                borderBottomRightRadius: "10px",
+                fontSize: "14px",
+              }}
+            >
+              {art.title}
+            </div>
+          </div>
         ))}
       </div>
 
-      {/* Popup */}
+      {/* POPUP */}
       {selected && (
         <div
           onClick={() => setSelected(null)}
@@ -99,6 +131,44 @@ export default function Artworks() {
             <p style={{ whiteSpace: "pre-line", lineHeight: "1.8" }}>
               {selected.description}
             </p>
+
+            {/* BUTTONS */}
+            <div style={{ marginTop: "20px" }}>
+              
+              {/* WhatsApp */}
+              <a
+                href="https://wa.me/966554520495"
+                target="_blank"
+                style={{
+                  display: "inline-block",
+                  margin: "5px",
+                  padding: "10px 20px",
+                  background: "#25D366",
+                  color: "white",
+                  borderRadius: "6px",
+                  textDecoration: "none",
+                }}
+              >
+                تواصل واتساب
+              </a>
+
+              {/* Email */}
+              <a
+                href="mailto:info@maabartspace.com"
+                style={{
+                  display: "inline-block",
+                  margin: "5px",
+                  padding: "10px 20px",
+                  background: "#333",
+                  color: "white",
+                  borderRadius: "6px",
+                  textDecoration: "none",
+                }}
+              >
+                تواصل عبر الإيميل
+              </a>
+
+            </div>
           </div>
         </div>
       )}
