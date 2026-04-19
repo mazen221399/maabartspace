@@ -1,58 +1,33 @@
-export default function ArtworksPage() {
+export default function Artworks() {
   return (
-    <main
-      style={{
-        minHeight: "80vh",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        textAlign: "center",
-        padding: "40px 20px",
-        fontFamily: "sans-serif",
-      }}
-    >
-      <div style={{ maxWidth: "700px" }}>
-        <h1
+    <main style={{ padding: "40px", textAlign: "center" }}>
+      
+      {/* الصورة */}
+      <div style={{ marginBottom: "20px" }}>
+        <img
+          src="/images/artworks/hahaha.jpg"
+          alt="Artwork"
           style={{
-            fontSize: "clamp(32px,5vw,44px)",
-            marginBottom: "18px",
-          }}
-        >
-          الأعمال الفنية
-        </h1>
-
-        <p
-          style={{
-            fontSize: "22px",
-            color: "#444",
-            lineHeight: "1.7",
-          }}
-        >
-          قريباً
-          <br />
-          <span
-            style={{
-              fontSize: "0.7em",
-              color: "#777",
-              letterSpacing: "2px",
-            }}
-          >
-            Coming Soon
-          </span>
-        </p>
-
-        <div
-          style={{
-            marginTop: "30px",
-            width: "120px",
-            height: "6px",
-            background: "#FFD100",
-            marginLeft: "auto",
-            marginRight: "auto",
-            borderRadius: "10px",
+            width: "300px",
+            height: "auto",
+            borderRadius: "10px"
           }}
         />
       </div>
+
+      {/* الوصف */}
+      <p style={{
+        maxWidth: "600px",
+        margin: "0 auto",
+        lineHeight: "1.8",
+        fontSize: "16px"
+      }}>
+        من أعمال فنان الخط العربي مازن أنديجاني، وهي تمثل أشكال اتصالات حرف الهاء في خط الثلث بشكل عفوي، 
+        وتترجم حالة السعادة من خلال نطقها والألوان المستخدمة لها. مكتوبة على ورق مقهر طبيعي من بوتان، 
+        وبأحبار الشمنك الألمانية وأحبار صينية طبيعية، على إطار عصري بمقاس كلي 56×81 سم. 
+        نسخة أصلية (1 من 1).
+      </p>
+
     </main>
   );
 }
