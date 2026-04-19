@@ -23,11 +23,14 @@ export default function Artworks() {
 
   return (
     <main style={{ padding: "40px" }}>
+      
+      {/* Grid */}
       <div
         style={{
           display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+          gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
           gap: "40px",
+          justifyItems: "center",
         }}
       >
         {artworks.map((art, index) => (
@@ -36,14 +39,24 @@ export default function Artworks() {
             src={art.image}
             style={{
               width: "100%",
+              maxWidth: "320px",
+              height: "auto",
               borderRadius: "10px",
               cursor: "pointer",
+              transition: "0.3s",
             }}
             onClick={() => setSelected(art)}
+            onMouseEnter={(e) =>
+              (e.currentTarget.style.transform = "scale(1.03)")
+            }
+            onMouseLeave={(e) =>
+              (e.currentTarget.style.transform = "scale(1)")
+            }
           />
         ))}
       </div>
 
+      {/* Popup */}
       {selected && (
         <div
           onClick={() => setSelected(null)}
@@ -63,17 +76,27 @@ export default function Artworks() {
         >
           <div
             onClick={(e) => e.stopPropagation()}
-            style={{ maxWidth: "800px", color: "white", textAlign: "center" }}
+            style={{
+              maxWidth: "700px",
+              color: "white",
+              textAlign: "center",
+            }}
           >
             <img
               src={selected.image}
-              style={{ width: "100%", borderRadius: "10px" }}
+              style={{
+                width: "100%",
+                maxHeight: "70vh",
+                objectFit: "contain",
+                borderRadius: "10px",
+                marginBottom: "20px",
+              }}
             />
 
             <h2>{selected.artist}</h2>
             <h3>{selected.title}</h3>
 
-            <p style={{ whiteSpace: "pre-line" }}>
+            <p style={{ whiteSpace: "pre-line", lineHeight: "1.8" }}>
               {selected.description}
             </p>
           </div>
