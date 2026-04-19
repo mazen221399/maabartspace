@@ -6,6 +6,16 @@ export default function Artworks() {
   const [selected, setSelected] = useState<any>(null);
 
   const artworks = [
+    // 🔥 بسمة مختار (أول عمل)
+    {
+      image: "/images/artworks/sisters.jpg",
+      title: "Sisters",
+      artist: "بسمة مختار",
+      description: `نسخة مطبوعة بدقة عالية
+على سطح كانفاس
+بمقاس 150 × 150 سم.`,
+    },
+
     {
       image: "/images/artworks/hahaha.jpg",
       title: "اتصالات حرف الهاء – خط الثلث",
@@ -84,20 +94,11 @@ export default function Artworks() {
 مع إطار خشبي
 بمعالجة لونية تعكس حس الحركة والارتباط بالبيئة.`,
     },
-
-    // 🔥 بسمة مختار
-    {
-      image: "/images/artworks/sisters.jpg",
-      title: "Sisters",
-      artist: "بسمة مختار",
-      description: `نسخة مطبوعة
-بمقاس 150 × 150 سم
-على سطح كانفاس.`,
-    },
   ];
 
   return (
     <main style={{ padding: "40px" }}>
+      
       <div
         style={{
           display: "grid",
@@ -112,6 +113,8 @@ export default function Artworks() {
             style={{ position: "relative", cursor: "pointer" }}
             onClick={() => setSelected(art)}
           >
+            
+            {/* الصورة */}
             <img
               src={art.image}
               style={{
@@ -121,6 +124,21 @@ export default function Artworks() {
               }}
             />
 
+            {/* 🔥 شعار مآب (Watermark) */}
+            <img
+              src="/logo.png"
+              style={{
+                position: "absolute",
+                top: "50%",
+                left: "50%",
+                transform: "translate(-50%, -50%)",
+                width: "60px",
+                opacity: 0.15,
+                pointerEvents: "none",
+              }}
+            />
+
+            {/* اسم العمل */}
             <div
               style={{
                 position: "absolute",
