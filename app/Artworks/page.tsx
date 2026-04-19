@@ -64,7 +64,6 @@ export default function Artworks() {
 منفذ بأسلوب الخط الكوفي المربع.`,
     },
 
-    // 🔥 فهد العمار
     {
       image: "/images/artworks/fahad1.jpg",
       title: "بدون عنوان",
@@ -84,6 +83,16 @@ export default function Artworks() {
       description: `أكريليك على كانفاس
 مع إطار خشبي
 بمعالجة لونية تعكس حس الحركة والارتباط بالبيئة.`,
+    },
+
+    // 🔥 بسمة مختار
+    {
+      image: "/images/artworks/sisters.jpg",
+      title: "Sisters",
+      artist: "بسمة مختار",
+      description: `نسخة مطبوعة
+بمقاس 150 × 150 سم
+على سطح كانفاس.`,
     },
   ];
 
