@@ -25,8 +25,7 @@ export default function Artworks() {
       title: "هو علي هيّن",
       artist: "مازن أنديجاني",
       description: `تكوين خطي لعبارة "هو علي هيّن" بخط الثلث،
-منفذ على ورق طبيعي مقهر من بوتان باستخدام ألوان طبيعية وصناعية،
-في معالجة بصرية متوازنة.`,
+منفذ على ورق طبيعي مقهر من بوتان بألوان طبيعية وصناعية.`,
     },
 
     {
@@ -34,14 +33,22 @@ export default function Artworks() {
       title: "هو علي هيّن",
       artist: "مازن أنديجاني",
       description: `صياغة بصرية لعبارة "هو علي هيّن" بخط الثلث،
-على ورق مقهر من بوتان، بألوان طبيعية وصناعية،
-تعكس تناغمًا بين التكوين الحروفي والإيقاع اللوني.`,
+على ورق مقهر من بوتان بألوان طبيعية وصناعية.`,
+    },
+
+    {
+      image: "/images/artworks/rbbi.jpg",
+      title: "ربّ اجعل لي آية",
+      artist: "مازن أنديجاني",
+      description: `تركيب كلاسيكي بخط الثلث،
+منفذ على ورق مقهر طبيعي من بوتان،
+بمعالجة تقليدية تعكس أصالة التكوين الحروفي.`,
     },
   ];
 
   return (
     <main style={{ padding: "40px" }}>
-
+      
       {/* GRID */}
       <div
         style={{
@@ -57,7 +64,6 @@ export default function Artworks() {
             style={{ position: "relative", cursor: "pointer" }}
             onClick={() => setSelected(art)}
           >
-            {/* IMAGE */}
             <img
               src={art.image}
               style={{
@@ -67,7 +73,7 @@ export default function Artworks() {
               }}
             />
 
-            {/* TITLE OVERLAY */}
+            {/* اسم العمل */}
             <div
               style={{
                 position: "absolute",
@@ -79,7 +85,6 @@ export default function Artworks() {
                 padding: "8px",
                 borderBottomLeftRadius: "10px",
                 borderBottomRightRadius: "10px",
-                fontSize: "14px",
               }}
             >
               {art.title}
@@ -132,40 +137,42 @@ export default function Artworks() {
               {selected.description}
             </p>
 
-            {/* BUTTONS */}
-            <div style={{ marginTop: "20px" }}>
+            {/* زر طلب اقتناء */}
+            <div style={{ marginTop: "25px" }}>
               
-              {/* WhatsApp */}
+              {/* واتساب */}
               <a
-                href="https://wa.me/966554520495"
+                href={`https://wa.me/966554520495?text=مرحباً، أرغب في اقتناء العمل: ${selected.title}`}
                 target="_blank"
                 style={{
                   display: "inline-block",
                   margin: "5px",
-                  padding: "10px 20px",
+                  padding: "12px 22px",
                   background: "#25D366",
                   color: "white",
                   borderRadius: "6px",
                   textDecoration: "none",
+                  fontWeight: "bold",
                 }}
               >
-                تواصل واتساب
+                طلب اقتناء (واتساب)
               </a>
 
-              {/* Email */}
+              {/* ايميل */}
               <a
-                href="mailto:info@maabartspace.com"
+                href={`mailto:info@maabartspace.com?subject=طلب اقتناء&body=أرغب في اقتناء العمل: ${selected.title}`}
                 style={{
                   display: "inline-block",
                   margin: "5px",
-                  padding: "10px 20px",
+                  padding: "12px 22px",
                   background: "#333",
                   color: "white",
                   borderRadius: "6px",
                   textDecoration: "none",
+                  fontWeight: "bold",
                 }}
               >
-                تواصل عبر الإيميل
+                طلب اقتناء (إيميل)
               </a>
 
             </div>
