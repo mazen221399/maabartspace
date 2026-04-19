@@ -64,13 +64,16 @@ export default function Artworks() {
 منفذ بأسلوب الخط الكوفي المربع.`,
     },
 
-    // 🔥 أعمال فهد العمار
+    // 🔥 فهد العمار
     {
       image: "/images/artworks/fahad1.jpg",
       title: "بدون عنوان",
       artist: "فهد العمار",
       description: `أكريليك على كانفاس
 مع إطار خشبي
+
+220 × 150 سم
+
 بأسلوب تعبيري مستلهم من البيئة والعناصر الحية.`,
     },
 
@@ -86,7 +89,6 @@ export default function Artworks() {
 
   return (
     <main style={{ padding: "40px" }}>
-      
       <div
         style={{
           display: "grid",
