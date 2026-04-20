@@ -5,17 +5,18 @@ export default function ArtistsPage() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   const artists = [
-    "artist1",
-    "artist2",
-
-    // 🔥 مازن أنديجاني (تمت الإضافة)
+    // 🔥 أول صورة
     "mazin2",
 
+    "artist1",
     "stuart",
     "ahmed",
     "redafarhan",
     "tajaliat",
     "dina",
+
+    // 🔥 آخر صورة
+    "artist2",
   ];
 
   return (
@@ -57,7 +58,7 @@ export default function ArtistsPage() {
               alt={artist}
               style={{
                 width: "100%",
-                height: "260px", // 🔥 كبرتها شوي عشان تكون أوضح
+                height: "260px",
                 objectFit: "cover",
                 borderRadius: "6px",
               }}
@@ -66,7 +67,7 @@ export default function ArtistsPage() {
         ))}
       </section>
 
-      {/* 🔥 تكبير الصورة */}
+      {/* تكبير الصورة */}
       {selectedImage && (
         <div
           onClick={() => setSelectedImage(null)}
