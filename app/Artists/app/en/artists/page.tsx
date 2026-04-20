@@ -7,7 +7,10 @@ export default function ArtistsPage() {
   const artists = [
     "artist1",
     "artist2",
+
+    // 🔥 مازن أنديجاني (تمت الإضافة)
     "mazin2",
+
     "stuart",
     "ahmed",
     "redafarhan",
@@ -54,7 +57,7 @@ export default function ArtistsPage() {
               alt={artist}
               style={{
                 width: "100%",
-                height: "220px",
+                height: "260px", // 🔥 كبرتها شوي عشان تكون أوضح
                 objectFit: "cover",
                 borderRadius: "6px",
               }}
@@ -63,6 +66,7 @@ export default function ArtistsPage() {
         ))}
       </section>
 
+      {/* 🔥 تكبير الصورة */}
       {selectedImage && (
         <div
           onClick={() => setSelectedImage(null)}
