@@ -2,15 +2,16 @@
 import { useState } from "react";
 
 export default function ArtworksPage() {
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [selected, setSelected] = useState<any>(null);
 
   const artworks = [
-    // 🔹 أعمال سابقة
+    // 🔹 بسمة مختار
     { file: "sisters", name: "Sisters" },
     { file: "confusion", name: "Confusion" },
     { file: "joy", name: "Joy" },
     { file: "migraine", name: "Migraine" },
 
+    // 🔹 مازن أنديجاني
     { file: "hahaha", name: "اتصالات حرف الهاء" },
     { file: "hoa1", name: "هو علي هيّن" },
     { file: "hoa2", name: "هو علي هيّن" },
@@ -18,16 +19,61 @@ export default function ArtworksPage() {
     { file: "rohi", name: "روحه روحي" },
     { file: "kldaqat", name: "كل دقة قلب" },
 
-    { file: "fahad1", name: "بدون عنوان" },
-    { file: "fahad2", name: "بدون عنوان" },
+    // 🔹 فهد العمار
+    { file: "fahad1", name: "عمل لفهد العمار" },
+    { file: "fahad2", name: "عمل لفهد العمار" },
 
-    // 🔥 الأعمال الجديدة (آخر شيء)
+    // 🔹 أعمال حديثة
     { file: "najdiat", name: "نجديات" },
-    { file: "womenstrength", name: "جبروت امرأة" },
+    { file: "womenstrenth", name: "جبروت امرأة" },
     { file: "hadeethalbab", name: "حديث الباب" },
     { file: "ziyarah", name: "زيارة" },
     { file: "onfowan", name: "عنفوان امرأة" },
     { file: "mknonat", name: "مكنونات" },
+
+    // 🔥 أحمد السعيد
+    {
+      file: "tarot1",
+      name: "The Ark of Tarot 1",
+      description: `طباعة فوتوغرافية بتقنية الغرفة المظلمة (Darkroom)
+على إطار بمقاس 50 × 50 سم
+من أعمال المصور أحمد السعيد.`,
+    },
+    {
+      file: "moored",
+      name: "Moored",
+      description: `طباعة فوتوغرافية بتقنية الغرفة المظلمة (Darkroom)
+على إطار بمقاس 50 × 50 سم
+من أعمال المصور أحمد السعيد.`,
+    },
+    {
+      file: "sted",
+      name: "Steadfastness",
+      description: `طباعة فوتوغرافية بتقنية الغرفة المظلمة (Darkroom)
+على إطار بمقاس 50 × 50 سم
+من أعمال المصور أحمد السعيد.`,
+    },
+    {
+      file: "mani",
+      name: "Manifestation",
+      description: `طباعة فوتوغرافية بتقنية الغرفة المظلمة (Darkroom)
+على إطار بمقاس 50 × 50 سم
+من أعمال المصور أحمد السعيد.`,
+    },
+    {
+      file: "whisper",
+      name: "Whisper",
+      description: `طباعة فوتوغرافية بتقنية الغرفة المظلمة (Darkroom)
+على إطار بمقاس 50 × 50 سم
+من أعمال المصور أحمد السعيد.`,
+    },
+    {
+      file: "tarot2",
+      name: "The Ark of Tarot 2",
+      description: `طباعة فوتوغرافية بتقنية الغرفة المظلمة (Darkroom)
+على إطار بمقاس 50 × 50 سم
+من أعمال المصور أحمد السعيد.`,
+    },
   ];
 
   return (
@@ -43,9 +89,9 @@ export default function ArtworksPage() {
           margin: "0 auto 50px",
         }}
       >
-        {artworks.map((art) => (
+        {artworks.map((art, index) => (
           <div
-            key={art.file}
+            key={index}
             style={{
               border: "2px solid #FEDD00",
               padding: "10px",
@@ -54,9 +100,7 @@ export default function ArtworksPage() {
               cursor: "pointer",
               transition: "0.3s",
             }}
-            onClick={() =>
-              setSelectedImage(`/images/artworks/${art.file}.jpg`)
-            }
+            onClick={() => setSelected(art)}
           >
             <img
               src={`/images/artworks/${art.file}.jpg`}
@@ -75,9 +119,9 @@ export default function ArtworksPage() {
       </section>
 
       {/* 🔥 Lightbox */}
-      {selectedImage && (
+      {selected && (
         <div
-          onClick={() => setSelectedImage(null)}
+          onClick={() => setSelected(null)}
           style={{
             position: "fixed",
             top: 0,
@@ -89,16 +133,31 @@ export default function ArtworksPage() {
             alignItems: "center",
             justifyContent: "center",
             zIndex: 999,
+            padding: "20px",
           }}
         >
-          <img
-            src={selectedImage}
-            style={{
-              maxWidth: "90%",
-              maxHeight: "90%",
-              borderRadius: "10px",
-            }}
-          />
+          <div
+            onClick={(e) => e.stopPropagation()}
+            style={{ maxWidth: "700px", color: "white" }}
+          >
+            <img
+              src={`/images/artworks/${selected.file}.jpg`}
+              style={{
+                width: "100%",
+                maxHeight: "70vh",
+                objectFit: "contain",
+                marginBottom: "20px",
+              }}
+            />
+
+            <h3>{selected.name}</h3>
+
+            {selected.description && (
+              <p style={{ whiteSpace: "pre-line", lineHeight: "1.8" }}>
+                {selected.description}
+              </p>
+            )}
+          </div>
         </div>
       )}
     </main>
