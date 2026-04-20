@@ -1,6 +1,9 @@
 "use client";
+import { useState } from "react";
 
 export default function ArtistsPage() {
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
   const artists = [
     "artist1",
     "artist2",
@@ -16,7 +19,6 @@ export default function ArtistsPage() {
     <main style={{ padding: "60px 20px", textAlign: "center" }}>
       <h1 style={{ marginBottom: "50px" }}>الفنانون</h1>
 
-      {/* 🔥 Grid Responsive */}
       <section
         style={{
           display: "grid",
@@ -37,6 +39,9 @@ export default function ArtistsPage() {
               transition: "all 0.3s ease",
               cursor: "pointer",
             }}
+            onClick={() =>
+              setSelectedImage(`/images/${artist}.jpg`)
+            }
             onMouseEnter={(e) => {
               e.currentTarget.style.transform = "scale(1.05)";
               e.currentTarget.style.boxShadow =
@@ -53,23 +58,41 @@ export default function ArtistsPage() {
               style={{
                 width: "100%",
                 height: "220px",
-                objectFit: "cover", // 🔥 أفضل للفنانين
+                objectFit: "cover",
                 borderRadius: "6px",
               }}
             />
-
-            {/* اسم الفنان (اختياري) */}
-            <p
-              style={{
-                marginTop: "10px",
-                fontSize: "16px",
-              }}
-            >
-              {artist}
-            </p>
           </div>
         ))}
       </section>
+
+      {/* 🔥 تكبير الصورة */}
+      {selectedImage && (
+        <div
+          onClick={() => setSelectedImage(null)}
+          style={{
+            position: "fixed",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            background: "rgba(0,0,0,0.9)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            zIndex: 9999,
+          }}
+        >
+          <img
+            src={selectedImage}
+            style={{
+              maxWidth: "90%",
+              maxHeight: "90%",
+              borderRadius: "10px",
+            }}
+          />
+        </div>
+      )}
 
       <p style={{ fontSize: "20px", lineHeight: "1.8", marginBottom: "25px" }}>
         للتعرف عن قرب على فنانينا، الرجاء زيارة حسابنا في إنستجرام

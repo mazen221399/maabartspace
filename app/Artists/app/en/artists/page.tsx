@@ -1,16 +1,16 @@
 "use client";
+import { useState } from "react";
 
 export default function ArtistsPage() {
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
   const artists = [
-    // 🔼 الأقدم
     "artist1",
     "artist2",
     "mazin",
     "stuart",
     "ahmed",
     "redafarhan",
-
-    // 🔽 الأحدث
     "tajaliat",
     "dina",
   ];
@@ -22,8 +22,8 @@ export default function ArtistsPage() {
       <section
         style={{
           display: "grid",
-          gridTemplateColumns: "repeat(4, 1fr)",
-          gap: "30px",
+          gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
+          gap: "20px",
           maxWidth: "1100px",
           margin: "0 auto 50px",
         }}
@@ -35,13 +35,17 @@ export default function ArtistsPage() {
               border: "2px solid #FEDD00",
               padding: "8px",
               borderRadius: "8px",
-              background: "white",
+              background: "#fff",
               transition: "all 0.3s ease",
               cursor: "pointer",
             }}
+            onClick={() =>
+              setSelectedImage(`/images/${artist}.jpg`)
+            }
             onMouseEnter={(e) => {
               e.currentTarget.style.transform = "scale(1.05)";
-              e.currentTarget.style.boxShadow = "0 10px 25px rgba(0,0,0,0.2)";
+              e.currentTarget.style.boxShadow =
+                "0 10px 25px rgba(0,0,0,0.2)";
             }}
             onMouseLeave={(e) => {
               e.currentTarget.style.transform = "scale(1)";
@@ -53,15 +57,42 @@ export default function ArtistsPage() {
               alt={artist}
               style={{
                 width: "100%",
-                height: "260px",
-                objectFit: "contain", // ✅ يظهر كامل
-                background: "#fff",
+                height: "220px",
+                objectFit: "cover",
                 borderRadius: "6px",
               }}
             />
           </div>
         ))}
       </section>
+
+      {/* 🔥 تكبير الصورة */}
+      {selectedImage && (
+        <div
+          onClick={() => setSelectedImage(null)}
+          style={{
+            position: "fixed",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            background: "rgba(0,0,0,0.9)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            zIndex: 9999,
+          }}
+        >
+          <img
+            src={selectedImage}
+            style={{
+              maxWidth: "90%",
+              maxHeight: "90%",
+              borderRadius: "10px",
+            }}
+          />
+        </div>
+      )}
 
       <p style={{ fontSize: "20px", lineHeight: "1.8", marginBottom: "25px" }}>
         للتعرف عن قرب على فنانينا، الرجاء زيارة حسابنا في إنستجرام
