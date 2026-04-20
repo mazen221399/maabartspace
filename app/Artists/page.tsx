@@ -2,14 +2,17 @@
 
 export default function ArtistsPage() {
   const artists = [
-    "tajliat",
-    "dina",
+    // 🔼 الأقدم
     "artist1",
     "artist2",
     "mazin",
     "stuart",
     "ahmed",
     "redafarhan",
+
+    // 🔽 الأحدث
+    "tajaliat",
+    "dina",
   ];
 
   return (
@@ -30,7 +33,7 @@ export default function ArtistsPage() {
             key={artist}
             style={{
               border: "2px solid #FEDD00",
-              padding: "6px",
+              padding: "8px",
               borderRadius: "8px",
               background: "white",
               transition: "all 0.3s ease",
@@ -51,7 +54,8 @@ export default function ArtistsPage() {
               style={{
                 width: "100%",
                 height: "260px",
-                objectFit: "cover",
+                objectFit: "contain", // ✅ يظهر كامل
+                background: "#fff",
                 borderRadius: "6px",
               }}
             />
