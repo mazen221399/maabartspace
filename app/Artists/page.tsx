@@ -1,4 +1,17 @@
+"use client";
+
 export default function ArtistsPage() {
+  const artists = [
+    "tajliat",
+    "dina",
+    "artist1",
+    "artist2",
+    "mazin",
+    "stuart",
+    "ahmed",
+    "redafarhan",
+  ];
+
   return (
     <main style={{ padding: "60px 20px", textAlign: "center" }}>
       <h1 style={{ marginBottom: "50px" }}>الفنانون</h1>
@@ -12,22 +25,24 @@ export default function ArtistsPage() {
           margin: "0 auto 50px",
         }}
       >
-        {[
-          "tajliat", // ✅ الجديد
-          "artist1",
-          "artist2",
-          "mazin",
-          "stuart",
-          "ahmed",
-          "redafarhan",
-        ].map((artist) => (
+        {artists.map((artist) => (
           <div
             key={artist}
             style={{
-              border: "2px solid #FEDD00", // Pantone 109C
+              border: "2px solid #FEDD00",
               padding: "6px",
               borderRadius: "8px",
               background: "white",
+              transition: "all 0.3s ease",
+              cursor: "pointer",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = "scale(1.05)";
+              e.currentTarget.style.boxShadow = "0 10px 25px rgba(0,0,0,0.2)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = "scale(1)";
+              e.currentTarget.style.boxShadow = "none";
             }}
           >
             <img
