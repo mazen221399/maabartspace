@@ -1,7 +1,27 @@
 "use client";
+import { useState } from "react";
 
 export default function ArtworksPage() {
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
   const artworks = [
+    // 🔹 أعمال سابقة
+    { file: "sisters", name: "Sisters" },
+    { file: "confusion", name: "Confusion" },
+    { file: "joy", name: "Joy" },
+    { file: "migraine", name: "Migraine" },
+
+    { file: "hahaha", name: "اتصالات حرف الهاء" },
+    { file: "hoa1", name: "هو علي هيّن" },
+    { file: "hoa2", name: "هو علي هيّن" },
+    { file: "rbbi", name: "ربّ اجعل لي آية" },
+    { file: "rohi", name: "روحه روحي" },
+    { file: "kldaqat", name: "كل دقة قلب" },
+
+    { file: "fahad1", name: "عمل لفهد العمار" },
+    { file: "fahad2", name: "عمل لفهد العمار" },
+
+    // 🔥 الأعمال الجديدة (آخر شيء)
     { file: "najdiat", name: "نجديات" },
     { file: "womenstrenth", name: "جبروت امرأة" },
     { file: "hadeethalbab", name: "حديث الباب" },
@@ -17,8 +37,8 @@ export default function ArtworksPage() {
       <section
         style={{
           display: "grid",
-          gridTemplateColumns: "repeat(3, 1fr)",
-          gap: "30px",
+          gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
+          gap: "20px",
           maxWidth: "1100px",
           margin: "0 auto 50px",
         }}
@@ -31,76 +51,56 @@ export default function ArtworksPage() {
               padding: "10px",
               borderRadius: "8px",
               background: "#fff",
-              transition: "all 0.3s ease",
               cursor: "pointer",
+              transition: "0.3s",
             }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.transform = "scale(1.05)";
-              e.currentTarget.style.boxShadow =
-                "0 10px 25px rgba(0,0,0,0.2)";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.transform = "scale(1)";
-              e.currentTarget.style.boxShadow = "none";
-            }}
+            onClick={() =>
+              setSelectedImage(`/images/artworks/${art.file}.jpg`)
+            }
           >
             <img
               src={`/images/artworks/${art.file}.jpg`}
               alt={art.name}
               style={{
                 width: "100%",
-                height: "260px",
+                height: "220px",
                 objectFit: "contain",
-                background: "#fff",
-                borderRadius: "6px",
                 marginBottom: "10px",
               }}
             />
 
-            {/* اسم العمل */}
-            <p
-              style={{
-                fontSize: "18px",
-                fontWeight: "500",
-                margin: 0,
-              }}
-            >
-              {art.name}
-            </p>
+            <p style={{ margin: 0 }}>{art.name}</p>
           </div>
         ))}
       </section>
 
-      <p style={{ fontSize: "20px", lineHeight: "1.8", marginBottom: "25px" }}>
-        لمزيد من الأعمال، تابعنا على إنستجرام
-      </p>
-
-      <a
-        href="https://instagram.com/maab.artspace"
-        target="_blank"
-        rel="noopener noreferrer"
-        style={{
-          display: "inline-block",
-          padding: "14px 30px",
-          backgroundColor: "black",
-          color: "white",
-          textDecoration: "none",
-          fontSize: "18px",
-          transition: "all 0.3s ease",
-        }}
-        onMouseEnter={(e) => {
-          e.currentTarget.style.backgroundColor = "#FEDD00";
-          e.currentTarget.style.color = "#000";
-          e.currentTarget.style.transform = "translateY(-3px)";
-        }}
-        onMouseLeave={(e) => {
-          e.currentTarget.style.backgroundColor = "#000";
-          e.currentTarget.style.color = "#fff";
-          e.currentTarget.style.transform = "translateY(0)";
-        }}
-      >
-        📸 Instagram account
-      </a>
+      {/* 🔥 Lightbox */}
+      {selectedImage && (
+        <div
+          onClick={() => setSelectedImage(null)}
+          style={{
+            position: "fixed",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            background: "rgba(0,0,0,0.9)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            zIndex: 999,
+          }}
+        >
+          <img
+            src={selectedImage}
+            style={{
+              maxWidth: "90%",
+              maxHeight: "90%",
+              borderRadius: "10px",
+            }}
+          />
+        </div>
+      )}
     </main>
   );
 }
