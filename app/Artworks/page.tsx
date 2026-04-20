@@ -1,241 +1,106 @@
 "use client";
 
-import { useState } from "react";
-
-export default function Artworks() {
-  const [selected, setSelected] = useState<any>(null);
-
+export default function ArtworksPage() {
   const artworks = [
-    {
-      image: "/images/artworks/sisters.jpg",
-      title: "Sisters",
-      artist: "بسمة مختار",
-      description: `نسخة مطبوعة بدقة عالية
-على سطح كانفاس
-بمقاس 150 × 150 سم.`,
-    },
-    {
-      image: "/images/artworks/confusion.jpg",
-      title: "Confusion",
-      artist: "بسمة مختار",
-      description: `عمل أصلي
-أكريليك على كانفاس.`,
-    },
-    {
-      image: "/images/artworks/joy.jpg",
-      title: "Joy",
-      artist: "بسمة مختار",
-      description: `عمل أصلي
-أكريليك على كانفاس.`,
-    },
-    {
-      image: "/images/artworks/migraine.jpg",
-      title: "Migraine",
-      artist: "بسمة مختار",
-      description: `عمل أصلي
-أكريليك على كانفاس.`,
-    },
-    {
-      image: "/images/artworks/hahaha.jpg",
-      title: "اتصالات حرف الهاء – خط الثلث",
-      artist: "مازن أنديجاني",
-      description: `تجسيد بصري لحالة السعادة من خلال تنوع أشكال نطق حرف الهاء،
-بمعالجة عفوية وتكوينات حرة ضمن قواعد خط الثلث.
-
-حبر على ورق مقهر طبيعي (بوتان)
-أحبار Schmincke وأحبار صينية طبيعية
-
-56 × 81 سم
-عمل أصلي (1/1)`,
-    },
-    {
-      image: "/images/artworks/hoa1.jpg",
-      title: "هو علي هيّن",
-      artist: "مازن أنديجاني",
-      description: `تكوين خطي لعبارة "هو علي هيّن" بخط الثلث،
-منفذ على ورق طبيعي مقهر من بوتان بألوان طبيعية وصناعية.`,
-    },
-    {
-      image: "/images/artworks/hoa2.jpg",
-      title: "هو علي هيّن",
-      artist: "مازن أنديجاني",
-      description: `صياغة بصرية لعبارة "هو علي هيّن" بخط الثلث،
-على ورق مقهر من بوتان بألوان طبيعية وصناعية.`,
-    },
-    {
-      image: "/images/artworks/rbbi.jpg",
-      title: "ربّ اجعل لي آية",
-      artist: "مازن أنديجاني",
-      description: `تركيب كلاسيكي بخط الثلث،
-منفذ على ورق مقهر طبيعي من بوتان.`,
-    },
-    {
-      image: "/images/artworks/rohi.jpg",
-      title: "روحه روحي",
-      artist: "مازن أنديجاني",
-      description: `تركيب حروفي بخط الثلث والنسخ
-على ورق طبيعي مقهر من بوتان.`,
-    },
-    {
-      image: "/images/artworks/kldaqat.jpg",
-      title: "كل دقة قلب",
-      artist: "مازن أنديجاني",
-      description: `عمل رقمي مدمج مع سطح أكريليك
-30 × 30 سم
-بالخط الكوفي المربع.`,
-    },
-    {
-      image: "/images/artworks/fahad1.jpg",
-      title: "بدون عنوان",
-      artist: "فهد العمار",
-      description: `أكريليك على كانفاس
-220 × 150 سم
-مع إطار خشبي.`,
-    },
-    {
-      image: "/images/artworks/fahad2.jpg",
-      title: "بدون عنوان",
-      artist: "فهد العمار",
-      description: `أكريليك على كانفاس
-مع إطار خشبي.`,
-    },
+    { file: "najdiat", name: "نجديات" },
+    { file: "womenstrenth", name: "جبروت امرأة" },
+    { file: "hadeethalbab", name: "حديث الباب" },
+    { file: "ziyarah", name: "زيارة" },
+    { file: "onfowan", name: "عنفوان امرأة" },
+    { file: "mknonat", name: "مكنونات" },
   ];
 
   return (
-    <main style={{ padding: "40px" }}>
-      <div
+    <main style={{ padding: "60px 20px", textAlign: "center" }}>
+      <h1 style={{ marginBottom: "50px" }}>الأعمال الفنية</h1>
+
+      <section
         style={{
           display: "grid",
-          gridTemplateColumns: "repeat(4, 1fr)",
-          gap: "25px",
+          gridTemplateColumns: "repeat(3, 1fr)",
+          gap: "30px",
+          maxWidth: "1100px",
+          margin: "0 auto 50px",
         }}
       >
-        {artworks.map((art, index) => (
+        {artworks.map((art) => (
           <div
-            key={index}
+            key={art.file}
             style={{
-              position: "relative",
-              cursor: "pointer",
-              border: "2px solid black",
+              border: "2px solid #FEDD00",
+              padding: "10px",
               borderRadius: "8px",
-              padding: "6px",
-              background: "white",
+              background: "#fff",
+              transition: "all 0.3s ease",
+              cursor: "pointer",
             }}
-            onClick={() => setSelected(art)}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = "scale(1.05)";
+              e.currentTarget.style.boxShadow =
+                "0 10px 25px rgba(0,0,0,0.2)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = "scale(1)";
+              e.currentTarget.style.boxShadow = "none";
+            }}
           >
             <img
-              src={art.image}
+              src={`/images/artworks/${art.file}.jpg`}
+              alt={art.name}
               style={{
                 width: "100%",
-                height: "250px",
-                objectFit: "cover",
+                height: "260px",
+                objectFit: "contain",
+                background: "#fff",
                 borderRadius: "6px",
+                marginBottom: "10px",
               }}
             />
 
-            {/* watermark */}
-            <img
-              src="/logo.jpg"
+            {/* اسم العمل */}
+            <p
               style={{
-                position: "absolute",
-                top: "50%",
-                left: "50%",
-                transform: "translate(-50%, -50%)",
-                width: "50px",
-                opacity: 0.07,
-              }}
-            />
-
-            <div
-              style={{
-                position: "absolute",
-                bottom: "0",
-                width: "100%",
-                background: "rgba(0,0,0,0.6)",
-                color: "white",
-                textAlign: "center",
-                padding: "6px",
-                fontSize: "14px",
+                fontSize: "18px",
+                fontWeight: "500",
+                margin: 0,
               }}
             >
-              {art.title}
-            </div>
+              {art.name}
+            </p>
           </div>
         ))}
-      </div>
+      </section>
 
-      {selected && (
-        <div
-          onClick={() => setSelected(null)}
-          style={{
-            position: "fixed",
-            top: 0,
-            left: 0,
-            width: "100%",
-            height: "100%",
-            background: "rgba(0,0,0,0.9)",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            zIndex: 9999,
-          }}
-        >
-          <div
-            onClick={(e) => e.stopPropagation()}
-            style={{
-              maxWidth: "700px",
-              color: "white",
-              textAlign: "center",
-            }}
-          >
-            <img
-              src={selected.image}
-              style={{
-                width: "100%",
-                maxHeight: "70vh",
-                objectFit: "contain",
-                marginBottom: "20px",
-              }}
-            />
+      <p style={{ fontSize: "20px", lineHeight: "1.8", marginBottom: "25px" }}>
+        لمزيد من الأعمال، تابعنا على إنستجرام
+      </p>
 
-            <h2>{selected.artist}</h2>
-            <h3>{selected.title}</h3>
-
-            <p style={{ whiteSpace: "pre-line" }}>
-              {selected.description}
-            </p>
-
-            <div style={{ marginTop: "20px" }}>
-              <a
-                href={`https://wa.me/966554520495?text=أرغب في اقتناء العمل: ${selected.title}`}
-                target="_blank"
-                style={{
-                  padding: "10px 20px",
-                  background: "#25D366",
-                  color: "white",
-                  margin: "5px",
-                  display: "inline-block",
-                }}
-              >
-                واتساب
-              </a>
-
-              <a
-                href={`mailto:info@maabartspace.com`}
-                style={{
-                  padding: "10px 20px",
-                  background: "#333",
-                  color: "white",
-                  margin: "5px",
-                  display: "inline-block",
-                }}
-              >
-                إيميل
-              </a>
-            </div>
-          </div>
-        </div>
-      )}
+      <a
+        href="https://instagram.com/maab.artspace"
+        target="_blank"
+        rel="noopener noreferrer"
+        style={{
+          display: "inline-block",
+          padding: "14px 30px",
+          backgroundColor: "black",
+          color: "white",
+          textDecoration: "none",
+          fontSize: "18px",
+          transition: "all 0.3s ease",
+        }}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.backgroundColor = "#FEDD00";
+          e.currentTarget.style.color = "#000";
+          e.currentTarget.style.transform = "translateY(-3px)";
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.backgroundColor = "#000";
+          e.currentTarget.style.color = "#fff";
+          e.currentTarget.style.transform = "translateY(0)";
+        }}
+      >
+        📸 Instagram account
+      </a>
     </main>
   );
 }
