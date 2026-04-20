@@ -2,15 +2,12 @@
 
 export default function ArtistsPage() {
   const artists = [
-    // 🔼 الأقدم
     "artist1",
     "artist2",
     "mazin",
     "stuart",
     "ahmed",
     "redafarhan",
-
-    // 🔽 الأحدث
     "tajaliat",
     "dina",
   ];
@@ -19,11 +16,12 @@ export default function ArtistsPage() {
     <main style={{ padding: "60px 20px", textAlign: "center" }}>
       <h1 style={{ marginBottom: "50px" }}>الفنانون</h1>
 
+      {/* 🔥 Grid Responsive */}
       <section
         style={{
           display: "grid",
-          gridTemplateColumns: "repeat(4, 1fr)",
-          gap: "30px",
+          gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
+          gap: "20px",
           maxWidth: "1100px",
           margin: "0 auto 50px",
         }}
@@ -35,13 +33,14 @@ export default function ArtistsPage() {
               border: "2px solid #FEDD00",
               padding: "8px",
               borderRadius: "8px",
-              background: "white",
+              background: "#fff",
               transition: "all 0.3s ease",
               cursor: "pointer",
             }}
             onMouseEnter={(e) => {
               e.currentTarget.style.transform = "scale(1.05)";
-              e.currentTarget.style.boxShadow = "0 10px 25px rgba(0,0,0,0.2)";
+              e.currentTarget.style.boxShadow =
+                "0 10px 25px rgba(0,0,0,0.2)";
             }}
             onMouseLeave={(e) => {
               e.currentTarget.style.transform = "scale(1)";
@@ -53,12 +52,21 @@ export default function ArtistsPage() {
               alt={artist}
               style={{
                 width: "100%",
-                height: "260px",
-                objectFit: "contain", // ✅ يظهر كامل
-                background: "#fff",
+                height: "220px",
+                objectFit: "cover", // 🔥 أفضل للفنانين
                 borderRadius: "6px",
               }}
             />
+
+            {/* اسم الفنان (اختياري) */}
+            <p
+              style={{
+                marginTop: "10px",
+                fontSize: "16px",
+              }}
+            >
+              {artist}
+            </p>
           </div>
         ))}
       </section>
