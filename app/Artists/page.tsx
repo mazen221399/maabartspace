@@ -7,7 +7,10 @@ export default function ArtistsPage() {
   const artists = [
     "artist1",
     "artist2",
-    "mazin",
+
+    // 🔥 مازن أنديجاني (تمت الإضافة)
+    "mazin2",
+
     "stuart",
     "ahmed",
     "redafarhan",
@@ -39,13 +42,10 @@ export default function ArtistsPage() {
               transition: "all 0.3s ease",
               cursor: "pointer",
             }}
-            onClick={() =>
-              setSelectedImage(`/images/${artist}.jpg`)
-            }
+            onClick={() => setSelectedImage(`/images/${artist}.jpg`)}
             onMouseEnter={(e) => {
               e.currentTarget.style.transform = "scale(1.05)";
-              e.currentTarget.style.boxShadow =
-                "0 10px 25px rgba(0,0,0,0.2)";
+              e.currentTarget.style.boxShadow = "0 10px 25px rgba(0,0,0,0.2)";
             }}
             onMouseLeave={(e) => {
               e.currentTarget.style.transform = "scale(1)";
@@ -57,7 +57,7 @@ export default function ArtistsPage() {
               alt={artist}
               style={{
                 width: "100%",
-                height: "220px",
+                height: "260px", // 🔥 كبرتها شوي عشان تكون أوضح
                 objectFit: "cover",
                 borderRadius: "6px",
               }}
@@ -81,6 +81,7 @@ export default function ArtistsPage() {
             alignItems: "center",
             justifyContent: "center",
             zIndex: 9999,
+            padding: "20px",
           }}
         >
           <img
