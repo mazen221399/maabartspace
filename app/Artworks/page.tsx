@@ -20,8 +20,8 @@ export default function ArtworksPage() {
     { file: "kldaqat", name: "كل دقة قلب" },
 
     // 🔹 فهد العمار
-    { file: "fahad1", name: "عمل لفهد العمار" },
-    { file: "fahad2", name: "عمل لفهد العمار" },
+    { file: "fahad1", name: "بدون عنوان" },
+    { file: "fahad2", name: "بدون عنوان" },
 
     // 🔹 أعمال حديثة
     { file: "najdiat", name: "نجديات" },
@@ -118,7 +118,6 @@ export default function ArtworksPage() {
         ))}
       </section>
 
-      {/* 🔥 Lightbox */}
       {selected && (
         <div
           onClick={() => setSelected(null)}
