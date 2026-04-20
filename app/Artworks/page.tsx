@@ -18,8 +18,8 @@ export default function ArtworksPage() {
     { file: "rohi", name: "روحه روحي" },
     { file: "kldaqat", name: "كل دقة قلب" },
 
-    { file: "fahad1", name: "عمل لفهد العمار" },
-    { file: "fahad2", name: "عمل لفهد العمار" },
+    { file: "fahad1", name: "بدون عنوان" },
+    { file: "fahad2", name: "بدون عنوان" },
 
     // 🔥 الأعمال الجديدة (آخر شيء)
     { file: "najdiat", name: "نجديات" },
