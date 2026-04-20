@@ -25,7 +25,7 @@ export default function ArtworksPage() {
 
     // 🔹 أعمال حديثة
     { file: "najdiat", name: "نجديات" },
-    { file: "womenstrenth", name: "جبروت امرأة" },
+    { file: "womenstrength", name: "جبروت امرأة" },
     { file: "hadeethalbab", name: "حديث الباب" },
     { file: "ziyarah", name: "زيارة" },
     { file: "onfowan", name: "عنفوان امرأة" },
