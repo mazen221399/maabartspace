@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function RootLayout({
   children,
 }: {
@@ -5,59 +7,107 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ar" dir="rtl">
-      <body style={{ margin: 0, fontFamily: "sans-serif" }}>
-        
-        {/* المحتوى */}
-        {children}
+      <body
+        style={{
+          margin: 0,
+          fontFamily: "system-ui, -apple-system, sans-serif",
+          backgroundColor: "#ffffff",
+          color: "#111",
+        }}
+      >
+        {/* TOP LINE */}
+        <div style={{ height: "6px", backgroundColor: "#e5c94c" }} />
 
-        {/* ====== LICENSE TEXT ====== */}
+        {/* HEADER */}
+        <header
+          style={{
+            padding: "28px 40px",
+            borderBottom: "1px solid #eee",
+          }}
+        >
+          <div
+            style={{
+              maxWidth: "1200px",
+              margin: "0 auto",
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              flexWrap: "wrap",
+              gap: "20px",
+            }}
+          >
+            {/* LOGO TEXT */}
+            <div
+              style={{
+                fontSize: "26px",
+                fontWeight: 600,
+                letterSpacing: "2px",
+              }}
+            >
+              MAAB
+            </div>
+
+            {/* NAV */}
+            <nav
+              style={{
+                display: "flex",
+                gap: "28px",
+                fontSize: "16px",
+                fontWeight: 400,
+              }}
+            >
+              <Link href="/" style={linkStyle}>الرئيسية</Link>
+              <Link href="/About" style={linkStyle}>عن مآب</Link>
+              <Link href="/Artworks" style={linkStyle}>الأعمال</Link>
+              <Link href="/Workshops" style={linkStyle}>الورش</Link>
+              <Link href="/Artists" style={linkStyle}>الفنانون</Link>
+              <Link href="/Contact" style={linkStyle}>اتصل بنا</Link>
+              <Link href="/en" style={linkStyle}>EN</Link>
+            </nav>
+          </div>
+        </header>
+
+        {/* MAIN */}
+        <main
+          style={{
+            maxWidth: "1200px",
+            margin: "0 auto",
+            padding: "60px 20px",
+          }}
+        >
+          {children}
+        </main>
+
+        {/* LICENSE (SUBTLE) */}
         <div
           style={{
             textAlign: "center",
-            padding: "20px",
-            fontSize: "15px",
-            fontWeight: "600",
-            direction: "rtl",
+            fontSize: "13px",
+            color: "#777",
+            marginBottom: "20px",
           }}
         >
           بترخيص من وزارة الثقافة – هيئة الفنون البصرية
         </div>
 
-        {/* ====== FOOTER ====== */}
+        {/* FOOTER */}
         <footer
           style={{
-            backgroundColor: "#e5c94c",
-            padding: "12px 20px",
+            borderTop: "1px solid #eee",
+            padding: "20px",
+            textAlign: "center",
+            fontSize: "13px",
+            color: "#888",
           }}
         >
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "space-between",
-              flexWrap: "wrap",
-              gap: "10px",
-            }}
-          >
-            {/* النص */}
-            <div style={{ fontSize: "14px" }}>
-              Maab Art Space 2026 ©
-            </div>
-
-            {/* اللوجو */}
-            <img
-              src="/images/logovac.jpg"
-              alt="VAC"
-              style={{
-                width: "70px",
-                filter: "grayscale(100%)",
-                opacity: 0.9,
-              }}
-            />
-          </div>
+          Maab Art Space 2026 ©
         </footer>
-
       </body>
     </html>
   );
 }
+
+const linkStyle = {
+  color: "#111",
+  textDecoration: "none",
+};
