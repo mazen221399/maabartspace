@@ -17,8 +17,7 @@ export default function ArtworksPage() {
     { file: "hoa2", name: "هو علي هيّن" },
     { file: "rbbi", name: "ربّ اجعل لي آية" },
     { file: "rohi", name: "روحه روحي" },
-    { file: "kldaqat", name: "كل دقة قلب" },
-
+  
     // 🔹 فهد العمار
     { file: "fahad1", name: "بدون عنوان" },
     { file: "fahad2", name: "بدون عنوان" },
