@@ -110,4 +110,4 @@ export default function RootLayout({
 const linkStyle = {
   color: "#111",
   textDecoration: "none",
-};
+};<a href="/editions">نسخ فنية</a>
