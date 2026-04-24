@@ -1,5 +1,7 @@
 "use client";
+
 export default function ArtistsPage() {
+
   const featured = [
     {
       image: "mazin1.jpg",
@@ -20,7 +22,7 @@ export default function ArtistsPage() {
 
   const others = [
     {
-      image: "stuart.jpg",
+      image: "steuart.jpg",
       name: "Stuart Williams",
       specialty: "Photography",
     },
@@ -30,13 +32,13 @@ export default function ArtistsPage() {
       specialty: "Photography",
     },
     {
-      image: "dina1.jpg",
-      name: "Diana Alzaatre",
+      image: "sawsan.jpg",
+      name: "Dr. Sawsan Sajan",
       specialty: "Visual Art",
     },
     {
-      image: "sawsan.jpg",
-      name: "Dr. Sawsan Sajan",
+      image: "dina1.jpg",
+      name: "Diana Alzaatre",
       specialty: "Visual Art",
     },
     {
@@ -44,120 +46,119 @@ export default function ArtistsPage() {
       name: "Mahdia Altaleb",
       specialty: "Visual Art",
     },
-    {
-      image: "reda.jpg", // 👈 تأكد هذا الاسم مطابق 100%
-      name: "Reda Farhan",
-      specialty: "Sculpting",
-    },
   ];
-
-  const renderCard = (artist: any, large = false) => (
-    <div className={`card ${large ? "large" : ""}`}>
-      <div className="image">
-        <img
-          src={`/images/${artist.image}`}
-          alt={artist.name}
-        />
-      </div>
-
-      <div className="overlay">
-        <h3>{artist.name}</h3>
-        <p>{artist.specialty}</p>
-      </div>
-    </div>
-  );
 
   return (
     <main className="page">
-      <h1>الفنانون</h1>
+
+      <h1 className="title">الفنانون</h1>
 
       <div className="grid featured">
-        {featured.map((a, i) => (
-          <div key={i}>{renderCard(a, true)}</div>
+        {featured.map((artist, index) => (
+          <div key={index} className="card large">
+            <img src={`/images/${artist.image}`} alt={artist.name} />
+            <div className="overlay">
+              <h2>{artist.name}</h2>
+              <p>{artist.specialty}</p>
+            </div>
+          </div>
         ))}
       </div>
 
       <div className="grid others">
-        {others.map((a, i) => (
-          <div key={i}>{renderCard(a)}</div>
+        {others.map((artist, index) => (
+          <div key={index} className="card">
+            <img src={`/images/${artist.image}`} alt={artist.name} />
+            <div className="overlay">
+              <h2>{artist.name}</h2>
+              <p>{artist.specialty}</p>
+            </div>
+          </div>
         ))}
       </div>
 
       <style jsx>{`
         .page {
-          padding: 60px 20px;
-          max-width: 1200px;
+          padding: 40px 20px;
+          max-width: 1000px;
           margin: auto;
         }
 
-        h1 {
+        .title {
           text-align: center;
-          margin-bottom: 60px;
-          font-size: 32px;
+          font-size: 24px;
+          margin-bottom: 30px;
         }
 
         .grid {
           display: grid;
-          gap: 20px;
+          gap: 14px;
+          margin-bottom: 25px;
         }
 
         .featured {
-          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-          margin-bottom: 40px;
+          grid-template-columns: repeat(3, 1fr);
         }
 
         .others {
-          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+          grid-template-columns: repeat(3, 1fr);
         }
 
         .card {
           position: relative;
           overflow: hidden;
-          cursor: pointer;
+          border-radius: 6px;
         }
 
-        .image {
-          width: 100%;
-          height: 260px;
-        }
-
-        .large .image {
-          height: 350px;
-        }
-
-        .image img {
+        .card img {
           width: 100%;
           height: 100%;
           object-fit: cover;
-          transition: 0.4s;
+          transition: 0.3s;
         }
 
         .card:hover img {
-          transform: scale(1.05);
+          transform: scale(1.03);
         }
 
         .overlay {
           position: absolute;
           bottom: 0;
           width: 100%;
-          background: rgba(0, 0, 0, 0.5);
+          padding: 12px;
+          background: linear-gradient(
+            to top,
+            rgba(0,0,0,0.7),
+            rgba(0,0,0,0)
+          );
           color: white;
-          padding: 10px;
-          text-align: center;
+          opacity: 0;
+          transition: 0.3s;
         }
 
-        .overlay h3 {
+        .card:hover .overlay {
+          opacity: 1;
+        }
+
+        .overlay h2 {
+          font-size: 14px;
           margin: 0;
-          font-size: 16px;
         }
 
         .overlay p {
-          margin: 5px 0 0;
-          font-size: 12px;
-          opacity: 0.8;
+          font-size: 11px;
+          margin: 3px 0 0;
         }
 
-        @media (max-width: 600px) {
+        .large {
+          height: 220px;
+        }
+
+        .card:not(.large) {
+          height: 180px;
+        }
+
+        @media (max-width: 768px) {
           .featured {
             grid-template-columns: 1fr;
           }
@@ -165,8 +166,18 @@ export default function ArtistsPage() {
           .others {
             grid-template-columns: repeat(2, 1fr);
           }
+
+          .large {
+            height: 200px;
+          }
+
+          .card:not(.large) {
+            height: 160px;
+          }
         }
+
       `}</style>
+
     </main>
   );
 }
