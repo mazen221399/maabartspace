@@ -1,11 +1,4 @@
-"use client";
-
-import { useState } from "react";
-
 export default function ArtistsPage() {
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
-
-  // ⭐ Featured
   const featured = [
     {
       image: "mazin1.jpg",
@@ -24,22 +17,11 @@ export default function ArtistsPage() {
     },
   ];
 
-  // باقي الفنانين
   const others = [
     {
-      image: "steuart.jpg",
+      image: "stuart.jpg",
       name: "Stuart Williams",
       specialty: "Photography",
-    },
-    {
-      image: "sawsan.jpg",
-      name: "Dr. Sawsan Sajan",
-      specialty: "Visual Art",
-    },
-    {
-      image: "dina1.jpg",
-      name: "Diana Alzaatre",
-      specialty: "Visual Art",
     },
     {
       image: "ahmed1.jpg",
@@ -47,151 +29,140 @@ export default function ArtistsPage() {
       specialty: "Photography",
     },
     {
+      image: "dina1.jpg",
+      name: "Diana Alzaatre",
+      specialty: "Visual Art",
+    },
+    {
+      image: "sawsan.jpg",
+      name: "Dr. Sawsan Sajan",
+      specialty: "Visual Art",
+    },
+    {
       image: "mahdia.jpg",
       name: "Mahdia Altaleb",
       specialty: "Visual Art",
     },
     {
-      image: "reda.jpg",
-      name: "Redha Farhan",
+      image: "reda.jpg", // 👈 تأكد هذا الاسم مطابق 100%
+      name: "Reda Farhan",
       specialty: "Sculpting",
     },
   ];
 
+  const renderCard = (artist: any, large = false) => (
+    <div className={`card ${large ? "large" : ""}`}>
+      <div className="image">
+        <img
+          src={`/images/${artist.image}`}
+          alt={artist.name}
+        />
+      </div>
+
+      <div className="overlay">
+        <h3>{artist.name}</h3>
+        <p>{artist.specialty}</p>
+      </div>
+    </div>
+  );
+
   return (
     <main className="page">
+      <h1>الفنانون</h1>
 
-      {/* عنوان */}
-      <h1 className="title">ARTISTS</h1>
-
-      {/* ⭐ Featured */}
-      <section className="featured">
-        {featured.map((artist) => (
-          <div
-            key={artist.name}
-            className="card large"
-            onClick={() => setSelectedImage(`/images/${artist.image}`)}
-          >
-            <img src={`/images/${artist.image}`} />
-
-            <div className="overlay">
-              <h2>{artist.name}</h2>
-              <p>{artist.specialty}</p>
-            </div>
-          </div>
+      <div className="grid featured">
+        {featured.map((a, i) => (
+          <div key={i}>{renderCard(a, true)}</div>
         ))}
-      </section>
+      </div>
 
-      {/* باقي الفنانين */}
-      <section className="grid">
-        {others.map((artist) => (
-          <div
-            key={artist.name}
-            className="card"
-            onClick={() => setSelectedImage(`/images/${artist.image}`)}
-          >
-            <img src={`/images/${artist.image}`} />
-
-            <div className="overlay small">
-              <h3>{artist.name}</h3>
-              <p>{artist.specialty}</p>
-            </div>
-          </div>
+      <div className="grid others">
+        {others.map((a, i) => (
+          <div key={i}>{renderCard(a)}</div>
         ))}
-      </section>
-
-      {/* Lightbox */}
-      {selectedImage && (
-        <div className="lightbox" onClick={() => setSelectedImage(null)}>
-          <img src={selectedImage} />
-        </div>
-      )}
+      </div>
 
       <style jsx>{`
         .page {
           padding: 60px 20px;
+          max-width: 1200px;
+          margin: auto;
+        }
+
+        h1 {
           text-align: center;
+          margin-bottom: 60px;
+          font-size: 32px;
         }
 
-        .title {
-          margin-bottom: 40px;
-          letter-spacing: 8px;
-        }
-
-        /* Featured */
-        .featured {
-          display: grid;
-          grid-template-columns: repeat(3, 1fr);
-          gap: 10px;
-          margin-bottom: 30px;
-        }
-
-        .large {
-          height: 420px;
-        }
-
-        /* Grid */
         .grid {
           display: grid;
-          grid-template-columns: repeat(3, 1fr);
-          gap: 10px;
+          gap: 20px;
         }
 
-        /* Cards */
+        .featured {
+          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+          margin-bottom: 40px;
+        }
+
+        .others {
+          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        }
+
         .card {
           position: relative;
-          height: 280px;
-          cursor: pointer;
           overflow: hidden;
+          cursor: pointer;
         }
 
-        .card img {
+        .image {
+          width: 100%;
+          height: 260px;
+        }
+
+        .large .image {
+          height: 350px;
+        }
+
+        .image img {
           width: 100%;
           height: 100%;
           object-fit: cover;
+          transition: 0.4s;
+        }
+
+        .card:hover img {
+          transform: scale(1.05);
         }
 
         .overlay {
           position: absolute;
           bottom: 0;
           width: 100%;
-          background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+          background: rgba(0, 0, 0, 0.5);
           color: white;
-          padding: 20px;
-          text-align: left;
+          padding: 10px;
+          text-align: center;
         }
 
-        .overlay.small {
-          padding: 12px;
+        .overlay h3 {
+          margin: 0;
+          font-size: 16px;
         }
 
-        /* Lightbox */
-        .lightbox {
-          position: fixed;
-          inset: 0;
-          background: rgba(0,0,0,0.9);
-          display: flex;
-          justify-content: center;
-          align-items: center;
+        .overlay p {
+          margin: 5px 0 0;
+          font-size: 12px;
+          opacity: 0.8;
         }
 
-        .lightbox img {
-          max-width: 90%;
-          max-height: 90%;
-        }
-
-        /* 📱 Mobile */
-        @media (max-width: 768px) {
+        @media (max-width: 600px) {
           .featured {
             grid-template-columns: 1fr;
           }
 
-          .grid {
+          .others {
             grid-template-columns: repeat(2, 1fr);
-          }
-
-          .large {
-            height: 320px;
           }
         }
       `}</style>
