@@ -1,76 +1,60 @@
 "use client";
 
 export default function ArtistsPage() {
-
-  const featured = [
+  const artists = [
     {
-      image: "mazin1.jpg",
+      image: "/images/mazin1.jpg",
       name: "Mazin Andijani",
       specialty: "Arabic Calligraphy",
     },
     {
-      image: "fahad1.jpg",
+      image: "/images/fahad1.jpg",
       name: "Fahad Alammar",
       specialty: "Visual Art",
     },
     {
-      image: "tjlyat.jpg",
+      image: "/images/tjlyat.jpg",
       name: "Tajalyat",
       specialty: "Arabic Calligraphy & Ornamentation",
     },
-  ];
-
-  const others = [
     {
-      image: "steuart.jpg",
-      name: "Stuart Williams",
-      specialty: "Photography",
+      image: "/images/mahdia.jpg",
+      name: "Mahdia Altaleb",
+      specialty: "Visual Art",
     },
     {
-      image: "ahmed1.jpg",
+      image: "/images/ahmed1.jpg",
       name: "Ahmed Alsaeed",
       specialty: "Photography",
     },
     {
-      image: "sawsan.jpg",
+      image: "/images/steuart.jpg",
+      name: "Stuart Williams",
+      specialty: "Photography",
+    },
+    {
+      image: "/images/sawsan.jpg",
       name: "Dr. Sawsan Sajan",
       specialty: "Visual Art",
     },
     {
-      image: "dina1.jpg",
+      image: "/images/dina1.jpg",
       name: "Diana Alzaatre",
-      specialty: "Visual Art",
-    },
-    {
-      image: "mahdia.jpg",
-      name: "Mahdia Altaleb",
       specialty: "Visual Art",
     },
   ];
 
   return (
     <main className="page">
-
       <h1 className="title">الفنانون</h1>
 
-      <div className="grid featured">
-        {featured.map((artist, index) => (
-          <div key={index} className="card large">
-            <img src={`/images/${artist.image}`} alt={artist.name} />
-            <div className="overlay">
-              <h2>{artist.name}</h2>
-              <p>{artist.specialty}</p>
-            </div>
-          </div>
-        ))}
-      </div>
+      <div className="grid">
+        {artists.map((artist, i) => (
+          <div key={i} className="card">
+            <img src={artist.image} alt={artist.name} />
 
-      <div className="grid others">
-        {others.map((artist, index) => (
-          <div key={index} className="card">
-            <img src={`/images/${artist.image}`} alt={artist.name} />
-            <div className="overlay">
-              <h2>{artist.name}</h2>
+            <div className="info">
+              <h3>{artist.name}</h3>
               <p>{artist.specialty}</p>
             </div>
           </div>
@@ -82,102 +66,58 @@ export default function ArtistsPage() {
           padding: 40px 20px;
           max-width: 1000px;
           margin: auto;
+          text-align: center;
         }
 
         .title {
-          text-align: center;
-          font-size: 24px;
-          margin-bottom: 30px;
+          font-size: 26px;
+          margin-bottom: 40px;
         }
 
         .grid {
           display: grid;
-          gap: 14px;
-          margin-bottom: 25px;
-        }
-
-        .featured {
           grid-template-columns: repeat(3, 1fr);
-        }
-
-        .others {
-          grid-template-columns: repeat(3, 1fr);
+          gap: 16px;
         }
 
         .card {
-          position: relative;
-          overflow: hidden;
-          border-radius: 6px;
+          background: white;
         }
 
         .card img {
           width: 100%;
-          height: 100%;
+          aspect-ratio: 1 / 1; /* 🔥 مربعات */
           object-fit: cover;
+          border-radius: 6px;
           transition: 0.3s;
         }
 
-        .card:hover img {
+        .card img:hover {
           transform: scale(1.03);
         }
 
-        .overlay {
-          position: absolute;
-          bottom: 0;
-          width: 100%;
-          padding: 12px;
-          background: linear-gradient(
-            to top,
-            rgba(0,0,0,0.7),
-            rgba(0,0,0,0)
-          );
-          color: white;
-          opacity: 0;
-          transition: 0.3s;
+        .info {
+          margin-top: 10px;
         }
 
-        .card:hover .overlay {
-          opacity: 1;
-        }
-
-        .overlay h2 {
-          font-size: 14px;
+        .info h3 {
           margin: 0;
+          font-size: 15px;
         }
 
-        .overlay p {
-          font-size: 11px;
-          margin: 3px 0 0;
+        .info p {
+          margin: 4px 0 0;
+          font-size: 12px;
+          color: gray;
         }
 
-        .large {
-          height: 220px;
-        }
-
-        .card:not(.large) {
-          height: 180px;
-        }
-
+        /* 📱 جوال */
         @media (max-width: 768px) {
-          .featured {
-            grid-template-columns: 1fr;
-          }
-
-          .others {
+          .grid {
             grid-template-columns: repeat(2, 1fr);
           }
-
-          .large {
-            height: 200px;
-          }
-
-          .card:not(.large) {
-            height: 160px;
-          }
         }
-
       `}</style>
-
     </main>
   );
 }
