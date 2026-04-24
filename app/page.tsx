@@ -1,76 +1,52 @@
-export default function HomePage() {
+"use client";
+
+export default function Home() {
   return (
-    <main style={{ padding: "60px 20px", textAlign: "center" }}>
-      <div
-        style={{
-          width: "120px",
-          height: "120px",
-          backgroundColor: "#FFD700",
-          margin: "0 auto 40px",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
-        <img
-          src="/images/logo.jpg"
-          alt="MAAB Logo"
-          style={{ width: "70%", height: "auto" }}
-        />
-      </div>
+    <main className="home">
 
-      <section style={{ maxWidth: "700px", margin: "0 auto 40px" }}>
-        <h2>الرؤية</h2>
-        <ul style={{ textAlign: "right", lineHeight: "2" }}>
-          <li>أن يكون مآب وجهة فنية نخبوية في المملكة تعكس قيمة الفن كهوية ثقافية أصيلة.</li>
-        </ul>
-      </section>
+      <div className="bg"></div>
+      <div className="overlay"></div>
 
-      <section style={{ maxWidth: "700px", margin: "0 auto 40px" }}>
-        <h2>الرسالة</h2>
-        <ul style={{ textAlign: "right", lineHeight: "2" }}>
-          <li>تمثيل وعرض أعمال فنية مختارة بعناية.</li>
-          <li>تقديم الدعم والمشورة للفنانين عبر الدورات المتخصصة والجلسات الإرشادية.</li>
-          <li>رفع الوعي باقتناء الأعمال الأصيلة ضمن بيئة احترافية وموثوقة.</li>
-          <li>تقديم جلسات استشارية وبناء مجموعات فنية للمقتنين.</li>
-          <li>نشر ثقافة الفن الأصيل في المجتمع من خلال تنظيم المعارض الفنية بشكل دوري.</li>
-        </ul>
-      </section>
+      <h1>MAAB</h1>
 
-      <section
-        style={{
-          display: "flex",
-          gap: "20px",
-          justifyContent: "center",
-          flexWrap: "wrap",
-        }}
-      >
-        <a
-          href="/Contact"
-          style={{
-            padding: "12px 24px",
-            border: "1px solid black",
-            textDecoration: "none",
-            color: "black",
-          }}
-        >
-          اتصل بنا
-        </a>
+      <style jsx>{`
+        .home {
+          min-height: 100vh;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          position: relative;
+        }
 
-        <a
-          href="https://instagram.com/maab.artspace"
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{
-            padding: "12px 24px",
-            backgroundColor: "black",
-            color: "white",
-            textDecoration: "none",
-          }}
-        >
-          تابعنا على انستجرام
-        </a>
-      </section>
+        .bg {
+          position: fixed;
+          inset: 0;
+          background-image: url("/images/bg.jpg");
+          background-size: cover;
+          background-position: center;
+
+          filter: blur(6px) brightness(0.85);
+          transform: scale(1.05);
+
+          z-index: -2;
+        }
+
+        .overlay {
+          position: fixed;
+          inset: 0;
+          background:
+            radial-gradient(circle, rgba(255,255,255,0.08), transparent 60%),
+            linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.7));
+          z-index: -1;
+        }
+
+        h1 {
+          color: white;
+          font-size: 56px;
+          letter-spacing: 6px;
+        }
+      `}</style>
+
     </main>
   );
 }
