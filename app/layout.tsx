@@ -1,42 +1,38 @@
+import "./globals.css";
+
+export const metadata = {
+  title: "MAAB Art Space",
+  description: "MAAB Art Space",
+};
+
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <html lang="ar">
-      <body>
+    <html lang="ar" dir="rtl">
+      <body style={{ margin: 0, fontFamily: "sans-serif" }}>
+        
+        {/* Header بسيط */}
+        <header style={{
+          padding: "20px",
+          borderBottom: "1px solid #eee",
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center"
+        }}>
+          <div style={{ fontWeight: "bold" }}>MAAB</div>
 
-        {/* Navbar */}
-        <nav className="flex justify-between items-center px-6 md:px-20 py-6 border-b border-gray-200">
+          <nav style={{ display: "flex", gap: "20px", fontSize: "14px" }}>
+            <a href="/">الرئيسية</a>
+            <a href="/Artists">الفنانون</a>
+            <a href="/Artworks">الأعمال</a>
+            <a href="/Workshops">الورش</a>
+            <a href="/Contact">اتصل بنا</a>
+          </nav>
+        </header>
 
-          <div className="flex gap-6 text-sm">
-
-            <a href="/" className="hover:opacity-60">الرئيسية</a>
-
-            <a href="/about" className="hover:opacity-60">عن مآب</a>
-
-            <a href="/artworks" className="hover:opacity-60">الأعمال</a>
-
-            <a href="/workshops" className="hover:opacity-60">الورش</a>
-
-            <a href="/artists" className="hover:opacity-60">الفنانون</a>
-
-            <a href="/editions" className="hover:opacity-60">
-              النسخ الفنية
-            </a>
-
-            <a href="/contact" className="hover:opacity-60">اتصل بنا</a>
-
-          </div>
-
-          <div className="text-xl tracking-widest">
-            MAAB
-          </div>
-
-        </nav>
-
-        {/* Page Content */}
         {children}
 
       </body>
