@@ -3,6 +3,11 @@
 export default function ArtistsPage() {
   const artists = [
     {
+      image: "/images/basma.jpg",
+      name: "Basma Moktar",
+      specialty: "Visual Art & Sculpting",
+    },
+    {
       image: "/images/mazin1.jpg",
       name: "Mazin Andijani",
       specialty: "Arabic Calligraphy",
@@ -86,7 +91,7 @@ export default function ArtistsPage() {
 
         .card img {
           width: 100%;
-          aspect-ratio: 1 / 1; /* 🔥 مربعات */
+          aspect-ratio: 1 / 1;
           object-fit: cover;
           border-radius: 6px;
           transition: 0.3s;
@@ -111,7 +116,6 @@ export default function ArtistsPage() {
           color: gray;
         }
 
-        /* 📱 جوال */
         @media (max-width: 768px) {
           .grid {
             grid-template-columns: repeat(2, 1fr);
