@@ -12,7 +12,8 @@ export default function ArtworksPage() {
     { image: "/images/artworks/hoa1.jpg", title: "هو علي هين" },
     { image: "/images/artworks/hoa2.jpg", title: "هو علي هين" },
     { image: "/images/artworks/joy.jpg", title: "Joy" },
-    
+    { image: "/images/artworks/kldaqat.jpg", title: "كل دقة قلب" },
+
     { image: "/images/artworks/tarot1.jpg", title: "The Ark of Tarot 1" },
     { image: "/images/artworks/moored.jpg", title: "Moored" },
     { image: "/images/artworks/sted.jpg", title: "Stedfastness" },
@@ -33,10 +34,11 @@ export default function ArtworksPage() {
     { image: "/images/artworks/s4.jpg", title: "Unnamed" },
 
     { image: "/images/artworks/sisters.jpg", title: "Sisters" },
-    { image: "/images/artworks/womenstrengh.jpg", title: "جبروت امرأة" },
+    { image: "/images/artworks/womenstrength.jpg", title: "جبروت امرأة" },
     { image: "/images/artworks/ziyarah.jpg", title: "زيارة" },
+    { image: "/images/artworks/confusion.jpg", title: "Confusion" },
 
-    { image: "/images/artworks/confusion.jpg", title: "Confusion" }
+    { image: "/images/artworks/taa.jpg", title: "تاء مربوطة" }
   ];
 
   const [selected, setSelected] = useState<any>(null);
@@ -57,9 +59,27 @@ export default function ArtworksPage() {
 
       {selected && (
         <div className="modal" onClick={() => setSelected(null)}>
-          <div className="modal-content">
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
             <img src={selected.image} />
+
             <p>{selected.title}</p>
+
+            <div className="actions">
+              <a
+                href="mailto:info@maabartspace.com"
+                className="btn"
+              >
+                Email
+              </a>
+
+              <a
+                href="https://wa.me/966XXXXXXXXX"
+                target="_blank"
+                className="btn"
+              >
+                WhatsApp
+              </a>
+            </div>
           </div>
         </div>
       )}
@@ -76,31 +96,21 @@ export default function ArtworksPage() {
           margin-bottom: 40px;
         }
 
-        /* 🔥 توزيع احترافي */
         .grid {
           column-count: 4;
           column-gap: 15px;
         }
 
-        /* لابتوب متوسط */
         @media (max-width: 1200px) {
-          .grid {
-            column-count: 3;
-          }
+          .grid { column-count: 3; }
         }
 
-        /* تابلت */
         @media (max-width: 900px) {
-          .grid {
-            column-count: 2;
-          }
+          .grid { column-count: 2; }
         }
 
-        /* جوال */
         @media (max-width: 500px) {
-          .grid {
-            column-count: 2;
-          }
+          .grid { column-count: 2; }
         }
 
         .card {
@@ -134,14 +144,39 @@ export default function ArtworksPage() {
           z-index: 100;
         }
 
+        .modal-content {
+          text-align: center;
+        }
+
         .modal img {
           max-width: 90vw;
-          max-height: 80vh;
+          max-height: 70vh;
         }
 
         .modal p {
           color: white;
           margin-top: 10px;
+        }
+
+        .actions {
+          margin-top: 15px;
+          display: flex;
+          gap: 10px;
+          justify-content: center;
+        }
+
+        .btn {
+          padding: 8px 14px;
+          border: 1px solid white;
+          color: white;
+          text-decoration: none;
+          font-size: 12px;
+          transition: 0.3s;
+        }
+
+        .btn:hover {
+          background: white;
+          color: black;
         }
       `}</style>
 
