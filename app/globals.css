@@ -3,7 +3,7 @@ body {
   font-family: sans-serif;
 }
 
-/* NAVBAR */
+/* الشريط */
 .header {
   position: fixed;
   top: 0;
@@ -11,19 +11,26 @@ body {
   z-index: 10;
 }
 
+/* Glass effect */
 .nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+
   padding: 20px 40px;
+
+  background: rgba(0, 0, 0, 0.35); /* 👈 اللون */
+  backdrop-filter: blur(10px);     /* 👈 الضبابية */
 }
 
+/* اللوجو */
 .logo {
   color: white;
   font-size: 20px;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
 }
 
+/* الروابط */
 .links {
   display: flex;
   gap: 30px;
@@ -39,4 +46,9 @@ body {
 
 .links a:hover {
   opacity: 1;
+}
+
+/* عشان ما يغطي الشريط المحتوى */
+main {
+  padding-top: 80px;
 }
