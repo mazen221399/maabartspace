@@ -59,24 +59,26 @@ export default function ArtworksPage() {
       {selected && (
         <div className="modal" onClick={() => setSelected(null)}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <img src={selected.image} alt="" />
+            <img src={selected.image} />
             <p>{selected.title}</p>
 
             <div className="actions">
 
-              <a
-                href={`mailto:info@maabartspace.com?subject=طلب اقتناء&body=أرغب في اقتناء العمل: ${selected.title}`}
-                className="btn"
-              >
-                طلب اقتناء
-              </a>
-
+              {/* واتساب */}
               <a
                 href={`https://wa.me/966554520495?text=أرغب في اقتناء العمل: ${selected.title}`}
                 target="_blank"
-                className="btn"
+                className="btn whatsapp"
               >
-                طلب اقتناء
+                طلب اقتناء – واتساب
+              </a>
+
+              {/* إيميل */}
+              <a
+                href={`mailto:info@maabartspace.com?subject=طلب اقتناء&body=أرغب في اقتناء العمل: ${selected.title}`}
+                className="btn email"
+              >
+                طلب اقتناء – إيميل
               </a>
 
             </div>
@@ -92,26 +94,14 @@ export default function ArtworksPage() {
           text-align: center;
         }
 
-        .title {
-          margin-bottom: 40px;
-        }
-
         .grid {
           column-count: 4;
           column-gap: 15px;
         }
 
-        @media (max-width: 1200px) {
-          .grid { column-count: 3; }
-        }
-
-        @media (max-width: 900px) {
-          .grid { column-count: 2; }
-        }
-
-        @media (max-width: 500px) {
-          .grid { column-count: 2; }
-        }
+        @media (max-width: 1200px) { .grid { column-count: 3; } }
+        @media (max-width: 900px) { .grid { column-count: 2; } }
+        @media (max-width: 500px) { .grid { column-count: 2; } }
 
         .card {
           break-inside: avoid;
@@ -122,16 +112,6 @@ export default function ArtworksPage() {
         .card img {
           width: 100%;
           border-radius: 6px;
-          transition: 0.3s;
-        }
-
-        .card:hover img {
-          transform: scale(1.02);
-        }
-
-        .card p {
-          font-size: 13px;
-          margin-top: 6px;
         }
 
         .modal {
@@ -141,11 +121,6 @@ export default function ArtworksPage() {
           display: flex;
           justify-content: center;
           align-items: center;
-          z-index: 100;
-        }
-
-        .modal-content {
-          text-align: center;
         }
 
         .modal img {
@@ -159,22 +134,35 @@ export default function ArtworksPage() {
         }
 
         .actions {
-          margin-top: 15px;
+          margin-top: 20px;
           display: flex;
-          gap: 10px;
+          gap: 12px;
           justify-content: center;
         }
 
         .btn {
-          padding: 8px 14px;
-          border: 1px solid white;
-          color: white;
+          padding: 10px 16px;
+          font-size: 13px;
+          border-radius: 6px;
           text-decoration: none;
-          font-size: 12px;
           transition: 0.3s;
         }
 
-        .btn:hover {
+        .whatsapp {
+          background: #25D366;
+          color: white;
+        }
+
+        .whatsapp:hover {
+          background: #1da851;
+        }
+
+        .email {
+          border: 1px solid white;
+          color: white;
+        }
+
+        .email:hover {
           background: white;
           color: black;
         }
