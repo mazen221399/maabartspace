@@ -5,16 +5,38 @@ import { useState } from "react";
 export default function ArtworksPage() {
 
   const artworks = [
-    // 🔴 الأعمال الجديدة
-    { image: "/images/s1.jpg", title: "بدون عنوان" },
-    { image: "/images/s2.jpg", title: "بدون عنوان" },
-    { image: "/images/s3.jpg", title: "بدون عنوان" },
-    { image: "/images/s4.jpg", title: "بدون عنوان" },
+    { image: "/images/artworks/fahad1.jpg", title: "بدون عنوان" },
+    { image: "/images/artworks/fahad2.jpg", title: "بدون عنوان" },
+    { image: "/images/artworks/hadeethalbab.jpg", title: "حديث الباب" },
+    { image: "/images/artworks/hahaha.jpg", title: "هههه" },
+    { image: "/images/artworks/hoa1.jpg", title: "هو علي هين" },
+    { image: "/images/artworks/hoa2.jpg", title: "هو علي هين" },
+    { image: "/images/artworks/joy.jpg", title: "Joy" },
+    
+    { image: "/images/artworks/tarot1.jpg", title: "The Ark of Tarot 1" },
+    { image: "/images/artworks/moored.jpg", title: "Moored" },
+    { image: "/images/artworks/sted.jpg", title: "Stedfastness" },
+    { image: "/images/artworks/mani.jpg", title: "Manifestation" },
+    { image: "/images/artworks/whisper.jpg", title: "Whisper" },
+    { image: "/images/artworks/tarot2.jpg", title: "The Ark of Tarot 2" },
 
-    // 🔵 الأعمال القديمة بعد التعديل
-    { image: "/images/hahaha.jpg", title: "هههه" },
-    { image: "/images/rbbi.jpg", title: "رب اجعل لي آية" },
-    { image: "/images/rohi.jpg", title: "روحه روحي" }
+    { image: "/images/artworks/mknonat.jpg", title: "مكنونات" },
+    { image: "/images/artworks/najdiat.jpg", title: "نجديات" },
+    { image: "/images/artworks/onfowan.jpg", title: "عنفوان امرأة" },
+
+    { image: "/images/artworks/rbbi.jpg", title: "رب اجعل لي آية" },
+    { image: "/images/artworks/rohi.jpg", title: "روحه روحي" },
+
+    { image: "/images/artworks/s1.jpg", title: "Unnamed" },
+    { image: "/images/artworks/s2.jpg", title: "Unnamed" },
+    { image: "/images/artworks/s3.jpg", title: "Unnamed" },
+    { image: "/images/artworks/s4.jpg", title: "Unnamed" },
+
+    { image: "/images/artworks/sisters.jpg", title: "Sisters" },
+    { image: "/images/artworks/womenstrength.jpg", title: "جبروت امرأة" },
+    { image: "/images/artworks/ziyarah.jpg", title: "زيارة" },
+
+    { image: "/images/artworks/confusion.jpg", title: "Confusion" }
   ];
 
   const [selected, setSelected] = useState<any>(null);
@@ -26,22 +48,17 @@ export default function ArtworksPage() {
 
       <div className="grid">
         {artworks.map((art, i) => (
-          <div
-            key={i}
-            className="card"
-            onClick={() => setSelected(art)}
-          >
+          <div key={i} className="card" onClick={() => setSelected(art)}>
             <img src={art.image} alt={art.title} />
             <p>{art.title}</p>
           </div>
         ))}
       </div>
 
-      {/* Modal */}
       {selected && (
         <div className="modal" onClick={() => setSelected(null)}>
           <div className="modal-content">
-            <img src={selected.image} alt="" />
+            <img src={selected.image} />
             <p>{selected.title}</p>
           </div>
         </div>
@@ -83,7 +100,6 @@ export default function ArtworksPage() {
         .card p {
           font-size: 13px;
           margin-top: 6px;
-          color: #555;
         }
 
         .modal {
