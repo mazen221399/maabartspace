@@ -1,163 +1,118 @@
 "use client";
+
 import { useState } from "react";
 
 export default function ArtworksPage() {
-  const [selected, setSelected] = useState<any>(null);
 
   const artworks = [
-    // 🔹 بسمة مختار
-    { file: "sisters", name: "Sisters" },
-    { file: "confusion", name: "Confusion" },
-    { file: "joy", name: "Joy" },
-    { file: "migraine", name: "Migraine" },
+    // 🔴 الأعمال الجديدة
+    { image: "/images/s1.jpg", title: "بدون عنوان" },
+    { image: "/images/s2.jpg", title: "بدون عنوان" },
+    { image: "/images/s3.jpg", title: "بدون عنوان" },
+    { image: "/images/s4.jpg", title: "بدون عنوان" },
 
-    // 🔹 مازن أنديجاني
-    { file: "hahaha", name: "اتصالات حرف الهاء" },
-    { file: "hoa1", name: "هو علي هيّن" },
-    { file: "hoa2", name: "هو علي هيّن" },
-    { file: "rbbi", name: "ربّ اجعل لي آية" },
-    { file: "rohi", name: "روحه روحي" },
-  
-    // 🔹 فهد العمار
-    { file: "fahad1", name: "بدون عنوان" },
-    { file: "fahad2", name: "بدون عنوان" },
-
-    // 🔹 أعمال حديثة
-    { file: "najdiat", name: "نجديات" },
-    { file: "womenstrength", name: "جبروت امرأة" },
-    { file: "hadeethalbab", name: "حديث الباب" },
-    { file: "ziyarah", name: "زيارة" },
-    { file: "onfowan", name: "عنفوان امرأة" },
-    { file: "mknonat", name: "مكنونات" },
-
-    // 🔥 أحمد السعيد
-    {
-      file: "tarot1",
-      name: "The Ark of Tarot 1",
-      description: `طباعة فوتوغرافية بتقنية الغرفة المظلمة (Darkroom)
-على إطار بمقاس 50 × 50 سم
-من أعمال المصور أحمد السعيد.`,
-    },
-    {
-      file: "moored",
-      name: "Moored",
-      description: `طباعة فوتوغرافية بتقنية الغرفة المظلمة (Darkroom)
-على إطار بمقاس 50 × 50 سم
-من أعمال المصور أحمد السعيد.`,
-    },
-    {
-      file: "sted",
-      name: "Steadfastness",
-      description: `طباعة فوتوغرافية بتقنية الغرفة المظلمة (Darkroom)
-على إطار بمقاس 50 × 50 سم
-من أعمال المصور أحمد السعيد.`,
-    },
-    {
-      file: "mani",
-      name: "Manifestation",
-      description: `طباعة فوتوغرافية بتقنية الغرفة المظلمة (Darkroom)
-على إطار بمقاس 50 × 50 سم
-من أعمال المصور أحمد السعيد.`,
-    },
-    {
-      file: "whisper",
-      name: "Whisper",
-      description: `طباعة فوتوغرافية بتقنية الغرفة المظلمة (Darkroom)
-على إطار بمقاس 50 × 50 سم
-من أعمال المصور أحمد السعيد.`,
-    },
-    {
-      file: "tarot2",
-      name: "The Ark of Tarot 2",
-      description: `طباعة فوتوغرافية بتقنية الغرفة المظلمة (Darkroom)
-على إطار بمقاس 50 × 50 سم
-من أعمال المصور أحمد السعيد.`,
-    },
+    // 🔵 الأعمال القديمة بعد التعديل
+    { image: "/images/hahaha.jpg", title: "هههه" },
+    { image: "/images/rbbi.jpg", title: "رب اجعل لي آية" },
+    { image: "/images/rohi.jpg", title: "روحه روحي" }
   ];
 
-  return (
-    <main style={{ padding: "60px 20px", textAlign: "center" }}>
-      <h1 style={{ marginBottom: "50px" }}>الأعمال الفنية</h1>
+  const [selected, setSelected] = useState<any>(null);
 
-      <section
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
-          gap: "20px",
-          maxWidth: "1100px",
-          margin: "0 auto 50px",
-        }}
-      >
-        {artworks.map((art, index) => (
+  return (
+    <main className="page">
+
+      <h1 className="title">الأعمال الفنية</h1>
+
+      <div className="grid">
+        {artworks.map((art, i) => (
           <div
-            key={index}
-            style={{
-              border: "2px solid #FEDD00",
-              padding: "10px",
-              borderRadius: "8px",
-              background: "#fff",
-              cursor: "pointer",
-              transition: "0.3s",
-            }}
+            key={i}
+            className="card"
             onClick={() => setSelected(art)}
           >
-            <img
-              src={`/images/artworks/${art.file}.jpg`}
-              alt={art.name}
-              style={{
-                width: "100%",
-                height: "220px",
-                objectFit: "contain",
-                marginBottom: "10px",
-              }}
-            />
-
-            <p style={{ margin: 0 }}>{art.name}</p>
+            <img src={art.image} alt={art.title} />
+            <p>{art.title}</p>
           </div>
         ))}
-      </section>
+      </div>
 
+      {/* Modal */}
       {selected && (
-        <div
-          onClick={() => setSelected(null)}
-          style={{
-            position: "fixed",
-            top: 0,
-            left: 0,
-            width: "100%",
-            height: "100%",
-            background: "rgba(0,0,0,0.9)",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            zIndex: 999,
-            padding: "20px",
-          }}
-        >
-          <div
-            onClick={(e) => e.stopPropagation()}
-            style={{ maxWidth: "700px", color: "white" }}
-          >
-            <img
-              src={`/images/artworks/${selected.file}.jpg`}
-              style={{
-                width: "100%",
-                maxHeight: "70vh",
-                objectFit: "contain",
-                marginBottom: "20px",
-              }}
-            />
-
-            <h3>{selected.name}</h3>
-
-            {selected.description && (
-              <p style={{ whiteSpace: "pre-line", lineHeight: "1.8" }}>
-                {selected.description}
-              </p>
-            )}
+        <div className="modal" onClick={() => setSelected(null)}>
+          <div className="modal-content">
+            <img src={selected.image} alt="" />
+            <p>{selected.title}</p>
           </div>
         </div>
       )}
+
+      <style jsx>{`
+        .page {
+          padding: 100px 20px;
+          max-width: 1100px;
+          margin: auto;
+          text-align: center;
+        }
+
+        .title {
+          margin-bottom: 40px;
+        }
+
+        .grid {
+          column-count: 3;
+          column-gap: 15px;
+        }
+
+        .card {
+          break-inside: avoid;
+          margin-bottom: 15px;
+          cursor: pointer;
+        }
+
+        .card img {
+          width: 100%;
+          border-radius: 6px;
+          transition: 0.3s;
+        }
+
+        .card:hover img {
+          transform: scale(1.02);
+        }
+
+        .card p {
+          font-size: 13px;
+          margin-top: 6px;
+          color: #555;
+        }
+
+        .modal {
+          position: fixed;
+          inset: 0;
+          background: rgba(0,0,0,0.9);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          z-index: 100;
+        }
+
+        .modal img {
+          max-width: 90vw;
+          max-height: 80vh;
+        }
+
+        .modal p {
+          color: white;
+          margin-top: 10px;
+        }
+
+        @media (max-width: 768px) {
+          .grid {
+            column-count: 2;
+          }
+        }
+      `}</style>
+
     </main>
   );
 }
