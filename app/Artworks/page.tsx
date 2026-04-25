@@ -33,7 +33,7 @@ export default function ArtworksPage() {
     { image: "/images/artworks/s4.jpg", title: "Unnamed" },
 
     { image: "/images/artworks/sisters.jpg", title: "Sisters" },
-    { image: "/images/artworks/womenstrength.jpg", title: "جبروت امرأة" },
+    { image: "/images/artworks/womenstrengh.jpg", title: "جبروت امرأة" },
     { image: "/images/artworks/ziyarah.jpg", title: "زيارة" },
 
     { image: "/images/artworks/confusion.jpg", title: "Confusion" }
@@ -67,7 +67,7 @@ export default function ArtworksPage() {
       <style jsx>{`
         .page {
           padding: 100px 20px;
-          max-width: 1100px;
+          max-width: 900px;
           margin: auto;
           text-align: center;
         }
@@ -76,9 +76,31 @@ export default function ArtworksPage() {
           margin-bottom: 40px;
         }
 
+        /* 🔥 توزيع احترافي */
         .grid {
-          column-count: 3;
+          column-count: 4;
           column-gap: 15px;
+        }
+
+        /* لابتوب متوسط */
+        @media (max-width: 1200px) {
+          .grid {
+            column-count: 3;
+          }
+        }
+
+        /* تابلت */
+        @media (max-width: 900px) {
+          .grid {
+            column-count: 2;
+          }
+        }
+
+        /* جوال */
+        @media (max-width: 500px) {
+          .grid {
+            column-count: 2;
+          }
         }
 
         .card {
@@ -120,12 +142,6 @@ export default function ArtworksPage() {
         .modal p {
           color: white;
           margin-top: 10px;
-        }
-
-        @media (max-width: 768px) {
-          .grid {
-            column-count: 2;
-          }
         }
       `}</style>
 
