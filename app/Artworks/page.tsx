@@ -12,8 +12,7 @@ export default function ArtworksPage() {
     { image: "/images/artworks/hoa1.jpg", title: "هو علي هين" },
     { image: "/images/artworks/hoa2.jpg", title: "هو علي هين" },
     { image: "/images/artworks/joy.jpg", title: "Joy" },
-    { image: "/images/artworks/kldaqat.jpg", title: "كل دقة قلب" },
-
+    
     { image: "/images/artworks/tarot1.jpg", title: "The Ark of Tarot 1" },
     { image: "/images/artworks/moored.jpg", title: "Moored" },
     { image: "/images/artworks/sted.jpg", title: "Stedfastness" },
@@ -60,25 +59,26 @@ export default function ArtworksPage() {
       {selected && (
         <div className="modal" onClick={() => setSelected(null)}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <img src={selected.image} />
-
+            <img src={selected.image} alt="" />
             <p>{selected.title}</p>
 
             <div className="actions">
+
               <a
-                href="mailto:info@maabartspace.com"
+                href={`mailto:info@maabartspace.com?subject=طلب اقتناء&body=أرغب في اقتناء العمل: ${selected.title}`}
                 className="btn"
               >
-                Email
+                طلب اقتناء
               </a>
 
               <a
-                href="https://wa.me/966XXXXXXXXX"
+                href={`https://wa.me/966554520495?text=أرغب في اقتناء العمل: ${selected.title}`}
                 target="_blank"
                 className="btn"
               >
-                WhatsApp
+                طلب اقتناء
               </a>
+
             </div>
           </div>
         </div>
