@@ -16,7 +16,7 @@ export default function RootLayout({
 
             <div className="links">
               <a href="/">الرئيسية</a>
-              <a href="/Artists">الفنانون</a>
+              <a href="/artists">الفنانون</a>
               <a href="/Artworks">الأعمال</a>
               <a href="/Workshops">الورش</a>
               <a href="/Contact">اتصل بنا</a>
