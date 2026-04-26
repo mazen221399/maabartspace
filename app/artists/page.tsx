@@ -4,7 +4,10 @@ import { useState } from "react";
 
 export default function ArtistsPage() {
   const [activeFilter, setActiveFilter] = useState("All");
-  const [selectedImage, setSelectedImage] = useState(null);
+  const [selectedImage, setSelectedImage] = useState<null | {
+    image: string;
+    name: string;
+  }>(null);
 
   const artists = [
     {
@@ -96,7 +99,7 @@ export default function ArtistsPage() {
       {/* Lightbox */}
       {selectedImage && (
         <div className="lightbox" onClick={() => setSelectedImage(null)}>
-          <img src={selectedImage.image} />
+          <img src={selectedImage.image} alt={selectedImage.name} />
           <h3>{selectedImage.name}</h3>
         </div>
       )}
@@ -114,7 +117,6 @@ export default function ArtistsPage() {
           margin-bottom: 30px;
         }
 
-        /* Filters */
         .filters {
           margin-bottom: 30px;
         }
@@ -130,10 +132,8 @@ export default function ArtistsPage() {
 
         .filters .active {
           border-color: #f4d000;
-          color: black;
         }
 
-        /* Grid */
         .grid {
           display: grid;
           grid-template-columns: repeat(3, 1fr);
@@ -200,7 +200,6 @@ export default function ArtistsPage() {
           width: 100%;
         }
 
-        /* Lightbox */
         .lightbox {
           position: fixed;
           inset: 0;
@@ -215,7 +214,6 @@ export default function ArtistsPage() {
         .lightbox img {
           max-width: 80%;
           max-height: 70%;
-          border-radius: 10px;
         }
 
         .lightbox h3 {
