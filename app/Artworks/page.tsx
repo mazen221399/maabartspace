@@ -84,9 +84,6 @@ export default function ArtworksPage() {
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
             <img src={selected.image} />
             <p className="title-modal">{selected.title}</p>
-
-            {selected.medium && <p className="meta">{selected.medium}</p>}
-            {selected.size && <p className="meta">{selected.size}</p>}
           </div>
         </div>
       )}
@@ -111,34 +108,21 @@ export default function ArtworksPage() {
           }
         }
 
-        /* ===== CARD EFFECT ===== */
+        /* ===== CARD FIX ===== */
         .card {
           position: relative;
           cursor: pointer;
           border-radius: 8px;
           overflow: hidden;
-          transition: transform 0.3s;
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .card::before {
-          content: "";
-          position: absolute;
-          inset: 0;
-          border-radius: 8px;
-          padding: 1px;
-          background: linear-gradient(120deg, transparent, #f2d23b, transparent);
-          opacity: 0;
-          transition: 0.3s;
-          pointer-events: none;
-        }
-
-        .card:hover::before {
-          opacity: 1;
-        }
-
+        /* ⭐ الخط الأصفر بدون تغطية */
         .card:hover {
           transform: translateY(-5px) scale(1.02);
-          box-shadow: 0 10px 30px rgba(242, 210, 59, 0.2);
+          box-shadow:
+            0 0 0 2px #f2d23b,
+            0 10px 30px rgba(242, 210, 59, 0.2);
         }
 
         .card img {
@@ -168,10 +152,6 @@ export default function ArtworksPage() {
 
         .title-modal {
           color: white;
-        }
-
-        .meta {
-          color: #ccc;
         }
       `}</style>
 
