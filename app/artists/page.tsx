@@ -1,10 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function ArtistsPage() {
 
-  const artists = [
+  const allArtists = [
     {
       name: "Ahmed Alsaeed",
       category: "photography",
@@ -45,7 +45,7 @@ export default function ArtistsPage() {
       name: "Stuart Williams",
       category: "photography",
       role: "Photography",
-      image: "/images/stuart.jpg",
+      image: "/images/steuart.jpg", // ✅ الصحيح
     },
     {
       name: "Tajaliyat",
@@ -56,6 +56,17 @@ export default function ArtistsPage() {
   ];
 
   const [filter, setFilter] = useState("all");
+  const [artists, setArtists] = useState<any[]>([]);
+
+  // ⭐ بسمة أول + الباقي عشوائي
+  useEffect(() => {
+    const basma = allArtists.find(a => a.name === "Basma Moktar");
+    const others = allArtists.filter(a => a.name !== "Basma Moktar");
+
+    const shuffled = others.sort(() => Math.random() - 0.5);
+
+    setArtists([basma, ...shuffled]);
+  }, []);
 
   const filteredArtists =
     filter === "all"
