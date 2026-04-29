@@ -1,32 +1,31 @@
-import "./globals.css";
+import { usePathname } from "next/navigation";
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const pathname = typeof window !== "undefined" ? window.location.pathname : "";
+
+  const isHome = pathname === "/";
+
   return (
-    <html lang="ar" dir="rtl">
-      <body>
-
-        <header className="header">
-          <nav className="nav">
-
-            <div className="logo">MAAB</div>
-
-            <div className="links">
-              <a href="/">الرئيسية</a>
-              <a href="/artists">الفنانون</a>
-              <a href="/Artworks">الأعمال</a>
-              <a href="/Workshops">الورش</a>
-              <a href="/Contact">اتصل بنا</a>
-            </div>
-
-          </nav>
-        </header>
-
+    <html lang="ar">
+      <body className={isHome ? "home-bg" : "site-bg"}>
         {children}
 
+        <style jsx global>{`
+          .home-bg {
+            background: black;
+            min-height: 100vh;
+          }
+
+          .site-bg {
+            background:
+              linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
+              url("/images/maabwide.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            min-height: 100vh;
+          }
+        `}</style>
       </body>
     </html>
   );
