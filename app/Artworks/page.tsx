@@ -14,7 +14,7 @@ export default function ArtworksPage() {
 
     {
       image: "/images/artworks/mn.jpg",
-      title: "من جاد ساد - من جال نال Due"
+      title: "من جاد ساد - من جال نال Duo"
     },
 
     { image: "/images/artworks/tarot1.jpg", title: "The Ark of Tarot 1" },
