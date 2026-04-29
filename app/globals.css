@@ -1,3 +1,70 @@
+/* ===== RESET ===== */
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  font-family: Arial, sans-serif;
+}
+
+/* ===== BACKGROUND ===== */
+.site-bg {
+  background:
+    linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
+    url("/images/maabwide.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  opacity: 0.8;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  opacity: 1;
+}
+
+/* ===== LOGO ===== */
+.logo-center {
+  position: fixed;
+  top: 40%;
+  width: 100%;
+  text-align: center;
+  font-size: 60px;
+  color: white;
+  letter-spacing: 10px;
+  font-weight: 300;
+}
+
+/* ===== CONTENT ===== */
+.content {
+  padding-top: 120px;
+  position: relative;
+  z-index: 10;
+}
+
 /* ===== HOME WRAPPER ===== */
 .home-wrapper {
   display: flex;
@@ -5,6 +72,7 @@
   align-items: center;
   padding: 120px 20px;
   min-height: 100vh;
+  background: transparent; /* ⭐ مهم */
 }
 
 /* ===== OVERLAY ===== */
@@ -18,7 +86,7 @@
   backdrop-filter: blur(10px);
 
   color: white;
-  text-align: center; /* ⭐ هذا التعديل الأساسي */
+  text-align: center;
 }
 
 /* ===== SECTIONS ===== */
