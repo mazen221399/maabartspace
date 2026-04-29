@@ -5,13 +5,13 @@ import { useState } from "react";
 export default function ArtistsPage() {
 
   const artists = [
-    { name: "Mazin Andijani", image: "/images/artists/mazin.jpg" },
-    { name: "Fahad Alammar", image: "/images/artists/fahad.jpg" },
-    { name: "Tajalyat", image: "/images/artists/tajalyat.jpg" },
-    { name: "Basma Moktar", image: "/images/artists/basma.jpg" },
-    { name: "Stuart Williams", image: "/images/artists/stuart.jpg" },
-    { name: "Ahmed Alsaeed", image: "/images/artists/ahmed.jpg" },
-    { name: "Diana Alzaatre", image: "/images/artists/diana.jpg" },
+    { name: "Mazin Andijani", image: "/images/mazin.jpg" },
+    { name: "Fahad Alammar", image: "/images/fahad1.jpg" },
+    { name: "Tajalyat", image: "/images/tajalyat.jpg" },
+    { name: "Basma Moktar", image: "/images/basma.jpg" },
+    { name: "Stuart Williams", image: "/images/stuart.jpg" },
+    { name: "Ahmed Alsaeed", image: "/images/ahmed.jpg" },
+    { name: "Diana Alzaatre", image: "/images/diana.jpg" },
   ];
 
   const [selected, setSelected] = useState<any>(null);
@@ -59,7 +59,6 @@ export default function ArtistsPage() {
           }
         }
 
-        /* ===== نفس حركة الأعمال ===== */
         .card {
           cursor: pointer;
           border-radius: 8px;
