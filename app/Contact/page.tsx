@@ -10,65 +10,65 @@ export default function ContactPage() {
 
         {/* ===== عرض عمل فني ===== */}
         <section className="card">
-          <div className="icon">🎨</div>
+          <div className="icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M4 4h16v12H4z" />
+              <path d="M4 16l4-4 4 4 4-4 4 4" />
+            </svg>
+          </div>
           <h2>عرض عمل فني</h2>
           <p>إذا كنت فنان وترغب في عرض أعمالك ضمن مآب</p>
-          <a
-            href="https://forms.gle/3bsWYjdUTm1pMECk7"
-            target="_blank"
-            className="btn primary"
-          >
+          <a href="https://forms.gle/3bsWYjdUTm1pMECk7" target="_blank" className="btn primary">
             تعبئة النموذج
           </a>
         </section>
 
         {/* ===== تسجيل كمدرب ===== */}
         <section className="card">
-          <div className="icon">🧑‍🏫</div>
+          <div className="icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 2l9 4-9 4-9-4 9-4z" />
+              <path d="M3 10v4c0 2 4 4 9 4s9-2 9-4v-4" />
+            </svg>
+          </div>
           <h2>التسجيل كمدرب فنون</h2>
           <p>انضم لتقديم ورش فنية ضمن برامج مآب</p>
-          <a
-            href="https://forms.gle/Y3x3EjJkNfhs4Fq86"
-            target="_blank"
-            className="btn primary"
-          >
+          <a href="https://forms.gle/Y3x3EjJkNfhs4Fq86" target="_blank" className="btn primary">
             التسجيل الآن
           </a>
         </section>
 
         {/* ===== استبيان الورش ===== */}
         <section className="card">
-          <div className="icon">📝</div>
+          <div className="icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M4 4h16v16H4z" />
+              <path d="M8 8h8M8 12h6M8 16h4" />
+            </svg>
+          </div>
           <h2>استبيان الورش التدريبية</h2>
           <p>ساعدنا في تطوير تجربة الورش الفنية</p>
-          <a
-            href="https://forms.gle/rMeziHoErQiMQkXr9"
-            target="_blank"
-            className="btn primary"
-          >
+          <a href="https://forms.gle/rMeziHoErQiMQkXr9" target="_blank" className="btn primary">
             المشاركة في الاستبيان
           </a>
         </section>
 
         {/* ===== تواصل مباشر ===== */}
         <section className="card">
-          <div className="icon">📩</div>
+          <div className="icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M4 4h16v12H4z" />
+              <path d="M4 4l8 6 8-6" />
+            </svg>
+          </div>
           <h2>تواصل مباشر</h2>
           <p>للاستفسارات العامة</p>
 
           <div className="actions">
-            <a
-              href="https://wa.me/966554520495"
-              target="_blank"
-              className="btn whatsapp"
-            >
+            <a href="https://wa.me/966554520495" target="_blank" className="btn whatsapp">
               واتساب
             </a>
-
-            <a
-              href="mailto:info@maabartspace.com"
-              className="btn email"
-            >
+            <a href="mailto:info@maabartspace.com" className="btn email">
               إيميل
             </a>
           </div>
@@ -90,10 +90,8 @@ export default function ContactPage() {
           width: 100%;
           padding: 40px;
           border-radius: 16px;
-
           background: rgba(0, 0, 0, 0.6);
           backdrop-filter: blur(12px);
-
           color: white;
           text-align: center;
         }
@@ -103,7 +101,6 @@ export default function ContactPage() {
           letter-spacing: 2px;
         }
 
-        /* ===== CARD ===== */
         .card {
           margin-bottom: 25px;
           padding: 20px;
@@ -118,9 +115,13 @@ export default function ContactPage() {
           box-shadow: 0 10px 30px rgba(242, 210, 59, 0.1);
         }
 
-        /* ===== ICON ===== */
-        .icon {
-          font-size: 24px;
+        /* ===== ICON STYLE ===== */
+        .icon svg {
+          width: 32px;
+          height: 32px;
+          stroke: #f2d23b;
+          stroke-width: 1.5;
+          fill: none;
           margin-bottom: 10px;
         }
 
@@ -134,7 +135,6 @@ export default function ContactPage() {
           margin-bottom: 15px;
         }
 
-        /* ===== BUTTONS ===== */
         .btn {
           display: inline-block;
           padding: 10px 18px;
@@ -165,10 +165,6 @@ export default function ContactPage() {
           color: white;
         }
 
-        .whatsapp:hover {
-          transform: scale(1.05);
-        }
-
         .email {
           border: 1px solid white;
           color: white;
@@ -177,28 +173,6 @@ export default function ContactPage() {
         .email:hover {
           background: white;
           color: black;
-        }
-
-        /* ===== ANIMATION ===== */
-        .card {
-          animation: fadeUp 0.6s ease forwards;
-          opacity: 0;
-        }
-
-        .card:nth-child(1) { animation-delay: 0.1s; }
-        .card:nth-child(2) { animation-delay: 0.2s; }
-        .card:nth-child(3) { animation-delay: 0.3s; }
-        .card:nth-child(4) { animation-delay: 0.4s; }
-
-        @keyframes fadeUp {
-          from {
-            transform: translateY(20px);
-            opacity: 0;
-          }
-          to {
-            transform: translateY(0);
-            opacity: 1;
-          }
         }
 
         @media (max-width: 600px) {
