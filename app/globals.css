@@ -72,7 +72,7 @@ html, body {
   align-items: center;
   padding: 120px 20px;
   min-height: 100vh;
-  background: transparent; /* ⭐ مهم */
+  background: transparent;
 }
 
 /* ===== OVERLAY ===== */
@@ -89,23 +89,46 @@ html, body {
   text-align: center;
 }
 
-/* ===== SECTIONS ===== */
-.overlay-box section {
-  margin-bottom: 30px;
-}
-
-/* ===== TITLES ===== */
+/* ===== TEXT INSIDE OVERLAY ===== */
 .overlay-box h2 {
   font-size: 22px;
   margin-bottom: 12px;
   letter-spacing: 2px;
 }
 
-/* ===== TEXT ===== */
 .overlay-box p {
   font-size: 14px;
   color: #ddd;
   line-height: 1.8;
+}
+
+/* ===== ⭐ MAAB YELLOW COLOR ===== */
+:root {
+  --maab-yellow: #f2d23b;
+}
+
+/* ===== ⭐ APPLY YELLOW ON ART PAGES ===== */
+.page h1,
+.page p,
+.card p,
+.title,
+h1, h2, h3 {
+  color: var(--maab-yellow);
+}
+
+/* ===== CARD STYLE ===== */
+.card p {
+  margin-top: 8px;
+  font-size: 13px;
+}
+
+/* ===== MODAL TEXT ===== */
+.title-modal {
+  color: white !important;
+}
+
+.meta {
+  color: #ccc !important;
 }
 
 /* ===== MOBILE ===== */
