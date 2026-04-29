@@ -1,54 +1,162 @@
 export default function ContactPage() {
   return (
-    <main style={{ padding: "60px 20px", fontFamily: "sans-serif", lineHeight: "1.8" }}>
-      <div style={{ maxWidth: "900px", margin: "0 auto" }}>
-        <h1 style={{ fontSize: "42px", marginBottom: "30px" }}>
-          اتصل بنا
-        </h1>
+    <main className="contact-wrapper">
 
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(280px,1fr))",
-            gap: "30px",
-          }}
-        >
-          <div style={card}>
-            <h3>رقم الجوال</h3>
-            <p style={text}>+966 554520495</p>
-          </div>
+      <div className="contact-box">
 
-          <div style={card}>
-            <h3>البريد الإلكتروني</h3>
-            <p style={text}>info@maabartspace.com</p>
-          </div>
+        <h1>تواصل معنا</h1>
 
-          <div style={card}>
-            <h3>الموقع</h3>
-            <p style={text}>الرياض – المملكة العربية السعودية</p>
-          </div>
+        {/* ===== عرض عمل فني ===== */}
+        <section>
+          <h2>عرض عمل فني</h2>
+          <p>إذا كنت فنان وترغب في عرض أعمالك ضمن مآب</p>
+          <a
+            href="https://forms.gle/3bsWYjdUTm1pMECk7"
+            target="_blank"
+            className="btn primary"
+          >
+            تعبئة النموذج
+          </a>
+        </section>
 
-          <div style={card}>
-            <h3>ساعات العمل</h3>
-            <p style={text}>
-              السبت – الخميس
-              <br />
-              5:00 مساءً – 11:00 مساءً
-            </p>
+        {/* ===== تسجيل كمدرب ===== */}
+        <section>
+          <h2>التسجيل كمدرب فنون</h2>
+          <p>انضم لتقديم ورش فنية ضمن برامج مآب</p>
+          <a
+            href="https://forms.gle/Y3x3EjJkNfhs4Fq86"
+            target="_blank"
+            className="btn primary"
+          >
+            التسجيل الآن
+          </a>
+        </section>
+
+        {/* ===== استبيان الورش ===== */}
+        <section>
+          <h2>استبيان الورش التدريبية</h2>
+          <p>ساعدنا في تطوير تجربة الورش الفنية</p>
+          <a
+            href="https://forms.gle/rMeziHoErQiMQkXr9"
+            target="_blank"
+            className="btn primary"
+          >
+            المشاركة في الاستبيان
+          </a>
+        </section>
+
+        {/* ===== تواصل مباشر ===== */}
+        <section>
+          <h2>تواصل مباشر</h2>
+          <p>للاستفسارات العامة</p>
+
+          <div className="actions">
+            <a
+              href="https://wa.me/966554520495"
+              target="_blank"
+              className="btn whatsapp"
+            >
+              واتساب
+            </a>
+
+            <a
+              href="mailto:info@maabartspace.com"
+              className="btn email"
+            >
+              إيميل
+            </a>
           </div>
-        </div>
+        </section>
+
       </div>
+
+      <style jsx>{`
+        .contact-wrapper {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 120px 20px;
+          min-height: 100vh;
+        }
+
+        .contact-box {
+          max-width: 600px;
+          width: 100%;
+          padding: 40px;
+          border-radius: 12px;
+
+          background: rgba(0, 0, 0, 0.6);
+          backdrop-filter: blur(10px);
+
+          color: white;
+          text-align: center;
+        }
+
+        h1 {
+          margin-bottom: 30px;
+        }
+
+        section {
+          margin-bottom: 30px;
+        }
+
+        h2 {
+          margin-bottom: 10px;
+        }
+
+        p {
+          font-size: 14px;
+          color: #ccc;
+          margin-bottom: 12px;
+        }
+
+        /* ===== BUTTONS ===== */
+        .btn {
+          display: inline-block;
+          padding: 10px 18px;
+          border-radius: 6px;
+          text-decoration: none;
+          font-size: 13px;
+          transition: 0.3s;
+        }
+
+        .primary {
+          background: #f2d23b;
+          color: black;
+        }
+
+        .primary:hover {
+          background: #e0c232;
+        }
+
+        .actions {
+          display: flex;
+          justify-content: center;
+          gap: 10px;
+        }
+
+        .whatsapp {
+          background: #25D366;
+          color: white;
+        }
+
+        .email {
+          border: 1px solid white;
+          color: white;
+        }
+
+        .email:hover {
+          background: white;
+          color: black;
+        }
+
+        @media (max-width: 600px) {
+          .contact-box {
+            padding: 25px;
+          }
+        }
+      `}</style>
+
     </main>
   );
 }
-
-const card = {
-  border: "1px solid #e5e5e5",
-  borderRadius: "16px",
-  padding: "30px",
-};
-
-const text = {
-  color: "#666",
-  fontSize: "17px",
-};
