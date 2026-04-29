@@ -109,34 +109,12 @@ export default function ArtistsPage() {
           }
         }
 
-        /* ===== CARD ===== */
+        /* ===== CLEAN HOVER ===== */
         .card {
-          position: relative;
           border-radius: 8px;
           overflow: hidden;
           cursor: pointer;
           transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        /* ⭐ الخط الأصفر المتحرك */
-        .card::after {
-          content: "";
-          position: absolute;
-          inset: 0;
-          border-radius: 8px;
-          background: linear-gradient(120deg, transparent, #f2d23b, transparent);
-          opacity: 0;
-          transition: 0.3s;
-        }
-
-        .card:hover::after {
-          opacity: 0.6;
-          animation: glowMove 2s linear infinite;
-        }
-
-        @keyframes glowMove {
-          0% { transform: translateX(-100%); }
-          100% { transform: translateX(100%); }
         }
 
         .card:hover {
