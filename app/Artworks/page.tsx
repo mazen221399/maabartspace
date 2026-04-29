@@ -12,8 +12,7 @@ export default function ArtworksPage() {
     { image: "/images/artworks/hoa1.jpg", title: "هو علي هين" },
     { image: "/images/artworks/hoa2.jpg", title: "هو علي هين" },
     { image: "/images/artworks/joy.jpg", title: "Joy" },
-    { image: "/images/artworks/kldaqat.jpg", title: "كل دقة قلب" },
-
+    
     { image: "/images/artworks/tarot1.jpg", title: "The Ark of Tarot 1" },
     { image: "/images/artworks/moored.jpg", title: "Moored" },
     { image: "/images/artworks/sted.jpg", title: "Stedfastness" },
@@ -40,7 +39,7 @@ export default function ArtworksPage() {
 
     { image: "/images/artworks/taa.jpg", title: "تاء مربوطة" },
 
-    // ✅ الأعمال الجديدة
+    // ===== الأعمال الجديدة =====
     {
       image: "/images/artworks/silent.jpg",
       title: "Silent Ascension",
@@ -48,7 +47,7 @@ export default function ArtworksPage() {
       size: "50 × 70 cm"
     },
     {
-      image: "/images/artworks/girlandcat.jpg",
+      image: "/images/artworks/girlandcat.JPG", // نفس اسم ملفك بالضبط
       title: "Girl and Cat",
       medium: "Oil on Canvas"
     }
@@ -57,7 +56,7 @@ export default function ArtworksPage() {
   const [artworks, setArtworks] = useState<any[]>([]);
   const [selected, setSelected] = useState<any>(null);
 
-  // 🔀 ترتيب عشوائي مرة واحدة
+  // ترتيب عشوائي مرة واحدة
   useEffect(() => {
     const shuffled = [...artworksData].sort(() => Math.random() - 0.5);
     setArtworks(shuffled);
