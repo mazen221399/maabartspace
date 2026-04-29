@@ -3,7 +3,6 @@
 import { useState, useEffect } from "react";
 
 export default function ArtworksPage() {
-
   const artworksData = [
     { image: "/images/artworks/fahad1.jpg", title: "بدون عنوان" },
     { image: "/images/artworks/fahad2.jpg", title: "بدون عنوان" },
@@ -12,7 +11,12 @@ export default function ArtworksPage() {
     { image: "/images/artworks/hoa1.jpg", title: "هو علي هين" },
     { image: "/images/artworks/hoa2.jpg", title: "هو علي هين" },
     { image: "/images/artworks/joy.jpg", title: "Joy" },
-    
+
+    {
+      image: "/images/artworks/mn.jpg",
+      title: "من جاد ساد - من جال نال Due"
+    },
+
     { image: "/images/artworks/tarot1.jpg", title: "The Ark of Tarot 1" },
     { image: "/images/artworks/moored.jpg", title: "Moored" },
     { image: "/images/artworks/sted.jpg", title: "Stedfastness" },
@@ -39,7 +43,6 @@ export default function ArtworksPage() {
 
     { image: "/images/artworks/taa.jpg", title: "تاء مربوطة" },
 
-    // ===== الأعمال الجديدة =====
     {
       image: "/images/artworks/silent.jpg",
       title: "Silent Ascension",
@@ -63,7 +66,6 @@ export default function ArtworksPage() {
 
   return (
     <main className="page">
-
       <h1 className="title">الأعمال الفنية</h1>
 
       <div className="grid">
@@ -78,7 +80,7 @@ export default function ArtworksPage() {
       {selected && (
         <div className="modal" onClick={() => setSelected(null)}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <img src={selected.image} />
+            <img src={selected.image} alt={selected.title} />
             <p className="title-modal">{selected.title}</p>
 
             {selected.medium && <p className="meta">{selected.medium}</p>}
@@ -116,7 +118,6 @@ export default function ArtworksPage() {
           margin-bottom: 30px;
         }
 
-        /* ===== GRID ===== */
         .grid {
           display: grid;
           grid-template-columns: repeat(4, 1fr);
@@ -135,12 +136,10 @@ export default function ArtworksPage() {
           }
         }
 
-        /* ===== CARD ===== */
         .card {
           cursor: pointer;
         }
 
-        /* ===== IMAGE FIX ===== */
         .card img {
           width: 100%;
           height: 260px;
@@ -152,14 +151,14 @@ export default function ArtworksPage() {
           margin-top: 8px;
         }
 
-        /* ===== MODAL ===== */
         .modal {
           position: fixed;
           inset: 0;
-          background: rgba(0,0,0,0.9);
+          background: rgba(0, 0, 0, 0.9);
           display: flex;
           justify-content: center;
           align-items: center;
+          z-index: 2000;
         }
 
         .modal img {
@@ -192,7 +191,7 @@ export default function ArtworksPage() {
         }
 
         .whatsapp {
-          background: #25D366;
+          background: #25d366;
           color: white;
         }
 
@@ -201,7 +200,6 @@ export default function ArtworksPage() {
           color: white;
         }
       `}</style>
-
     </main>
   );
 }
