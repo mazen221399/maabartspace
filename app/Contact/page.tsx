@@ -1,3 +1,5 @@
+"use client";
+
 export default function ContactPage() {
   return (
     <main className="contact-wrapper">
@@ -7,7 +9,8 @@ export default function ContactPage() {
         <h1>تواصل معنا</h1>
 
         {/* ===== عرض عمل فني ===== */}
-        <section>
+        <section className="card">
+          <div className="icon">🎨</div>
           <h2>عرض عمل فني</h2>
           <p>إذا كنت فنان وترغب في عرض أعمالك ضمن مآب</p>
           <a
@@ -20,7 +23,8 @@ export default function ContactPage() {
         </section>
 
         {/* ===== تسجيل كمدرب ===== */}
-        <section>
+        <section className="card">
+          <div className="icon">🧑‍🏫</div>
           <h2>التسجيل كمدرب فنون</h2>
           <p>انضم لتقديم ورش فنية ضمن برامج مآب</p>
           <a
@@ -33,7 +37,8 @@ export default function ContactPage() {
         </section>
 
         {/* ===== استبيان الورش ===== */}
-        <section>
+        <section className="card">
+          <div className="icon">📝</div>
           <h2>استبيان الورش التدريبية</h2>
           <p>ساعدنا في تطوير تجربة الورش الفنية</p>
           <a
@@ -46,7 +51,8 @@ export default function ContactPage() {
         </section>
 
         {/* ===== تواصل مباشر ===== */}
-        <section>
+        <section className="card">
+          <div className="icon">📩</div>
           <h2>تواصل مباشر</h2>
           <p>للاستفسارات العامة</p>
 
@@ -80,34 +86,52 @@ export default function ContactPage() {
         }
 
         .contact-box {
-          max-width: 600px;
+          max-width: 650px;
           width: 100%;
           padding: 40px;
-          border-radius: 12px;
+          border-radius: 16px;
 
           background: rgba(0, 0, 0, 0.6);
-          backdrop-filter: blur(10px);
+          backdrop-filter: blur(12px);
 
           color: white;
           text-align: center;
         }
 
         h1 {
-          margin-bottom: 30px;
+          margin-bottom: 40px;
+          letter-spacing: 2px;
         }
 
-        section {
-          margin-bottom: 30px;
+        /* ===== CARD ===== */
+        .card {
+          margin-bottom: 25px;
+          padding: 20px;
+          border-radius: 10px;
+          transition: 0.3s;
+          border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .card:hover {
+          transform: translateY(-5px);
+          border: 1px solid rgba(242, 210, 59, 0.4);
+          box-shadow: 0 10px 30px rgba(242, 210, 59, 0.1);
+        }
+
+        /* ===== ICON ===== */
+        .icon {
+          font-size: 24px;
+          margin-bottom: 10px;
         }
 
         h2 {
-          margin-bottom: 10px;
+          margin-bottom: 8px;
         }
 
         p {
           font-size: 14px;
           color: #ccc;
-          margin-bottom: 12px;
+          margin-bottom: 15px;
         }
 
         /* ===== BUTTONS ===== */
@@ -127,6 +151,7 @@ export default function ContactPage() {
 
         .primary:hover {
           background: #e0c232;
+          transform: scale(1.05);
         }
 
         .actions {
@@ -140,6 +165,10 @@ export default function ContactPage() {
           color: white;
         }
 
+        .whatsapp:hover {
+          transform: scale(1.05);
+        }
+
         .email {
           border: 1px solid white;
           color: white;
@@ -148,6 +177,28 @@ export default function ContactPage() {
         .email:hover {
           background: white;
           color: black;
+        }
+
+        /* ===== ANIMATION ===== */
+        .card {
+          animation: fadeUp 0.6s ease forwards;
+          opacity: 0;
+        }
+
+        .card:nth-child(1) { animation-delay: 0.1s; }
+        .card:nth-child(2) { animation-delay: 0.2s; }
+        .card:nth-child(3) { animation-delay: 0.3s; }
+        .card:nth-child(4) { animation-delay: 0.4s; }
+
+        @keyframes fadeUp {
+          from {
+            transform: translateY(20px);
+            opacity: 0;
+          }
+          to {
+            transform: translateY(0);
+            opacity: 1;
+          }
         }
 
         @media (max-width: 600px) {
