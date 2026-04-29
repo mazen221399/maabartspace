@@ -5,66 +5,24 @@ import { useState, useEffect } from "react";
 export default function ArtistsPage() {
 
   const allArtists = [
-    {
-      name: "Ahmed Alsaeed",
-      category: "photography",
-      role: "Photography",
-      image: "/images/ahmed1.jpg",
-    },
-    {
-      name: "Basma Moktar",
-      category: "visual",
-      role: "Visual Art & Sculpting",
-      image: "/images/basma.jpg",
-    },
-    {
-      name: "Dina Alazaatre",
-      category: "visual",
-      role: "Visual Art",
-      image: "/images/dina1.jpg",
-    },
-    {
-      name: "Fahad Alammar",
-      category: "visual",
-      role: "Visual Art",
-      image: "/images/fahad1.jpg",
-    },
-    {
-      name: "Mazin Andijani",
-      category: "calligraphy",
-      role: "Calligraphy",
-      image: "/images/mazin1.jpg",
-    },
-    {
-      name: "Dr. Sawsan Alsajjan",
-      category: "visual",
-      role: "Visual Art",
-      image: "/images/sawsan.jpg",
-    },
-    {
-      name: "Stuart Williams",
-      category: "photography",
-      role: "Photography",
-      image: "/images/steuart.jpg", // ✅ الصحيح
-    },
-    {
-      name: "Tajaliyat",
-      category: "calligraphy",
-      role: "Calligraphy & Illumination",
-      image: "/images/tjlyat.jpg",
-    },
+    { name: "Ahmed Alsaeed", category: "photography", role: "Photography", image: "/images/ahmed1.jpg" },
+    { name: "Basma Moktar", category: "visual", role: "Visual Art & Sculpting", image: "/images/basma.jpg" },
+    { name: "Dina Alazaatre", category: "visual", role: "Visual Art", image: "/images/dina1.jpg" },
+    { name: "Fahad Alammar", category: "visual", role: "Visual Art", image: "/images/fahad1.jpg" },
+    { name: "Mazin Andijani", category: "calligraphy", role: "Calligraphy", image: "/images/mazin1.jpg" },
+    { name: "Dr. Sawsan Alsajjan", category: "visual", role: "Visual Art", image: "/images/sawsan.jpg" },
+    { name: "Stuart Williams", category: "photography", role: "Photography", image: "/images/steuart.jpg" },
+    { name: "Tajaliyat", category: "calligraphy", role: "Calligraphy & Illumination", image: "/images/tjlyat.jpg" },
   ];
 
   const [filter, setFilter] = useState("all");
   const [artists, setArtists] = useState<any[]>([]);
+  const [selected, setSelected] = useState<any>(null);
 
-  // ⭐ بسمة أول + الباقي عشوائي
   useEffect(() => {
     const basma = allArtists.find(a => a.name === "Basma Moktar");
     const others = allArtists.filter(a => a.name !== "Basma Moktar");
-
     const shuffled = others.sort(() => Math.random() - 0.5);
-
     setArtists([basma, ...shuffled]);
   }, []);
 
@@ -89,13 +47,24 @@ export default function ArtistsPage() {
       {/* ===== GRID ===== */}
       <div className="grid">
         {filteredArtists.map((artist, i) => (
-          <div key={i} className="card">
+          <div key={i} className="card" onClick={() => setSelected(artist)}>
             <img src={artist.image} alt={artist.name} />
             <p className="name">{artist.name}</p>
             <p className="role">{artist.role}</p>
           </div>
         ))}
       </div>
+
+      {/* ===== MODAL ===== */}
+      {selected && (
+        <div className="modal" onClick={() => setSelected(null)}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <img src={selected.image} />
+            <p className="title-modal">{selected.name}</p>
+            <p className="meta">{selected.role}</p>
+          </div>
+        </div>
+      )}
 
       <style jsx>{`
         .page {
@@ -105,11 +74,6 @@ export default function ArtistsPage() {
           text-align: center;
         }
 
-        .title {
-          margin-bottom: 20px;
-        }
-
-        /* ===== FILTER ===== */
         .filters {
           margin-bottom: 30px;
           display: flex;
@@ -125,7 +89,6 @@ export default function ArtistsPage() {
           color: #f2d23b;
           border-radius: 20px;
           cursor: pointer;
-          transition: 0.3s;
         }
 
         .filters button.active,
@@ -134,7 +97,6 @@ export default function ArtistsPage() {
           color: black;
         }
 
-        /* ===== GRID ===== */
         .grid {
           display: grid;
           grid-template-columns: repeat(4, 1fr);
@@ -149,10 +111,32 @@ export default function ArtistsPage() {
 
         /* ===== CARD ===== */
         .card {
+          position: relative;
           border-radius: 8px;
           overflow: hidden;
-          transition: transform 0.3s ease, box-shadow 0.3s ease;
           cursor: pointer;
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* ⭐ الخط الأصفر المتحرك */
+        .card::after {
+          content: "";
+          position: absolute;
+          inset: 0;
+          border-radius: 8px;
+          background: linear-gradient(120deg, transparent, #f2d23b, transparent);
+          opacity: 0;
+          transition: 0.3s;
+        }
+
+        .card:hover::after {
+          opacity: 0.6;
+          animation: glowMove 2s linear infinite;
+        }
+
+        @keyframes glowMove {
+          0% { transform: translateX(-100%); }
+          100% { transform: translateX(100%); }
         }
 
         .card:hover {
@@ -175,6 +159,30 @@ export default function ArtistsPage() {
 
         .role {
           font-size: 13px;
+          color: #ccc;
+        }
+
+        /* ===== MODAL ===== */
+        .modal {
+          position: fixed;
+          inset: 0;
+          background: rgba(0,0,0,0.9);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .modal img {
+          max-width: 90vw;
+          max-height: 65vh;
+        }
+
+        .title-modal {
+          color: white;
+          margin-top: 10px;
+        }
+
+        .meta {
           color: #ccc;
         }
       `}</style>
