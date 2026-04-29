@@ -68,10 +68,32 @@ export default function ContactPage() {
             <a href="https://wa.me/966554520495" target="_blank" className="btn whatsapp">
               واتساب
             </a>
+
             <a href="mailto:info@maabartspace.com" className="btn email">
               إيميل
             </a>
           </div>
+        </section>
+
+        {/* ===== INSTAGRAM ===== */}
+        <section className="card">
+          <div className="icon">
+            <svg viewBox="0 0 24 24">
+              <rect x="3" y="3" width="18" height="18" rx="5" />
+              <circle cx="12" cy="12" r="4" />
+              <circle cx="17" cy="7" r="1.5" />
+            </svg>
+          </div>
+          <h2>تابعنا على إنستجرام</h2>
+          <p>@maab.artspace</p>
+
+          <a
+            href="https://instagram.com/maab.artspace"
+            target="_blank"
+            className="btn instagram"
+          >
+            متابعة
+          </a>
         </section>
 
       </div>
@@ -115,7 +137,6 @@ export default function ContactPage() {
           box-shadow: 0 10px 30px rgba(242, 210, 59, 0.1);
         }
 
-        /* ===== ICON STYLE ===== */
         .icon svg {
           width: 32px;
           height: 32px;
@@ -151,6 +172,17 @@ export default function ContactPage() {
 
         .primary:hover {
           background: #e0c232;
+          transform: scale(1.05);
+        }
+
+        .instagram {
+          border: 1px solid #f2d23b;
+          color: #f2d23b;
+        }
+
+        .instagram:hover {
+          background: #f2d23b;
+          color: black;
           transform: scale(1.05);
         }
 
