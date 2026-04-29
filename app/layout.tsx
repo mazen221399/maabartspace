@@ -1,36 +1,10 @@
-import { usePathname } from "next/navigation";
-
-export default function RootLayout({ children }: { children: React.ReactNode }) {
-  const pathname = typeof window !== "undefined" ? window.location.pathname : "";
-
-  const isHome = pathname === "/";
-
-  return (
-    <html lang="ar">
-      <body className={isHome ? "home-bg" : "site-bg"}>
-        {children}
-
-        <style jsx global>{`
-          .home-bg {
-            background: black;
-            min-height: 100vh;
-          }
-
-          .site-bg {
-            background:
-              linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
-              url("/images/maabwide.jpg");
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            min-height: 100vh;
-          }
-        `}</style>
-      </body>
-    </html>
-  );
-}
 import "./globals.css";
+import Link from "next/link";
+
+export const metadata = {
+  title: "MAAB Art Space",
+  description: "MAAB Art Space",
+};
 
 export default function RootLayout({
   children,
@@ -39,8 +13,29 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ar">
-      <body>
-        {children}
+      <body className="site-bg">
+
+        {/* ===== NAVBAR ===== */}
+        <header className="navbar">
+          <nav className="nav-links">
+            <Link href="/">Home</Link>
+            <Link href="/artists">Artists</Link>
+            <Link href="/Artworks">Artworks</Link>
+            <Link href="/Workshops">Workshops</Link>
+            <Link href="/Contact">Contact</Link>
+          </nav>
+        </header>
+
+        {/* ===== LOGO CENTER ===== */}
+        <div className="logo-center">
+          MAAB
+        </div>
+
+        {/* ===== PAGE CONTENT ===== */}
+        <main className="content">
+          {children}
+        </main>
+
       </body>
     </html>
   );
