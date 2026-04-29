@@ -48,7 +48,7 @@ export default function ArtworksPage() {
     },
     {
       image: "/images/artworks/girlandcat.JPG",
-      title: "Night's Story", // ✅ التعديل هنا
+      title: "Night's Story",
       medium: "Oil on Canvas"
     }
   ];
@@ -85,7 +85,6 @@ export default function ArtworksPage() {
             {selected.size && <p className="meta">{selected.size}</p>}
 
             <div className="actions">
-
               <a
                 href={`https://wa.me/966554520495?text=أرغب في اقتناء العمل: ${selected.title}`}
                 target="_blank"
@@ -100,11 +99,108 @@ export default function ArtworksPage() {
               >
                 طلب اقتناء – إيميل
               </a>
-
             </div>
           </div>
         </div>
       )}
+
+      <style jsx>{`
+        .page {
+          padding: 120px 20px;
+          max-width: 1200px;
+          margin: auto;
+          text-align: center;
+        }
+
+        .title {
+          margin-bottom: 30px;
+        }
+
+        /* ===== GRID ===== */
+        .grid {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 15px;
+        }
+
+        @media (max-width: 1200px) {
+          .grid {
+            grid-template-columns: repeat(3, 1fr);
+          }
+        }
+
+        @media (max-width: 900px) {
+          .grid {
+            grid-template-columns: repeat(2, 1fr);
+          }
+        }
+
+        /* ===== CARD ===== */
+        .card {
+          cursor: pointer;
+        }
+
+        /* ===== IMAGE FIX ===== */
+        .card img {
+          width: 100%;
+          height: 260px;
+          object-fit: cover;
+          border-radius: 6px;
+        }
+
+        .card p {
+          margin-top: 8px;
+        }
+
+        /* ===== MODAL ===== */
+        .modal {
+          position: fixed;
+          inset: 0;
+          background: rgba(0,0,0,0.9);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .modal img {
+          max-width: 90vw;
+          max-height: 65vh;
+        }
+
+        .title-modal {
+          color: white;
+          margin-top: 10px;
+        }
+
+        .meta {
+          color: #ccc;
+          font-size: 13px;
+        }
+
+        .actions {
+          margin-top: 20px;
+          display: flex;
+          gap: 12px;
+          justify-content: center;
+        }
+
+        .btn {
+          padding: 10px 16px;
+          font-size: 13px;
+          border-radius: 6px;
+          text-decoration: none;
+        }
+
+        .whatsapp {
+          background: #25D366;
+          color: white;
+        }
+
+        .email {
+          border: 1px solid white;
+          color: white;
+        }
+      `}</style>
 
     </main>
   );
