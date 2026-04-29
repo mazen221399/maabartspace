@@ -4,6 +4,10 @@ import Link from "next/link";
 export const metadata = {
   title: "MAAB Art Space",
   description: "MAAB Art Space",
+  icons: {
+    icon: "/curve1.jpg",
+    shortcut: "/curve1.jpg",
+  },
 };
 
 export default function RootLayout({
