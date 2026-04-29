@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 
 export default function ArtworksPage() {
+
   const artworksData = [
     { image: "/images/artworks/fahad1.jpg", title: "بدون عنوان" },
     { image: "/images/artworks/fahad2.jpg", title: "بدون عنوان" },
@@ -66,6 +67,7 @@ export default function ArtworksPage() {
 
   return (
     <main className="page">
+
       <h1 className="title">الأعمال الفنية</h1>
 
       <div className="grid">
@@ -80,28 +82,11 @@ export default function ArtworksPage() {
       {selected && (
         <div className="modal" onClick={() => setSelected(null)}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <img src={selected.image} alt={selected.title} />
+            <img src={selected.image} />
             <p className="title-modal">{selected.title}</p>
 
             {selected.medium && <p className="meta">{selected.medium}</p>}
             {selected.size && <p className="meta">{selected.size}</p>}
-
-            <div className="actions">
-              <a
-                href={`https://wa.me/966554520495?text=أرغب في اقتناء العمل: ${selected.title}`}
-                target="_blank"
-                className="btn whatsapp"
-              >
-                طلب اقتناء – واتساب
-              </a>
-
-              <a
-                href={`mailto:info@maabartspace.com?subject=طلب اقتناء&body=أرغب في اقتناء العمل: ${selected.title}`}
-                className="btn email"
-              >
-                طلب اقتناء – إيميل
-              </a>
-            </div>
           </div>
         </div>
       )}
@@ -114,20 +99,10 @@ export default function ArtworksPage() {
           text-align: center;
         }
 
-        .title {
-          margin-bottom: 30px;
-        }
-
         .grid {
           display: grid;
           grid-template-columns: repeat(4, 1fr);
           gap: 15px;
-        }
-
-        @media (max-width: 1200px) {
-          .grid {
-            grid-template-columns: repeat(3, 1fr);
-          }
         }
 
         @media (max-width: 900px) {
@@ -136,15 +111,41 @@ export default function ArtworksPage() {
           }
         }
 
+        /* ===== CARD EFFECT ===== */
         .card {
+          position: relative;
           cursor: pointer;
+          border-radius: 8px;
+          overflow: hidden;
+          transition: transform 0.3s;
+        }
+
+        .card::before {
+          content: "";
+          position: absolute;
+          inset: 0;
+          border-radius: 8px;
+          padding: 1px;
+          background: linear-gradient(120deg, transparent, #f2d23b, transparent);
+          opacity: 0;
+          transition: 0.3s;
+          pointer-events: none;
+        }
+
+        .card:hover::before {
+          opacity: 1;
+        }
+
+        .card:hover {
+          transform: translateY(-5px) scale(1.02);
+          box-shadow: 0 10px 30px rgba(242, 210, 59, 0.2);
         }
 
         .card img {
           width: 100%;
           height: 260px;
           object-fit: cover;
-          border-radius: 6px;
+          display: block;
         }
 
         .card p {
@@ -154,11 +155,10 @@ export default function ArtworksPage() {
         .modal {
           position: fixed;
           inset: 0;
-          background: rgba(0, 0, 0, 0.9);
+          background: rgba(0,0,0,0.9);
           display: flex;
           justify-content: center;
           align-items: center;
-          z-index: 2000;
         }
 
         .modal img {
@@ -168,38 +168,13 @@ export default function ArtworksPage() {
 
         .title-modal {
           color: white;
-          margin-top: 10px;
         }
 
         .meta {
           color: #ccc;
-          font-size: 13px;
-        }
-
-        .actions {
-          margin-top: 20px;
-          display: flex;
-          gap: 12px;
-          justify-content: center;
-        }
-
-        .btn {
-          padding: 10px 16px;
-          font-size: 13px;
-          border-radius: 6px;
-          text-decoration: none;
-        }
-
-        .whatsapp {
-          background: #25d366;
-          color: white;
-        }
-
-        .email {
-          border: 1px solid white;
-          color: white;
         }
       `}</style>
+
     </main>
   );
 }
