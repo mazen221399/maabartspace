@@ -3,230 +3,106 @@
 import { useState } from "react";
 
 export default function ArtistsPage() {
-  const [activeFilter, setActiveFilter] = useState("All");
-  const [selectedImage, setSelectedImage] = useState<null | {
-    image: string;
-    name: string;
-  }>(null);
 
   const artists = [
-    {
-      image: "/images/basma.jpg",
-      name: "Basma Moktar",
-      specialty: "Visual Art",
-    },
-    {
-      image: "/images/mazin1.jpg",
-      name: "Mazin Andijani",
-      specialty: "Calligraphy",
-    },
-    {
-      image: "/images/fahad1.jpg",
-      name: "Fahad Alammar",
-      specialty: "Visual Art",
-    },
-    {
-      image: "/images/tjlyat.jpg",
-      name: "Tajalyat",
-      specialty: "Calligraphy",
-    },
-    {
-      image: "/images/ahmed1.jpg",
-      name: "Ahmed Alsaeed",
-      specialty: "Photography",
-    },
-    {
-      image: "/images/steuart.jpg",
-      name: "Stuart Williams",
-      specialty: "Photography",
-    },
-    {
-      image: "/images/sawsan.jpg",
-      name: "Dr. Sawsan Sajan",
-      specialty: "Visual Art",
-    },
-    {
-      image: "/images/dina1.jpg",
-      name: "Diana Alzaatre",
-      specialty: "Visual Art",
-    },
+    { name: "Mazin Andijani", image: "/images/artists/mazin.jpg" },
+    { name: "Fahad Alammar", image: "/images/artists/fahad.jpg" },
+    { name: "Tajalyat", image: "/images/artists/tajalyat.jpg" },
+    { name: "Basma Moktar", image: "/images/artists/basma.jpg" },
+    { name: "Stuart Williams", image: "/images/artists/stuart.jpg" },
+    { name: "Ahmed Alsaeed", image: "/images/artists/ahmed.jpg" },
+    { name: "Diana Alzaatre", image: "/images/artists/diana.jpg" },
   ];
 
-  const filters = ["All", "Visual Art", "Calligraphy", "Photography"];
-
-  const filteredArtists =
-    activeFilter === "All"
-      ? artists
-      : artists.filter((a) => a.specialty === activeFilter);
+  const [selected, setSelected] = useState<any>(null);
 
   return (
     <main className="page">
+
       <h1 className="title">الفنانون</h1>
 
-      {/* Filters */}
-      <div className="filters">
-        {filters.map((f, i) => (
-          <button
-            key={i}
-            className={activeFilter === f ? "active" : ""}
-            onClick={() => setActiveFilter(f)}
-          >
-            {f}
-          </button>
-        ))}
-      </div>
-
-      {/* Grid */}
       <div className="grid">
-        {filteredArtists.map((artist, i) => (
-          <div
-            key={i}
-            className="card"
-            onClick={() => setSelectedImage(artist)}
-          >
+        {artists.map((artist, i) => (
+          <div key={i} className="card" onClick={() => setSelected(artist)}>
             <img src={artist.image} alt={artist.name} />
-
-            <div className="overlay">
-              <h3>{artist.name}</h3>
-              <p>{artist.specialty}</p>
-            </div>
-
-            <div className="yellow-line"></div>
+            <p>{artist.name}</p>
           </div>
         ))}
       </div>
 
-      {/* Lightbox */}
-      {selectedImage && (
-        <div className="lightbox" onClick={() => setSelectedImage(null)}>
-          <img src={selectedImage.image} alt={selectedImage.name} />
-          <h3>{selectedImage.name}</h3>
+      {selected && (
+        <div className="modal" onClick={() => setSelected(null)}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <img src={selected.image} />
+            <p className="title-modal">{selected.name}</p>
+          </div>
         </div>
       )}
 
       <style jsx>{`
         .page {
-          padding: 60px 20px;
-          max-width: 1100px;
+          padding: 120px 20px;
+          max-width: 1200px;
           margin: auto;
           text-align: center;
         }
 
-        .title {
-          font-size: 28px;
-          margin-bottom: 30px;
-        }
-
-        .filters {
-          margin-bottom: 30px;
-        }
-
-        .filters button {
-          margin: 0 6px;
-          padding: 6px 14px;
-          border: 1px solid #ddd;
-          background: white;
-          cursor: pointer;
-          font-size: 12px;
-        }
-
-        .filters .active {
-          border-color: #f4d000;
-        }
-
         .grid {
           display: grid;
-          grid-template-columns: repeat(3, 1fr);
-          gap: 20px;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 15px;
         }
 
-        .card {
-          position: relative;
-          overflow: hidden;
-          border-radius: 10px;
-          cursor: pointer;
-        }
-
-        .card img {
-          width: 100%;
-          aspect-ratio: 1 / 1;
-          object-fit: cover;
-          transition: 0.4s;
-        }
-
-        .overlay {
-          position: absolute;
-          inset: 0;
-          background: rgba(0, 0, 0, 0.4);
-          display: flex;
-          flex-direction: column;
-          justify-content: flex-end;
-          padding: 20px;
-          opacity: 0;
-          transition: 0.4s;
-        }
-
-        .overlay h3 {
-          color: white;
-          margin: 0;
-          font-size: 15px;
-        }
-
-        .overlay p {
-          color: #ccc;
-          font-size: 12px;
-          margin-top: 4px;
-        }
-
-        .yellow-line {
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          width: 0%;
-          height: 2px;
-          background: #f4d000;
-          transition: 0.4s;
-        }
-
-        .card:hover img {
-          transform: scale(1.08);
-        }
-
-        .card:hover .overlay {
-          opacity: 1;
-        }
-
-        .card:hover .yellow-line {
-          width: 100%;
-        }
-
-        .lightbox {
-          position: fixed;
-          inset: 0;
-          background: rgba(0, 0, 0, 0.9);
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-          z-index: 1000;
-        }
-
-        .lightbox img {
-          max-width: 80%;
-          max-height: 70%;
-        }
-
-        .lightbox h3 {
-          color: white;
-          margin-top: 15px;
-        }
-
-        @media (max-width: 768px) {
+        @media (max-width: 900px) {
           .grid {
             grid-template-columns: repeat(2, 1fr);
           }
         }
+
+        /* ===== نفس حركة الأعمال ===== */
+        .card {
+          cursor: pointer;
+          border-radius: 8px;
+          overflow: hidden;
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+          transform: translateY(-5px) scale(1.02);
+          box-shadow:
+            0 0 0 2px #f2d23b,
+            0 10px 30px rgba(242, 210, 59, 0.2);
+        }
+
+        .card img {
+          width: 100%;
+          height: 260px;
+          object-fit: cover;
+        }
+
+        .card p {
+          margin-top: 8px;
+        }
+
+        .modal {
+          position: fixed;
+          inset: 0;
+          background: rgba(0,0,0,0.9);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .modal img {
+          max-width: 90vw;
+          max-height: 65vh;
+        }
+
+        .title-modal {
+          color: white;
+        }
       `}</style>
+
     </main>
   );
 }
