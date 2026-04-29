@@ -1,10 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function ArtworksPage() {
 
-  const artworks = [
+  const artworksData = [
     { image: "/images/artworks/fahad1.jpg", title: "بدون عنوان" },
     { image: "/images/artworks/fahad2.jpg", title: "بدون عنوان" },
     { image: "/images/artworks/hadeethalbab.jpg", title: "حديث الباب" },
@@ -37,10 +37,30 @@ export default function ArtworksPage() {
     { image: "/images/artworks/ziyarah.jpg", title: "زيارة" },
     { image: "/images/artworks/confusion.jpg", title: "Confusion" },
 
-    { image: "/images/artworks/taa.jpg", title: "تاء مربوطة" }
+    { image: "/images/artworks/taa.jpg", title: "تاء مربوطة" },
+
+    // ===== التعديل الجديد =====
+    {
+      image: "/images/artworks/silent.jpg",
+      title: "Silent Ascension",
+      medium: "Oil on Canvas",
+      size: "50 × 70 cm"
+    },
+    {
+      image: "/images/artworks/girlandcat.jpg",
+      title: "Girl and Cat",
+      medium: "Oil on Canvas"
+    }
   ];
 
+  const [artworks, setArtworks] = useState<any[]>([]);
   const [selected, setSelected] = useState<any>(null);
+
+  // 🔀 Shuffle مرة واحدة عند تحميل الصفحة
+  useEffect(() => {
+    const shuffled = [...artworksData].sort(() => Math.random() - 0.5);
+    setArtworks(shuffled);
+  }, []);
 
   return (
     <main className="page">
@@ -60,11 +80,13 @@ export default function ArtworksPage() {
         <div className="modal" onClick={() => setSelected(null)}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
             <img src={selected.image} />
-            <p>{selected.title}</p>
+            <p className="title-modal">{selected.title}</p>
+
+            {selected.medium && <p className="meta">{selected.medium}</p>}
+            {selected.size && <p className="meta">{selected.size}</p>}
 
             <div className="actions">
 
-              {/* واتساب */}
               <a
                 href={`https://wa.me/966554520495?text=أرغب في اقتناء العمل: ${selected.title}`}
                 target="_blank"
@@ -73,7 +95,6 @@ export default function ArtworksPage() {
                 طلب اقتناء – واتساب
               </a>
 
-              {/* إيميل */}
               <a
                 href={`mailto:info@maabartspace.com?subject=طلب اقتناء&body=أرغب في اقتناء العمل: ${selected.title}`}
                 className="btn email"
@@ -125,12 +146,19 @@ export default function ArtworksPage() {
 
         .modal img {
           max-width: 90vw;
-          max-height: 70vh;
+          max-height: 65vh;
         }
 
-        .modal p {
+        .title-modal {
           color: white;
           margin-top: 10px;
+          font-weight: 600;
+        }
+
+        .meta {
+          color: #ccc;
+          font-size: 13px;
+          margin-top: 4px;
         }
 
         .actions {
