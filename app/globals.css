@@ -64,3 +64,56 @@ html, body {
   position: relative;
   z-index: 10;
 }
+/* ===== HOME WRAPPER ===== */
+.home-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 120px 20px;
+  min-height: 100vh;
+}
+
+/* ===== OVERLAY BOX ===== */
+.overlay-box {
+  max-width: 700px;
+  width: 100%;
+  padding: 40px;
+  border-radius: 12px;
+
+  /* Glass effect */
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(10px);
+
+  color: white;
+  text-align: right;
+  line-height: 1.8;
+}
+
+/* ===== TITLES ===== */
+.overlay-box h2 {
+  margin-bottom: 10px;
+  font-size: 20px;
+  letter-spacing: 1px;
+}
+
+/* ===== PARAGRAPHS ===== */
+.overlay-box p {
+  font-size: 14px;
+  color: #ddd;
+  margin-bottom: 25px;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 600px) {
+  .overlay-box {
+    padding: 25px;
+  }
+
+  .overlay-box h2 {
+    font-size: 18px;
+  }
+
+  .overlay-box p {
+    font-size: 13px;
+  }
+}
