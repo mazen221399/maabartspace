@@ -47,8 +47,8 @@ export default function ArtworksPage() {
       size: "50 × 70 cm"
     },
     {
-      image: "/images/artworks/girlandcat.JPG", // نفس اسم ملفك بالضبط
-      title: "Girl and Cat",
+      image: "/images/artworks/girlandcat.JPG",
+      title: "Night's Story", // ✅ التعديل هنا
       medium: "Oil on Canvas"
     }
   ];
@@ -56,7 +56,6 @@ export default function ArtworksPage() {
   const [artworks, setArtworks] = useState<any[]>([]);
   const [selected, setSelected] = useState<any>(null);
 
-  // ترتيب عشوائي مرة واحدة
   useEffect(() => {
     const shuffled = [...artworksData].sort(() => Math.random() - 0.5);
     setArtworks(shuffled);
@@ -106,95 +105,6 @@ export default function ArtworksPage() {
           </div>
         </div>
       )}
-
-      <style jsx>{`
-        .page {
-          padding: 100px 20px;
-          max-width: 900px;
-          margin: auto;
-          text-align: center;
-        }
-
-        .grid {
-          column-count: 4;
-          column-gap: 15px;
-        }
-
-        @media (max-width: 1200px) { .grid { column-count: 3; } }
-        @media (max-width: 900px) { .grid { column-count: 2; } }
-        @media (max-width: 500px) { .grid { column-count: 2; } }
-
-        .card {
-          break-inside: avoid;
-          margin-bottom: 15px;
-          cursor: pointer;
-        }
-
-        .card img {
-          width: 100%;
-          border-radius: 6px;
-        }
-
-        .modal {
-          position: fixed;
-          inset: 0;
-          background: rgba(0,0,0,0.9);
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-
-        .modal img {
-          max-width: 90vw;
-          max-height: 65vh;
-        }
-
-        .title-modal {
-          color: white;
-          margin-top: 10px;
-          font-weight: 600;
-        }
-
-        .meta {
-          color: #ccc;
-          font-size: 13px;
-          margin-top: 4px;
-        }
-
-        .actions {
-          margin-top: 20px;
-          display: flex;
-          gap: 12px;
-          justify-content: center;
-        }
-
-        .btn {
-          padding: 10px 16px;
-          font-size: 13px;
-          border-radius: 6px;
-          text-decoration: none;
-          transition: 0.3s;
-        }
-
-        .whatsapp {
-          background: #25D366;
-          color: white;
-        }
-
-        .whatsapp:hover {
-          background: #1da851;
-        }
-
-        .email {
-          border: 1px solid white;
-          color: white;
-        }
-
-        .email:hover {
-          background: white;
-          color: black;
-        }
-      `}</style>
 
     </main>
   );
