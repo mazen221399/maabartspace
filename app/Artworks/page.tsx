@@ -10,14 +10,9 @@ export default function ArtworksPage() {
     { image: "/images/artworks/hadeethalbab.jpg", title: "حديث الباب" },
     { image: "/images/artworks/hahaha.jpg", title: "هههه" },
     { image: "/images/artworks/hoa1.jpg", title: "هو علي هين" },
-    { image: "/images/artworks/hoa2.jpg", title: "هو علي هين" },
     { image: "/images/artworks/joy.jpg", title: "Joy" },
 
-    {
-      image: "/images/artworks/mn.jpg",
-      title: "من جاد ساد - من جال نال Duo"
-    },
-
+    
     { image: "/images/artworks/tarot1.jpg", title: "The Ark of Tarot 1" },
     { image: "/images/artworks/moored.jpg", title: "Moored" },
     { image: "/images/artworks/sted.jpg", title: "Stedfastness" },
@@ -46,7 +41,7 @@ export default function ArtworksPage() {
 
     {
       image: "/images/artworks/silent.jpg",
-      title: "Silent Ascension",
+      title: "Silent Ascendance",
       medium: "Oil on Canvas",
       size: "50 × 70 cm"
     },
@@ -54,7 +49,17 @@ export default function ArtworksPage() {
       image: "/images/artworks/girlandcat.JPG",
       title: "Night's Story",
       medium: "Oil on Canvas"
-    }
+    },
+
+    /* ===== الأعمال الجديدة ===== */
+    { image: "/images/artworks/bigwheel.jpg", title: "Abandoned Big Wheel" },
+    { image: "/images/artworks/botsnam.jpg", title: "Botsnam" },
+    { image: "/images/artworks/farasan.jpg", title: "Farasan" },
+    { image: "/images/artworks/moonersrock.jpg", title: "Mooners Rock" },
+    { image: "/images/artworks/rallyjameel.jpg", title: "Rally Jameel" },
+    { image: "/images/artworks/reddune.jpg", title: "Red Dune" },
+    { image: "/images/artworks/ubm.jpg", title: "عروق بني معارض" },
+    { image: "/images/artworks/wildlife.jpg", title: "Wild Life" }
   ];
 
   const [artworks, setArtworks] = useState<any[]>([]);
@@ -108,7 +113,6 @@ export default function ArtworksPage() {
           }
         }
 
-        /* ===== CARD FIX ===== */
         .card {
           position: relative;
           cursor: pointer;
@@ -117,7 +121,6 @@ export default function ArtworksPage() {
           transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        /* ⭐ الخط الأصفر بدون تغطية */
         .card:hover {
           transform: translateY(-5px) scale(1.02);
           box-shadow:
