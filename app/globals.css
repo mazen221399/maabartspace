@@ -145,3 +145,9 @@ h1, h2, h3 {
     font-size: 13px;
   }
 }
+.nav-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  direction: rtl; /* ⭐ هذا المهم */
+}
