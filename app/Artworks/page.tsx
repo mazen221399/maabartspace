@@ -12,7 +12,6 @@ export default function ArtworksPage() {
     { image: "/images/artworks/hoa1.jpg", title: "هو علي هين" },
     { image: "/images/artworks/joy.jpg", title: "Joy" },
 
-    
     { image: "/images/artworks/tarot1.jpg", title: "The Ark of Tarot 1" },
     { image: "/images/artworks/moored.jpg", title: "Moored" },
     { image: "/images/artworks/sted.jpg", title: "Stedfastness" },
@@ -52,7 +51,7 @@ export default function ArtworksPage() {
     },
 
     /* ===== الأعمال الجديدة ===== */
-    { image: "/images/artworks/bigwheel.jpg", title: "Abandoned Big Wheel" },
+    { image: "/images/artworks/bigwheel.jpg", title: "Abandoned Big Wheel ثلاثية" },
     { image: "/images/artworks/botsnam.jpg", title: "Botsnam" },
     { image: "/images/artworks/farasan.jpg", title: "Farasan" },
     { image: "/images/artworks/moonersrock.jpg", title: "Mooners Rock" },
