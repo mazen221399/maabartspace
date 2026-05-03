@@ -22,11 +22,11 @@ export default function RootLayout({
         {/* ===== NAVBAR ===== */}
         <header className="navbar">
           <nav className="nav-links">
-            <Link href="/">Home</Link>
-            <Link href="/artists">Artists</Link>
-            <Link href="/Artworks">Artworks</Link>
-            <Link href="/Workshops">Workshops</Link>
-            <Link href="/Contact">Contact</Link>
+            <Link href="/">الرئيسية</Link>
+            <Link href="/artists">فنانو مآب</Link>
+            <Link href="/Artworks">الأعمال الفنية</Link>
+            <Link href="/Workshops">ورش العمل</Link>
+            <Link href="/Contact">تواصل معنا</Link>
           </nav>
         </header>
 
