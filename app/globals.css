@@ -151,3 +151,11 @@ h1, h2, h3 {
   gap: 20px;
   direction: rtl; /* ⭐ هذا المهم */
 }
+.footer {
+  text-align: center;
+  font-size: 12px;
+  color: #aaa;
+  padding: 20px;
+  margin-top: 40px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
