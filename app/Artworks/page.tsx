@@ -90,6 +90,8 @@ export default function ArtworksPage() {
             <p className="title-modal">{selected.title}</p>
 
             {/* ⭐ طلب اقتناء */}
+            <p className="acquire-title">طلب اقتناء</p>
+
             <div className="actions">
 
               <a
@@ -182,9 +184,15 @@ export default function ArtworksPage() {
           margin-top: 10px;
         }
 
+        .acquire-title {
+          margin-top: 15px;
+          font-size: 14px;
+          color: #f2d23b;
+        }
+
         /* ===== BUTTONS ===== */
         .actions {
-          margin-top: 20px;
+          margin-top: 15px;
           display: flex;
           justify-content: center;
           gap: 12px;
