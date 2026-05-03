@@ -48,9 +48,9 @@ export default function RootLayout({
           </div>
 
           <div className="footer-text-en">
-            All artworks and images are protected.
+            All artworks and images are protected
             <br />
-            Unauthorized use or reproduction is strictly prohibited.
+            Unauthorized use or reproduction is strictly prohibited
           </div>
 
         </footer>
