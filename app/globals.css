@@ -158,4 +158,31 @@ h1, h2, h3 {
   padding: 20px;
   margin-top: 40px;
   border-top: 1px solid rgba(255,255,255,0.1);
+}.footer {
+  text-align: center;
+  padding: 30px 20px;
+  margin-top: 40px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+/* اسم مآب */
+.footer-brand {
+  font-size: 14px;
+  letter-spacing: 6px;
+  color: #f2d23b;
+  margin-bottom: 10px;
+}
+
+/* العربي */
+.footer-text {
+  font-size: 12px;
+  color: #aaa;
+  margin-bottom: 8px;
+}
+
+/* الإنجليزي */
+.footer-text-en {
+  font-size: 12px;
+  color: #777;
+  line-height: 1.6;
 }

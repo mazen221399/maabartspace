@@ -38,13 +38,21 @@ export default function RootLayout({
 
         {/* ===== FOOTER ===== */}
         <footer className="footer">
-          © MAAB Art Space. جميع الحقوق محفوظة.
-          <br />
-          جميع الأعمال الفنية والصور محفوظة الحقوق ولا يجوز استخدامها أو إعادة إنتاجها.
-          <br /><br />
-          All artworks and images are protected.
-          <br />
-          Unauthorized use or reproduction is strictly prohibited.
+
+          <div className="footer-brand">
+            M A A B Artspace
+          </div>
+
+          <div className="footer-text">
+            جميع الأعمال الفنية والصور محفوظة الحقوق ولا يجوز استخدامها أو إعادة إنتاجها.
+          </div>
+
+          <div className="footer-text-en">
+            All artworks and images are protected.
+            <br />
+            Unauthorized use or reproduction is strictly prohibited.
+          </div>
+
         </footer>
 
       </body>
