@@ -26,22 +26,24 @@ export default function RootLayout({
           </nav>
         </header>
 
-        {/* ===== LOGO CENTER ===== */}
+        {/* ===== LOGO ===== */}
         <div className="logo-center">
           MAAB
         </div>
 
-        {/* ===== PAGE CONTENT ===== */}
+        {/* ===== CONTENT ===== */}
         <main className="content">
           {children}
         </main>
+
+        {/* ⭐ الفوتر (المكان الصحيح) */}
+        <footer className="footer">
+          © MAAB Art Space. جميع الحقوق محفوظة.
+          <br />
+          جميع الأعمال الفنية والصور محفوظة الحقوق ولا يجوز استخدامها أو إعادة إنتاجها.
+        </footer>
 
       </body>
     </html>
   );
 }
-<footer className="footer">
-  © MAAB Art Space. جميع الحقوق محفوظة.  
-  <br />
-  جميع الأعمال الفنية والصور محفوظة الحقوق ولا يجوز استخدامها أو إعادة إنتاجها.
-</footer>
