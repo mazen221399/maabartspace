@@ -12,13 +12,13 @@ export default function ArtworksPage() {
     { image: "/images/artworks/hoa1.jpg", title: "هو علي هين" },
     { image: "/images/artworks/joy.jpg", title: "Joy" },
 
-    /* ⭐ أعمال أحمد السعيد (بالأسماء الجديدة) */
-    { image: "/images/artworks/tarot11.jpeg", title: "The Ark of Tarot 1" },
-    { image: "/images/artworks/moo.jpeg", title: "Moored" },
-    { image: "/images/artworks/stedf.jpeg", title: "Steadfastness" },
-    { image: "/images/artworks/manis.jpeg", title: "Manifestation" },
-    { image: "/images/artworks/whis.jpeg", title: "Whisper" },
-    { image: "/images/artworks/tarot22.jpeg", title: "The Ark of Tarot 2" },
+    /* ⭐ أعمال أحمد السعيد (jpg + الأسماء الجديدة) */
+    { image: "/images/artworks/tarot11.jpg", title: "The Ark of Tarot 1" },
+    { image: "/images/artworks/moo.jpg", title: "Moored" },
+    { image: "/images/artworks/stedf.jpg", title: "Steadfastness" },
+    { image: "/images/artworks/manis.jpg", title: "Manifestation" },
+    { image: "/images/artworks/whis.jpg", title: "Whisper" },
+    { image: "/images/artworks/tarot22.jpg", title: "The Ark of Tarot 2" },
 
     { image: "/images/artworks/mknonat.jpg", title: "مكنونات" },
     { image: "/images/artworks/najdiat.jpg", title: "نجديات" },
