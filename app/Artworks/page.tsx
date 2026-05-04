@@ -6,9 +6,18 @@ export default function ArtworksPage() {
 
   const artworks = [
     { image: "/images/artworks/fahad1.jpg", title: "بدون عنوان" },
+    { image: "/images/artworks/fahad2.jpg", title: "بدون عنوان" },
     { image: "/images/artworks/hadeethalbab.jpg", title: "حديث الباب" },
     { image: "/images/artworks/hahaha.jpg", title: "هههه" },
     { image: "/images/artworks/hoa1.jpg", title: "هو علي هين" },
+
+    // 👇 باقي أعمالك
+    { image: "/images/artworks/hoa2.jpg", title: "هو علي هين 2" },
+    { image: "/images/artworks/mknonat.jpg", title: "مكنونات" },
+    { image: "/images/artworks/onfowan.jpg", title: "عنفوان امرأة" },
+    { image: "/images/artworks/ziyarah.jpg", title: "زيارة" },
+    { image: "/images/artworks/womenstrenth.jpg", title: "جبروت امرأة" },
+    { image: "/images/artworks/najdiat.jpg", title: "نجديات" },
   ];
 
   const [selected, setSelected] = useState<any>(null);
@@ -18,7 +27,6 @@ export default function ArtworksPage() {
 
       <h1 className="title">الأعمال</h1>
 
-      {/* ===== GRID ===== */}
       <div className="grid">
         {artworks.map((art, i) => (
           <div key={i} className="card" onClick={() => setSelected(art)}>
@@ -62,7 +70,7 @@ export default function ArtworksPage() {
           }
         }
 
-        /* ===== BLACK & WHITE EFFECT ===== */
+        /* 🔥 الأبيض والأسود */
         .card img {
           width: 100%;
           height: 260px;
@@ -72,12 +80,11 @@ export default function ArtworksPage() {
           cursor: pointer;
         }
 
-        /* hover (اختياري خفيف) */
         .card:hover img {
           filter: grayscale(40%);
         }
 
-        /* ===== MODAL (COLOR BACK) ===== */
+        /* ===== MODAL ===== */
         .modal {
           position: fixed;
           inset: 0;
