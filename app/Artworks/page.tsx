@@ -12,12 +12,13 @@ export default function ArtworksPage() {
     { image: "/images/artworks/hoa1.jpg", title: "هو علي هين" },
     { image: "/images/artworks/joy.jpg", title: "Joy" },
 
-    { image: "/images/artworks/tarot1.jpg", title: "The Ark of Tarot 1" },
-    { image: "/images/artworks/moored.jpg", title: "Moored" },
-    { image: "/images/artworks/sted.jpg", title: "Stedfastness" },
-    { image: "/images/artworks/mani.jpg", title: "Manifestation" },
-    { image: "/images/artworks/whisper.jpg", title: "Whisper" },
-    { image: "/images/artworks/tarot2.jpg", title: "The Ark of Tarot 2" },
+    /* ⭐ أعمال أحمد السعيد (محدثة) */
+    { image: "/images/artworks/tarot11.jpg", title: "The Ark of Tarot 1" },
+    { image: "/images/artworks/moo.jpg", title: "Moored" },
+    { image: "/images/artworks/stedf.jpg", title: "Steadfastness" },
+    { image: "/images/artworks/manis.jpg", title: "Manifestation" },
+    { image: "/images/artworks/whis.jpg", title: "Whisper" },
+    { image: "/images/artworks/tarot22.jpg", title: "The Ark of Tarot 2" },
 
     { image: "/images/artworks/mknonat.jpg", title: "مكنونات" },
     { image: "/images/artworks/najdiat.jpg", title: "نجديات" },
@@ -89,7 +90,6 @@ export default function ArtworksPage() {
             <img src={selected.image} />
             <p className="title-modal">{selected.title}</p>
 
-            {/* ⭐ طلب اقتناء */}
             <p className="acquire-title">طلب اقتناء</p>
 
             <div className="actions">
@@ -154,7 +154,6 @@ export default function ArtworksPage() {
           width: 100%;
           height: 260px;
           object-fit: cover;
-          display: block;
         }
 
         .card p {
@@ -168,10 +167,6 @@ export default function ArtworksPage() {
           display: flex;
           justify-content: center;
           align-items: center;
-        }
-
-        .modal-content {
-          text-align: center;
         }
 
         .modal img {
@@ -190,7 +185,6 @@ export default function ArtworksPage() {
           color: #f2d23b;
         }
 
-        /* ===== BUTTONS ===== */
         .actions {
           margin-top: 15px;
           display: flex;
@@ -203,7 +197,6 @@ export default function ArtworksPage() {
           border-radius: 6px;
           font-size: 13px;
           text-decoration: none;
-          transition: 0.3s;
           position: relative;
           overflow: hidden;
         }
@@ -226,10 +219,6 @@ export default function ArtworksPage() {
 
         .gold:hover::after {
           left: 100%;
-        }
-
-        .gold:hover {
-          transform: scale(1.05);
         }
 
         .outline {
