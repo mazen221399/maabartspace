@@ -12,13 +12,13 @@ export default function ArtworksPage() {
     { image: "/images/artworks/hoa1.jpg", title: "هو علي هين" },
     { image: "/images/artworks/joy.jpg", title: "Joy" },
 
-    /* ⭐ أعمال أحمد السعيد (محدثة) */
-    { image: "/images/artworks/tarot11.jpg", title: "The Ark of Tarot 1" },
-    { image: "/images/artworks/moo.jpg", title: "Moored" },
-    { image: "/images/artworks/stedf.jpg", title: "Steadfastness" },
-    { image: "/images/artworks/manis.jpg", title: "Manifestation" },
-    { image: "/images/artworks/whis.jpg", title: "Whisper" },
-    { image: "/images/artworks/tarot22.jpg", title: "The Ark of Tarot 2" },
+    /* ⭐ أعمال أحمد السعيد */
+    { image: "/images/artworks/tarot11.jpeg", title: "The Ark of Tarot 1" },
+    { image: "/images/artworks/moo.jpeg", title: "Moored" },
+    { image: "/images/artworks/stedf.jpeg", title: "Steadfastness" },
+    { image: "/images/artworks/manis.jpeg", title: "Manifestation" },
+    { image: "/images/artworks/whis.jpeg", title: "Whisper" },
+    { image: "/images/artworks/tarot22.jpeg", title: "The Ark of Tarot 2" },
 
     { image: "/images/artworks/mknonat.jpg", title: "مكنونات" },
     { image: "/images/artworks/najdiat.jpg", title: "نجديات" },
@@ -51,7 +51,13 @@ export default function ArtworksPage() {
       medium: "Oil on Canvas"
     },
 
-    { image: "/images/artworks/bigwheel.jpg", title: "Abandoned Big Wheel ثلاثية" },
+    /* ⭐ اللوحة الثلاثية */
+    {
+      image: "/images/artworks/bigwheel.jpg",
+      title: "Abandoned Big Wheel ثلاثية",
+      full: true
+    },
+
     { image: "/images/artworks/botsnam.jpg", title: "Botsnam" },
     { image: "/images/artworks/farasan.jpg", title: "Farasan" },
     { image: "/images/artworks/moonersrock.jpg", title: "Mooners Rock" },
@@ -77,7 +83,11 @@ export default function ArtworksPage() {
       <div className="grid">
         {artworks.map((art, i) => (
           <div key={i} className="card" onClick={() => setSelected(art)}>
-            <img src={art.image} alt={art.title} />
+            <img
+              src={art.image}
+              alt={art.title}
+              className={art.full ? "full-img" : ""}
+            />
             <p>{art.title}</p>
           </div>
         ))}
@@ -136,7 +146,6 @@ export default function ArtworksPage() {
         }
 
         .card {
-          position: relative;
           cursor: pointer;
           border-radius: 8px;
           overflow: hidden;
@@ -154,6 +163,12 @@ export default function ArtworksPage() {
           width: 100%;
           height: 260px;
           object-fit: cover;
+        }
+
+        /* ⭐ اللوحة الثلاثية */
+        .full-img {
+          object-fit: contain;
+          background: black;
         }
 
         .card p {
