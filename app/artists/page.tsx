@@ -7,6 +7,10 @@ export default function ArtistsPage() {
   const allArtists = [
     { name: "Ahmed Alsaeed", category: "photography", role: "Photography", image: "/images/ahmed1.jpg" },
     { name: "Basma Moktar", category: "visual", role: "Visual Art & Sculpting", image: "/images/basma.jpg" },
+
+    // 👇 NEW ARTIST
+    { name: "Marwa Abulenein", category: "visual", role: "Visual Art", image: "/images/mrwa1.jpg" },
+
     { name: "Dina Alazaatre", category: "visual", role: "Visual Art", image: "/images/dina1.jpg" },
     { name: "Fahad Alammar", category: "visual", role: "Visual Art", image: "/images/fahad1.jpg" },
     { name: "Mazin Andijani", category: "calligraphy", role: "Calligraphy", image: "/images/mazin1.jpg" },
@@ -109,7 +113,6 @@ export default function ArtistsPage() {
           }
         }
 
-        /* ===== CLEAN HOVER ===== */
         .card {
           border-radius: 8px;
           overflow: hidden;
@@ -140,7 +143,6 @@ export default function ArtistsPage() {
           color: #ccc;
         }
 
-        /* ===== MODAL ===== */
         .modal {
           position: fixed;
           inset: 0;
