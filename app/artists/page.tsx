@@ -8,7 +8,7 @@ export default function ArtistsPage() {
     { name: "Ahmed Alsaeed", category: "photography", role: "Photography", image: "/images/ahmed1.jpg" },
     { name: "Basma Moktar", category: "visual", role: "Visual Art & Sculpting", image: "/images/basma.jpg" },
 
-    // 👇 NEW ARTIST
+    // 👇 Marwa (تم التعديل إلى jpg)
     { name: "Marwa Abulenein", category: "visual", role: "Visual Art", image: "/images/mrwa1.jpg" },
 
     { name: "Dina Alazaatre", category: "visual", role: "Visual Art", image: "/images/dina1.jpg" },
@@ -40,7 +40,6 @@ export default function ArtistsPage() {
 
       <h1 className="title">الفنانون</h1>
 
-      {/* ===== FILTER ===== */}
       <div className="filters">
         <button onClick={() => setFilter("all")} className={filter === "all" ? "active" : ""}>All</button>
         <button onClick={() => setFilter("calligraphy")} className={filter === "calligraphy" ? "active" : ""}>Calligraphy</button>
@@ -48,7 +47,6 @@ export default function ArtistsPage() {
         <button onClick={() => setFilter("visual")} className={filter === "visual" ? "active" : ""}>Visual Art</button>
       </div>
 
-      {/* ===== GRID ===== */}
       <div className="grid">
         {filteredArtists.map((artist, i) => (
           <div key={i} className="card" onClick={() => setSelected(artist)}>
@@ -59,7 +57,6 @@ export default function ArtistsPage() {
         ))}
       </div>
 
-      {/* ===== MODAL ===== */}
       {selected && (
         <div className="modal" onClick={() => setSelected(null)}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
