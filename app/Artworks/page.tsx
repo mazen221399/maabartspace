@@ -12,7 +12,7 @@ export default function ArtworksPage() {
     { image: "/images/artworks/hoa1.jpg", title: "هو علي هين" },
     { image: "/images/artworks/joy.jpg", title: "Joy" },
 
-    /* ⭐ أعمال أحمد السعيد */
+    /* ⭐ أعمال أحمد السعيد (بالأسماء الجديدة) */
     { image: "/images/artworks/tarot11.jpeg", title: "The Ark of Tarot 1" },
     { image: "/images/artworks/moo.jpeg", title: "Moored" },
     { image: "/images/artworks/stedf.jpeg", title: "Steadfastness" },
@@ -103,7 +103,6 @@ export default function ArtworksPage() {
             <p className="acquire-title">طلب اقتناء</p>
 
             <div className="actions">
-
               <a
                 href={`https://wa.me/966554520495?text=أرغب في اقتناء العمل: ${selected.title}`}
                 target="_blank"
@@ -118,7 +117,6 @@ export default function ArtworksPage() {
               >
                 إيميل
               </a>
-
             </div>
 
           </div>
@@ -165,7 +163,6 @@ export default function ArtworksPage() {
           object-fit: cover;
         }
 
-        /* ⭐ اللوحة الثلاثية */
         .full-img {
           object-fit: contain;
           background: black;
@@ -245,7 +242,6 @@ export default function ArtworksPage() {
           background: #f2d23b;
           color: black;
         }
-
       `}</style>
 
     </main>
