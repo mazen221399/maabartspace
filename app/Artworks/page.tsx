@@ -12,7 +12,6 @@ export default function ArtworksPage() {
     { image: "/images/artworks/hoa1.jpg", title: "هو علي هين" },
     { image: "/images/artworks/joy.jpg", title: "Joy" },
 
-    /* ⭐ أعمال أحمد السعيد */
     { image: "/images/artworks/tarot11.jpg", title: "The Ark of Tarot 1" },
     { image: "/images/artworks/moo.jpg", title: "Moored" },
     { image: "/images/artworks/stedf.jpg", title: "Steadfastness" },
@@ -51,7 +50,6 @@ export default function ArtworksPage() {
       medium: "Oil on Canvas"
     },
 
-    /* ⭐ اللوحة الثلاثية */
     {
       image: "/images/artworks/bigwheel.jpg",
       title: "Abandoned Big Wheel ثلاثية",
@@ -66,7 +64,6 @@ export default function ArtworksPage() {
     { image: "/images/artworks/ubm.jpg", title: "عروق بني معارض" },
     { image: "/images/artworks/wildlife.jpg", title: "Wild Life" },
 
-    /* ⭐ الجديد (إضافتك) */
     { image: "/images/artworks/redfish.jpg", title: "Res Fish" },
     { image: "/images/artworks/violetroom.jpg", title: "Violet Room" }
   ];
@@ -103,6 +100,11 @@ export default function ArtworksPage() {
 
             <img src={selected.image} />
             <p className="title-modal">{selected.title}</p>
+
+            {/* ⭐ حفظ الحقوق */}
+            <p className="copyright">
+              © MAAB Art Space — جميع حقوق الصورة محفوظة
+            </p>
 
             <p className="acquire-title">طلب اقتناء</p>
 
@@ -193,6 +195,14 @@ export default function ArtworksPage() {
         .title-modal {
           color: white;
           margin-top: 10px;
+        }
+
+        /* ⭐ ستايل الحقوق */
+        .copyright {
+          color: #888;
+          font-size: 12px;
+          margin-top: 8px;
+          letter-spacing: 0.5px;
         }
 
         .acquire-title {
