@@ -26,10 +26,8 @@ export default function RootLayout({
           </nav>
         </header>
 
-        {/* ===== CENTER BRAND ===== */}
-        <div className="brand-center">
-          MAAB
-        </div>
+        {/* ===== CENTER TEXT ===== */}
+        <div className="brand-center">MAAB</div>
 
         {/* ===== CONTENT ===== */}
         <main className="content">
@@ -38,7 +36,15 @@ export default function RootLayout({
 
         {/* ===== FOOTER ===== */}
         <footer className="footer">
-          جميع الحقوق للصور محفوظة ولا يجوز استخدامها او اعادة انتاجها بأي شكل من الاشكال
+          <div className="footer-brand">M A A B Art Space</div>
+
+          <div className="footer-text-ar">
+            جميع الحقوق للصور محفوظة ولا يجوز استخدامها او اعادة انتاجها بأي شكل من الاشكال
+          </div>
+
+          <div className="footer-text-en">
+            All images are protected and may not be used or reproduced in any form.
+          </div>
         </footer>
 
       </body>
