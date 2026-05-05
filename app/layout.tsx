@@ -26,7 +26,7 @@ export default function RootLayout({
           </nav>
         </header>
 
-        {/* ===== CENTER TEXT ===== */}
+        {/* ===== MAAB CENTER ===== */}
         <div className="brand-center">MAAB</div>
 
         {/* ===== CONTENT ===== */}

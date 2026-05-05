@@ -2,19 +2,22 @@
 .site-bg {
   position: relative;
   min-height: 100vh;
-  background-image: url("/images/bg.jpg"); /* ⭐ تأكد من المسار */
-  background-size: cover;
-  background-position: center;
+
+  background-image: url("/images/maabwide.jpg"); /* ⭐ الصورة الجديدة */
+  background-size: cover;      /* ⭐ تغطي كامل الشاشة */
+  background-position: center; /* ⭐ توسيط */
   background-repeat: no-repeat;
+  background-attachment: fixed; /* يعطي إحساس فخم */
+
   color: white;
 }
 
-/* طبقة تغميق */
+/* طبقة تغميق خفيفة */
 .site-bg::before {
   content: "";
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.65);
+  background: rgba(0, 0, 0, 0.6);
   z-index: 0;
 }
 
@@ -64,21 +67,6 @@
   padding: 120px 20px 40px;
 }
 
-/* ===== BOX ===== */
-.info-box {
-  max-width: 800px;
-  margin: 40px auto;
-  background: rgba(0, 0, 0, 0.6);
-  padding: 30px;
-  border-radius: 8px;
-  text-align: center;
-}
-
-.info-box h2 {
-  color: #f2d23b;
-  margin-bottom: 10px;
-}
-
 /* ===== FOOTER ===== */
 .footer {
   position: relative;
@@ -91,7 +79,6 @@
   color: #f2d23b;
   letter-spacing: 6px;
   margin-bottom: 10px;
-  font-size: 14px;
 }
 
 .footer-text-ar {
@@ -115,5 +102,9 @@
   .nav-links {
     flex-wrap: wrap;
     gap: 12px;
+  }
+
+  .site-bg {
+    background-attachment: scroll; /* مهم للجوال */
   }
 }
