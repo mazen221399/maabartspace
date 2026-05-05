@@ -23,12 +23,10 @@
   letter-spacing: 25px;
   font-weight: bold;
 
-  color: rgba(255, 255, 255, 0.03);
+  color: rgba(255, 255, 255, 0.02); /* ⭐ خفيف جدًا */
 
   pointer-events: none;
   z-index: 0;
-
-  transition: transform 0.1s linear;
 }
 
 /* ===== CONTENT ===== */
@@ -63,18 +61,13 @@
   margin-top: 5px;
 }
 
-/* ===== MOBILE OPTIMIZATION ===== */
+/* ===== MOBILE ===== */
 @media (max-width: 768px) {
 
   .logo-center {
     font-size: 60px;
     letter-spacing: 10px;
-
-    /* ⭐ أهم نقطة */
-    color: rgba(255, 255, 255, 0.015);
-
-    /* ⭐ نوقف الحركة */
-    transform: translate(-50%, -50%) !important;
+    color: rgba(255, 255, 255, 0.015); /* أخف للجوال */
   }
 
 }

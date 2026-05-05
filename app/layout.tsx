@@ -26,8 +26,8 @@ export default function RootLayout({
           </nav>
         </header>
 
-        {/* ===== LOGO BACKGROUND ===== */}
-        <div className="logo-center" id="bgLogo">
+        {/* ===== LOGO BACKGROUND (ثابت) ===== */}
+        <div className="logo-center">
           MAAB
         </div>
 
@@ -47,26 +47,6 @@ export default function RootLayout({
             Unauthorized use or reproduction is strictly prohibited.
           </div>
         </footer>
-
-        {/* ===== PARALLAX EFFECT (DESKTOP ONLY) ===== */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              const isMobile = window.innerWidth < 768;
-
-              if (!isMobile) {
-                window.addEventListener("scroll", function () {
-                  const logo = document.getElementById("bgLogo");
-                  if (logo) {
-                    const scrollY = window.scrollY;
-                    logo.style.transform =
-                      'translate(-50%, calc(-50% + ' + (scrollY * 0.08) + 'px))';
-                  }
-                });
-              }
-            `,
-          }}
-        />
 
       </body>
     </html>
