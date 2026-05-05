@@ -21,14 +21,14 @@ export default function RootLayout({
             <Link href="/">الرئيسية</Link>
             <Link href="/artists">الفنانون</Link>
             <Link href="/Artworks">الأعمال الفنية</Link>
-            <Link href="/Workshops">ورش العمل</Link>
-            <Link href="/Contact">تواصل معنا</Link>
+            <Link href="/Workshops">الورش التدريبية</Link>
+            <Link href="/Contact">اتصل بنا</Link>
           </nav>
         </header>
 
-        {/* ===== LOGO BACKGROUND (ثابت) ===== */}
+        {/* ===== CENTER LOGO ===== */}
         <div className="logo-center">
-          MAAB
+          M A A B
         </div>
 
         {/* ===== CONTENT ===== */}
@@ -38,14 +38,7 @@ export default function RootLayout({
 
         {/* ===== FOOTER ===== */}
         <footer className="footer">
-          <div className="footer-brand">M A A B Artspace</div>
-          <div className="footer-text">
-            جميع الأعمال الفنية والصور محفوظة الحقوق ولا يجوز استخدامها أو إعادة إنتاجها.
-          </div>
-          <div className="footer-text-en">
-            All artworks and images are protected.<br />
-            Unauthorized use or reproduction is strictly prohibited.
-          </div>
+          جميع حقوق الصور محفوظة ولا يجوز استخدامها أو إعادة انتاجها بأي شكل من الأشكال
         </footer>
 
       </body>
