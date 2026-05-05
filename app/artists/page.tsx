@@ -7,9 +7,7 @@ export default function ArtistsPage() {
   const allArtists = [
     { name: "Ahmed Alsaeed", category: "photography", role: "Photography", image: "/images/ahmed1.jpg" },
     { name: "Basma Moktar", category: "visual", role: "Visual Art & Sculpting", image: "/images/basma.jpg" },
-
     { name: "Marwa Abulenein", category: "visual", role: "Visual Art", image: "/images/mrwa1.jpg" },
-
     { name: "Dina Alazaatre", category: "visual", role: "Visual Art", image: "/images/dina1.jpg" },
     { name: "Fahad Alammar", category: "visual", role: "Visual Art", image: "/images/fahad1.jpg" },
     { name: "Mazin Andijani", category: "calligraphy", role: "Calligraphy", image: "/images/mazin1.jpg" },
@@ -17,7 +15,7 @@ export default function ArtistsPage() {
     { name: "Stuart Williams", category: "photography", role: "Photography", image: "/images/steuart.jpg" },
     { name: "Tajaliyat", category: "calligraphy", role: "Calligraphy & Illumination", image: "/images/tjlyat.jpg" },
 
-    /* ⭐ الفنانة الجديدة */
+    // ⭐ الفنانة الجديدة
     { name: "Leena Al-Ayoobi", category: "visual", role: "Visual Art", image: "/images/leena1.jpg" },
   ];
 
@@ -29,7 +27,7 @@ export default function ArtistsPage() {
     const basma = allArtists.find(a => a.name === "Basma Moktar");
     const others = allArtists.filter(a => a.name !== "Basma Moktar");
     const shuffled = others.sort(() => Math.random() - 0.5);
-    setArtists([basma, ...shuffled]);
+    setArtists(basma ? [basma, ...shuffled] : shuffled);
   }, []);
 
   const filteredArtists =
