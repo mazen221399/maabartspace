@@ -15,7 +15,7 @@ export default function RootLayout({
     <html lang="ar" dir="rtl">
       <body className="site-bg">
 
-        {/* ===== NAVBAR ===== */}
+        {/* ===== HEADER ===== */}
         <header className="navbar">
           <nav className="nav-links">
             <Link href="/">الرئيسية</Link>
@@ -26,9 +26,9 @@ export default function RootLayout({
           </nav>
         </header>
 
-        {/* ===== CENTER LOGO ===== */}
-        <div className="logo-center">
-          M A A B
+        {/* ===== CENTER BRAND ===== */}
+        <div className="brand-center">
+          MAAB
         </div>
 
         {/* ===== CONTENT ===== */}
@@ -38,7 +38,7 @@ export default function RootLayout({
 
         {/* ===== FOOTER ===== */}
         <footer className="footer">
-          جميع حقوق الصور محفوظة ولا يجوز استخدامها أو إعادة انتاجها بأي شكل من الأشكال
+          جميع الحقوق للصور محفوظة ولا يجوز استخدامها او اعادة انتاجها بأي شكل من الاشكال
         </footer>
 
       </body>

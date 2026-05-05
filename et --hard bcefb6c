@@ -1,0 +1,160 @@
+[33m80314cb[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m apply background image + clean MAAB layout design
+[33mbcefbc6[m fix layout and restore clean static background logo
+[33md1b0c0d[m add subtle parallax background logo with mobile optimization
+[33me0d967b[m add copyright text to artworks modal
+[33mef625ae[m fix artists page + add Leena
+[33m0c4238f[m add Leena Al-Ayoobi artist
+[33m80ec8df[m add new artworks redfish and violetroom
+[33m23e3829[m fix Ahmed artworks to jpg extension
+[33m2bc52ab[m update Ahmed artworks with new filenames + fix jpeg + triptych display
+[33m75c91cb[m show triptych artwork fully without cropping
+[33m09f7bb4[m update Ahmed Alsaeed artworks with high quality images
+[33me2dc4b2[m restore artworks + grayscale effect
+[33m824a312[m add black & white artworks effect
+[33mcaab97c[m fix image extensions from jpg to jpeg
+[33m9e21a09[m update Ahmed Alsaeed artworks with high quality images
+[33m0df7110[m fix Marwa image + update artists
+[33m612a995[m add Marwa Abulenein
+[33m7167794[m refine footer branding layout
+[33m51a84ee[m refine footer branding layout
+[33m08df953[m add bilingual copyright footer
+[33mad1c575[m fix footer position in layout
+[33m896c3c6[m add copyright footer
+[33mc5391f4[m convert navbar to Arabic RTL layout
+[33m9ec77dc[m translate navbar to Arabic
+[33m613e43f[m add acquisition buttons to artworks modal
+[33m73a68d5[m add acquisition buttons to artworks modal
+[33m705fc49[m add acquisition buttons with premium MAAB style
+[33m434fbc6[m remove hoa2 and mn artworks
+[33m47c13e8[m add new artworks + update silent title
+[33mf7c4a92[m remove animated line and keep clean premium UI
+[33mb2a9ebc[m add animated yellow line + modal for artists
+[33m73f1dc9[m set basma first + randomize other artists + fix steuart
+[33m58b3079[m add artist filtering + premium hover UI
+[33m6ce3f58[m fix artist images paths
+[33m65cfec4[m apply hover glow effect to artists page
+[33mff89376[m fix hover effect without overlay blocking image
+[33m3c18038[m add premium hover glow effect to artworks cards
+[33m852ce69[m add instagram follow section to contact page
+[33m961a2bf[m replace emoji icons with clean SVG MAAB style
+[33madf4b7b[m upgrade contact page to premium interactive UI
+[33m5651f50[m create contact page with forms and CTAs
+[33m4d9db46[m replace Kldaqat artwork with MN
+[33m27711c7[m replace Kldaqat artwork with MN
+[33m13cb691[m fix artworks layout and scaling properly
+[33m86a0e32[m rename girlandcat to Night's Story
+[33mdd0db8e[m update vision statement to premium Saudi-focused version
+[33m0d61a1e[m apply MAAB yellow to artists and artworks pages
+[33m3b799b4[m final layout + favicon curve1
+[33m8b265d5[m fix styles and background
+[33mb19f420[m update home layout and styles
+[33m4a9b1bd[m add premium overlay for home content
+[33m3f7fdcf[m add premium overlay for home content
+[33mf3c87d9[m setup global layout with background and navbar
+[33mf0c9cb6[m add global gallery background
+[33mfacd1b9[m add global gallery background
+[33m3aed907[m fix girlandcat + add new artworks + shuffle
+[33mc0d033b[m fix paths + add Silent Ascension & Girl and Cat
+[33m5b85987[m update artworks + add Silent Ascension and Girl and Cat + shuffle
+[33mf034b4e[m update artworks + add Silent Ascension and Girl and Cat + shuffle
+[33m4c36189[m restore homepage sections
+[33mb1d3ea3[m fix artists route بالكامل
+[33m75e1539[m artists page final clean
+[33m804f80a[m force rename Artists to artists
+[33mf27d697[m Update artists page + filters + lightbox
+[33m1476634[m improve acquisition buttons UI
+[33m67379b8[m final artworks page with acquisition buttons
+[33m56b7eae[m fix womenstrength + add taa + add acquisition buttons
+[33m7bf04fa[m fix artworks layout size
+[33m86a534e[m add fahad1 and confusion artworks
+[33m15023da[m update artworks list and layout
+[33mf071cd3[m update navbar style
+[33m512d22d[m add basma moktar
+[33m71f38b0[m update navbar and homepage
+[33m4e31414[m update artists and layout
+[33m382824a[m final artists fix
+[33m369580d[m fix artists page
+[33mcb48565[m final artists page
+[33m7e568f5[m fix layout
+[33m57fa88e[m update artists featured layout
+[33m1752d27[m fix editions route
+[33m6585336[m fix editions route
+[33m0e50f1e[m editions coming soon with contact button
+[33mefdebe7[m add purchase button (whatsapp)
+[33m8f30583[m responsive artists page with hover + mobile layout
+[33mc0ed60b[m update tajliat artist image
+[33m920a45d[m ultra clean layout redesign
+[33mf0356cc[m refine footer with VAC logo
+[33m4473b52[m add VAC license section
+[33m321c15a[m remove kldaqat artwork
+[33md9849a6[m reorder artists: mazin first, artist2 last
+[33m516b7a8[m fix mazin2 artist
+[33m71a8d58[m fix mazin2 artist
+[33mb4d6e0b[m replace mazin image with mazin2
+[33m54c4591[m fix Fahad titles and womenstrenth label
+[33mec2213e[m fix Fahad titles and womenstrenth label
+[33m5625735[m add Ahmed Alsaeed artworks full page
+[33m264f1dd[m artists page remove names + add lightbox
+[33m1acebc2[m restore old artworks + add new ones
+[33mdf68335[m restore old artworks + add new ones
+[33m10afe1e[m restore old artworks + add new ones
+[33m3a2c099[m responsive artists page fix
+[33m623ae8f[m add artworks with arabic titles
+[33mb21d3b0[m fix tajaliat + reorder artists + contain images
+[33mbbf0397[m update artists page + dina + hover effect
+[33m9152d37[m artists page grid + yellow frame + tajliat
+[33md75d376[m 4 grid + border style
+[33m2858d68[m add migraine artwork
+[33m3d9e326[m add joy artwork basma
+[33m1956f79[m add confusion artwork basma
+[33m5db6f8f[m add watermark + reorder artworks
+[33m377728b[m add sisters artwork - basma mokhtar
+[33m4da802e[m final update fahad1 dimensions
+[33m2491404[m add Fahad artworks
+[33m1461953[m final update artworks + kldaqat description
+[33me9db889[m update workshops page
+[33m5f1549d[m add rohi artwork
+[33m11b86eb[m add rbbi artwork + acquisition buttons
+[33m53ad0f6[m final artworks + overlay + contact buttons
+[33m1e00fbf[m final artworks + overlay + contact buttons
+[33m4c786e3[m add hoa artworks
+[33m8da9002[m add hoa artworks
+[33m2a33b3f[m final artwork layout
+[33m4d27560[m force update artworks page
+[33m6fe0100[m remove categories and unify artworks page
+[33mc605435[m add artwork popup with description
+[33m9bec3c8[m add first artwork
+[33m4ac4413[m improve instagram button and optimize artists layout
+[33m73d7fd0[m update instagram button text
+[33mef744f6[m add ahmed artist
+[33m0982d94[m add stuart and resize artists layout
+[33m9b9e1e0[m add stuart and resize artists layout
+[33m6dcd41f[m fix artists layout
+[33mcb6c61e[m update artists page layout
+[33mba75308[m add mazin artist
+[33m8399196[m show two artists
+[33mf9c550b[m add second artist
+[33m957216f[m update artists page
+[33m4fbd03e[m add artist image
+[33m69b2824[m update vision section
+[33m2393199[m fix home page
+[33maa2b1e8[m fix home page
+[33m985439e[m fix logo and clean home page
+[33m323d10d[m add logo box and center layout
+[33mb30520e[m add logo box and center layout
+[33ma180b49[m fix home page structure
+[33m0b5d199[m update home page content
+[33mf8e9d03[m remove coming soon
+[33m79ac6e5[m add english version
+[33mcf75b08[m logo frame design update
+[33mf6c8568[m remove vision page
+[33mc528534[m replace pages with coming soon placeholders
+[33meb02553[m homepage design refinement
+[33m39a3d26[m short coming soon text
+[33m07bedf4[m update artists page placeholder
+[33mb685615[m add instagram link
+[33mde150e5[m coming soon homepage
+[33m26af370[m coming soon page
+[33ma2a0203[m mobile menu update
+[33mcd0751c[m homepage responsive update
+[33m5e43dc4[m first maab website
