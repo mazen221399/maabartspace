@@ -3,16 +3,15 @@
   position: relative;
   min-height: 100vh;
 
-  background-image: url("/images/maabwide.jpg"); /* ⭐ الصورة الجديدة */
-  background-size: cover;      /* ⭐ تغطي كامل الشاشة */
-  background-position: center; /* ⭐ توسيط */
+  background-image: url("/images/maabwide.jpg");
+  background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed; /* يعطي إحساس فخم */
+  background-attachment: fixed;
 
   color: white;
 }
 
-/* طبقة تغميق خفيفة */
 .site-bg::before {
   content: "";
   position: fixed;
@@ -37,7 +36,6 @@
 .nav-links a {
   color: white;
   text-decoration: none;
-  font-size: 14px;
 }
 
 .nav-links a:hover {
@@ -50,14 +48,11 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-
   font-size: 60px;
   letter-spacing: 15px;
   font-weight: bold;
-
   color: rgba(255, 255, 255, 0.08);
   z-index: 1;
-  pointer-events: none;
 }
 
 /* ===== CONTENT ===== */
@@ -65,6 +60,26 @@
   position: relative;
   z-index: 2;
   padding: 120px 20px 40px;
+}
+
+/* ===== INFO BOX (المربع الشفاف) ===== */
+.info-box {
+  max-width: 800px;
+  margin: 40px auto;
+  background: rgba(0, 0, 0, 0.65); /* ⭐ شفاف */
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  backdrop-filter: blur(6px); /* يعطي فخامة */
+}
+
+.info-box h2 {
+  color: #f2d23b;
+  margin-bottom: 10px;
+}
+
+.info-box p {
+  line-height: 1.8;
 }
 
 /* ===== FOOTER ===== */
@@ -84,7 +99,6 @@
 .footer-text-ar {
   font-size: 13px;
   color: #ccc;
-  margin-bottom: 5px;
 }
 
 .footer-text-en {
@@ -105,6 +119,6 @@
   }
 
   .site-bg {
-    background-attachment: scroll; /* مهم للجوال */
+    background-attachment: scroll;
   }
 }
