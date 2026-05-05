@@ -12,7 +12,7 @@ export default function ArtworksPage() {
     { image: "/images/artworks/hoa1.jpg", title: "هو علي هين" },
     { image: "/images/artworks/joy.jpg", title: "Joy" },
 
-    /* ⭐ أعمال أحمد السعيد (jpg + الأسماء الجديدة) */
+    /* ⭐ أعمال أحمد السعيد */
     { image: "/images/artworks/tarot11.jpg", title: "The Ark of Tarot 1" },
     { image: "/images/artworks/moo.jpg", title: "Moored" },
     { image: "/images/artworks/stedf.jpg", title: "Steadfastness" },
@@ -64,7 +64,11 @@ export default function ArtworksPage() {
     { image: "/images/artworks/rallyjameel.jpg", title: "Rally Jameel" },
     { image: "/images/artworks/reddune.jpg", title: "Red Dune" },
     { image: "/images/artworks/ubm.jpg", title: "عروق بني معارض" },
-    { image: "/images/artworks/wildlife.jpg", title: "Wild Life" }
+    { image: "/images/artworks/wildlife.jpg", title: "Wild Life" },
+
+    /* ⭐ الجديد (إضافتك) */
+    { image: "/images/artworks/redfish.jpg", title: "Res Fish" },
+    { image: "/images/artworks/violetroom.jpg", title: "Violet Room" }
   ];
 
   const [artworks, setArtworks] = useState<any[]>([]);
