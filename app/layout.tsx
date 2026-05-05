@@ -26,8 +26,8 @@ export default function RootLayout({
           </nav>
         </header>
 
-        {/* ===== LOGO ===== */}
-        <div className="logo-center">
+        {/* ===== LOGO BACKGROUND ===== */}
+        <div className="logo-center" id="bgLogo">
           MAAB
         </div>
 
@@ -38,22 +38,35 @@ export default function RootLayout({
 
         {/* ===== FOOTER ===== */}
         <footer className="footer">
-
-          <div className="footer-brand">
-            M A A B Artspace
-          </div>
-
+          <div className="footer-brand">M A A B Artspace</div>
           <div className="footer-text">
             جميع الأعمال الفنية والصور محفوظة الحقوق ولا يجوز استخدامها أو إعادة إنتاجها.
           </div>
-
           <div className="footer-text-en">
-            All artworks and images are protected
-            <br />
-            Unauthorized use or reproduction is strictly prohibited
+            All artworks and images are protected.<br />
+            Unauthorized use or reproduction is strictly prohibited.
           </div>
-
         </footer>
+
+        {/* ===== PARALLAX EFFECT (DESKTOP ONLY) ===== */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              const isMobile = window.innerWidth < 768;
+
+              if (!isMobile) {
+                window.addEventListener("scroll", function () {
+                  const logo = document.getElementById("bgLogo");
+                  if (logo) {
+                    const scrollY = window.scrollY;
+                    logo.style.transform =
+                      'translate(-50%, calc(-50% + ' + (scrollY * 0.08) + 'px))';
+                  }
+                });
+              }
+            `,
+          }}
+        />
 
       </body>
     </html>

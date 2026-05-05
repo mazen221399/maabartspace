@@ -1,171 +1,50 @@
-/* ===== RESET ===== */
-html, body {
-  margin: 0;
-  padding: 0;
-  min-height: 100%;
-  font-family: Arial, sans-serif;
-}
-
 /* ===== BACKGROUND ===== */
 .site-bg {
-  background:
-    linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
-    url("/images/maabwide.jpg");
-
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+  background: #000;
+  color: white;
 }
 
 /* ===== NAVBAR ===== */
-.navbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  padding: 20px;
-  display: flex;
-  justify-content: center;
-  z-index: 1000;
-}
-
-.nav-links {
-  display: flex;
-  gap: 30px;
-}
-
-.nav-links a {
-  color: white;
-  text-decoration: none;
-  font-size: 14px;
-  opacity: 0.8;
-  transition: 0.3s;
-}
-
-.nav-links a:hover {
-  opacity: 1;
-}
-
-/* ===== LOGO ===== */
-.logo-center {
-  position: fixed;
-  top: 40%;
-  width: 100%;
-  text-align: center;
-  font-size: 60px;
-  color: white;
-  letter-spacing: 10px;
-  font-weight: 300;
-}
-
-/* ===== CONTENT ===== */
-.content {
-  padding-top: 120px;
-  position: relative;
-  z-index: 10;
-}
-
-/* ===== HOME WRAPPER ===== */
-.home-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 120px 20px;
-  min-height: 100vh;
-  background: transparent;
-}
-
-/* ===== OVERLAY ===== */
-.overlay-box {
-  max-width: 700px;
-  width: 100%;
-  padding: 50px 40px;
-  border-radius: 12px;
-
-  background: rgba(0, 0, 0, 0.55);
-  backdrop-filter: blur(10px);
-
-  color: white;
-  text-align: center;
-}
-
-/* ===== TEXT INSIDE OVERLAY ===== */
-.overlay-box h2 {
-  font-size: 22px;
-  margin-bottom: 12px;
-  letter-spacing: 2px;
-}
-
-.overlay-box p {
-  font-size: 14px;
-  color: #ddd;
-  line-height: 1.8;
-}
-
-/* ===== ⭐ MAAB YELLOW COLOR ===== */
-:root {
-  --maab-yellow: #f2d23b;
-}
-
-/* ===== ⭐ APPLY YELLOW ON ART PAGES ===== */
-.page h1,
-.page p,
-.card p,
-.title,
-h1, h2, h3 {
-  color: var(--maab-yellow);
-}
-
-/* ===== CARD STYLE ===== */
-.card p {
-  margin-top: 8px;
-  font-size: 13px;
-}
-
-/* ===== MODAL TEXT ===== */
-.title-modal {
-  color: white !important;
-}
-
-.meta {
-  color: #ccc !important;
-}
-
-/* ===== MOBILE ===== */
-@media (max-width: 600px) {
-  .overlay-box {
-    padding: 30px 20px;
-  }
-
-  .overlay-box h2 {
-    font-size: 18px;
-  }
-
-  .overlay-box p {
-    font-size: 13px;
-  }
-}
 .nav-links {
   display: flex;
   justify-content: center;
   gap: 20px;
-  direction: rtl; /* ⭐ هذا المهم */
+  direction: rtl;
 }
+
+/* ===== LOGO BACKGROUND ===== */
+.logo-center {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  font-size: 120px;
+  letter-spacing: 25px;
+  font-weight: bold;
+
+  color: rgba(255, 255, 255, 0.03);
+
+  pointer-events: none;
+  z-index: 0;
+
+  transition: transform 0.1s linear;
+}
+
+/* ===== CONTENT ===== */
+.content {
+  position: relative;
+  z-index: 2;
+}
+
+/* ===== FOOTER ===== */
 .footer {
-  text-align: center;
-  font-size: 12px;
-  color: #aaa;
-  padding: 20px;
-  margin-top: 40px;
-  border-top: 1px solid rgba(255,255,255,0.1);
-}.footer {
   text-align: center;
   padding: 30px 20px;
   margin-top: 40px;
   border-top: 1px solid rgba(255,255,255,0.1);
 }
 
-/* اسم مآب */
 .footer-brand {
   font-size: 14px;
   letter-spacing: 6px;
@@ -173,16 +52,29 @@ h1, h2, h3 {
   margin-bottom: 10px;
 }
 
-/* العربي */
 .footer-text {
   font-size: 12px;
   color: #aaa;
-  margin-bottom: 8px;
 }
 
-/* الإنجليزي */
 .footer-text-en {
   font-size: 12px;
   color: #777;
-  line-height: 1.6;
+  margin-top: 5px;
+}
+
+/* ===== MOBILE OPTIMIZATION ===== */
+@media (max-width: 768px) {
+
+  .logo-center {
+    font-size: 60px;
+    letter-spacing: 10px;
+
+    /* ⭐ أهم نقطة */
+    color: rgba(255, 255, 255, 0.015);
+
+    /* ⭐ نوقف الحركة */
+    transform: translate(-50%, -50%) !important;
+  }
+
 }
