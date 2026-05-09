@@ -14,7 +14,6 @@ export default function ArtistsPage() {
     { name: "Dr. Sawsan Alsajjan", category: "visual", role: "Visual Art", image: "/images/sawsan.jpg" },
     { name: "Stuart Williams", category: "photography", role: "Photography", image: "/images/steuart.jpg" },
     { name: "Tajaliyat", category: "calligraphy", role: "Calligraphy & Illumination", image: "/images/tjlyat.jpg" },
-
     { name: "Leena Al-Ayoobi", category: "visual", role: "Visual Art", image: "/images/leena1.jpg" },
 
     // ⭐ الفنان الجديد
@@ -92,6 +91,7 @@ export default function ArtistsPage() {
           color: #f2d23b;
           border-radius: 20px;
           cursor: pointer;
+          transition: 0.3s;
         }
 
         .filters button.active,
@@ -117,6 +117,7 @@ export default function ArtistsPage() {
           overflow: hidden;
           cursor: pointer;
           transition: transform 0.3s ease, box-shadow 0.3s ease;
+          background: #111;
         }
 
         .card:hover {
@@ -130,6 +131,17 @@ export default function ArtistsPage() {
           width: 100%;
           height: 260px;
           object-fit: cover;
+          display: block;
+        }
+
+        /* 📱 الجوال */
+        @media (max-width: 768px) {
+          .card img {
+            aspect-ratio: 3 / 4;
+            height: auto;
+            object-fit: contain;
+            background: #111;
+          }
         }
 
         .name {
@@ -140,6 +152,7 @@ export default function ArtistsPage() {
         .role {
           font-size: 13px;
           color: #ccc;
+          margin-bottom: 10px;
         }
 
         .modal {
@@ -149,6 +162,11 @@ export default function ArtistsPage() {
           display: flex;
           justify-content: center;
           align-items: center;
+          z-index: 999;
+        }
+
+        .modal-content {
+          text-align: center;
         }
 
         .modal img {
@@ -159,10 +177,13 @@ export default function ArtistsPage() {
         .title-modal {
           color: white;
           margin-top: 10px;
+          font-size: 18px;
+          font-weight: bold;
         }
 
         .meta {
           color: #ccc;
+          margin-top: 5px;
         }
       `}</style>
 
