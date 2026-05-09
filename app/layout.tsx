@@ -1,5 +1,6 @@
 import "./globals.css";
 import Link from "next/link";
+import Script from "next/script";
 
 export const metadata = {
   title: "MAAB Art Space",
@@ -14,6 +15,22 @@ export default function RootLayout({
   return (
     <html lang="ar" dir="rtl">
       <body className="site-bg">
+
+        {/* Google Analytics */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-YJ1Q88G9HS"
+          strategy="afterInteractive"
+        />
+
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-YJ1Q88G9HS');
+          `}
+        </Script>
 
         {/* ===== HEADER ===== */}
         <header className="navbar">
