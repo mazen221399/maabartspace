@@ -30,10 +30,8 @@ export default function ArtworksPage() {
     { image: "/images/artworks/s2.jpg", title: "Unnamed" },
     { image: "/images/artworks/s3.jpg", title: "Unnamed" },
 
-    /* ⭐ تم تعديل اسم s4 */
     { image: "/images/artworks/s4.jpg", title: "Riyadh the Dancing City" },
 
-    /* ⭐ الأعمال الجديدة */
     { image: "/images/artworks/s5.jpg", title: "Camels at Diriyah" },
     { image: "/images/artworks/s6.jpg", title: "Sunset" },
 
@@ -71,7 +69,9 @@ export default function ArtworksPage() {
     { image: "/images/artworks/ubm.jpg", title: "عروق بني معارض" },
     { image: "/images/artworks/wildlife.jpg", title: "Wild Life" },
 
+    /* ⭐ تم التصحيح */
     { image: "/images/artworks/redfish.jpg", title: "Red Fish" },
+
     { image: "/images/artworks/violetroom.jpg", title: "Violet Room" }
   ];
 
@@ -177,7 +177,6 @@ export default function ArtworksPage() {
           display: block;
         }
 
-        /* 📱 الجوال */
         @media (max-width: 768px) {
           .card img {
             aspect-ratio: 3 / 4;
