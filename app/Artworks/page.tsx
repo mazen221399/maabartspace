@@ -29,7 +29,13 @@ export default function ArtworksPage() {
     { image: "/images/artworks/s1.jpg", title: "Unnamed" },
     { image: "/images/artworks/s2.jpg", title: "Unnamed" },
     { image: "/images/artworks/s3.jpg", title: "Unnamed" },
-    { image: "/images/artworks/s4.jpg", title: "Unnamed" },
+
+    /* ⭐ تم تعديل اسم s4 */
+    { image: "/images/artworks/s4.jpg", title: "Riyadh the Dancing City" },
+
+    /* ⭐ الأعمال الجديدة */
+    { image: "/images/artworks/s5.jpg", title: "Camels at Diriyah" },
+    { image: "/images/artworks/s6.jpg", title: "Sunset" },
 
     { image: "/images/artworks/sisters.jpg", title: "Sisters" },
     { image: "/images/artworks/womenstrength.jpg", title: "جبروت امرأة" },
