@@ -44,6 +44,7 @@ export default function ArtworksPage() {
       medium: "Oil on Canvas",
       size: "50 × 70 cm"
     },
+
     {
       image: "/images/artworks/girlandcat.JPG",
       title: "Night's Story",
@@ -101,7 +102,6 @@ export default function ArtworksPage() {
             <img src={selected.image} />
             <p className="title-modal">{selected.title}</p>
 
-            {/* ⭐ حفظ الحقوق */}
             <p className="copyright">
               © MAAB Art Space — جميع حقوق الصورة محفوظة
             </p>
@@ -154,6 +154,7 @@ export default function ArtworksPage() {
           border-radius: 8px;
           overflow: hidden;
           transition: transform 0.3s ease, box-shadow 0.3s ease;
+          background: #111;
         }
 
         .card:hover {
@@ -167,6 +168,17 @@ export default function ArtworksPage() {
           width: 100%;
           height: 260px;
           object-fit: cover;
+          display: block;
+        }
+
+        /* 📱 الجوال */
+        @media (max-width: 768px) {
+          .card img {
+            aspect-ratio: 3 / 4;
+            height: auto;
+            object-fit: contain;
+            background: #111;
+          }
         }
 
         .full-img {
@@ -176,6 +188,7 @@ export default function ArtworksPage() {
 
         .card p {
           margin-top: 8px;
+          margin-bottom: 10px;
         }
 
         .modal {
@@ -185,6 +198,11 @@ export default function ArtworksPage() {
           display: flex;
           justify-content: center;
           align-items: center;
+          z-index: 999;
+        }
+
+        .modal-content {
+          text-align: center;
         }
 
         .modal img {
@@ -195,9 +213,10 @@ export default function ArtworksPage() {
         .title-modal {
           color: white;
           margin-top: 10px;
+          font-size: 18px;
+          font-weight: bold;
         }
 
-        /* ⭐ ستايل الحقوق */
         .copyright {
           color: #888;
           font-size: 12px;
@@ -239,7 +258,12 @@ export default function ArtworksPage() {
           left: -100%;
           width: 100%;
           height: 100%;
-          background: linear-gradient(120deg, transparent, rgba(255,255,255,0.6), transparent);
+          background: linear-gradient(
+            120deg,
+            transparent,
+            rgba(255,255,255,0.6),
+            transparent
+          );
           transition: 0.6s;
         }
 
