@@ -15,8 +15,10 @@ export default function ArtistsPage() {
     { name: "Stuart Williams", category: "photography", role: "Photography", image: "/images/steuart.jpg" },
     { name: "Tajaliyat", category: "calligraphy", role: "Calligraphy & Illumination", image: "/images/tjlyat.jpg" },
 
-    // ⭐ الفنانة الجديدة
     { name: "Leena Al-Ayoobi", category: "visual", role: "Visual Art", image: "/images/leena1.jpg" },
+
+    // ⭐ الفنان الجديد
+    { name: "Waleed AlKawmani", category: "visual", role: "Visual Art", image: "/images/waleed1.jpg" },
   ];
 
   const [filter, setFilter] = useState("all");
