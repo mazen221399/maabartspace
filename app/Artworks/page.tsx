@@ -71,7 +71,7 @@ export default function ArtworksPage() {
     { image: "/images/artworks/ubm.jpg", title: "عروق بني معارض" },
     { image: "/images/artworks/wildlife.jpg", title: "Wild Life" },
 
-    { image: "/images/artworks/redfish.jpg", title: "Res Fish" },
+    { image: "/images/artworks/redfish.jpg", title: "Red Fish" },
     { image: "/images/artworks/violetroom.jpg", title: "Violet Room" }
   ];
 
