@@ -73,7 +73,7 @@ export default function ArtworksPage() {
 
     { image: "/images/artworks/violetroom.jpg", title: "Violet Room" },
 
-    /* ⭐ الأعمال الجديدة */
+    /* ⭐ تم تعديل اسم ملف العلا */
     { image: "/images/artworks/alula.jpg", title: "العُلا" },
 
     { image: "/images/artworks/tajalle.jpg", title: "تجلِّ" }
