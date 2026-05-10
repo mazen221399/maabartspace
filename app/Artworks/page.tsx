@@ -8,8 +8,21 @@ export default function ArtworksPage() {
     { image: "/images/artworks/fahad1.jpg", title: "بدون عنوان" },
     { image: "/images/artworks/fahad2.jpg", title: "بدون عنوان" },
     { image: "/images/artworks/hadeethalbab.jpg", title: "حديث الباب" },
-    { image: "/images/artworks/hahaha.jpg", title: "هههه" },
-    { image: "/images/artworks/hoa1.jpg", title: "هو علي هين" },
+
+    {
+      image: "/images/artworks/hahaha.jpg",
+      title: "هههه",
+      details:
+        "كتابة يدوية بخط الثلث باستخدام احبار طبيعية و صناعية، على ورق توت طبيعي مصنوع في بوتان و معالج في تركيا بمقاس 80 × 60 سم"
+    },
+
+    {
+      image: "/images/artworks/hoa1.jpg",
+      title: "هو علي هين",
+      details:
+        "كتابة يدوية بخط الثلث باستخدام احبار طبيعية و صناعية، على ورق توت طبيعي مصنوع في بوتان و معالج في تركيا بمقاس 80 × 60 سم"
+    },
+
     { image: "/images/artworks/joy.jpg", title: "Joy" },
 
     /* ⭐ أعمال أحمد السعيد */
@@ -54,8 +67,19 @@ export default function ArtworksPage() {
     { image: "/images/artworks/najdiat.jpg", title: "نجديات" },
     { image: "/images/artworks/onfowan.jpg", title: "عنفوان امرأة" },
 
-    { image: "/images/artworks/rbbi.jpg", title: "رب اجعل لي آية" },
-    { image: "/images/artworks/rohi.jpg", title: "روحه روحي" },
+    {
+      image: "/images/artworks/rbbi.jpg",
+      title: "رب اجعل لي آية",
+      details:
+        "كتابة يدوية بخط الثلث باستخدام احبار طبيعية و صناعية، على ورق توت طبيعي مصنوع في بوتان و معالج في تركيا بمقاس 80 × 60 سم"
+    },
+
+    {
+      image: "/images/artworks/rohi.jpg",
+      title: "روحه روحي",
+      details:
+        "كتابة يدوية بخط الثلث باستخدام احبار طبيعية و صناعية، على ورق توت طبيعي مصنوع في بوتان و معالج في تركيا بمقاس 80 × 60 سم"
+    },
 
     { image: "/images/artworks/s1.jpg", title: "Unnamed" },
     { image: "/images/artworks/s2.jpg", title: "Unnamed" },
@@ -75,6 +99,7 @@ export default function ArtworksPage() {
       medium: "Oil on Canvas",
       size: "50 × 70 cm"
     },
+
     {
       image: "/images/artworks/girlandcat.JPG",
       title: "Night's Story",
@@ -148,6 +173,7 @@ export default function ArtworksPage() {
             <p className="acquire-title">طلب اقتناء</p>
 
             <div className="actions">
+
               <a
                 href={`https://wa.me/966554520495?text=أرغب في اقتناء العمل: ${selected.title}`}
                 target="_blank"
@@ -162,6 +188,7 @@ export default function ArtworksPage() {
               >
                 إيميل
               </a>
+
             </div>
 
           </div>
