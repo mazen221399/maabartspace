@@ -12,12 +12,43 @@ export default function ArtworksPage() {
     { image: "/images/artworks/hoa1.jpg", title: "هو علي هين" },
     { image: "/images/artworks/joy.jpg", title: "Joy" },
 
-    { image: "/images/artworks/tarot11.jpg", title: "The Ark of Tarot 1" },
-    { image: "/images/artworks/moo.jpg", title: "Moored" },
-    { image: "/images/artworks/stedf.jpg", title: "Steadfastness" },
-    { image: "/images/artworks/manis.jpg", title: "Manifestation" },
-    { image: "/images/artworks/whis.jpg", title: "Whisper" },
-    { image: "/images/artworks/tarot22.jpg", title: "The Ark of Tarot 2" },
+    /* ⭐ أعمال أحمد السعيد */
+    {
+      image: "/images/artworks/tarot11.jpg",
+      title: "The Ark of Tarot 1",
+      details:
+        "طباعة Dark Room يدوية على ورق قطن 250 جرام جيلاتين فضة ماركة فورما العريقة 1921م بمقاس 50×50 سم"
+    },
+    {
+      image: "/images/artworks/moo.jpg",
+      title: "Moored",
+      details:
+        "طباعة Dark Room يدوية على ورق قطن 250 جرام جيلاتين فضة ماركة فورما العريقة 1921م بمقاس 50×50 سم"
+    },
+    {
+      image: "/images/artworks/stedf.jpg",
+      title: "Steadfastness",
+      details:
+        "طباعة Dark Room يدوية على ورق قطن 250 جرام جيلاتين فضة ماركة فورما العريقة 1921م بمقاس 50×50 سم"
+    },
+    {
+      image: "/images/artworks/manis.jpg",
+      title: "Manifestation",
+      details:
+        "طباعة Dark Room يدوية على ورق قطن 250 جرام جيلاتين فضة ماركة فورما العريقة 1921م بمقاس 50×50 سم"
+    },
+    {
+      image: "/images/artworks/whis.jpg",
+      title: "Whisper",
+      details:
+        "طباعة Dark Room يدوية على ورق قطن 250 جرام جيلاتين فضة ماركة فورما العريقة 1921م بمقاس 50×50 سم"
+    },
+    {
+      image: "/images/artworks/tarot22.jpg",
+      title: "The Ark of Tarot 2",
+      details:
+        "طباعة Dark Room يدوية على ورق قطن 250 جرام جيلاتين فضة ماركة فورما العريقة 1921م بمقاس 50×50 سم"
+    },
 
     { image: "/images/artworks/mknonat.jpg", title: "مكنونات" },
     { image: "/images/artworks/najdiat.jpg", title: "نجديات" },
@@ -29,11 +60,7 @@ export default function ArtworksPage() {
     { image: "/images/artworks/s1.jpg", title: "Unnamed" },
     { image: "/images/artworks/s2.jpg", title: "Unnamed" },
     { image: "/images/artworks/s3.jpg", title: "Unnamed" },
-
-    { image: "/images/artworks/s4.jpg", title: "Riyadh the Dancing City" },
-
-    { image: "/images/artworks/s5.jpg", title: "Camels at Diriyah" },
-    { image: "/images/artworks/s6.jpg", title: "Sunset" },
+    { image: "/images/artworks/s4.jpg", title: "Unnamed" },
 
     { image: "/images/artworks/sisters.jpg", title: "Sisters" },
     { image: "/images/artworks/womenstrength.jpg", title: "جبروت امرأة" },
@@ -48,7 +75,6 @@ export default function ArtworksPage() {
       medium: "Oil on Canvas",
       size: "50 × 70 cm"
     },
-
     {
       image: "/images/artworks/girlandcat.JPG",
       title: "Night's Story",
@@ -69,14 +95,8 @@ export default function ArtworksPage() {
     { image: "/images/artworks/ubm.jpg", title: "عروق بني معارض" },
     { image: "/images/artworks/wildlife.jpg", title: "Wild Life" },
 
-    { image: "/images/artworks/redfish.jpg", title: "Red Fish" },
-
-    { image: "/images/artworks/violetroom.jpg", title: "Violet Room" },
-
-    /* ⭐ تم تعديل اسم ملف العلا */
-    { image: "/images/artworks/alula.jpg", title: "العُلا" },
-
-    { image: "/images/artworks/tajalle.jpg", title: "تجلِّ" }
+    { image: "/images/artworks/redfish.jpg", title: "Res Fish" },
+    { image: "/images/artworks/violetroom.jpg", title: "Violet Room" }
   ];
 
   const [artworks, setArtworks] = useState<any[]>([]);
@@ -110,7 +130,16 @@ export default function ArtworksPage() {
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
 
             <img src={selected.image} />
-            <p className="title-modal">{selected.title}</p>
+
+            <p className="title-modal">
+              {selected.title}
+            </p>
+
+            {selected.details && (
+              <p className="details-modal">
+                {selected.details}
+              </p>
+            )}
 
             <p className="copyright">
               © MAAB Art Space — جميع حقوق الصورة محفوظة
@@ -147,6 +176,10 @@ export default function ArtworksPage() {
           text-align: center;
         }
 
+        .title {
+          margin-bottom: 30px;
+        }
+
         .grid {
           display: grid;
           grid-template-columns: repeat(4, 1fr);
@@ -164,7 +197,6 @@ export default function ArtworksPage() {
           border-radius: 8px;
           overflow: hidden;
           transition: transform 0.3s ease, box-shadow 0.3s ease;
-          background: #111;
         }
 
         .card:hover {
@@ -181,60 +213,60 @@ export default function ArtworksPage() {
           display: block;
         }
 
-        @media (max-width: 768px) {
-          .card img {
-            aspect-ratio: 3 / 4;
-            height: auto;
-            object-fit: contain;
-            background: #111;
-          }
-        }
-
         .full-img {
-          object-fit: contain;
+          object-fit: contain !important;
           background: black;
         }
 
         .card p {
           margin-top: 8px;
-          margin-bottom: 10px;
+          color: white;
         }
 
         .modal {
           position: fixed;
           inset: 0;
-          background: rgba(0,0,0,0.9);
+          background: rgba(0,0,0,0.92);
           display: flex;
           justify-content: center;
           align-items: center;
           z-index: 999;
+          padding: 20px;
         }
 
         .modal-content {
           text-align: center;
+          max-width: 700px;
         }
 
         .modal img {
           max-width: 90vw;
           max-height: 65vh;
+          border-radius: 6px;
         }
 
         .title-modal {
           color: white;
-          margin-top: 10px;
-          font-size: 18px;
-          font-weight: bold;
+          margin-top: 15px;
+          font-size: 20px;
+        }
+
+        .details-modal {
+          margin: 12px auto 0;
+          font-size: 13px;
+          line-height: 1.9;
+          color: #ccc;
+          max-width: 500px;
         }
 
         .copyright {
-          color: #888;
-          font-size: 12px;
-          margin-top: 8px;
-          letter-spacing: 0.5px;
+          color: #777;
+          font-size: 11px;
+          margin-top: 10px;
         }
 
         .acquire-title {
-          margin-top: 15px;
+          margin-top: 18px;
           font-size: 14px;
           color: #f2d23b;
         }
@@ -244,6 +276,7 @@ export default function ArtworksPage() {
           display: flex;
           justify-content: center;
           gap: 12px;
+          flex-wrap: wrap;
         }
 
         .btn {
@@ -253,6 +286,7 @@ export default function ArtworksPage() {
           text-decoration: none;
           position: relative;
           overflow: hidden;
+          transition: 0.3s;
         }
 
         .gold {
@@ -278,6 +312,10 @@ export default function ArtworksPage() {
 
         .gold:hover::after {
           left: 100%;
+        }
+
+        .gold:hover {
+          transform: scale(1.05);
         }
 
         .outline {
