@@ -92,6 +92,8 @@ export default function ArtworksPage() {
     { image: "/images/artworks/confusion.jpg", title: "Confusion" },
 
     { image: "/images/artworks/taa.jpg", title: "تاء مربوطة" },
+    { image: "/images/artworks/tajalle.jpg", title: "تجلِّ" },
+    { image: "/images/artworks/alula.jpg", title: "العلا" },
 
     {
       image: "/images/artworks/silent.jpg",
