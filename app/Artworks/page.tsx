@@ -85,6 +85,15 @@ export default function ArtworksPage() {
     { image: "/images/artworks/s2.jpg", title: "Unnamed" },
     { image: "/images/artworks/s3.jpg", title: "Unnamed" },
     { image: "/images/artworks/s4.jpg", title: "Unnamed" },
+    {
+  image: "/images/artworks/s5.jpg",
+  title: "Camels in Deriyah - Acrylic on Canvas",
+},
+
+{
+  image: "/images/artworks/s6.jpg",
+  title: "Sunset on Diriyah - Acrylic on Canvas",
+},
 
     { image: "/images/artworks/sisters.jpg", title: "Sisters" },
     { image: "/images/artworks/womenstrength.jpg", title: "جبروت امرأة" },
