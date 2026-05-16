@@ -80,10 +80,15 @@ export default function ArtworksPage() {
       details:
         "كتابة يدوية بخط الثلث باستخدام احبار طبيعية و صناعية، على ورق توت طبيعي مصنوع في بوتان و معالج في تركيا بمقاس 80 × 60 سم"
     },
+    {
+  image: "/images/artworks/toq.jpg",
+  title: "توق",
+  description: "أحبار على ورق موز مُقهّر يدوياً",
+},
 
-    { image: "/images/artworks/s1.jpg", title: "Unnamed" },
-    { image: "/images/artworks/s2.jpg", title: "Unnamed" },
-    { image: "/images/artworks/s3.jpg", title: "Unnamed" },
+    { image: "/images/artworks/s1.jpg", title: "Diriyah" },
+    { image: "/images/artworks/s2.jpg", title: "Alula" },
+    { image: "/images/artworks/s3.jpg", title: "Story Night at Ouja" },
     { image: "/images/artworks/s4.jpg", title: "Riyadh the Dancing City" },
     {
   image: "/images/artworks/s5.jpg",
