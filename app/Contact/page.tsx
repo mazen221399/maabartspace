@@ -104,6 +104,55 @@ export default function ContactPage() {
           </a>
         </section>
       </div>
+
+      {/* ===== معلومات التواصل ===== */}
+      <div
+        style={{
+          marginTop: "80px",
+          textAlign: "center",
+          lineHeight: "2.2",
+        }}
+      >
+        <h2
+          style={{
+            marginBottom: "20px",
+            fontSize: "30px",
+          }}
+        >
+          للاستفسارات
+        </h2>
+
+        <p style={{ color: "#ccc" }}>
+          Email:
+        </p>
+
+        <a
+          href="mailto:info@maabartspace.com"
+          style={{
+            color: "#F6D300",
+            textDecoration: "none",
+            display: "block",
+            marginBottom: "15px",
+          }}
+        >
+          maab.artspace@gmail.com
+        </a>
+
+        <p style={{ color: "#ccc" }}>
+          WhatsApp:
+        </p>
+
+        <a
+          href="https://wa.me/966554520495"
+          target="_blank"
+          style={{
+            color: "#F6D300",
+            textDecoration: "none",
+          }}
+        >
+          +966554520495
+        </a>
+      </div>
     </main>
   );
 }
