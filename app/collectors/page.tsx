@@ -4,6 +4,7 @@ import { useState } from "react";
 
 export default function CollectorsPage() {
   const [selectedInterests, setSelectedInterests] = useState<string[]>([]);
+  const [submitted, setSubmitted] = useState(false);
 
   const interests = [
     "الخط العربي",
@@ -25,6 +26,31 @@ export default function CollectorsPage() {
     }
   };
 
+  const handleSubmit = async (e: any) => {
+    e.preventDefault();
+
+    const formData = new FormData(e.target);
+
+    formData.append("interests", selectedInterests.join(", "));
+
+    const response = await fetch(
+      "https://formspree.io/f/mwvzqepe",
+      {
+        method: "POST",
+        body: formData,
+        headers: {
+          Accept: "application/json",
+        },
+      }
+    );
+
+    if (response.ok) {
+      setSubmitted(true);
+      e.target.reset();
+      setSelectedInterests([]);
+    }
+  };
+
   return (
     <main
       style={{
@@ -41,147 +67,190 @@ export default function CollectorsPage() {
           margin: "0 auto",
         }}
       >
-        <h1
-          style={{
-            fontSize: "48px",
-            marginBottom: "25px",
-            textAlign: "center",
-          }}
-        >
-          مجتمع المقتنين
-        </h1>
-
-        <p
-          style={{
-            textAlign: "center",
-            color: "#ccc",
-            lineHeight: "2",
-            marginBottom: "60px",
-            fontSize: "18px",
-          }}
-        >
-          يرحب مآب بالتواصل مع المهتمين باقتناء الأعمال الفنية والانضمام
-          إلى مجتمع المقتنين للاطلاع على الأعمال والمعارض والفرص القادمة.
-        </p>
-
-        <form
-          action="https://formspree.io/f/mwvzqepe"
-          method="POST"
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            gap: "25px",
-          }}
-        >
-          <input
-            type="text"
-            name="name"
-            placeholder="الاسم"
-            style={inputStyle}
-          />
-
-          <input
-            type="email"
-            name="email"
-            placeholder="البريد الإلكتروني"
-            style={inputStyle}
-          />
-
-          <input
-            type="text"
-            name="phone"
-            placeholder="رقم الجوال"
-            style={inputStyle}
-          />
-
-          <div>
-            <h3
+        {!submitted ? (
+          <>
+            <h1
               style={{
-                marginBottom: "20px",
-                fontSize: "22px",
+                fontSize: "48px",
+                marginBottom: "25px",
+                textAlign: "center",
               }}
             >
-              الاهتمامات
-            </h3>
+              مجتمع المقتنين
+            </h1>
 
-            <div
+            <p
+              style={{
+                textAlign: "center",
+                color: "#ccc",
+                lineHeight: "2",
+                marginBottom: "60px",
+                fontSize: "18px",
+              }}
+            >
+              يرحب مآب بالتواصل مع المهتمين باقتناء الأعمال الفنية والانضمام
+              إلى مجتمع المقتنين للاطلاع على الأعمال والمعارض والفرص القادمة.
+            </p>
+
+            <form
+              onSubmit={handleSubmit}
               style={{
                 display: "flex",
-                flexWrap: "wrap",
-                gap: "15px",
+                flexDirection: "column",
+                gap: "25px",
               }}
             >
-              {interests.map((interest) => (
-                <button
-                  type="button"
-                  key={interest}
-                  onClick={() => toggleInterest(interest)}
+              <input
+                type="text"
+                name="name"
+                placeholder="الاسم"
+                style={inputStyle}
+                required
+              />
+
+              <input
+                type="email"
+                name="email"
+                placeholder="البريد الإلكتروني"
+                style={inputStyle}
+                required
+              />
+
+              <input
+                type="text"
+                name="phone"
+                placeholder="رقم الجوال"
+                style={inputStyle}
+              />
+
+              <div>
+                <h3
                   style={{
-                    padding: "12px 18px",
-                    borderRadius: "999px",
-                    border: selectedInterests.includes(interest)
-                      ? "1px solid #F6D300"
-                      : "1px solid rgba(255,255,255,0.15)",
-                    background: selectedInterests.includes(interest)
-                      ? "#F6D300"
-                      : "transparent",
-                    color: selectedInterests.includes(interest)
-                      ? "black"
-                      : "white",
-                    cursor: "pointer",
-                    transition: "0.3s",
+                    marginBottom: "20px",
+                    fontSize: "22px",
                   }}
                 >
-                  {interest}
-                </button>
-              ))}
-            </div>
+                  الاهتمامات
+                </h3>
 
-            <input
-              type="hidden"
-              name="interests"
-              value={selectedInterests.join(", ")}
-            />
+                <div
+                  style={{
+                    display: "flex",
+                    flexWrap: "wrap",
+                    gap: "15px",
+                  }}
+                >
+                  {interests.map((interest) => (
+                    <button
+                      type="button"
+                      key={interest}
+                      onClick={() => toggleInterest(interest)}
+                      style={{
+                        padding: "12px 18px",
+                        borderRadius: "999px",
+                        border: selectedInterests.includes(interest)
+                          ? "1px solid #F6D300"
+                          : "1px solid rgba(255,255,255,0.15)",
+                        background: selectedInterests.includes(interest)
+                          ? "#F6D300"
+                          : "transparent",
+                        color: selectedInterests.includes(interest)
+                          ? "black"
+                          : "white",
+                        cursor: "pointer",
+                        transition: "0.3s",
+                      }}
+                    >
+                      {interest}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              <select
+                name="budget"
+                style={inputStyle}
+              >
+                <option>الميزانية التقريبية للاقتناء</option>
+                <option>أقل من 5,000 ريال</option>
+                <option>5,000 – 15,000 ريال</option>
+                <option>15,000 – 50,000 ريال</option>
+                <option>أكثر من 50,000 ريال</option>
+              </select>
+
+              <textarea
+                name="notes"
+                placeholder="ملاحظات"
+                rows={6}
+                style={{
+                  ...inputStyle,
+                  resize: "none",
+                }}
+              />
+
+              <button
+                type="submit"
+                style={{
+                  background: "#F6D300",
+                  color: "black",
+                  border: "none",
+                  padding: "18px",
+                  borderRadius: "999px",
+                  fontSize: "18px",
+                  cursor: "pointer",
+                  marginTop: "10px",
+                  fontWeight: "bold",
+                }}
+              >
+                الانضمام إلى مجتمع المقتنين
+              </button>
+            </form>
+          </>
+        ) : (
+          <div
+            style={{
+              textAlign: "center",
+              paddingTop: "120px",
+            }}
+          >
+            <h1
+              style={{
+                fontSize: "48px",
+                marginBottom: "25px",
+              }}
+            >
+              شكراً لكم
+            </h1>
+
+            <p
+              style={{
+                color: "#ccc",
+                fontSize: "20px",
+                lineHeight: "2",
+                marginBottom: "40px",
+              }}
+            >
+              تم استلام اهتمامكم بنجاح،
+              <br />
+              ويسعدنا انضمامكم إلى مجتمع المقتنين في مآب.
+            </p>
+
+            <a
+              href="/"
+              style={{
+                display: "inline-block",
+                background: "#F6D300",
+                color: "black",
+                padding: "16px 30px",
+                borderRadius: "999px",
+                textDecoration: "none",
+                fontWeight: "bold",
+              }}
+            >
+              العودة للرئيسية
+            </a>
           </div>
-
-          <select
-            name="budget"
-            style={inputStyle}
-          >
-            <option>الميزانية التقريبية للاقتناء</option>
-            <option>أقل من 5,000 ريال</option>
-            <option>5,000 – 15,000 ريال</option>
-            <option>15,000 – 50,000 ريال</option>
-            <option>أكثر من 50,000 ريال</option>
-          </select>
-
-          <textarea
-            name="notes"
-            placeholder="ملاحظات"
-            rows={6}
-            style={{
-              ...inputStyle,
-              resize: "none",
-            }}
-          />
-
-          <button
-            type="submit"
-            style={{
-              background: "#F6D300",
-              color: "black",
-              border: "none",
-              padding: "18px",
-              borderRadius: "999px",
-              fontSize: "18px",
-              cursor: "pointer",
-              marginTop: "10px",
-              fontWeight: "bold",
-            }}
-          >
-            الانضمام إلى مجتمع المقتنين
-          </button>
-        </form>
+        )}
       </div>
     </main>
   );
