@@ -115,6 +115,17 @@ export default function ArtworksPage() {
       medium: "Oil on Canvas",
       size: "50 × 70 cm"
     },
+    {
+  image: "/images/artworks/noon1.jpg",
+  title: "نون 1",
+  description: "نسخة رقمية بعدد محدود",
+},
+
+{
+  image: "/images/artworks/noon2.jpg",
+  title: "نون 2",
+  description: "نسخة رقمية بعدد محدود",
+},
 
     {
       image: "/images/artworks/girlandcat.JPG",
