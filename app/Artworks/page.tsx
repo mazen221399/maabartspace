@@ -25,37 +25,41 @@ export default function ArtworksPage() {
 
     { image: "/images/artworks/joy.jpg", title: "Joy" },
 
-    /* ⭐ أعمال أحمد السعيد */
     {
       image: "/images/artworks/tarot11.jpg",
       title: "The Ark of Tarot 1",
       details:
         "طباعة Dark Room يدوية على ورق قطن 250 جرام جيلاتين فضة ماركة فورما العريقة 1921م بمقاس 50×50 سم"
     },
+
     {
       image: "/images/artworks/moo.jpg",
       title: "Moored",
       details:
         "طباعة Dark Room يدوية على ورق قطن 250 جرام جيلاتين فضة ماركة فورما العريقة 1921م بمقاس 50×50 سم"
     },
+
     {
       image: "/images/artworks/stedf.jpg",
       title: "Steadfastness",
       details:
         "طباعة Dark Room يدوية على ورق قطن 250 جرام جيلاتين فضة ماركة فورما العريقة 1921م بمقاس 50×50 سم"
     },
+
     {
       image: "/images/artworks/manis.jpg",
       title: "Manifestation",
       details:
         "طباعة Dark Room يدوية على ورق قطن 250 جرام جيلاتين فضة ماركة فورما العريقة 1921م بمقاس 50×50 سم"
     },
+
     {
       image: "/images/artworks/whis.jpg",
       title: "Whisper",
       details:
         "طباعة Dark Room يدوية على ورق قطن 250 جرام جيلاتين فضة ماركة فورما العريقة 1921م بمقاس 50×50 سم"
     },
+
     {
       image: "/images/artworks/tarot22.jpg",
       title: "The Ark of Tarot 2",
@@ -80,25 +84,27 @@ export default function ArtworksPage() {
       details:
         "كتابة يدوية بخط الثلث باستخدام احبار طبيعية و صناعية، على ورق توت طبيعي مصنوع في بوتان و معالج في تركيا بمقاس 80 × 60 سم"
     },
+
     {
-  image: "/images/artworks/toq.jpg",
-  title: "توق",
-  description: "أحبار على ورق موز مُقهّر يدوياً",
-},
+      image: "/images/artworks/toq.jpg",
+      title: "توق",
+      description: "أحبار على ورق موز مُقهّر يدوياً",
+    },
 
     { image: "/images/artworks/s1.jpg", title: "Diriyah" },
     { image: "/images/artworks/s2.jpg", title: "Alula" },
     { image: "/images/artworks/s3.jpg", title: "Story Night at Ouja" },
     { image: "/images/artworks/s4.jpg", title: "Riyadh the Dancing City" },
-    {
-  image: "/images/artworks/s5.jpg",
-  title: "Camels in Deriyah - Acrylic on Canvas",
-},
 
-{
-  image: "/images/artworks/s6.jpg",
-  title: "Sunset on Diriyah - Acrylic on Canvas",
-},
+    {
+      image: "/images/artworks/s5.jpg",
+      title: "Camels in Deriyah - Acrylic on Canvas",
+    },
+
+    {
+      image: "/images/artworks/s6.jpg",
+      title: "Sunset on Diriyah - Acrylic on Canvas",
+    },
 
     { image: "/images/artworks/sisters.jpg", title: "Sisters" },
     { image: "/images/artworks/womenstrength.jpg", title: "جبروت امرأة" },
@@ -115,17 +121,18 @@ export default function ArtworksPage() {
       medium: "Oil on Canvas",
       size: "50 × 70 cm"
     },
-    {
-  image: "/images/artworks/noon1.jpg",
-  title: "نون 1",
-  description: "نسخة رقمية بعدد محدود",
-},
 
-{
-  image: "/images/artworks/noon2.jpg",
-  title: "نون 2",
-  description: "نسخة رقمية بعدد محدود",
-},
+    {
+      image: "/images/artworks/noon1.jpg",
+      title: "نون 1",
+      description: "نسخة رقمية بعدد محدود",
+    },
+
+    {
+      image: "/images/artworks/noon2.jpg",
+      title: "نون 2",
+      description: "نسخة رقمية بعدد محدود",
+    },
 
     {
       image: "/images/artworks/girlandcat.JPG",
@@ -177,42 +184,53 @@ export default function ArtworksPage() {
         ))}
       </div>
 
-      <div
-  style={{
-    position: "relative",
-    display: "inline-block",
-    width: "100%"
-  }}
->
+      {selected && (
+        <div className="modal" onClick={() => setSelected(null)}>
 
-  <img
-    src={selected.image}
-    draggable={false}
-    style={{
-      userSelect: "none",
-      WebkitUserDrag: "none"
-    }}
-  />
+          <div
+            className="modal-content"
+            onClick={(e) => e.stopPropagation()}
+          >
 
-  <div
-    style={{
-      position: "absolute",
-      top: "50%",
-      left: "50%",
-      transform: "translate(-50%, -50%) rotate(-25deg)",
-      fontSize: "90px",
-      fontWeight: "bold",
-      color: "rgba(255,255,255,0.08)",
-      pointerEvents: "none",
-      userSelect: "none",
-      whiteSpace: "nowrap",
-      letterSpacing: "8px"
-    }}
-  >
-    MAAB ART SPACE
-  </div>
+            <div
+              style={{
+                position: "relative",
+                display: "inline-block",
+                width: "100%"
+              }}
+            >
 
-</div>
+              <img
+                src={selected.image}
+                draggable={false}
+                style={{
+  userSelect: "none"
+}}
+              />
+
+              <div
+                style={{
+                  position: "absolute",
+                  top: "50%",
+                  left: "50%",
+                  transform: "translate(-50%, -50%) rotate(-25deg)",
+                  fontSize: "50px",
+                  fontWeight: "bold",
+                  color: "rgba(255,255,255,0.06)",
+                  pointerEvents: "none",
+                  userSelect: "none",
+                  whiteSpace: "nowrap",
+                  letterSpacing: "8px"
+                }}
+              >
+                MAAB ART SPACE
+              </div>
+
+            </div>
+
+            <p className="title-modal">
+              {selected.title}
+            </p>
 
             {selected.details && (
               <p className="details-modal">
@@ -246,6 +264,7 @@ export default function ArtworksPage() {
             </div>
 
           </div>
+
         </div>
       )}
 
