@@ -122,3 +122,6 @@
     background-attachment: scroll;
   }
 }
+select option {
+  color: black;
+}
