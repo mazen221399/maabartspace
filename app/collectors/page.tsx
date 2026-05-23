@@ -64,7 +64,9 @@ export default function CollectorsPage() {
           إلى مجتمع المقتنين للاطلاع على الأعمال والمعارض والفرص القادمة.
         </p>
 
-        <div
+        <form
+          action="https://formspree.io/f/mwvzqepe"
+          method="POST"
           style={{
             display: "flex",
             flexDirection: "column",
@@ -73,18 +75,21 @@ export default function CollectorsPage() {
         >
           <input
             type="text"
+            name="name"
             placeholder="الاسم"
             style={inputStyle}
           />
 
           <input
             type="email"
+            name="email"
             placeholder="البريد الإلكتروني"
             style={inputStyle}
           />
 
           <input
             type="text"
+            name="phone"
             placeholder="رقم الجوال"
             style={inputStyle}
           />
@@ -108,6 +113,7 @@ export default function CollectorsPage() {
             >
               {interests.map((interest) => (
                 <button
+                  type="button"
                   key={interest}
                   onClick={() => toggleInterest(interest)}
                   style={{
@@ -130,9 +136,18 @@ export default function CollectorsPage() {
                 </button>
               ))}
             </div>
+
+            <input
+              type="hidden"
+              name="interests"
+              value={selectedInterests.join(", ")}
+            />
           </div>
 
-          <select style={inputStyle}>
+          <select
+            name="budget"
+            style={inputStyle}
+          >
             <option>الميزانية التقريبية للاقتناء</option>
             <option>أقل من 5,000 ريال</option>
             <option>5,000 – 15,000 ريال</option>
@@ -141,6 +156,7 @@ export default function CollectorsPage() {
           </select>
 
           <textarea
+            name="notes"
             placeholder="ملاحظات"
             rows={6}
             style={{
@@ -150,6 +166,7 @@ export default function CollectorsPage() {
           />
 
           <button
+            type="submit"
             style={{
               background: "#F6D300",
               color: "black",
@@ -164,7 +181,7 @@ export default function CollectorsPage() {
           >
             الانضمام إلى مجتمع المقتنين
           </button>
-        </div>
+        </form>
       </div>
     </main>
   );
