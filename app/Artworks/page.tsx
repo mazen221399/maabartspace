@@ -177,15 +177,42 @@ export default function ArtworksPage() {
         ))}
       </div>
 
-      {selected && (
-        <div className="modal" onClick={() => setSelected(null)}>
-          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+      <div
+  style={{
+    position: "relative",
+    display: "inline-block",
+    width: "100%"
+  }}
+>
 
-            <img src={selected.image} />
+  <img
+    src={selected.image}
+    draggable={false}
+    style={{
+      userSelect: "none",
+      WebkitUserDrag: "none"
+    }}
+  />
 
-            <p className="title-modal">
-              {selected.title}
-            </p>
+  <div
+    style={{
+      position: "absolute",
+      top: "50%",
+      left: "50%",
+      transform: "translate(-50%, -50%) rotate(-25deg)",
+      fontSize: "90px",
+      fontWeight: "bold",
+      color: "rgba(255,255,255,0.08)",
+      pointerEvents: "none",
+      userSelect: "none",
+      whiteSpace: "nowrap",
+      letterSpacing: "8px"
+    }}
+  >
+    MAAB ART SPACE
+  </div>
+
+</div>
 
             {selected.details && (
               <p className="details-modal">
