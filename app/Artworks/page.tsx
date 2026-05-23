@@ -200,29 +200,34 @@ export default function ArtworksPage() {
               }}
             >
 
-              <img
-                src={selected.image}
-                draggable={false}
-                style={{
-  userSelect: "none"
-}}
-              />
+             <img
+  src={selected.image}
+  draggable={false}
+  style={{
+    userSelect: "none",
+    position: "relative",
+    zIndex: 1
+  }}
+/>
 
-              <div
-                style={{
-                  position: "absolute",
-                  top: "50%",
-                  left: "50%",
-                  transform: "translate(-50%, -50%) rotate(-25deg)",
-                  fontSize: "50px",
-                  fontWeight: "bold",
-                  color: "rgba(255,255,255,0.06)",
-                  pointerEvents: "none",
-                  userSelect: "none",
-                  whiteSpace: "nowrap",
-                  letterSpacing: "8px"
-                }}
-              >
+             <div
+  style={{
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%) rotate(-25deg)",
+    fontSize: "50px",
+    fontWeight: "bold",
+    color: "rgba(255,255,255,0.10)",
+    pointerEvents: "none",
+    userSelect: "none",
+    whiteSpace: "nowrap",
+    letterSpacing: "8px",
+    zIndex: 5,
+    width: "100%",
+    textAlign: "center"
+  }}
+>
                 MAAB ART SPACE
               </div>
 
