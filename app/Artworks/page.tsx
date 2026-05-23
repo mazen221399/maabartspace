@@ -15,6 +15,10 @@ export default function ArtworksPage() {
       details:
         "كتابة يدوية بخط الثلث باستخدام احبار طبيعية و صناعية، على ورق توت طبيعي مصنوع في بوتان و معالج في تركيا بمقاس 80 × 60 سم"
     },
+    {
+     image: "/images/artworks/shalky.jpg",
+     title: "شالكي / Shalky",
+    },
 
     {
       image: "/images/artworks/hoa1.jpg",
