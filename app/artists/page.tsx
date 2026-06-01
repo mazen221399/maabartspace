@@ -4,21 +4,22 @@ import { useState, useEffect } from "react";
 
 export default function ArtistsPage() {
 
-  const allArtists = [
-    { name: "Ahmed Alsaeed", category: "photography", role: "Photography", image: "/images/ahmed1.jpg" },
-    { name: "Basma Moktar", category: "visual", role: "Visual Art & Sculpting", image: "/images/basma.jpg" },
-    { name: "Marwa Abulenein", category: "visual", role: "Visual Art", image: "/images/mrwa1.jpg" },
-    { name: "Dina Alazaatre", category: "visual", role: "Visual Art", image: "/images/dina1.jpg" },
-    { name: "Fahad Alammar", category: "visual", role: "Visual Art", image: "/images/fahad1.jpg" },
-    { name: "Mazin Andijani", category: "calligraphy", role: "Calligraphy", image: "/images/mazin1.jpg" },
-    { name: "Dr. Sawsan Alsajjan", category: "visual", role: "Visual Art", image: "/images/sawsan.jpg" },
-    { name: "Stuart Williams", category: "photography", role: "Photography", image: "/images/steuart.jpg" },
-    { name: "Tajaliyat", category: "calligraphy", role: "Calligraphy & Illumination", image: "/images/tjlyat.jpg" },
-    { name: "Leena Al-Ayoobi", category: "visual", role: "Visual Art", image: "/images/leena1.jpg" },
+const allArtists = [
+  { name: "Ahmed Alsaeed", category: "photography", role: "Photography", image: "/images/ahmed1.jpg" },
+  { name: "Basma Moktar", category: "visual", role: "Visual Art & Sculpting", image: "/images/basma.jpg" },
+  { name: "Marwa Abulenein", category: "visual", role: "Visual Art", image: "/images/mrwa1.jpg" },
+  { name: "Dina Alazaatre", category: "visual", role: "Visual Art", image: "/images/dina1.jpg" },
+  { name: "Fahad Alammar", category: "visual", role: "Visual Art", image: "/images/fahad1.jpg" },
+  { name: "Mazin Andijani", category: "calligraphy", role: "Calligraphy", image: "/images/mazin1.jpg" },
+  { name: "Dr. Sawsan Alsajjan", category: "visual", role: "Visual Art", image: "/images/sawsan.jpg" },
+  { name: "Stuart Williams", category: "photography", role: "Photography", image: "/images/steuart.jpg" },
+  { name: "Tajaliyat", category: "calligraphy", role: "Calligraphy & Illumination", image: "/images/tjlyat.jpg" },
+  { name: "Leena Al-Ayoobi", category: "visual", role: "Visual Art", image: "/images/leena1.jpg" },
 
-    // ⭐ الفنان الجديد
-    { name: "Waleed AlKawmani", category: "visual", role: "Visual Art", image: "/images/waleed1.jpg" },
-  ];
+  { name: "Waleed AlKawmani", category: "visual", role: "Visual Art", image: "/images/waleed1.jpg" },
+
+  { name: "Dr. Siraj Allaf", category: "calligraphy", role: "Calligraphy", image: "/images/siraj1.jpg" },
+];
 
   const [filter, setFilter] = useState("all");
   const [artists, setArtists] = useState<any[]>([]);
