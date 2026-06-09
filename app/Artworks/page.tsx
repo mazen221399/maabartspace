@@ -19,7 +19,23 @@ export default function ArtworksPage() {
      image: "/images/artworks/shalky.jpg",
      title: "شالكي / Shalky",
     },
+{
+  image: "/images/artworks/farghab.jpg",
+  title: "وإلى ربك فارغب",
+  details: "بالخط المغربي المبسوط والتذهيب اليدوي على ورق طبيعي معالج يدوياً",
+},
 
+{
+  image: "/images/artworks/menni.jpg",
+  title: "وألقيت عليك محبة مني",
+  details: "بالخط المغربي المبسوط والتذهيب اليدوي على ورق طبيعي معالج يدوياً",
+},
+
+{
+  image: "/images/artworks/albait.jpg",
+  title: "اللهم احفظ هذا البيت وأهله",
+  details: "بالخط المغربي المبسوط والتذهيب اليدوي على ورق طبيعي معالج يدوياً",
+},
     {
       image: "/images/artworks/hoa1.jpg",
       title: "هو علي هين",
