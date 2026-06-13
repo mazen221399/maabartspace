@@ -38,7 +38,7 @@ export default function RootLayout({
             <Link href="/">الرئيسية</Link>
             <Link href="/artists">الفنانون</Link>
             <Link href="/Artworks">الأعمال الفنية</Link>
-            <Link href="/Workshops">الورش التدريبية</Link>
+            <Link href="/Workshops">الورش والفعاليات</Link>
             <Link href="/collectors">مجتمع المقتنين</Link>
             <Link href="/Contact">اتصل بنا</Link>
           </nav>
