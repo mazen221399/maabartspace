@@ -20,7 +20,7 @@ export default function ArtworksPage() {
      title: "شالكي / Shalky",
     },
 {
-  image: "/images/artworks/frghb.jpg",
+    image: "/images/artworks/farghab.jpg",
   title: "وإلى ربك فارغب",
   details: "بالخط المغربي المبسوط والتذهيب اليدوي على ورق طبيعي معالج يدوياً",
 },
