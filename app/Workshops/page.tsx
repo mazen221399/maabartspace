@@ -3,7 +3,23 @@
 import { useState } from "react";
 
 export default function WorkshopsPage() {
-  const workshops = [
+  const upcomingWorkshops = [
+    {
+      title: "محاكاة أعمال بابلو بيكاسو",
+      instructor: "الفنانة آمنة يعقوب",
+      date: "24 إلى 28 يونيو 2026",
+      time: "من 6 مساءً إلى 8 مساءً",
+      seats: "المقاعد محدودة",
+      location: "مآب - قرطبة، الرياض",
+      cover: "/images/workshops/picaso1.jpg",
+      description:
+        "ورشة فنية للصغار للتعرف على قصة الفنان العالمي بابلو بيكاسو، والاتجاه التكعيبي، وأساسيات الألوان والظل والنور، مع تطبيق عملي لمحاكاة إحدى رسوماته باستخدام ألوان الأكريليك.",
+      registerLink:
+        "https://docs.google.com/forms/d/e/1FAIpQLSejqHdNbDMYCYB-iyPSoXwkZhlEXKqJyF3txHHr_999JJxi1A/viewform?usp=sharing&ouid=101460317983873958162",
+    },
+  ];
+
+  const pastEvents = [
     {
       title: "لقيا ليقا",
       date: "الخميس 5 يونيو 2026",
@@ -25,39 +41,77 @@ export default function WorkshopsPage() {
     },
   ];
 
-  const [selectedWorkshop, setSelectedWorkshop] = useState<any>(null);
+  const [selectedEvent, setSelectedEvent] = useState<any>(null);
 
   return (
     <main className="page">
-      <h1 className="title">الورش والفعاليات</h1>
+      {!selectedEvent ? (
+        <>
+          <h1 className="title">الورش والفعاليات</h1>
 
-      {!selectedWorkshop ? (
-        <div className="grid">
-          {workshops.map((workshop, index) => (
-            <div
-              key={index}
-              className="card"
-              onClick={() => setSelectedWorkshop(workshop)}
-            >
-              <img src={workshop.cover} alt={workshop.title} />
-              <h2>{workshop.title}</h2>
-              <p>{workshop.date}</p>
+          <section>
+            <h2 className="section-title">الورش القادمة</h2>
+
+            <div className="grid">
+              {upcomingWorkshops.map((workshop, index) => (
+                <div key={index} className="card">
+                  <img src={workshop.cover} alt={workshop.title} />
+                  <div className="content">
+                    <h3>{workshop.title}</h3>
+                    <p>{workshop.description}</p>
+                    <p className="meta">المدربة: {workshop.instructor}</p>
+                    <p className="meta">التاريخ: {workshop.date}</p>
+                    <p className="meta">الوقت: {workshop.time}</p>
+                    <p className="meta">الموقع: {workshop.location}</p>
+                    <p className="meta">{workshop.seats}</p>
+
+                    <a
+                      href={workshop.registerLink}
+                      target="_blank"
+                      className="btn"
+                    >
+                      التسجيل
+                    </a>
+                  </div>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
+          </section>
+
+          <section className="past-section">
+            <h2 className="section-title">فعاليات سابقة</h2>
+
+            <div className="grid">
+              {pastEvents.map((event, index) => (
+                <div
+                  key={index}
+                  className="card"
+                  onClick={() => setSelectedEvent(event)}
+                >
+                  <img src={event.cover} alt={event.title} />
+                  <div className="content">
+                    <h3>{event.title}</h3>
+                    <p className="meta">{event.date}</p>
+                    <p>{event.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+        </>
       ) : (
         <section className="details">
-          <button className="back" onClick={() => setSelectedWorkshop(null)}>
+          <button className="back" onClick={() => setSelectedEvent(null)}>
             العودة
           </button>
 
-          <h1>{selectedWorkshop.title}</h1>
-          <p className="date">{selectedWorkshop.date}</p>
-          <p className="description">{selectedWorkshop.description}</p>
+          <h1>{selectedEvent.title}</h1>
+          <p className="date">{selectedEvent.date}</p>
+          <p className="description">{selectedEvent.description}</p>
 
           <div className="gallery">
-            {selectedWorkshop.images.map((img: string, index: number) => (
-              <img key={index} src={img} alt={selectedWorkshop.title} />
+            {selectedEvent.images.map((img: string, index: number) => (
+              <img key={index} src={img} alt={selectedEvent.title} />
             ))}
           </div>
         </section>
@@ -73,7 +127,17 @@ export default function WorkshopsPage() {
         }
 
         .title {
-          margin-bottom: 40px;
+          margin-bottom: 50px;
+        }
+
+        .section-title {
+          color: #f2d23b;
+          margin-bottom: 25px;
+          font-size: 26px;
+        }
+
+        .past-section {
+          margin-top: 80px;
         }
 
         .grid {
@@ -89,6 +153,7 @@ export default function WorkshopsPage() {
           border-radius: 18px;
           overflow: hidden;
           transition: 0.3s;
+          text-align: right;
         }
 
         .card:hover {
@@ -98,18 +163,40 @@ export default function WorkshopsPage() {
 
         .card img {
           width: 100%;
-          height: 320px;
+          height: 220px;
           object-fit: cover;
           display: block;
         }
 
-        .card h2 {
-          margin: 18px 0 8px;
+        .content {
+          padding: 22px;
         }
 
-        .card p {
+        .content h3 {
+          margin-bottom: 12px;
+          font-size: 22px;
+        }
+
+        .content p {
           color: #ccc;
-          margin-bottom: 20px;
+          line-height: 1.8;
+          font-size: 14px;
+        }
+
+        .meta {
+          color: #aaa !important;
+          margin: 6px 0;
+        }
+
+        .btn {
+          display: inline-block;
+          margin-top: 18px;
+          background: #f2d23b;
+          color: black;
+          padding: 12px 26px;
+          border-radius: 999px;
+          text-decoration: none;
+          font-weight: bold;
         }
 
         .details {
@@ -141,13 +228,13 @@ export default function WorkshopsPage() {
 
         .gallery {
           display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-          gap: 18px;
+          grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+          gap: 16px;
         }
 
         .gallery img {
           width: 100%;
-          height: 320px;
+          height: 220px;
           object-fit: cover;
           border-radius: 14px;
         }
