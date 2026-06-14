@@ -7,7 +7,7 @@ export default function WorkshopsPage() {
     {
       title: "محاكاة أعمال بابلو بيكاسو",
       instructor: "الفنانة آمنة يعقوب",
-      date: "24 إلى 28 يونيو 2026",
+      date: "24 إلى 26 يونيو 2026",
       time: "من 6 مساءً إلى 8 مساءً",
       seats: "المقاعد محدودة",
       location: "مآب - قرطبة، الرياض",
@@ -20,6 +20,32 @@ export default function WorkshopsPage() {
   ];
 
   const pastEvents = [
+    {
+  title: "معرض فناني مآب والافتتاح الرسمي",
+  date: "يونيو 2026",
+  cover: "/images/workshops/open2.jpg",
+  description:
+    "بمناسبة الافتتاح الرسمي لمآب – مساحة فنية، يجمع هذا المعرض نخبة من الفنانين المشاركين في انطلاقة المساحة، مقدمًا مجموعة متنوعة من الأعمال الفنية في الخط العربي والتصوير الفوتوغرافي والفنون البصرية المعاصرة.",
+  images: [
+    "/images/workshops/open1.jpg",
+    "/images/workshops/open2.jpg",
+    "/images/workshops/open3.jpg",
+    "/images/workshops/open4.jpg",
+    "/images/workshops/open5.jpg",
+    "/images/workshops/open6.jpg",
+    "/images/workshops/open7.jpg",
+    "/images/workshops/open8.jpg",
+    "/images/workshops/open9.jpg",
+    "/images/workshops/open10.jpg",
+    "/images/workshops/open11.jpg",
+    "/images/workshops/open12.jpg",
+    "/images/workshops/open13.jpg",
+    "/images/workshops/open14.jpg",
+    "/images/workshops/open15.jpg",
+    "/images/workshops/open16.jpg",
+    "/images/workshops/open17.jpg",
+  ],
+},
     {
       title: "لقيا ليقا",
       date: "الخميس 5 يونيو 2026",
