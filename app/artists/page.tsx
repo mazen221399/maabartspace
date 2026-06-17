@@ -10,7 +10,7 @@ const allArtists = [
   { name: "Marwa Abulenein", category: "visual", role: "Visual Art", image: "/images/mrwa1.jpg" },
   { name: "Dina Alazaatre", category: "visual", role: "Visual Art", image: "/images/dina1.jpg" },
   { name: "Fahad Alammar", category: "visual", role: "Visual Art", image: "/images/fahad1.jpg" },
-  { name: "Mazin Andijani", category: "calligraphy", role: "Calligraphy", image: "/images/mazin1.jpg" },
+  { name: "Mazin Andijani", category: "calligraphy", role: "Calligraphy", image: "/images/mazin5.jpg" },
   { name: "Dr. Sawsan Alsajjan", category: "visual", role: "Visual Art", image: "/images/sawsan.jpg" },
   { name: "Stuart Williams", category: "photography", role: "Photography", image: "/images/steuart.jpg" },
   { name: "Tajaliyat", category: "calligraphy", role: "Calligraphy & Illumination", image: "/images/tjlyat.jpg" },
