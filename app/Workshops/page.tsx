@@ -9,43 +9,78 @@ export default function WorkshopsPage() {
       instructor: "الفنانة آمنة يعقوب",
       date: "24 إلى 26 يونيو 2026",
       time: "من 6 مساءً إلى 8 مساءً",
-      seats: "المقاعد محدودة",
+      seats: "تم إقفال التسجيل لاكتمال العدد",
       location: "مآب - قرطبة، الرياض",
       cover: "/images/workshops/picaso1.jpg",
       description:
         "ورشة فنية للصغار للتعرف على قصة الفنان العالمي بابلو بيكاسو، والاتجاه التكعيبي، وأساسيات الألوان والظل والنور، مع تطبيق عملي لمحاكاة إحدى رسوماته باستخدام ألوان الأكريليك.",
-      registerLink:
-        "https://docs.google.com/forms/d/e/1FAIpQLSejqHdNbDMYCYB-iyPSoXwkZhlEXKqJyF3txHHr_999JJxi1A/viewform?usp=sharing&ouid=101460317983873958162",
+      registrationStatus: "closed",
+    },
+    {
+      title: "تشكيل المصغرات بالنباتات",
+      instructor: "سيعلن لاحقاً",
+      date: "قريباً",
+      time: "قريباً",
+      seats: "سيتم فتح باب التسجيل قريباً",
+      location: "مآب - قرطبة، الرياض",
+      cover: "/images/workshops/plant.jpg",
+      description:
+        "ورشة فنية قادمة تتناول تشكيل المصغرات باستخدام النباتات، ضمن تجربة تطبيقية تجمع بين التكوين البصري والعناية بالتفاصيل.",
+      registrationStatus: "soon",
+    },
+    {
+      title: "فن الرسم على الزجاج",
+      instructor: "سيعلن لاحقاً",
+      date: "قريباً",
+      time: "قريباً",
+      seats: "سيتم فتح باب التسجيل قريباً",
+      location: "مآب - قرطبة، الرياض",
+      cover: "/images/workshops/glass.jpg",
+      description:
+        "ورشة قادمة للتعرف على تقنيات الرسم على الزجاج وتطبيقاته الفنية، وسيتم الإعلان عن تفاصيل التسجيل قريباً.",
+      registrationStatus: "soon",
+    },
+    {
+      title: "الخط العربي من القصبة إلى اللوحة",
+      instructor: "سيعلن لاحقاً",
+      date: "قريباً",
+      time: "قريباً",
+      seats: "سيتم فتح باب التسجيل قريباً",
+      location: "مآب - قرطبة، الرياض",
+      cover: "/images/workshops/hoa.jpg",
+      description:
+        "ورشة قادمة في الخط العربي تبدأ من التعرف على أدوات الخط التقليدية، مروراً بالقصبة والحبر والورق، وصولاً إلى إخراج لوحة خطية متكاملة.",
+      registrationStatus: "soon",
     },
   ];
 
   const pastEvents = [
     {
-  title: "معرض فناني مآب والافتتاح الرسمي",
-  date: "يونيو 2026",
-  cover: "/images/workshops/open2.jpg",
-  description:
-    "بمناسبة الافتتاح الرسمي لمآب – مساحة فنية، يجمع هذا المعرض نخبة من الفنانين المشاركين في انطلاقة المساحة، مقدمًا مجموعة متنوعة من الأعمال الفنية في الخط العربي والتصوير الفوتوغرافي والفنون البصرية المعاصرة.",
-  images: [
-    "/images/workshops/open1.jpg",
-    "/images/workshops/open2.jpg",
-    "/images/workshops/open3.jpg",
-    "/images/workshops/open4.jpg",
-    "/images/workshops/open5.jpg",
-    "/images/workshops/open6.jpg",
-    "/images/workshops/open7.jpg",
-    "/images/workshops/open8.jpg",
-    "/images/workshops/open9.jpg",
-    "/images/workshops/open10.jpg",
-    "/images/workshops/open11.jpg",
-    "/images/workshops/open12.jpg",
-    "/images/workshops/open13.jpg",
-    "/images/workshops/open14.jpg",
-    "/images/workshops/open15.jpg",
-    "/images/workshops/open16.jpg",
-    "/images/workshops/open17.jpg",
-  ],
-},
+      title: "معرض فناني مآب والافتتاح الرسمي",
+      date: "يونيو 2026",
+      cover: "/images/workshops/open2.jpg",
+      description:
+        "بمناسبة الافتتاح الرسمي لمآب – مساحة فنية، يجمع هذا المعرض نخبة من الفنانين المشاركين في انطلاقة المساحة، مقدمًا مجموعة متنوعة من الأعمال الفنية في الخط العربي والتصوير الفوتوغرافي والفنون البصرية المعاصرة.",
+      images: [
+        "/images/workshops/open1.jpg",
+        "/images/workshops/open2.jpg",
+        "/images/workshops/open3.jpg",
+        "/images/workshops/open4.jpg",
+        "/images/workshops/open5.jpg",
+        "/images/workshops/open6.jpg",
+        "/images/workshops/open7.jpg",
+        "/images/workshops/open8.jpg",
+        "/images/workshops/open9.jpg",
+        "/images/workshops/open10.jpg",
+        "/images/workshops/open11.jpg",
+        "/images/workshops/open12.jpg",
+        "/images/workshops/open13.jpg",
+        "/images/workshops/open14.jpg",
+        "/images/workshops/open15.jpg",
+        "/images/workshops/open16.jpg",
+        "/images/workshops/open17.jpg",
+      ],
+    },
     {
       title: "لقيا ليقا",
       date: "الخميس 5 يونيو 2026",
@@ -85,19 +120,12 @@ export default function WorkshopsPage() {
                   <div className="content">
                     <h3>{workshop.title}</h3>
                     <p>{workshop.description}</p>
-                    <p className="meta">المدربة: {workshop.instructor}</p>
+                    <p className="meta">المدرب/ـة: {workshop.instructor}</p>
                     <p className="meta">التاريخ: {workshop.date}</p>
                     <p className="meta">الوقت: {workshop.time}</p>
                     <p className="meta">الموقع: {workshop.location}</p>
-                    <p className="meta">{workshop.seats}</p>
 
-                    <a
-                      href={workshop.registerLink}
-                      target="_blank"
-                      className="btn"
-                    >
-                      التسجيل
-                    </a>
+                    <div className="status-badge">{workshop.seats}</div>
                   </div>
                 </div>
               ))}
@@ -214,14 +242,14 @@ export default function WorkshopsPage() {
           margin: 6px 0;
         }
 
-        .btn {
+        .status-badge {
           display: inline-block;
           margin-top: 18px;
-          background: #f2d23b;
-          color: black;
+          background: transparent;
+          color: #f2d23b;
+          border: 1px solid #f2d23b;
           padding: 12px 26px;
           border-radius: 999px;
-          text-decoration: none;
           font-weight: bold;
         }
 
