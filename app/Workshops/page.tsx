@@ -195,11 +195,12 @@ export default function WorkshopsPage() {
         }
 
         .grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-          gap: 25px;
-        }
-
+       display: grid;
+       grid-template-columns: repeat(auto-fit, minmax(280px, 360px));
+       justify-content: center;
+       gap: 25px;
+       }
+       
         .card {
           cursor: pointer;
           background: rgba(255, 255, 255, 0.04);
@@ -216,10 +217,11 @@ export default function WorkshopsPage() {
         }
 
         .card img {
-          width: 100%;
-          height: 220px;
-          object-fit: cover;
-          display: block;
+         width: 100%;
+         height: 260px;
+         object-fit: contain;
+         background: #111;
+         display: block;
         }
 
         .content {
