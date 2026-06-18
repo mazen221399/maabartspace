@@ -17,7 +17,7 @@ export default function WorkshopsPage() {
       registrationStatus: "closed",
     },
     {
-      title: "تشكيل المصغرات بالنباتات",
+      title: "تشكيل النباتات بفن المصغرات",
       instructor: "سيعلن لاحقاً",
       date: "قريباً",
       time: "قريباً",
@@ -200,7 +200,7 @@ export default function WorkshopsPage() {
        justify-content: center;
        gap: 25px;
        }
-       
+
         .card {
           cursor: pointer;
           background: rgba(255, 255, 255, 0.04);
