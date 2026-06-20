@@ -28,18 +28,19 @@ export default function WorkshopsPage() {
         "ورشة فنية قادمة تتناول تشكيل المصغرات باستخدام النباتات، ضمن تجربة تطبيقية تجمع بين التكوين البصري والعناية بالتفاصيل.",
       registrationStatus: "soon",
     },
-    {
-      title: "فن الرسم على الزجاج",
-      instructor: "سيعلن لاحقاً",
-      date: "قريباً",
-      time: "قريباً",
-      seats: "سيتم فتح باب التسجيل قريباً",
-      location: "مآب - قرطبة، الرياض",
-      cover: "/images/workshops/glass.jpg",
-      description:
-        "ورشة قادمة للتعرف على تقنيات الرسم على الزجاج وتطبيقاته الفنية، وسيتم الإعلان عن تفاصيل التسجيل قريباً.",
-      registrationStatus: "soon",
-    },
+  {
+  title: "فن الرسم على الزجاج",
+  instructor: "المدرب الياس كلنتن",
+  date: "2 يوليو 2026",
+  time: "من 6:00 مساءً إلى 9:00 مساءً",
+  seats: "الفئة العمرية: +14",
+  location: "مآب - قرطبة، الرياض",
+  cover: "/images/workshops/glass.jpg",
+  description:
+    "انضموا إلينا في ورشة فنية تفاعلية لتعلم أساسيات وتقنيات الرسم على الزجاج، وتحويل القطع الزجاجية البسيطة إلى أعمال فنية مميزة. الرسوم: 220 ريال سعودي شاملة الأدوات والضريبة.",
+  registrationStatus: "open",
+  registerLink: "https://forms.gle/oK232wGLKQcfZezr9",
+},
     {
       title: "الخط العربي من القصبة إلى اللوحة",
       instructor: "سيعلن لاحقاً",
@@ -125,7 +126,13 @@ export default function WorkshopsPage() {
                     <p className="meta">الوقت: {workshop.time}</p>
                     <p className="meta">الموقع: {workshop.location}</p>
 
-                    <div className="status-badge">{workshop.seats}</div>
+                    {workshop.registrationStatus === "open" && workshop.registerLink ? (
+                    <a href={workshop.registerLink} target="_blank" className="btn">
+                   التسجيل
+                   </a>
+                   ) : (
+                   <div className="status-badge">{workshop.seats}</div>
+                  )}
                   </div>
                 </div>
               ))}
@@ -243,7 +250,16 @@ export default function WorkshopsPage() {
           color: #aaa !important;
           margin: 6px 0;
         }
-
+.btn {
+  display: inline-block;
+  margin-top: 18px;
+  background: #f2d23b;
+  color: black;
+  padding: 12px 26px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: bold;
+}
         .status-badge {
           display: inline-block;
           margin-top: 18px;
