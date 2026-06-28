@@ -17,17 +17,18 @@ export default function WorkshopsPage() {
       registrationStatus: "closed",
     },
     {
-      title: "تشكيل النباتات بفن المصغرات",
-      instructor: "سيعلن لاحقاً",
-      date: "قريباً",
-      time: "قريباً",
-      seats: "سيتم فتح باب التسجيل قريباً",
-      location: "مآب - قرطبة، الرياض",
-      cover: "/images/workshops/plant.jpg",
-      description:
-        "ورشة فنية قادمة تتناول تشكيل المصغرات باستخدام النباتات، ضمن تجربة تطبيقية تجمع بين التكوين البصري والعناية بالتفاصيل.",
-      registrationStatus: "soon",
-    },
+  title: "تشكيل النباتات بفن المصغرات",
+  instructor: "روان الشهري",
+  date: "11 يوليو 2026",
+  time: "6-9مساءاً",
+  seats: "المقاعد محدودة",
+  location: "مآب - قرطبة، الرياض",
+  cover: "/images/workshops/plant.jpg",
+  description:
+    "ورشة فنية تجمع بين جمال النباتات وفن المصغرات، يتعرف المشاركون خلالها على أساليب التكوين والعرض وصناعة مشاهد نباتية مصغرة ذات طابع فني وجمالي.",
+  registrationStatus: "open",
+  registerLink: "https://forms.gle/rNar2vgjKYiJwkSk7",
+},
   {
   title: "فن الرسم على الزجاج",
   instructor: "المدرب الياس كلنتن",
@@ -41,18 +42,19 @@ export default function WorkshopsPage() {
   registrationStatus: "open",
   registerLink: "https://forms.gle/oK232wGLKQcfZezr9",
 },
-    {
-      title: "الخط العربي من القصبة إلى اللوحة",
-      instructor: "سيعلن لاحقاً",
-      date: "قريباً",
-      time: "قريباً",
-      seats: "سيتم فتح باب التسجيل قريباً",
-      location: "مآب - قرطبة، الرياض",
-      cover: "/images/workshops/hoa.jpg",
-      description:
-        "ورشة قادمة في الخط العربي تبدأ من التعرف على أدوات الخط التقليدية، مروراً بالقصبة والحبر والورق، وصولاً إلى إخراج لوحة خطية متكاملة.",
-      registrationStatus: "soon",
-    },
+   {
+  title: "الخط العربي من القصبة إلى اللوحة",
+  instructor: "مازن أنديجاني",
+  date: "5، 6 و8 أغسطس 2026",
+  time: "5:00 مساءً - 9:00 مساءً",
+  seats: "المقاعد محدودة لضمان تجربة تعليمية فعّالة",
+  location: "مآب - قرطبة، الرياض",
+  cover: "/images/workshops/hoa.jpg",
+  description:
+    "ورشة احترافية تمتد لثلاثة أيام يتعلم خلالها المشاركون إعداد أدوات الخط العربي، وقص أقلام القصب، وتحضير الأحبار والورق المقهر، والتدريب على خطي الثلث والنسخ، وصولاً إلى تنفيذ لوحة خطية متكاملة بإطار جاهز للتعليق.",
+  registrationStatus: "open",
+  registerLink: "https://forms.gle/86RhPnw6AQU8M57f9",
+},
   ];
 
   const pastEvents = [
