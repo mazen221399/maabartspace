@@ -83,6 +83,25 @@ export default function WorkshopsPage() {
       ],
     },
     {
+  title: "ورشة محاكاة أعمال الفنان بيكاسو",
+  date: "24 إلى 28 يونيو 2026",
+  cover: "/images/workshops/pic1.jpg",
+  description:
+    "ورشة فنية للأطفال تعرّف خلالها الفنانون الصغار على قصة الفنان العالمي بابلو بيكاسو، ونبذة عن الاتجاه الفني التكعيبي، وأساسيات نظرية الألوان، والظل والنور، وفهم خامة الأكريليك وأنواع الفرش، وصولاً إلى تطبيق عملي لرسمة مستوحاة من أعمال الفنان بيكاسو.",
+  images: [
+    "/images/workshops/pic1.jpg",
+    "/images/workshops/pic2.jpg",
+    "/images/workshops/pic3.jpg",
+    "/images/workshops/pic4.jpg",
+    "/images/workshops/pic5.jpg",
+    "/images/workshops/pic6.jpg",
+    "/images/workshops/pic7.jpg",
+    "/images/workshops/pic8.jpg",
+    "/images/workshops/pic9.jpg",
+    "/images/workshops/pic10.jpg",
+  ],
+},
+    {
       title: "لقيا ليقا",
       date: "الخميس 5 يونيو 2026",
       cover: "/images/workshops/liqa4.jpg",
