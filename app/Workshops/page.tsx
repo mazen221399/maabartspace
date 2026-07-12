@@ -21,7 +21,6 @@ export default function WorkshopsPage() {
   instructor: "روان الشهري",
   date: "11 يوليو 2026",
   time: "6-9مساءاً",
-  seats: "المقاعد محدودة",
   location: "مآب - قرطبة، الرياض",
   cover: "/images/workshops/plant.jpg",
   description:
@@ -34,7 +33,6 @@ registrationStatus: "closed",
   instructor: "المدرب الياس كلنتن",
   date: "2 يوليو 2026",
   time: "من 6:00 مساءً إلى 9:00 مساءً",
-  seats: "الفئة العمرية: +14",
   location: "مآب - قرطبة، الرياض",
   cover: "/images/workshops/glass.jpg",
   description:
