@@ -32,6 +32,12 @@ export default function ArtworksPage() {
 },
 
 {
+  image: "/images/artworks/torab.jpg",
+  title: "إذا صح منك الود",
+  details: "بيت شعر منحوت بخط عربي على جرة فخارية",
+},
+
+{
   image: "/images/artworks/bait.jpg",
   title: "اللهم احفظ هذا البيت وأهله",
   details: "بالخط المغربي المبسوط والتذهيب اليدوي على ورق طبيعي معالج يدوياً",
