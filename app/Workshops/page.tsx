@@ -26,8 +26,8 @@ export default function WorkshopsPage() {
   cover: "/images/workshops/plant.jpg",
   description:
     "ورشة فنية تجمع بين جمال النباتات وفن المصغرات، يتعرف المشاركون خلالها على أساليب التكوين والعرض وصناعة مشاهد نباتية مصغرة ذات طابع فني وجمالي.",
-  registrationStatus: "open",
-  registerLink: "https://forms.gle/rNar2vgjKYiJwkSk7",
+  seats: "تم إقفال التسجيل",
+registrationStatus: "closed",
 },
   {
   title: "فن الرسم على الزجاج",
@@ -39,8 +39,8 @@ export default function WorkshopsPage() {
   cover: "/images/workshops/glass.jpg",
   description:
     "انضموا إلينا في ورشة فنية تفاعلية لتعلم أساسيات وتقنيات الرسم على الزجاج، وتحويل القطع الزجاجية البسيطة إلى أعمال فنية مميزة. الرسوم: 220 ريال سعودي شاملة الأدوات والضريبة.",
-  registrationStatus: "open",
-  registerLink: "https://forms.gle/oK232wGLKQcfZezr9",
+  seats: "تم إقفال التسجيل",
+registrationStatus: "closed",
 },
    {
   title: "الخط العربي من القصبة إلى اللوحة",
