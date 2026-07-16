@@ -58,7 +58,7 @@ export default function ArtworksPage() {
 },
 
 {
-  image: "/images/artworks/ksp.jpg",
+  image: "/images/artworks/ksp1.jpg",
   title: "حديقة الملك سلمان",
   details: "أكريليك على كانفس، 200 × 100 سم."
 },
