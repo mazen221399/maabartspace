@@ -58,6 +58,12 @@ export default function ArtworksPage() {
 },
 
 {
+  image: "/images/artworks/ksp.jpg",
+  title: "حديقة الملك سلمان",
+  details: "أكريليك على كانفس، 200 × 100 سم."
+},
+
+{
   image: "/images/artworks/bait.jpg",
   title: "اللهم احفظ هذا البيت وأهله",
   details: "بالخط المغربي المبسوط والتذهيب اليدوي على ورق طبيعي معالج يدوياً",
