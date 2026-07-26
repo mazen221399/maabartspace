@@ -122,6 +122,10 @@ export default function WorkshopsPage() {
       {!selectedEvent ? (
         <>
           <h1 className="title">الورش والفعاليات</h1>
+          <p className="intro">
+  مساحة للتعلّم، والتجربة، والإبداع. تقدم مآب ورشًا وبرامج متخصصة في
+  الفنون والثقافة والحرف والهوية، بإشراف نخبة من الممارسين والمتخصصين.
+</p>
 
           <section>
             <h2 className="section-title">الورش القادمة</h2>
