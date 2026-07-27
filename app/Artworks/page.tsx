@@ -77,6 +77,17 @@ export default function ArtworksPage() {
       category: "sculpture",
       details: "بيت شعر منحوت بخط عربي على جرة فخارية.",
     },
+{
+  image: "/images/artworks/nostalgia.jpg",
+  title: "Nostalgia",
+  category: "sculpture",
+},
+
+{
+  image: "/images/artworks/areyouhaveanyfun.jpg",
+  title: "Are You Have Any Fun?",
+  category: "sculpture",
+},
 
     {
       image: "/images/artworks/circle.jpg",
