@@ -81,7 +81,7 @@ export default function ArtworksPage() {
     {
       image: "/images/artworks/circle.jpg",
       title: "الدائرة",
-      category: "painting",
+      category: "calligraphy",
       details: "ألوان أكريليك على كانفس.",
     },
 
