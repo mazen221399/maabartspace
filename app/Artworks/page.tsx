@@ -64,6 +64,18 @@ export default function ArtworksPage() {
 },
 
 {
+  image: "/images/artworks/enlight.jpg",
+  title: "Enlightened",
+  details: "Oil on Canvas, 150 × 95 cm."
+},
+
+{
+  image: "/images/artworks/horse.jpg",
+  title: "Unnamed",
+  details: "2023 • قطر 60 سم."
+},
+
+{
   image: "/images/artworks/bait.jpg",
   title: "اللهم احفظ هذا البيت وأهله",
   details: "بالخط المغربي المبسوط والتذهيب اليدوي على ورق طبيعي معالج يدوياً",
