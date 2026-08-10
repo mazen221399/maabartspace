@@ -5,50 +5,69 @@ import { useState } from "react";
 export default function WorkshopsPage() {
   const upcomingWorkshops = [
     {
-  title: "الخط العربي من القصبة إلى اللوحة",
-  instructor: "مازن أنديجاني",
-  date: "5، 6 و8 أغسطس 2026",
-  time: "5:00 مساءً - 9:00 مساءً",
-  seats: "المقاعد محدودة لضمان تجربة تعليمية فعّالة",
-  location: "مآب - قرطبة، الرياض",
-  cover: "/images/workshops/hoa.jpg",
-  description:
-    "ورشة احترافية تمتد لثلاثة أيام يتعلم خلالها المشاركون إعداد أدوات الخط العربي، وقص أقلام القصب، وتحضير الأحبار والورق المقهر، والتدريب على خطي الثلث والنسخ، وصولاً إلى تنفيذ لوحة خطية متكاملة بإطار جاهز للتعليق.",
-  registrationStatus: "open",
-  registerLink: "https://forms.gle/86RhPnw6AQU8M57f9",
-},
-   
-    
-   
-{
-  title: "فن المظهر السعودي",
-  instructor: "خبير المظهر السعودي عبدالله الروكان",
-  date: "سيعلن الموعد الجديد قريباً",
-  time: "سيعلن لاحقاً",
-  seats: "المقاعد محدودة",
-  location: "مآب - قرطبة، الرياض",
-  cover: "/images/workshops/rokan.jpg",
-  description:
-    "ورشة تدريبية تتناول أسس المظهر السعودي وعناصره الثقافية، مع استعراض أبرز التفاصيل التي تعكس الهوية السعودية في اللباس والمظهر، يقدمها خبير المظهر السعودي عبدالله الروكان.",
-  registrationStatus: "soon",
-},
+      title: "الخط العربي من القصبة إلى اللوحة",
+      instructor: "مازن أنديجاني",
+      date: "5، 6 و8 أغسطس 2026",
+      time: "5:00 مساءً - 9:00 مساءً",
+      seats: "تم إغلاق التسجيل لاكتمال العدد",
+      location: "مآب - قرطبة، الرياض",
+      cover: "/images/workshops/hoa.jpg",
+      description:
+        "ورشة متخصصة في أساسيات الخط العربي، يتعرف خلالها المشاركون على أدوات الخط وإعدادها، والتدريب على خط الثلث، وصولاً إلى تنفيذ عمل خطي متكامل.",
+      registrationStatus: "closed",
+      registerLink: "",
+    },
 
-{
+    {
+      title: "فن المظهر السعودي",
+      instructor: "خبير المظهر السعودي عبدالله الروكان",
+      date: "سيعلن الموعد الجديد قريباً",
+      time: "سيعلن لاحقاً",
+      seats: "سيتم فتح باب التسجيل قريبًا",
+      location: "مآب - قرطبة، الرياض",
+      cover: "/images/workshops/rokan.jpg",
+      description:
+        "ورشة تدريبية تتناول أسس المظهر السعودي وعناصره الثقافية، مع استعراض أبرز التفاصيل التي تعكس الهوية السعودية في اللباس والمظهر، يقدمها خبير المظهر السعودي عبدالله الروكان.",
+      registrationStatus: "soon",
+      registerLink: "",
+    },
+
+    {
       title: "محاكاة أعمال بابلو بيكاسو",
       instructor: "الفنانة آمنة يعقوب",
       date: "24 إلى 26 يونيو 2026",
       time: "من 6 مساءً إلى 8 مساءً",
-      seats: "تم إقفال التسجيل لاكتمال العدد",
+      seats: "تم إغلاق التسجيل لاكتمال العدد",
       location: "مآب - قرطبة، الرياض",
       cover: "/images/workshops/picaso1.jpg",
       description:
         "ورشة فنية للصغار للتعرف على قصة الفنان العالمي بابلو بيكاسو، والاتجاه التكعيبي، وأساسيات الألوان والظل والنور، مع تطبيق عملي لمحاكاة إحدى رسوماته باستخدام ألوان الأكريليك.",
       registrationStatus: "closed",
+      registerLink: "",
     },
-  
   ];
 
   const pastEvents = [
+    {
+      title: "الخط العربي من القصبة إلى اللوحة",
+      date: "5، 6 و8 أغسطس 2026",
+      cover: "/images/workshops/ac18.jpg",
+      description:
+        "ورشة متخصصة في أساسيات خط الثلث، تعرّف خلالها المشاركون على مبادئ الخط وإعداد أدواته، وأنواع أقلام القصب والطومار، والأوراق المستخدمة في الكتابة بما فيها الورق الكوشيه والورق المقهر. كما تناولت الورشة طرق إعداد الورق المقهر وتجهيزه للكتابة، وإعداد القوالب وطرق نقلها إلى الورق، وصولاً إلى تنفيذ الأعمال الخطية وتأطيرها في صورتها النهائية.",
+      images: [
+        "/images/workshops/ac18.jpg",
+        "/images/workshops/ac1.jpg",
+        "/images/workshops/ac2.jpg",
+        "/images/workshops/ac5.jpg",
+        "/images/workshops/ac6.jpg",
+        "/images/workshops/ac11.jpg",
+        "/images/workshops/ac13.jpg",
+        "/images/workshops/ac14.jpg",
+        "/images/workshops/ac15.jpg",
+        "/images/workshops/ac16.jpg",
+      ],
+    },
+
     {
       title: "معرض فناني مآب والافتتاح الرسمي",
       date: "يونيو 2026",
@@ -75,25 +94,27 @@ export default function WorkshopsPage() {
         "/images/workshops/open17.jpg",
       ],
     },
+
     {
-  title: "ورشة محاكاة أعمال الفنان بيكاسو",
-  date: "24 إلى 28 يونيو 2026",
-  cover: "/images/workshops/pic4.jpg",
-  description:
-    "ورشة فنية للأطفال تعرّف خلالها الفنانون الصغار على قصة الفنان العالمي بابلو بيكاسو، ونبذة عن الاتجاه الفني التكعيبي، وأساسيات نظرية الألوان، والظل والنور، وفهم خامة الأكريليك وأنواع الفرش، وصولاً إلى تطبيق عملي لرسمة مستوحاة من أعمال الفنان بيكاسو.",
-  images: [
-    "/images/workshops/pic1.jpg",
-    "/images/workshops/pic2.jpg",
-    "/images/workshops/pic3.jpg",
-    "/images/workshops/pic4.jpg",
-    "/images/workshops/pic5.jpg",
-    "/images/workshops/pic6.jpg",
-    "/images/workshops/pic7.jpg",
-    "/images/workshops/pic8.jpg",
-    "/images/workshops/pic9.jpg",
-    "/images/workshops/pic10.jpg",
-  ],
-},
+      title: "ورشة محاكاة أعمال الفنان بيكاسو",
+      date: "24 إلى 28 يونيو 2026",
+      cover: "/images/workshops/pic4.jpg",
+      description:
+        "ورشة فنية للأطفال تعرّف خلالها الفنانون الصغار على قصة الفنان العالمي بابلو بيكاسو، ونبذة عن الاتجاه الفني التكعيبي، وأساسيات نظرية الألوان، والظل والنور، وفهم خامة الأكريليك وأنواع الفرش، وصولاً إلى تطبيق عملي لرسمة مستوحاة من أعمال الفنان بيكاسو.",
+      images: [
+        "/images/workshops/pic1.jpg",
+        "/images/workshops/pic2.jpg",
+        "/images/workshops/pic3.jpg",
+        "/images/workshops/pic4.jpg",
+        "/images/workshops/pic5.jpg",
+        "/images/workshops/pic6.jpg",
+        "/images/workshops/pic7.jpg",
+        "/images/workshops/pic8.jpg",
+        "/images/workshops/pic9.jpg",
+        "/images/workshops/pic10.jpg",
+      ],
+    },
+
     {
       title: "لقيا ليقا",
       date: "الخميس 5 يونيو 2026",
@@ -122,10 +143,11 @@ export default function WorkshopsPage() {
       {!selectedEvent ? (
         <>
           <h1 className="title">الورش والفعاليات</h1>
+
           <p className="intro">
-  مساحة للتعلّم، والتجربة، والإبداع. تقدم مآب ورشًا وبرامج متخصصة في
-  الفنون والثقافة والحرف والهوية، بإشراف نخبة من الممارسين والمتخصصين.
-</p>
+            مساحة للتعلّم، والتجربة، والإبداع. تقدم مآب ورشًا وبرامج متخصصة في
+            الفنون والثقافة والحرف والهوية، بإشراف نخبة من الممارسين والمتخصصين.
+          </p>
 
           <section>
             <h2 className="section-title">الورش القادمة</h2>
@@ -134,21 +156,43 @@ export default function WorkshopsPage() {
               {upcomingWorkshops.map((workshop, index) => (
                 <div key={index} className="card">
                   <img src={workshop.cover} alt={workshop.title} />
+
                   <div className="content">
                     <h3>{workshop.title}</h3>
-                    <p>{workshop.description}</p>
-                    <p className="meta">المدرب/ـة: {workshop.instructor}</p>
-                    <p className="meta">التاريخ: {workshop.date}</p>
-                    <p className="meta">الوقت: {workshop.time}</p>
-                    <p className="meta">الموقع: {workshop.location}</p>
 
-                    {workshop.registrationStatus === "open" && workshop.registerLink ? (
-                    <a href={workshop.registerLink} target="_blank" className="btn">
-                   التسجيل
-                   </a>
-                   ) : (
-                   <div className="status-badge">{workshop.seats}</div>
-                  )}
+                    <p>{workshop.description}</p>
+
+                    <p className="meta">
+                      المدرب/ـة: {workshop.instructor}
+                    </p>
+
+                    <p className="meta">
+                      التاريخ: {workshop.date}
+                    </p>
+
+                    <p className="meta">
+                      الوقت: {workshop.time}
+                    </p>
+
+                    <p className="meta">
+                      الموقع: {workshop.location}
+                    </p>
+
+                    {workshop.registrationStatus === "open" &&
+                    workshop.registerLink ? (
+                      <a
+                        href={workshop.registerLink}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="btn"
+                      >
+                        التسجيل
+                      </a>
+                    ) : (
+                      <div className="status-badge">
+                        {workshop.seats}
+                      </div>
+                    )}
                   </div>
                 </div>
               ))}
@@ -166,9 +210,12 @@ export default function WorkshopsPage() {
                   onClick={() => setSelectedEvent(event)}
                 >
                   <img src={event.cover} alt={event.title} />
+
                   <div className="content">
                     <h3>{event.title}</h3>
+
                     <p className="meta">{event.date}</p>
+
                     <p>{event.description}</p>
                   </div>
                 </div>
@@ -178,18 +225,33 @@ export default function WorkshopsPage() {
         </>
       ) : (
         <section className="details">
-          <button className="back" onClick={() => setSelectedEvent(null)}>
+          <button
+            className="back"
+            onClick={() => setSelectedEvent(null)}
+          >
             العودة
           </button>
 
           <h1>{selectedEvent.title}</h1>
-          <p className="date">{selectedEvent.date}</p>
-          <p className="description">{selectedEvent.description}</p>
+
+          <p className="date">
+            {selectedEvent.date}
+          </p>
+
+          <p className="description">
+            {selectedEvent.description}
+          </p>
 
           <div className="gallery">
-            {selectedEvent.images.map((img: string, index: number) => (
-              <img key={index} src={img} alt={selectedEvent.title} />
-            ))}
+            {selectedEvent.images.map(
+              (img: string, index: number) => (
+                <img
+                  key={index}
+                  src={img}
+                  alt={selectedEvent.title}
+                />
+              )
+            )}
           </div>
         </section>
       )}
@@ -204,7 +266,14 @@ export default function WorkshopsPage() {
         }
 
         .title {
-          margin-bottom: 50px;
+          margin-bottom: 20px;
+        }
+
+        .intro {
+          max-width: 800px;
+          margin: 0 auto 50px;
+          color: #ccc;
+          line-height: 2;
         }
 
         .section-title {
@@ -218,11 +287,14 @@ export default function WorkshopsPage() {
         }
 
         .grid {
-       display: grid;
-       grid-template-columns: repeat(auto-fit, minmax(280px, 360px));
-       justify-content: center;
-       gap: 25px;
-       }
+          display: grid;
+          grid-template-columns: repeat(
+            auto-fit,
+            minmax(280px, 360px)
+          );
+          justify-content: center;
+          gap: 25px;
+        }
 
         .card {
           cursor: pointer;
@@ -240,11 +312,11 @@ export default function WorkshopsPage() {
         }
 
         .card img {
-         width: 100%;
-         height: 260px;
-         object-fit: contain;
-         background: #111;
-         display: block;
+          width: 100%;
+          height: 260px;
+          object-fit: contain;
+          background: #111;
+          display: block;
         }
 
         .content {
@@ -266,16 +338,18 @@ export default function WorkshopsPage() {
           color: #aaa !important;
           margin: 6px 0;
         }
-.btn {
-  display: inline-block;
-  margin-top: 18px;
-  background: #f2d23b;
-  color: black;
-  padding: 12px 26px;
-  border-radius: 999px;
-  text-decoration: none;
-  font-weight: bold;
-}
+
+        .btn {
+          display: inline-block;
+          margin-top: 18px;
+          background: #f2d23b;
+          color: black;
+          padding: 12px 26px;
+          border-radius: 999px;
+          text-decoration: none;
+          font-weight: bold;
+        }
+
         .status-badge {
           display: inline-block;
           margin-top: 18px;
@@ -316,7 +390,10 @@ export default function WorkshopsPage() {
 
         .gallery {
           display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+          grid-template-columns: repeat(
+            auto-fit,
+            minmax(220px, 1fr)
+          );
           gap: 16px;
         }
 
