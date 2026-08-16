@@ -5,6 +5,26 @@ import { useState } from "react";
 export default function WorkshopsPage() {
   const upcomingWorkshops = [
     {
+      type: "exhibition",
+      title: "معرض اليوم الوطني",
+      date: "",
+      location: "مآب - قرطبة، الرياض",
+      cover: "/images/workshops/nd1.jpg",
+      description:
+        "دعوة للفنانين للمشاركة في معرض اليوم الوطني، ضمن فعالية فنية تحتفي بالهوية والثقافة والتجارب الإبداعية.",
+      registrationStatus: "open",
+      registerLink: "https://forms.gle/YMVqD3VcWHwkDNRn9",
+      buttonText: "التسجيل للمشاركة",
+      note:
+        "للاستفسارات، يرجى التواصل معنا عبر البريد الإلكتروني أو الواتساب.",
+      images: [
+        "/images/workshops/nd1.jpg",
+        "/images/workshops/nd2.jpg",
+      ],
+    },
+
+    {
+      type: "workshop",
       title: "الخط العربي من القصبة إلى اللوحة",
       instructor: "مازن أنديجاني",
       date: "5، 6 و8 أغسطس 2026",
@@ -19,6 +39,7 @@ export default function WorkshopsPage() {
     },
 
     {
+      type: "workshop",
       title: "فن المظهر السعودي",
       instructor: "خبير المظهر السعودي عبدالله الروكان",
       date: "سيعلن الموعد الجديد قريباً",
@@ -33,6 +54,7 @@ export default function WorkshopsPage() {
     },
 
     {
+      type: "workshop",
       title: "محاكاة أعمال بابلو بيكاسو",
       instructor: "الفنانة آمنة يعقوب",
       date: "24 إلى 26 يونيو 2026",
@@ -150,29 +172,45 @@ export default function WorkshopsPage() {
           </p>
 
           <section>
-            <h2 className="section-title">الورش القادمة</h2>
+            <h2 className="section-title">الورش والفعاليات القادمة</h2>
 
             <div className="grid">
               {upcomingWorkshops.map((workshop, index) => (
                 <div key={index} className="card">
-                  <img src={workshop.cover} alt={workshop.title} />
+                  <img
+                    src={workshop.cover}
+                    alt={workshop.title}
+                    onClick={() => {
+                      if ("images" in workshop && workshop.images) {
+                        setSelectedEvent(workshop);
+                      }
+                    }}
+                  />
 
                   <div className="content">
                     <h3>{workshop.title}</h3>
 
                     <p>{workshop.description}</p>
 
-                    <p className="meta">
-                      المدرب/ـة: {workshop.instructor}
-                    </p>
+                    {"instructor" in workshop && workshop.instructor && (
+                      <p className="meta">
+                        المدرب/ـة: {workshop.instructor}
+                      </p>
+                    )}
 
-                    <p className="meta">
-                      التاريخ: {workshop.date}
-                    </p>
+                    {"date" in workshop &&
+                      workshop.date && (
+                        <p className="meta">
+                          التاريخ: {workshop.date}
+                        </p>
+                      )}
 
-                    <p className="meta">
-                      الوقت: {workshop.time}
-                    </p>
+                    {"time" in workshop &&
+                      workshop.time && (
+                        <p className="meta">
+                          الوقت: {workshop.time}
+                        </p>
+                      )}
 
                     <p className="meta">
                       الموقع: {workshop.location}
@@ -180,17 +218,39 @@ export default function WorkshopsPage() {
 
                     {workshop.registrationStatus === "open" &&
                     workshop.registerLink ? (
-                      <a
-                        href={workshop.registerLink}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="btn"
-                      >
-                        التسجيل
-                      </a>
+                      <>
+                        <a
+                          href={workshop.registerLink}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="btn"
+                          onClick={(e) => e.stopPropagation()}
+                        >
+                          {"buttonText" in workshop && workshop.buttonText
+                            ? workshop.buttonText
+                            : "التسجيل"}
+                        </a>
+
+                        {"note" in workshop && workshop.note && (
+                          <p className="contact-note">
+                            {workshop.note}
+                          </p>
+                        )}
+
+                        {"images" in workshop && workshop.images && (
+                          <button
+                            className="details-btn"
+                            onClick={() => setSelectedEvent(workshop)}
+                          >
+                            عرض التفاصيل
+                          </button>
+                        )}
+                      </>
                     ) : (
                       <div className="status-badge">
-                        {workshop.seats}
+                        {"seats" in workshop
+                          ? workshop.seats
+                          : "قريبًا"}
                       </div>
                     )}
                   </div>
@@ -234,25 +294,49 @@ export default function WorkshopsPage() {
 
           <h1>{selectedEvent.title}</h1>
 
-          <p className="date">
-            {selectedEvent.date}
-          </p>
+          {selectedEvent.date && (
+            <p className="date">
+              {selectedEvent.date}
+            </p>
+          )}
 
           <p className="description">
             {selectedEvent.description}
           </p>
 
-          <div className="gallery">
-            {selectedEvent.images.map(
-              (img: string, index: number) => (
-                <img
-                  key={index}
-                  src={img}
-                  alt={selectedEvent.title}
-                />
-              )
+          {selectedEvent.registrationStatus === "open" &&
+            selectedEvent.registerLink && (
+              <div className="details-registration">
+                <a
+                  href={selectedEvent.registerLink}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn"
+                >
+                  {selectedEvent.buttonText || "التسجيل"}
+                </a>
+
+                {selectedEvent.note && (
+                  <p className="contact-note">
+                    {selectedEvent.note}
+                  </p>
+                )}
+              </div>
             )}
-          </div>
+
+          {selectedEvent.images && (
+            <div className="gallery">
+              {selectedEvent.images.map(
+                (img: string, index: number) => (
+                  <img
+                    key={index}
+                    src={img}
+                    alt={selectedEvent.title}
+                  />
+                )
+              )}
+            </div>
+          )}
         </section>
       )}
 
@@ -361,6 +445,25 @@ export default function WorkshopsPage() {
           font-weight: bold;
         }
 
+        .contact-note {
+          color: #aaa !important;
+          font-size: 13px !important;
+          line-height: 1.8 !important;
+          margin-top: 14px !important;
+        }
+
+        .details-btn {
+          display: block;
+          margin-top: 12px;
+          background: transparent;
+          border: none;
+          color: #f2d23b;
+          cursor: pointer;
+          font-family: inherit;
+          font-weight: bold;
+          padding: 0;
+        }
+
         .details {
           max-width: 1000px;
           margin: auto;
@@ -385,7 +488,11 @@ export default function WorkshopsPage() {
           color: #ccc;
           line-height: 2;
           max-width: 750px;
-          margin: 0 auto 45px;
+          margin: 0 auto 30px;
+        }
+
+        .details-registration {
+          margin-bottom: 40px;
         }
 
         .gallery {
@@ -402,6 +509,24 @@ export default function WorkshopsPage() {
           height: 220px;
           object-fit: cover;
           border-radius: 14px;
+        }
+
+        @media (max-width: 600px) {
+          .page {
+            padding: 80px 14px;
+          }
+
+          .grid {
+            grid-template-columns: 1fr;
+          }
+
+          .gallery {
+            grid-template-columns: 1fr;
+          }
+
+          .gallery img {
+            height: auto;
+          }
         }
       `}</style>
     </main>
