@@ -70,6 +70,36 @@ export default function WorkshopsPage() {
   ];
 
   const pastEvents = [
+
+    {
+  title: "ما خلف النافذة",
+  date: "18 – 22 أغسطس 2026",
+  cover: "/images/workshops/h11.jpg",
+  description:
+    "«ما خلف النافذة» معرض فردي للفنان هشام الدخيل، يستعرض تجربته الفنية في الرسم بألوان الباستيل من خلال سرد بصري يتتبع رحلة أنثى تبدأ من العزلة، ثم تنطلق عبر محطات متتابعة نحو مساحات أكثر رحابة واتساعًا. ويرافقها خلال الرحلة قطها «مؤنس»، بوصفه رفيقًا حاضرًا في تفاصيل الحكاية وتحولاتها. يقدم المعرض هذه الرحلة عبر مجموعة من الأعمال التي تتقاطع فيها المشاهد والألوان والشخصيات لتروي فصول الحكاية من نافذة إلى أخرى.",
+  images: [
+    "/images/workshops/h11.jpg",
+    "/images/workshops/h12.jpg",
+    "/images/workshops/h13.jpg",
+    "/images/workshops/h14.jpg",
+    "/images/workshops/h15.jpg",
+    "/images/workshops/h16.jpg",
+    "/images/workshops/h17.jpg",
+    "/images/workshops/h18.jpg",
+    "/images/workshops/h19.jpg",
+    "/images/workshops/h20.jpg",
+    "/images/workshops/h21.jpg",
+    "/images/workshops/h22.jpg",
+    "/images/workshops/h23.jpg",
+    "/images/workshops/h26.jpg",
+    "/images/workshops/h29.jpg",
+    "/images/workshops/h30.jpg",
+    "/images/workshops/h31.jpg",
+    "/images/workshops/h32.jpg",
+    "/images/workshops/h33.jpg",
+  ],
+},
+
     {
       title: "الخط العربي من القصبة إلى اللوحة",
       date: "5، 6 و8 أغسطس 2026",
