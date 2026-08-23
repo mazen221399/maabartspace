@@ -83,7 +83,6 @@ export default function WorkshopsPage() {
     "/images/workshops/h13.jpg",
     "/images/workshops/h14.jpg",
     "/images/workshops/h15.jpg",
-    "/images/workshops/h16.jpg",
     "/images/workshops/h17.jpg",
     "/images/workshops/h18.jpg",
     "/images/workshops/h19.jpg",
