@@ -14,6 +14,7 @@ export default function CollectorsPage() {
     "الأعمال المعاصرة",
     "الفن السعودي",
     "الأعمال محدودة النسخ",
+    "حضور الورش التدريبية",
   ];
 
   const toggleInterest = (interest: string) => {
