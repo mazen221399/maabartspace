@@ -4,22 +4,20 @@ import { useState, useEffect } from "react";
 
 export default function ArtistsPage() {
 
-const allArtists = [
-  { name: "Ahmed Alsaeed", category: "photography", role: "Photography", image: "/images/ahmed1.jpg" },
-  { name: "Basma Moktar", category: "visual", role: "Visual Art & Sculpting", image: "/images/basma.jpg" },
-  { name: "Marwa Abulenein", category: "visual", role: "Visual Art", image: "/images/mrwa1.jpg" },
-  { name: "Dina Alazaatre", category: "visual", role: "Visual Art", image: "/images/dina1.jpg" },
-  { name: "Fahad Alammar", category: "visual", role: "Visual Art", image: "/images/fahad1.jpg" },
-  { name: "Mazin Andijani", category: "calligraphy", role: "Calligraphy", image: "/images/mazin5.jpg" },
-  { name: "Dr. Sawsan Alsajjan", category: "visual", role: "Visual Art", image: "/images/sawsan.jpg" },
-  { name: "Stuart Williams", category: "photography", role: "Photography", image: "/images/steuart.jpg" },
-  { name: "Tajaliyat", category: "calligraphy", role: "Calligraphy & Illumination", image: "/images/tjlyat.jpg" },
-  { name: "Leena Al-Ayoobi", category: "visual", role: "Visual Art", image: "/images/leena1.jpg" },
-
-  { name: "Waleed AlKawmani", category: "visual", role: "Visual Art", image: "/images/waleed1.jpg" },
-
-  { name: "Dr. Siraj Allaf", category: "calligraphy", role: "Calligraphy", image: "/images/siraj1.jpg" },
-];
+  const allArtists = [
+    { name: "Ahmed Alsaeed", category: "photography", role: "Photography", image: "/images/ahmed1.jpg" },
+    { name: "Basma Moktar", category: "visual", role: "Visual Art & Sculpting", image: "/images/basma.jpg" },
+    { name: "Marwa Abulenein", category: "visual", role: "Visual Art", image: "/images/mrwa1.jpg" },
+    { name: "Dina Alazaatre", category: "visual", role: "Visual Art", image: "/images/dina1.jpg" },
+    { name: "Fahad Alammar", category: "visual", role: "Visual Art", image: "/images/fahad1.jpg" },
+    { name: "Mazin Andijani", category: "calligraphy", role: "Calligraphy", image: "/images/mazin5.jpg" },
+    { name: "Dr. Sawsan Alsajjan", category: "visual", role: "Visual Art", image: "/images/sawsan.jpg" },
+    { name: "Stuart Williams", category: "photography", role: "Photography", image: "/images/steuart.jpg" },
+    { name: "Tajaliyat", category: "calligraphy", role: "Calligraphy & Illumination", image: "/images/tjlyat.jpg" },
+    { name: "Leena Al-Ayoobi", category: "visual", role: "Visual Art", image: "/images/leena1.jpg" },
+    { name: "Waleed AlKawmani", category: "visual", role: "Visual Art", image: "/images/waleed1.jpg" },
+    { name: "Dr. Siraj Allaf", category: "calligraphy", role: "Calligraphy", image: "/images/siraj1.jpg" },
+  ];
 
   const [filter, setFilter] = useState("all");
   const [artists, setArtists] = useState<any[]>([]);
@@ -42,16 +40,56 @@ const allArtists = [
 
       <h1 className="title">الفنانون</h1>
 
+      <div className="artists-intro">
+        <p className="intro-main">
+          تفخر مآب بتمثيل مجموعة مختارة من الفنانين، لكلٍ منهم تجربته المتفردة
+          ومسيرته الراسخة في مجاله.
+        </p>
+
+        <p className="intro-secondary">
+          تتنوع ممارساتهم الفنية وتتقاطع في أصالة التجربة وخصوصية الرؤية،
+          ليقدم كل فنان لغة بصرية تعبّر عن هويته ومسيرته، وتشكل مجتمعةً
+          المشهد الفني الذي تمثله مآب.
+        </p>
+      </div>
+
       <div className="filters">
-        <button onClick={() => setFilter("all")} className={filter === "all" ? "active" : ""}>All</button>
-        <button onClick={() => setFilter("calligraphy")} className={filter === "calligraphy" ? "active" : ""}>Calligraphy</button>
-        <button onClick={() => setFilter("photography")} className={filter === "photography" ? "active" : ""}>Photography</button>
-        <button onClick={() => setFilter("visual")} className={filter === "visual" ? "active" : ""}>Visual Art</button>
+        <button
+          onClick={() => setFilter("all")}
+          className={filter === "all" ? "active" : ""}
+        >
+          All
+        </button>
+
+        <button
+          onClick={() => setFilter("calligraphy")}
+          className={filter === "calligraphy" ? "active" : ""}
+        >
+          Calligraphy
+        </button>
+
+        <button
+          onClick={() => setFilter("photography")}
+          className={filter === "photography" ? "active" : ""}
+        >
+          Photography
+        </button>
+
+        <button
+          onClick={() => setFilter("visual")}
+          className={filter === "visual" ? "active" : ""}
+        >
+          Visual Art
+        </button>
       </div>
 
       <div className="grid">
         {filteredArtists.map((artist, i) => (
-          <div key={i} className="card" onClick={() => setSelected(artist)}>
+          <div
+            key={i}
+            className="card"
+            onClick={() => setSelected(artist)}
+          >
             <img src={artist.image} alt={artist.name} />
             <p className="name">{artist.name}</p>
             <p className="role">{artist.role}</p>
@@ -60,9 +98,15 @@ const allArtists = [
       </div>
 
       {selected && (
-        <div className="modal" onClick={() => setSelected(null)}>
-          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <img src={selected.image} />
+        <div
+          className="modal"
+          onClick={() => setSelected(null)}
+        >
+          <div
+            className="modal-content"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <img src={selected.image} alt={selected.name} />
             <p className="title-modal">{selected.name}</p>
             <p className="meta">{selected.role}</p>
           </div>
@@ -75,6 +119,25 @@ const allArtists = [
           max-width: 1200px;
           margin: auto;
           text-align: center;
+        }
+
+        .artists-intro {
+          max-width: 820px;
+          margin: 0 auto 45px;
+          line-height: 2;
+        }
+
+        .intro-main {
+          margin: 0 0 10px;
+          color: #ffffff;
+          font-size: 18px;
+          font-weight: 600;
+        }
+
+        .intro-secondary {
+          margin: 0;
+          color: #bdbdbd;
+          font-size: 16px;
         }
 
         .filters {
@@ -135,8 +198,19 @@ const allArtists = [
           display: block;
         }
 
-        /* 📱 الجوال */
         @media (max-width: 768px) {
+          .artists-intro {
+            margin-bottom: 35px;
+          }
+
+          .intro-main {
+            font-size: 17px;
+          }
+
+          .intro-secondary {
+            font-size: 15px;
+          }
+
           .card img {
             aspect-ratio: 3 / 4;
             height: auto;
