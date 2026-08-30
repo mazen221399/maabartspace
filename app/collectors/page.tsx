@@ -168,16 +168,13 @@ export default function CollectorsPage() {
                 </div>
               </div>
 
-              <select
-                name="budget"
-                style={inputStyle}
-              >
-                <option>الميزانية التقريبية للاقتناء</option>
-                <option>أقل من 5,000 ريال</option>
-                <option>5,000 – 15,000 ريال</option>
-                <option>15,000 – 50,000 ريال</option>
-                <option>أكثر من 50,000 ريال</option>
-              </select>
+              <select name="budget" style={inputStyle}>
+  <option value="">الميزانية التقريبية (اختياري)</option>
+  <option>أقل من 5,000 ريال</option>
+  <option>5,000 – 15,000 ريال</option>
+  <option>15,000 – 50,000 ريال</option>
+  <option>أكثر من 50,000 ريال</option>
+</select>
 
               <textarea
                 name="notes"
