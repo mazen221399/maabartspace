@@ -60,9 +60,8 @@ export default function WorkshopsPage() {
 
   registrationStatus: "open",
 
-  registerLink: "https://forms.gle/w31Y1cdRPoF7HD7t5",
+  registerLink: "https://forms.gle/7Lzs5gFPb2bgQgtS9",
 },
-
     {
       type: "workshop",
       title: "محاكاة أعمال بابلو بيكاسو",
