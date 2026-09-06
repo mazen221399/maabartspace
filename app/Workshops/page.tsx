@@ -4,7 +4,20 @@ import { useState } from "react";
 
 export default function WorkshopsPage() {
   const upcomingWorkshops = [
-    
+    {
+      type: "workshop",
+      title: "فن المظهر السعودي",
+      instructor: "خبير المظهر السعودي عبدالله الروكان",
+      date: "3 أكتوبر 2026",
+      time: "من 5:00 مساءً إلى 9:00 مساءً",
+      seats: "المقاعد محدودة",
+      location: "مآب - قرطبة، الرياض",
+      cover: "/images/workshops/rokan.jpg",
+      description:
+        "ورشة تدريبية تتناول أسس المظهر السعودي وعناصره الثقافية، مع استعراض أبرز التفاصيل التي تعكس الهوية السعودية في اللباس والمظهر، يقدمها خبير المظهر السعودي عبدالله الروكان.",
+      registrationStatus: "open",
+      registerLink: "https://forms.gle/7Lzs5gFPb2bgQgtS9",
+    },
 
     {
       type: "workshop",
@@ -22,30 +35,6 @@ export default function WorkshopsPage() {
     },
 
     {
-  type: "workshop",
-
-  title: "فن المظهر السعودي",
-
-  instructor: "خبير المظهر السعودي عبدالله الروكان",
-
-  date: "3 أكتوبر 2026",
-
-  time: "من 5:00 مساءً إلى 9:00 مساءً",
-
-  seats: "المقاعد محدودة",
-
-  location: "مآب - قرطبة، الرياض",
-
-  cover: "/images/workshops/rokan.jpg",
-
-  description:
-    "ورشة تدريبية تتناول أسس المظهر السعودي وعناصره الثقافية، مع استعراض أبرز التفاصيل التي تعكس الهوية السعودية في اللباس والمظهر، يقدمها خبير المظهر السعودي عبدالله الروكان.",
-
-  registrationStatus: "open",
-
-  registerLink: "https://forms.gle/7Lzs5gFPb2bgQgtS9",
-},
-    {
       type: "workshop",
       title: "محاكاة أعمال بابلو بيكاسو",
       instructor: "الفنانة آمنة يعقوب",
@@ -62,43 +51,42 @@ export default function WorkshopsPage() {
   ];
 
   const pastEvents = [
-
     {
-  title: "ما خلف النافذة",
-  date: "18 – 22 أغسطس 2026",
-  cover: "/images/workshops/h11.jpg",
-  description:
-    "«ما خلف النافذة» معرض فردي للفنان هشام الدخيل، يستعرض تجربته الفنية في الرسم بألوان الباستيل من خلال سرد بصري يتتبع رحلة أنثى تبدأ من العزلة، ثم تنطلق عبر محطات متتابعة نحو مساحات أكثر رحابة واتساعًا. ويرافقها خلال الرحلة قطها «مؤنس»، بوصفه رفيقًا حاضرًا في تفاصيل الحكاية وتحولاتها. يقدم المعرض هذه الرحلة عبر مجموعة من الأعمال التي تتقاطع فيها المشاهد والألوان والشخصيات لتروي فصول الحكاية من نافذة إلى أخرى.",
-  images: [
-    "/images/workshops/h11.jpg",
-    "/images/workshops/h12.jpg",
-    "/images/workshops/h13.jpg",
-    "/images/workshops/h14.jpg",
-    "/images/workshops/h15.jpg",
-    "/images/workshops/h17.jpg",
-    "/images/workshops/h18.jpg",
-    "/images/workshops/h19.jpg",
-    "/images/workshops/h20.jpg",
-    "/images/workshops/h21.jpg",
-    "/images/workshops/h22.jpg",
-    "/images/workshops/h23.jpg",
-    "/images/workshops/h26.jpg",
-    "/images/workshops/h29.jpg",
-    "/images/workshops/h30.jpg",
-    "/images/workshops/h31.jpg",
-    "/images/workshops/h32.jpg",
-    "/images/workshops/h33.jpg",
-    "/images/workshops/h34.jpg",
-"/images/workshops/h35.jpg",
-"/images/workshops/h36.jpg",
-"/images/workshops/h37.jpg",
-"/images/workshops/h38.jpg",
-"/images/workshops/h39.jpg",
-"/images/workshops/h40.jpg",
-"/images/workshops/h41.jpg",
-"/images/workshops/h42.jpg",
-  ],
-},
+      title: "ما خلف النافذة",
+      date: "18 – 22 أغسطس 2026",
+      cover: "/images/workshops/h11.jpg",
+      description:
+        "«ما خلف النافذة» معرض فردي للفنان هشام الدخيل، يستعرض تجربته الفنية في الرسم بألوان الباستيل من خلال سرد بصري يتتبع رحلة أنثى تبدأ من العزلة، ثم تنطلق عبر محطات متتابعة نحو مساحات أكثر رحابة واتساعًا. ويرافقها خلال الرحلة قطها «مؤنس»، بوصفه رفيقًا حاضرًا في تفاصيل الحكاية وتحولاتها. يقدم المعرض هذه الرحلة عبر مجموعة من الأعمال التي تتقاطع فيها المشاهد والألوان والشخصيات لتروي فصول الحكاية من نافذة إلى أخرى.",
+      images: [
+        "/images/workshops/h11.jpg",
+        "/images/workshops/h12.jpg",
+        "/images/workshops/h13.jpg",
+        "/images/workshops/h14.jpg",
+        "/images/workshops/h15.jpg",
+        "/images/workshops/h17.jpg",
+        "/images/workshops/h18.jpg",
+        "/images/workshops/h19.jpg",
+        "/images/workshops/h20.jpg",
+        "/images/workshops/h21.jpg",
+        "/images/workshops/h22.jpg",
+        "/images/workshops/h23.jpg",
+        "/images/workshops/h26.jpg",
+        "/images/workshops/h29.jpg",
+        "/images/workshops/h30.jpg",
+        "/images/workshops/h31.jpg",
+        "/images/workshops/h32.jpg",
+        "/images/workshops/h33.jpg",
+        "/images/workshops/h34.jpg",
+        "/images/workshops/h35.jpg",
+        "/images/workshops/h36.jpg",
+        "/images/workshops/h37.jpg",
+        "/images/workshops/h38.jpg",
+        "/images/workshops/h39.jpg",
+        "/images/workshops/h40.jpg",
+        "/images/workshops/h41.jpg",
+        "/images/workshops/h42.jpg",
+      ],
+    },
 
     {
       title: "الخط العربي من القصبة إلى اللوحة",
@@ -210,11 +198,6 @@ export default function WorkshopsPage() {
                   <img
                     src={workshop.cover}
                     alt={workshop.title}
-                    onClick={() => {
-                      if ("images" in workshop && workshop.images) {
-                        setSelectedEvent(workshop);
-                      }
-                    }}
                   />
 
                   <div className="content">
@@ -222,25 +205,23 @@ export default function WorkshopsPage() {
 
                     <p>{workshop.description}</p>
 
-                    {"instructor" in workshop && workshop.instructor && (
+                    {workshop.instructor && (
                       <p className="meta">
                         المدرب/ـة: {workshop.instructor}
                       </p>
                     )}
 
-                    {"date" in workshop &&
-                      workshop.date && (
-                        <p className="meta">
-                          التاريخ: {workshop.date}
-                        </p>
-                      )}
+                    {workshop.date && (
+                      <p className="meta">
+                        التاريخ: {workshop.date}
+                      </p>
+                    )}
 
-                    {"time" in workshop &&
-                      workshop.time && (
-                        <p className="meta">
-                          الوقت: {workshop.time}
-                        </p>
-                      )}
+                    {workshop.time && (
+                      <p className="meta">
+                        الوقت: {workshop.time}
+                      </p>
+                    )}
 
                     <p className="meta">
                       الموقع: {workshop.location}
@@ -248,39 +229,17 @@ export default function WorkshopsPage() {
 
                     {workshop.registrationStatus === "open" &&
                     workshop.registerLink ? (
-                      <>
-                        <a
-                          href={workshop.registerLink}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="btn"
-                          onClick={(e) => e.stopPropagation()}
-                        >
-                          {"buttonText" in workshop && workshop.buttonText
-                            ? workshop.buttonText
-                            : "التسجيل"}
-                        </a>
-
-                        {"note" in workshop && workshop.note && (
-                          <p className="contact-note">
-                            {workshop.note}
-                          </p>
-                        )}
-
-                        {"images" in workshop && workshop.images && (
-                          <button
-                            className="details-btn"
-                            onClick={() => setSelectedEvent(workshop)}
-                          >
-                            عرض التفاصيل
-                          </button>
-                        )}
-                      </>
+                      <a
+                        href={workshop.registerLink}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="btn"
+                      >
+                        التسجيل
+                      </a>
                     ) : (
                       <div className="status-badge">
-                        {"seats" in workshop
-                          ? workshop.seats
-                          : "قريبًا"}
+                        {workshop.seats || "قريبًا"}
                       </div>
                     )}
                   </div>
@@ -333,26 +292,6 @@ export default function WorkshopsPage() {
           <p className="description">
             {selectedEvent.description}
           </p>
-
-          {selectedEvent.registrationStatus === "open" &&
-            selectedEvent.registerLink && (
-              <div className="details-registration">
-                <a
-                  href={selectedEvent.registerLink}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="btn"
-                >
-                  {selectedEvent.buttonText || "التسجيل"}
-                </a>
-
-                {selectedEvent.note && (
-                  <p className="contact-note">
-                    {selectedEvent.note}
-                  </p>
-                )}
-              </div>
-            )}
 
           {selectedEvent.images && (
             <div className="gallery">
@@ -475,25 +414,6 @@ export default function WorkshopsPage() {
           font-weight: bold;
         }
 
-        .contact-note {
-          color: #aaa !important;
-          font-size: 13px !important;
-          line-height: 1.8 !important;
-          margin-top: 14px !important;
-        }
-
-        .details-btn {
-          display: block;
-          margin-top: 12px;
-          background: transparent;
-          border: none;
-          color: #f2d23b;
-          cursor: pointer;
-          font-family: inherit;
-          font-weight: bold;
-          padding: 0;
-        }
-
         .details {
           max-width: 1000px;
           margin: auto;
@@ -519,10 +439,6 @@ export default function WorkshopsPage() {
           line-height: 2;
           max-width: 750px;
           margin: 0 auto 30px;
-        }
-
-        .details-registration {
-          margin-bottom: 40px;
         }
 
         .gallery {
