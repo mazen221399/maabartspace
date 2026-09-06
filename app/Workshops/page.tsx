@@ -39,19 +39,29 @@ export default function WorkshopsPage() {
     },
 
     {
-      type: "workshop",
-      title: "فن المظهر السعودي",
-      instructor: "خبير المظهر السعودي عبدالله الروكان",
-      date: "سيعلن الموعد الجديد قريباً",
-      time: "سيعلن لاحقاً",
-      seats: "سيتم فتح باب التسجيل قريبًا",
-      location: "مآب - قرطبة، الرياض",
-      cover: "/images/workshops/rokan.jpg",
-      description:
-        "ورشة تدريبية تتناول أسس المظهر السعودي وعناصره الثقافية، مع استعراض أبرز التفاصيل التي تعكس الهوية السعودية في اللباس والمظهر، يقدمها خبير المظهر السعودي عبدالله الروكان.",
-      registrationStatus: "soon",
-      registerLink: "",
-    },
+  type: "workshop",
+
+  title: "فن المظهر السعودي",
+
+  instructor: "خبير المظهر السعودي عبدالله الروكان",
+
+  date: "3 أكتوبر 2026",
+
+  time: "من 5:00 مساءً إلى 9:00 مساءً",
+
+  seats: "المقاعد محدودة",
+
+  location: "مآب - قرطبة، الرياض",
+
+  cover: "/images/workshops/rokan.jpg",
+
+  description:
+    "ورشة تدريبية تتناول أسس المظهر السعودي وعناصره الثقافية، مع استعراض أبرز التفاصيل التي تعكس الهوية السعودية في اللباس والمظهر، يقدمها خبير المظهر السعودي عبدالله الروكان.",
+
+  registrationStatus: "open",
+
+  registerLink: "https://forms.gle/w31Y1cdRPoF7HD7t5",
+},
 
     {
       type: "workshop",
