@@ -5,23 +5,23 @@ import { useState } from "react";
 export default function WorkshopsPage() {
   const upcomingWorkshops = [
     {
-      type: "exhibition",
-      title: "معرض اليوم الوطني",
-      date: "",
-      location: "مآب - قرطبة، الرياض",
-      cover: "/images/workshops/nd1.jpg",
-      description:
-        "دعوة للفنانين للمشاركة في معرض اليوم الوطني، ضمن فعالية فنية تحتفي بالهوية والثقافة والتجارب الإبداعية.",
-      registrationStatus: "open",
-      registerLink: "https://forms.gle/YMVqD3VcWHwkDNRn9",
-      buttonText: "التسجيل للمشاركة",
-      note:
-        "للاستفسارات، يرجى التواصل معنا عبر البريد الإلكتروني أو الواتساب.",
-      images: [
-        "/images/workshops/nd1.jpg",
-        "/images/workshops/nd2.jpg",
-      ],
-    },
+  type: "exhibition",
+  title: "معرض اليوم الوطني",
+  date: "",
+  location: "مآب - قرطبة، الرياض",
+  cover: "/images/workshops/nd1.jpg",
+  description:
+    "دعوة للفنانين للمشاركة في معرض اليوم الوطني، ضمن فعالية فنية تحتفي بالهوية والثقافة والتجارب الإبداعية.",
+  registrationStatus: "closed",
+  registerLink: "",
+  buttonText: "تم إغلاق باب المشاركة",
+  note:
+    "للاستفسارات، يرجى التواصل معنا عبر البريد الإلكتروني أو الواتساب.",
+  images: [
+    "/images/workshops/nd1.jpg",
+    "/images/workshops/nd2.jpg",
+  ],
+},
 
     {
       type: "workshop",
