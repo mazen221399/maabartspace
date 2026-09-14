@@ -20,20 +20,19 @@ export default function WorkshopsPage() {
   registerLink: "https://forms.gle/VdyMjCoWdvvmNR467",
 },
 
-    {
+{
   type: "workshop",
   title: "فن الكتابة بالأدوات التقليدية في الخط العربي",
   instructor: "الخطاط عبدالله المفرح",
   date: "16 سبتمبر 2026",
   time: "من 6:00 مساءً إلى 10:00 مساءً",
-  seats: "المقاعد محدودة",
+  seats: "تم إغلاق التسجيل",
   location: "مآب - قرطبة، الرياض",
-  cover: "/images/workshops/am.jpg",
+  cover: "/images/workshops/mufreh.jpg",
   description:
     "ورشة تدريبية في فن الكتابة بالأدوات التقليدية للخط العربي، يقدمها الخطاط عبدالله المفرح، المجاز في الخط الديواني، ويتعرف خلالها المشاركون على الأدوات التقليدية وأساليب استخدامها والتطبيق العملي في الكتابة. رسوم المشاركة 320 ريال.",
-  registrationStatus: "open",
-  registerLink:
-    "https://docs.google.com/forms/d/e/1FAIpQLSe0JKKsfhtvF2mVdmL4Ws7FcvKz-v549bwihI8lsKpLj8b11g/viewform?usp=sharing&ouid=101460317983873958162",
+  registrationStatus: "closed",
+  registerLink: "",
 },
 
     {
