@@ -56,13 +56,15 @@ export default function RootLayout({
 
             {/* روابط الصفحات */}
             <nav className="nav-links" aria-label="القائمة الرئيسية">
-              <Link href="/">الرئيسية</Link>
-              <Link href="/artists">الفنانون</Link>
-              <Link href="/Artworks">الأعمال الفنية</Link>
-              <Link href="/Workshops">الورش والفعاليات</Link>
-              <Link href="/collectors">مجتمع المقتنين</Link>
-              <Link href="/Contact">اتصل بنا</Link>
-            </nav>
+  <Link href="/">الرئيسية</Link>
+  <Link href="/artists">الفنانون</Link>
+  <Link href="/Artworks">الأعمال الفنية</Link>
+  <Link href="/Workshops">الورش والفعاليات</Link>
+  <Link href="/artists-services">خدمات الفنانين</Link>
+  <Link href="/organizations-services">خدمات الشركات والمنظمات</Link>
+  <Link href="/collectors">مجتمع المقتنين</Link>
+  <Link href="/Contact">اتصل بنا</Link>
+</nav>
 
             {/* روابط التواصل والموقع */}
             <div className="header-socials">
