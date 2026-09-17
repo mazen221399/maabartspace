@@ -10,6 +10,8 @@ export const metadata = {
 const instagramUrl = "https://www.instagram.com/maab.artspace/";
 const linkedinUrl = "https://www.linkedin.com/company/maab-artspace/";
 const mapsUrl = "https://maps.app.goo.gl/URK8kmirbhj3o46E8";
+const tripadvisorUrl =
+  "https://www.tripadvisor.com/Attraction_Review-g293995-d34689268-Reviews-MAAB_Artspace-Riyadh_Riyadh_Province.html";
 
 export default function RootLayout({
   children,
@@ -19,6 +21,7 @@ export default function RootLayout({
   return (
     <html lang="ar" dir="rtl">
       <body className="site-bg">
+
         {/* ===== GOOGLE ANALYTICS ===== */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-DX05VKQH9F"
@@ -41,6 +44,7 @@ export default function RootLayout({
         {/* ===== HEADER ===== */}
         <header className="navbar">
           <div className="navbar-inner">
+
             {/* اللوجو */}
             <Link
               href="/"
@@ -56,18 +60,22 @@ export default function RootLayout({
 
             {/* روابط الصفحات */}
             <nav className="nav-links" aria-label="القائمة الرئيسية">
-  <Link href="/">الرئيسية</Link>
-  <Link href="/artists">الفنانون</Link>
-  <Link href="/Artworks">الأعمال الفنية</Link>
-  <Link href="/Workshops">الورش والفعاليات</Link>
-  <Link href="/artists-services">خدمات الفنانين</Link>
-  <Link href="/organizations-services">خدمات الشركات والمنظمات</Link>
-  <Link href="/collectors">مجتمع المقتنين</Link>
-  <Link href="/Contact">اتصل بنا</Link>
-</nav>
+              <Link href="/">الرئيسية</Link>
+              <Link href="/artists">الفنانون</Link>
+              <Link href="/Artworks">الأعمال الفنية</Link>
+              <Link href="/Workshops">الورش والفعاليات</Link>
+              <Link href="/artists-services">خدمات الفنانين</Link>
+              <Link href="/organizations-services">
+                خدمات الشركات والمنظمات
+              </Link>
+              <Link href="/collectors">مجتمع المقتنين</Link>
+              <Link href="/Contact">اتصل بنا</Link>
+            </nav>
 
             {/* روابط التواصل والموقع */}
             <div className="header-socials">
+
+              {/* Instagram */}
               <a
                 href={instagramUrl}
                 target="_blank"
@@ -87,6 +95,7 @@ export default function RootLayout({
                 </svg>
               </a>
 
+              {/* LinkedIn */}
               <a
                 href={linkedinUrl}
                 target="_blank"
@@ -103,6 +112,7 @@ export default function RootLayout({
                 </svg>
               </a>
 
+              {/* Google Maps */}
               <a
                 href={mapsUrl}
                 target="_blank"
@@ -115,6 +125,7 @@ export default function RootLayout({
                   <circle cx="12" cy="9" r="2.5" />
                 </svg>
               </a>
+
             </div>
           </div>
         </header>
@@ -124,9 +135,79 @@ export default function RootLayout({
 
         {/* ===== FOOTER ===== */}
         <footer className="footer">
-          <div className="footer-brand">M A A B Art Space</div>
 
+          <div className="footer-brand">
+            M A A B Art Space
+          </div>
+
+          {/* ===== TRIPADVISOR WIDGET ===== */}
+          <div
+            className="tripadvisor-widget"
+            dir="ltr"
+            style={{
+              width: "100%",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              margin: "10px auto",
+              textAlign: "center",
+            }}
+          >
+            <div
+              id="TA_rated309"
+              className="TA_rated"
+              style={{
+                display: "flex",
+                justifyContent: "center",
+              }}
+            >
+              <ul
+                id="vLyBXHo8"
+                className="TA_links Dius3c4OcT9J"
+                style={{
+                  margin: 0,
+                  padding: 0,
+                  listStyle: "none",
+                }}
+              >
+                <li
+                  id="uIVZwAQr"
+                  className="wG0VKjTn"
+                  style={{
+                    margin: 0,
+                    padding: 0,
+                  }}
+                >
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href={tripadvisorUrl}
+                  >
+                    <img
+                      src="https://www.tripadvisor.com/img/cdsi/img2/badges/ollie-11424-2.gif"
+                      alt="Tripadvisor"
+                      style={{
+                        display: "block",
+                        width: "90px",
+                        height: "auto",
+                        margin: "0 auto",
+                      }}
+                    />
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <Script
+              id="tripadvisor-widget-script"
+              src="https://www.jscache.com/wejs?wtype=rated&uniq=309&locationId=34689268&lang=en_US&display_version=2"
+              strategy="afterInteractive"
+            />
+          </div>
+
+          {/* ===== FOOTER LINKS ===== */}
           <div className="footer-socials">
+
             <a
               href={instagramUrl}
               target="_blank"
@@ -154,8 +235,20 @@ export default function RootLayout({
             >
               Google Maps
             </a>
+
+            <span>•</span>
+
+            <a
+              href={tripadvisorUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Tripadvisor
+            </a>
+
           </div>
 
+          {/* ===== COPYRIGHT ===== */}
           <p className="footer-text-ar">
             جميع حقوق الصور والأعمال الفنية محفوظة، ولا يجوز استخدامها أو
             إعادة إنتاجها بأي شكل من الأشكال.
@@ -165,7 +258,9 @@ export default function RootLayout({
             All artworks and images are protected. Unauthorized use or
             reproduction is strictly prohibited.
           </p>
+
         </footer>
+
       </body>
     </html>
   );
