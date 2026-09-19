@@ -20,7 +20,21 @@ export default function WorkshopsPage() {
   registerLink: "",
 },
 
-
+{
+  type: "exhibition",
+  title: "ذاكرة رقمية",
+  instructor: "",
+  date: "22 – 24 أكتوبر 2026",
+  time: "",
+  seats: "رسوم المشاركة: 150 ريال",
+  location: "مآب - قرطبة، الرياض",
+  cover: "/images/workshops/mim.jpg",
+  description:
+    "دعوة مفتوحة للفنانين للمشاركة في معرض «ذاكرة رقمية»، وهو معرض فني مخصص للأعمال الرقمية، ويقام في مآب خلال الفترة من 22 إلى 24 أكتوبر 2026. رسوم المشاركة في المعرض 150 ريال.",
+  registrationStatus: "open",
+  registerLink: "https://forms.gle/Fhj7YtCUUK8JgAvY6",
+  buttonText: "التسجيل للمشاركة",
+},
 
     {
       type: "workshop",
