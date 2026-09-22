@@ -12,6 +12,7 @@ export default function ArtistsPage() {
     { name: "Fahad Alammar", category: "visual", role: "Visual Art", image: "/images/fahad1.jpg" },
     { name: "Mazin Andijani", category: "calligraphy", role: "Calligraphy", image: "/images/maz.jpg" },
     { name: "Dr. Sawsan Alsajjan", category: "visual", role: "Visual Art", image: "/images/sawsan.jpg" },
+    { name: "Sahila Rakhdari", category: "visual", role: "Visual Art & Illumination", image: "/images/sah111.jpg" },
     { name: "Stuart Williams", category: "photography", role: "Photography", image: "/images/steuart.jpg" },
     { name: "Tajaliyat", category: "calligraphy", role: "Calligraphy & Illumination", image: "/images/tjlyat.jpg" },
     { name: "Leena Al-Ayoobi", category: "visual", role: "Visual Art", image: "/images/leena1.jpg" },
