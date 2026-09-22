@@ -6,6 +6,7 @@ type Category = "painting" | "calligraphy" | "sculpture" | "photography";
 
 type Artwork = {
   image: string;
+  images?: string[];
   title: string;
   category: Category;
   details?: string;
@@ -77,17 +78,18 @@ export default function ArtworksPage() {
       category: "sculpture",
       details: "بيت شعر منحوت بخط عربي على جرة فخارية.",
     },
-{
-  image: "/images/artworks/nostalgia.jpg",
-  title: "Nostalgia",
-  category: "sculpture",
-},
 
-{
-  image: "/images/artworks/areyouhaveanyfun.jpg",
-  title: "Are You Have Any Fun?",
-  category: "sculpture",
-},
+    {
+      image: "/images/artworks/nostalgia.jpg",
+      title: "Nostalgia",
+      category: "sculpture",
+    },
+
+    {
+      image: "/images/artworks/areyouhaveanyfun.jpg",
+      title: "Are You Have Any Fun?",
+      category: "sculpture",
+    },
 
     {
       image: "/images/artworks/circle.jpg",
@@ -156,6 +158,25 @@ export default function ArtworksPage() {
       category: "painting",
     },
 
+    /* ===== أعمال Sahila Rakhdari ===== */
+
+    {
+      image: "/images/artworks/sah3.jpg",
+      images: [
+        "/images/artworks/sah3.jpg",
+        "/images/artworks/sah1.jpg",
+        "/images/artworks/sah2.jpg",
+        "/images/artworks/sah4.jpg",
+        "/images/artworks/sah5.jpg",
+        "/images/artworks/sah6.jpg",
+        "/images/artworks/sah7.jpg",
+        "/images/artworks/sah8.jpg",
+        "/images/artworks/sah9.jpg",
+      ],
+      title: "Shirin’s Garden (Shirinin baginda)",
+      category: "painting",
+    },
+
     /* ===== أعمال التصوير الفوتوغرافي ===== */
 
     {
@@ -211,11 +232,13 @@ export default function ArtworksPage() {
       title: "مكنونات",
       category: "painting",
     },
+
     {
       image: "/images/artworks/najdiat.jpg",
       title: "نجديات",
       category: "painting",
     },
+
     {
       image: "/images/artworks/onfowan.jpg",
       title: "عنفوان امرأة",
@@ -250,16 +273,19 @@ export default function ArtworksPage() {
       title: "Diriyah",
       category: "painting",
     },
+
     {
       image: "/images/artworks/s2.jpg",
       title: "Alula",
       category: "painting",
     },
+
     {
       image: "/images/artworks/s3.jpg",
       title: "Story Night at Ouja",
       category: "painting",
     },
+
     {
       image: "/images/artworks/s4.jpg",
       title: "Riyadh the Dancing City",
@@ -283,16 +309,19 @@ export default function ArtworksPage() {
       title: "Sisters",
       category: "painting",
     },
+
     {
       image: "/images/artworks/womenstrength.jpg",
       title: "جبروت امرأة",
       category: "painting",
     },
+
     {
       image: "/images/artworks/ziyarah.jpg",
       title: "زيارة",
       category: "painting",
     },
+
     {
       image: "/images/artworks/confusion.jpg",
       title: "Confusion",
@@ -304,11 +333,13 @@ export default function ArtworksPage() {
       title: "تاء مربوطة",
       category: "calligraphy",
     },
+
     {
       image: "/images/artworks/tajalle.jpg",
       title: "تجلِّ",
       category: "calligraphy",
     },
+
     {
       image: "/images/artworks/alula.jpg",
       title: "العلا",
@@ -356,31 +387,37 @@ export default function ArtworksPage() {
       title: "unnamed",
       category: "photography",
     },
+
     {
       image: "/images/artworks/farasan.jpg",
       title: "unnamed",
       category: "photography",
     },
+
     {
       image: "/images/artworks/moonersrock.jpg",
       title: "Mooners Rock",
       category: "photography",
     },
+
     {
       image: "/images/artworks/rallyjameel.jpg",
       title: "unnamed",
       category: "photography",
     },
+
     {
       image: "/images/artworks/reddune.jpg",
       title: "Red Dune",
       category: "photography",
     },
+
     {
       image: "/images/artworks/ubm.jpg",
       title: "عروق بني معارض",
       category: "photography",
     },
+
     {
       image: "/images/artworks/wildlife.jpg",
       title: "Wild Life",
@@ -392,6 +429,7 @@ export default function ArtworksPage() {
       title: "Res Fish",
       category: "painting",
     },
+
     {
       image: "/images/artworks/violetroom.jpg",
       title: "Violet Room",
@@ -401,6 +439,8 @@ export default function ArtworksPage() {
 
   const [artworks, setArtworks] = useState<Artwork[]>([]);
   const [selected, setSelected] = useState<Artwork | null>(null);
+  const [currentImage, setCurrentImage] = useState(0);
+
   const [activeCategory, setActiveCategory] =
     useState<"all" | Category>("all");
 
@@ -419,6 +459,22 @@ export default function ArtworksPage() {
       selected.description ||
       [selected.medium, selected.size].filter(Boolean).join("، ")
     : "";
+
+  const previousImage = () => {
+    if (!selected?.images || selected.images.length <= 1) return;
+
+    setCurrentImage((prev) =>
+      prev === 0 ? selected.images!.length - 1 : prev - 1
+    );
+  };
+
+  const nextImage = () => {
+    if (!selected?.images || selected.images.length <= 1) return;
+
+    setCurrentImage((prev) =>
+      prev === selected.images!.length - 1 ? 0 : prev + 1
+    );
+  };
 
   return (
     <main className="page">
@@ -446,7 +502,10 @@ export default function ArtworksPage() {
           <div
             key={`${art.image}-${art.title}`}
             className="card"
-            onClick={() => setSelected(art)}
+            onClick={() => {
+              setSelected(art);
+              setCurrentImage(0);
+            }}
           >
             <img
               src={art.image}
@@ -462,7 +521,13 @@ export default function ArtworksPage() {
 
       {/* ===== نافذة تكبير العمل ===== */}
       {selected && (
-        <div className="modal" onClick={() => setSelected(null)}>
+        <div
+          className="modal"
+          onClick={() => {
+            setSelected(null);
+            setCurrentImage(0);
+          }}
+        >
           <div
             className="modal-content"
             onClick={(e) => e.stopPropagation()}
@@ -471,17 +536,50 @@ export default function ArtworksPage() {
               type="button"
               className="close-button"
               aria-label="إغلاق"
-              onClick={() => setSelected(null)}
+              onClick={() => {
+                setSelected(null);
+                setCurrentImage(0);
+              }}
             >
               ×
             </button>
 
             <div className="modal-image-wrapper">
               <img
-                src={selected.image}
+                src={
+                  selected.images
+                    ? selected.images[currentImage]
+                    : selected.image
+                }
                 alt={selected.title}
                 draggable={false}
               />
+
+              {selected.images && selected.images.length > 1 && (
+                <>
+                  <button
+                    type="button"
+                    className="gallery-arrow gallery-prev"
+                    aria-label="الصورة السابقة"
+                    onClick={previousImage}
+                  >
+                    ‹
+                  </button>
+
+                  <button
+                    type="button"
+                    className="gallery-arrow gallery-next"
+                    aria-label="الصورة التالية"
+                    onClick={nextImage}
+                  >
+                    ›
+                  </button>
+
+                  <div className="image-counter">
+                    {currentImage + 1} / {selected.images.length}
+                  </div>
+                </>
+              )}
 
               <div className="watermark">MAAB ART SPACE</div>
             </div>
@@ -705,6 +803,66 @@ export default function ArtworksPage() {
           -webkit-user-drag: none;
         }
 
+        /* ===== GALLERY ARROWS ===== */
+
+        .gallery-arrow {
+          position: absolute;
+          top: 50%;
+          z-index: 15;
+
+          width: 44px;
+          height: 44px;
+
+          transform: translateY(-50%);
+
+          border: 1px solid rgba(255, 255, 255, 0.4);
+          border-radius: 50%;
+
+          background: rgba(0, 0, 0, 0.65);
+          color: white;
+
+          font-size: 32px;
+          line-height: 36px;
+
+          cursor: pointer;
+
+          transition:
+            color 0.3s ease,
+            background 0.3s ease,
+            border-color 0.3s ease;
+        }
+
+        .gallery-arrow:hover {
+          background: #f2d23b;
+          color: black;
+          border-color: #f2d23b;
+        }
+
+        .gallery-prev {
+          left: 12px;
+        }
+
+        .gallery-next {
+          right: 12px;
+        }
+
+        .image-counter {
+          position: absolute;
+          bottom: 12px;
+          left: 50%;
+          z-index: 15;
+
+          transform: translateX(-50%);
+
+          padding: 5px 12px;
+          border-radius: 999px;
+
+          background: rgba(0, 0, 0, 0.7);
+          color: white;
+
+          font-size: 12px;
+        }
+
         .watermark {
           position: absolute;
           top: 50%;
@@ -873,6 +1031,25 @@ export default function ArtworksPage() {
           .modal-image-wrapper img {
             max-width: 100%;
             max-height: 58vh;
+          }
+
+          .gallery-arrow {
+            width: 38px;
+            height: 38px;
+            font-size: 27px;
+            line-height: 30px;
+          }
+
+          .gallery-prev {
+            left: 8px;
+          }
+
+          .gallery-next {
+            right: 8px;
+          }
+
+          .image-counter {
+            bottom: 8px;
           }
         }
       `}</style>
