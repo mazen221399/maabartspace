@@ -14,13 +14,13 @@ export default function WorkshopsPage() {
   instructor: "",
   date: "26 سبتمبر 2026",
   time: "من 7:00 مساءً إلى 9:30 مساءً",
-  seats: "الرسوم: 230 ريال",
+  seats: "تم إغلاق التسجيل لاكتمال العدد",
   location: "مآب - قرطبة، الرياض",
   cover: "/images/workshops/lino4.jpg",
   description:
     "ورشة تطبيقية للتعرف على فن الطباعة باللينو، بدءًا من إعداد التصميم والحفر على سطح اللينو، وصولًا إلى تحبير القالب وتنفيذ الطبعة الفنية. تجربة عملية تتيح للمشاركين التعرف على أساسيات هذه التقنية وتنفيذ أعمالهم الخاصة.",
-  registrationStatus: "open",
-  registerLink: "https://forms.gle/VgeZW3ZWbUaT2qJk8",
+  registrationStatus: "closed",
+  registerLink: "",
 },
 
 
