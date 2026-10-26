@@ -24,22 +24,6 @@ export default function WorkshopsPage() {
 },
 
 
-{
-  type: "exhibition",
-  title: "ذاكرة رقمية",
-  instructor: "",
-  date: "22 – 24 أكتوبر 2026",
-  time: "",
-  seats: "رسوم المشاركة: 150 ريال",
-  location: "مآب - قرطبة، الرياض",
-  cover: "/images/workshops/mim.jpg",
-  description:
-    "دعوة مفتوحة للفنانين للمشاركة في معرض «ذاكرة رقمية»، وهو معرض فني مخصص للأعمال الرقمية، ويقام في مآب خلال الفترة من 22 إلى 24 أكتوبر 2026. رسوم المشاركة في المعرض 150 ريال.",
-  registrationStatus: "open",
-  registerLink: "https://forms.gle/Fhj7YtCUUK8JgAvY6",
-  buttonText: "التسجيل للمشاركة",
-},
-
     {
   type: "workshop",
   title: "خِذ رَجّال",
@@ -87,6 +71,50 @@ export default function WorkshopsPage() {
   ];
 
   const pastEvents = [
+    {
+      title: "ذاكرة رقمية",
+      date: "22 – 24 أكتوبر 2026",
+      cover: "/images/workshops/d27.jpg",
+      description:
+        "معرض فني جماعي يحتفي بالفن الرقمي بوصفه مساحة معاصرة للإبداع والتعبير البصري. ضم المعرض أعمالًا أُنتجت جميعها باستخدام الوسائط الرقمية، وقدّم ثمانية فنانين رؤاهم وأساليبهم المتنوعة في استحضار الذاكرة والتجارب الإنسانية بلغة بصرية معاصرة. الفنانون المشاركون: بسمة مختار، إلياس كلنتن، مازن منصور، سارة بن عبود، مروة أبو العينين، مها الزهراني، إبراهيم البلال، وغصون سعود. أُقيم المعرض في مآب، مساحة فنية بمدينة الرياض، خلال الفترة من 22 إلى 24 أكتوبر 2026.",
+      images: [
+        "/images/workshops/d27.jpg",
+        "/images/workshops/d8.jpg",
+        "/images/workshops/d19.jpg",
+        "/images/workshops/d3.jpg",
+        "/images/workshops/d31.jpg",
+        "/images/workshops/d14.jpg",
+        "/images/workshops/d6.jpg",
+        "/images/workshops/d24.jpg",
+        "/images/workshops/d11.jpg",
+        "/images/workshops/d35.jpg",
+        "/images/workshops/d2.jpg",
+        "/images/workshops/d21.jpg",
+        "/images/workshops/d16.jpg",
+        "/images/workshops/d29.jpg",
+        "/images/workshops/d5.jpg",
+        "/images/workshops/d33.jpg",
+        "/images/workshops/d12.jpg",
+        "/images/workshops/d1.jpg",
+        "/images/workshops/d25.jpg",
+        "/images/workshops/d9.jpg",
+        "/images/workshops/d18.jpg",
+        "/images/workshops/d30.jpg",
+        "/images/workshops/d4.jpg",
+        "/images/workshops/d22.jpg",
+        "/images/workshops/d15.jpg",
+        "/images/workshops/d34.jpg",
+        "/images/workshops/d7.jpg",
+        "/images/workshops/d26.jpg",
+        "/images/workshops/d10.jpg",
+        "/images/workshops/d32.jpg",
+        "/images/workshops/d13.jpg",
+        "/images/workshops/d28.jpg",
+        "/images/workshops/d17.jpg",
+        "/images/workshops/d23.jpg",
+        "/images/workshops/d20.jpg",
+      ],
+    },
     {
       title: "ما خلف النافذة",
       date: "18 – 22 أغسطس 2026",
@@ -213,6 +241,13 @@ export default function WorkshopsPage() {
   ];
 
   const [selectedEvent, setSelectedEvent] = useState<any>(null);
+  const [activeImageIndex, setActiveImageIndex] = useState<number | null>(null);
+
+  const closeImage = () => setActiveImageIndex(null);
+  const changeImage = (direction: number) => {
+    if (activeImageIndex === null || !selectedEvent?.images?.length) return;
+    setActiveImageIndex((activeImageIndex + direction + selectedEvent.images.length) % selectedEvent.images.length);
+  };
 
   return (
     <main className="page">
@@ -292,7 +327,7 @@ export default function WorkshopsPage() {
                 <div
                   key={index}
                   className="card"
-                  onClick={() => setSelectedEvent(event)}
+                  onClick={() => { setSelectedEvent(event); closeImage(); }}
                 >
                   <img src={event.cover} alt={event.title} />
 
@@ -312,7 +347,7 @@ export default function WorkshopsPage() {
         <section className="details">
           <button
             className="back"
-            onClick={() => setSelectedEvent(null)}
+            onClick={() => { setSelectedEvent(null); closeImage(); }}
           >
             العودة
           </button>
@@ -333,16 +368,34 @@ export default function WorkshopsPage() {
             <div className="gallery">
               {selectedEvent.images.map(
                 (img: string, index: number) => (
-                  <img
+                  <button
                     key={index}
-                    src={img}
-                    alt={selectedEvent.title}
-                  />
+                    type="button"
+                    className="gallery-item"
+                    onClick={() => setActiveImageIndex(index)}
+                    aria-label={`تكبير الصورة ${index + 1}`}
+                  >
+                    <img src={img} alt={`${selectedEvent.title} - الصورة ${index + 1}`} />
+                  </button>
                 )
               )}
             </div>
           )}
         </section>
+      )}
+
+      {selectedEvent && activeImageIndex !== null && (
+        <div className="lightbox" role="dialog" aria-modal="true" aria-label="عرض الصورة بحجم كبير" onClick={closeImage}>
+          <button type="button" className="lightbox-close" onClick={closeImage} aria-label="إغلاق">×</button>
+          <button type="button" className="lightbox-prev" onClick={(e) => { e.stopPropagation(); changeImage(-1); }} aria-label="الصورة السابقة">❮</button>
+          <img
+            src={selectedEvent.images[activeImageIndex]}
+            alt={`${selectedEvent.title} - الصورة ${activeImageIndex + 1}`}
+            onClick={(e) => e.stopPropagation()}
+          />
+          <button type="button" className="lightbox-next" onClick={(e) => { e.stopPropagation(); changeImage(1); }} aria-label="الصورة التالية">❯</button>
+          <div className="lightbox-counter">{activeImageIndex + 1} / {selectedEvent.images.length}</div>
+        </div>
       )}
 
       <style jsx>{`
@@ -486,12 +539,54 @@ export default function WorkshopsPage() {
           gap: 16px;
         }
 
+        .gallery-item {
+          padding: 0;
+          border: 0;
+          background: transparent;
+          cursor: zoom-in;
+          border-radius: 14px;
+          overflow: hidden;
+        }
+
         .gallery img {
           width: 100%;
           height: 220px;
           object-fit: cover;
           border-radius: 14px;
         }
+
+        .lightbox {
+          position: fixed;
+          inset: 0;
+          z-index: 9999;
+          background: rgba(0, 0, 0, 0.95);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 55px 55px;
+        }
+        .lightbox img {
+          max-width: 100%;
+          max-height: 85vh;
+          object-fit: contain;
+          border-radius: 6px;
+        }
+        .lightbox button {
+          position: absolute;
+          color: white;
+          background: rgba(40, 40, 40, 0.75);
+          border: 1px solid #777;
+          border-radius: 50%;
+          cursor: pointer;
+          width: 42px;
+          height: 42px;
+          font-size: 25px;
+          z-index: 2;
+        }
+        .lightbox-close { top: 16px; right: 16px; }
+        .lightbox-prev { left: 10px; top: 50%; transform: translateY(-50%); }
+        .lightbox-next { right: 10px; top: 50%; transform: translateY(-50%); }
+        .lightbox-counter { position: absolute; bottom: 16px; color: #f2d23b; }
 
         @media (max-width: 600px) {
           .page {
