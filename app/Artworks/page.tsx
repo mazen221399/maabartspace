@@ -29,7 +29,7 @@ export default function ArtworksPage() {
 
         // أعمال زكي الهاشمي
     {
-      image: "/images/artworks/zki1.jpg",
+      image: "/images/artworks/zki4.jpg",
       title: "إنا منجوك",
       category: "calligraphy",
       details:
