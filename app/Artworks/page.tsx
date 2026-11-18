@@ -36,13 +36,13 @@ export default function ArtworksPage() {
         "زكي الهاشمي — تركيب فني بخط الثلث على ورق مقهّر، بمقاس 42 × 51 سم.",
     },
     {
-      image: "/images/artworks/zki2.jpg",
+      image: "/images/artworks/zki3.jpg",
       title: "وكثير من السؤال اشتياق وكثير من رده تعليل",
       category: "calligraphy",
       details:
         "زكي الهاشمي — بخط الثلث الجلي الديواني على ورق مقهّر، بمقاس 105 × 74 سم.",
     },
-    
+
     {
       image: "/images/artworks/fahad1.jpg",
       title: "بدون عنوان",
