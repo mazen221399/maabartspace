@@ -35,6 +35,24 @@ export default function ArtworksPage() {
       details:
         "زكي الهاشمي — تركيب فني بخط الثلث على ورق مقهّر، بمقاس 42 × 51 سم.",
     },
+        {
+      image: "/images/artworks/cam1.jpg",
+      title: "عام الإبل — The Year of the Camel 2024",
+      category: "painting",
+      details: "ألوان زيتية على كانفس، بمقاس 100 × 120 سم، 2024م.",
+    },
+    {
+      image: "/images/artworks/eli1.jpg",
+      title: "دوامة فيل — Elephant Vortex",
+      category: "painting",
+      details: "ألوان زيتية على كانفس، بمقاس 100 × 120 سم.",
+    },
+    {
+      image: "/images/artworks/nooon.jpg",
+      title: "نون والقلم وما يسطرون",
+      category: "calligraphy",
+      details: "ألوان زيتية على كانفس، بمقاس 30 × 42 سم.",
+    },
     {
       image: "/images/artworks/zki3.jpg",
       title: "وكثير من السؤال اشتياق وكثير من رده تعليل",
