@@ -18,6 +18,7 @@ export default function ArtistsPage() {
     { name: "Leena Al-Ayoobi", category: "visual", role: "Visual Art", image: "/images/leena1.jpg" },
     { name: "Waleed AlKawmani", category: "visual", role: "Visual Art", image: "/images/waleed1.jpg" },
     { name: "Dr. Siraj Allaf", category: "calligraphy", role: "Calligraphy", image: "/images/siraj1.jpg" },
+    { name: "Zaki Alhashimi", category: "calligraphy", role: "Calligraphy", image: "/images/zkiphoto.jpg" },
   ];
 
   const [filter, setFilter] = useState("all");
